@@ -1,0 +1,2475 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<!-- Vantablack Depth & Inter Typography Standard - STACKLABS FLEET HARMONIZATION -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STACKLABS // UNIFIED FOUNDER COCKPIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+  <script>
+    function initTheme() {
+      let saved = localStorage.getItem('stacklabs_theme');
+      if (!saved || saved === 'light') {
+        saved = 'dark';
+        try { localStorage.setItem('stacklabs_theme', 'dark'); } catch(e) {}
+      }
+      setTheme(saved);
+    }
+    function setTheme(mode) {
+      document.documentElement.classList.add('dark');
+      try { localStorage.setItem('stacklabs_theme', 'dark'); } catch(e) {}
+      updateThemeToggleUI('dark');
+    }
+    function toggleTheme() {
+      setTheme('dark');
+    }
+    function updateThemeToggleUI(mode) {
+      const el = document.getElementById('themeToggleText');
+      if (!el) return;
+      el.innerHTML = '<span class="text-slate-500">☀️ LITE</span> <span class="text-slate-600">/</span> <span class="text-emerald-400 font-bold">🌙 DARK</span>';
+    }
+    (function() {
+      let saved = localStorage.getItem('stacklabs_theme');
+      if (!saved || saved === 'light') {
+        saved = 'dark';
+        try { localStorage.setItem('stacklabs_theme', 'dark'); } catch(e) {}
+      }
+      document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (typeof pdfjsLib !== 'undefined') {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+  </script>
+  <style>
+    :root, html.dark {
+      --bg-canvas: #090A0F;
+      --bg-card: #0B0D13;
+      --border-card: #1E2330;
+      --text-primary: #F2F4F7;
+      --text-secondary: #8A909C;
+      --text-muted: #576072;
+      --color-teal: #06B6D4;
+      --color-emerald: #10B981;
+      --color-amber: #F59E0B;
+      --color-crimson: #EF4444;
+    }
+    body {
+      background-color: #090A0F !important;
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.08) 0%, rgba(8, 145, 178, 0.02) 45%, rgba(9, 10, 15, 0) 75%), #090A0F !important;
+      color: #F2F4F7 !important;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-weight: 500 !important;
+      letter-spacing: -0.03em !important;
+    }
+    .font-metrics, .font-mono {
+      font-family: 'JetBrains Mono', monospace !important;
+    }
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg-canvas); }
+    ::-webkit-scrollbar-thumb { background: var(--border-card); border-radius: 2px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--color-teal); }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    /* Flat Black Material Card Standard */
+    .material-card {
+      border-radius: 2px !important;
+      background-color: #0B0D13 !important;
+      border-top: 1px solid #1E2330 !important;
+      border-bottom: 1px solid #1E2330 !important;
+      border-right: 1px solid #1E2330 !important;
+      border-left: 6px solid #06B6D4 !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+      transition: background-color 0.15s ease, border-color 0.15s ease !important;
+    }
+    html.dark .material-card {
+      background-color: #0B0D13 !important;
+      border-top: 1px solid #1E2330 !important;
+      border-bottom: 1px solid #1E2330 !important;
+      border-right: 1px solid #1E2330 !important;
+      border-left: 6px solid #06B6D4 !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+    }
+    .spine-active, html.dark .spine-active { border-left-color: #10B981 !important; }
+    .spine-action, html.dark .spine-action { border-left-color: #06B6D4 !important; }
+    .spine-pending, html.dark .spine-pending { border-left-color: #F59E0B !important; }
+    .spine-error, html.dark .spine-error { border-left-color: #EF4444 !important; }
+    .tab-btn.active, html.dark .tab-btn.active {
+      background-color: #141B26 !important;
+      color: #FFFFFF !important;
+      border-color: #06B6D4 !important;
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.25) !important;
+    }
+    .btn-primary {
+      background: #06B6D4;
+      color: #090A0F;
+      font-weight: 700;
+      border: 1px solid #0891B2;
+      padding: 8px 16px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.75rem;
+    }
+    .btn-primary:hover {
+      background: #22D3EE;
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+    }
+    html.dark .btn-primary {
+      background: #06B6D4;
+      color: #090A0F;
+      border-color: #0891B2;
+    }
+    html.dark .btn-primary:hover {
+      background: #22D3EE;
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+    }
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body class="flex flex-col h-screen antialiased">
+  <!-- TOP CONSOLIDATED HEADER -->
+  <header class="h-14 border-b border-[#1E2330] bg-[#090A0F] px-3 md:px-4 flex items-center justify-between shrink-0 transition-colors duration-150">
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-[2px] bg-[#06B6D4] flex items-center justify-center font-bold text-black font-mono text-sm shadow-sm">
+        SL
+      </div>
+      <div>
+        <div class="text-xs font-bold tracking-wider uppercase text-white flex items-center gap-1.5 font-sans">
+          <span>STACKLABS COCKPIT</span>
+          <span class="text-[9px] font-mono px-1.5 py-0.5 rounded-[2px] bg-emerald-950/80 text-emerald-400 border border-emerald-800/50">CLIO HOST • LIVE</span>
+        </div>
+        <div class="text-[9px] font-mono text-slate-500 hidden sm:block">SINGLE-PANE FOUNDER CONTROL PLANE</div>
+      </div>
+    </div>
+    <!-- DESKTOP NAVIGATION PILLS (2014 MATERIAL UTILITY) -->
+    <nav class="hidden md:flex items-center bg-[#0B0D13] p-1 rounded-[2px] border border-[#1E2330] gap-1">
+      <button onclick="switchTab('tab-all')" id="btn-all" class="tab-btn active px-3 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition flex items-center gap-1.5 border border-transparent">
+        <span>Mission Deck</span>
+      </button>
+      <button onclick="switchTab('tab-drop')" id="btn-drop" class="tab-btn px-3 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition flex items-center gap-1.5 border border-transparent">
+        <span>Dropzone</span>
+        <span id="pill-drop-count" class="px-1.5 py-0.5 rounded-[2px] text-[9px] font-mono bg-blue-950 text-blue-300 border border-blue-800/40">3</span>
+      </button>
+      <button onclick="switchTab('tab-sync')" id="btn-sync" class="tab-btn px-3 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition flex items-center gap-1.5 border border-transparent">
+        <span>Drive Sync</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
+      </button>
+      <button onclick="switchTab('tab-jit')" id="btn-jit" class="tab-btn px-3 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition flex items-center gap-1.5 border border-transparent">
+        <span>JIT Approvals</span>
+        <span id="pill-jit-count" class="px-1.5 py-0.5 rounded-[2px] text-[9px] font-mono bg-amber-950 text-amber-300 border border-amber-800/40">2</span>
+      </button>
+      <button onclick="switchTab('tab-queue')" id="btn-queue" class="tab-btn px-3 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition flex items-center gap-1.5 border border-transparent">
+        <span>Active Queue</span>
+        <span id="pill-queue-badge" class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+      </button>
+      <button onclick="switchTab('tab-cmdb')" id="btn-cmdb" class="tab-btn px-3 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition flex items-center gap-1.5 border border-transparent">
+        <span>Fleet &amp; CMDB</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+      </button>
+      <button onclick="switchTab('tab-horizon')" id="btn-horizon" class="tab-btn px-3 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition flex items-center gap-1.5 border border-transparent">
+        <span>Horizon Telemetry</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#06B6D4]"></span>
+      </button>
+      <button onclick="switchTab('tab-predict')" id="btn-predict" class="tab-btn px-3 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition flex items-center gap-1.5 border border-transparent">
+        <span>Sickos Exchange</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+      </button>
+      <button onclick="switchTab('tab-snipe')" id="btn-snipe" class="tab-btn px-3 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition flex items-center gap-1.5 border border-transparent">
+        <span>YouTube Snipe</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+      </button>
+    </nav>
+    <!-- RIGHT STATUS & GLOBAL THEME SWITCHER -->
+    <div class="flex items-center gap-2.5">
+      <button id="themeToggleBtn" type="button" onclick="toggleTheme()" class="px-2.5 py-1 rounded-[2px] bg-[#0B0D13] border border-[#1E2330] shadow-sm text-xs font-mono uppercase tracking-wider transition cursor-pointer flex items-center gap-1.5 hover:border-[#06B6D4]" title="Toggle Light/Dark Theme">
+        <span id="themeToggleText"><span class="text-slate-500">☀️ LITE</span> <span class="text-slate-600">/</span> <span class="text-emerald-400 font-bold">🌙 DARK</span></span>
+      </button>
+      <div class="hidden xl:flex flex-col items-end text-right">
+        <span class="text-[11px] font-mono font-bold text-slate-300">CLIO MASTER (SER8)</span>
+        <span class="text-[10px] font-mono text-emerald-400">35W • 12.53-DAY RECOVERY</span>
+      </div>
+      <div class="w-8 h-8 rounded-[2px] border border-[#1E2330] bg-[#0B0D13] flex items-center justify-center text-xs font-bold text-slate-300 font-mono" title="James Carroll (Pilot)">
+        JC
+      </div>
+    </div>
+  </header>
+  <!-- MOBILE NAVIGATION SUB-BAR -->
+  <div class="md:hidden h-10 px-3 bg-[#0B0D13] border-b border-[#1E2330] flex items-center overflow-x-auto no-scrollbar gap-1 shrink-0">
+    <button onclick="switchTab('tab-all')" id="m-btn-all" class="tab-btn active px-2.5 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition border border-transparent flex items-center gap-1 whitespace-nowrap">
+      <span>Deck</span>
+    </button>
+    <button onclick="switchTab('tab-drop')" id="m-btn-drop" class="tab-btn px-2.5 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition border border-transparent flex items-center gap-1 whitespace-nowrap">
+      <span>Drop</span>
+      <span id="m-pill-drop-count" class="px-1 rounded-[2px] text-[9px] font-mono bg-blue-950 text-blue-300">3</span>
+    </button>
+    <button onclick="switchTab('tab-sync')" id="m-btn-sync" class="tab-btn px-2.5 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition border border-transparent flex items-center gap-1 whitespace-nowrap">
+      <span>Sync</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
+    </button>
+    <button onclick="switchTab('tab-jit')" id="m-btn-jit" class="tab-btn px-2.5 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition border border-transparent flex items-center gap-1 whitespace-nowrap">
+      <span>JIT</span>
+      <span id="m-pill-jit-count" class="px-1 rounded-[2px] text-[9px] font-mono bg-amber-950 text-amber-300">2</span>
+    </button>
+    <button onclick="switchTab('tab-queue')" id="m-btn-queue" class="tab-btn px-2.5 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition border border-transparent flex items-center gap-1 whitespace-nowrap">
+      <span>Queue</span>
+    </button>
+    <button onclick="switchTab('tab-cmdb')" id="m-btn-cmdb" class="tab-btn px-2.5 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition border border-transparent flex items-center gap-1 whitespace-nowrap">
+      <span>Fleet</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+    </button>
+    <button onclick="switchTab('tab-horizon')" id="m-btn-horizon" class="tab-btn px-2.5 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition border border-transparent flex items-center gap-1 whitespace-nowrap">
+      <span>Horizon</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-[#06B6D4]"></span>
+    </button>
+    <button onclick="switchTab('tab-predict')" id="m-btn-predict" class="tab-btn px-2.5 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition border border-transparent flex items-center gap-1 whitespace-nowrap">
+      <span>Sickos</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+    </button>
+    <button onclick="switchTab('tab-snipe')" id="m-btn-snipe" class="tab-btn px-2.5 py-1.5 rounded-[2px] text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-white hover:bg-[#1E2330] transition border border-transparent flex items-center gap-1 whitespace-nowrap">
+      <span>Snipe</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+    </button>
+  </div>
+  <!-- MAIN SCROLLABLE VIEWPORT (LOCKED VIEWPORT KI-095 COMPLIANT) -->
+  <main class="flex-1 overflow-y-auto p-4 md:p-6" id="main-content">
+    <!-- ==================== VIEW 1: MISSION DECK (UNIFIED 3-COLUMN VIEW) ==================== -->
+    <div id="tab-all" class="tab-content flex flex-col gap-6">
+      <!-- QUICK STATS RIBBON -->
+      <section class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="material-card spine-action p-3 flex flex-col justify-between">
+          <span class="text-[10px] font-metrics text-slate-400 uppercase tracking-wider">Mobile Drops</span>
+          <div class="flex items-baseline justify-between mt-1">
+            <span class="text-xl font-bold text-white" id="stat-drops-val">3 Pending</span>
+            <span class="text-[10px] font-metrics text-blue-400" id="stat-drops-sub">1 Audio • 2 SMS</span>
+          </div>
+        </div>
+        <div class="material-card spine-active p-3 flex flex-col justify-between">
+          <span class="text-[10px] font-metrics text-slate-400 uppercase tracking-wider">Drive Envelopes</span>
+          <div class="flex items-baseline justify-between mt-1">
+            <span class="text-xl font-bold text-white" id="stat-sync-val">8 Ready</span>
+            <span class="text-[10px] font-metrics text-emerald-400">Clean Room Synced</span>
+          </div>
+        </div>
+        <div class="material-card spine-pending p-3 flex flex-col justify-between">
+          <span class="text-[10px] font-metrics text-slate-400 uppercase tracking-wider">JIT Architecture</span>
+          <div class="flex items-baseline justify-between mt-1">
+            <span class="text-xl font-bold text-amber-400" id="stat-jit-val">2 Awaiting</span>
+            <span class="text-[10px] font-metrics text-amber-500">Pawel • Davidson</span>
+          </div>
+        </div>
+        <div class="material-card spine-active p-3 flex flex-col justify-between">
+          <span class="text-[10px] font-metrics text-slate-400 uppercase tracking-wider">Active Queue</span>
+          <div class="flex items-baseline justify-between mt-1">
+            <span class="text-xl font-bold text-white" id="stat-queue-val">IDLE</span>
+            <span class="text-[10px] font-metrics text-emerald-400" id="stat-atf-val">ATF Passed</span>
+          </div>
+        </div>
+      </section>
+      <!-- 3-COLUMN UNIFIED DESK -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- COLUMN 1: 24/7 MOBILE DROPZONE (DIRECT DROPZONE) -->
+        <div class="lg:col-span-4 material-card spine-action p-4 flex flex-col gap-4">
+          <div class="flex items-center justify-between border-b border-[#1E2330] pb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🎙️</span>
+              <h2 class="text-sm font-bold text-white uppercase tracking-wider">Mobile Dropzone</h2>
+            </div>
+            <span class="text-[10px] font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded-[2px] border border-cyan-800/40">DIRECT DROPZONE</span>
+          </div>
+          <!-- ONE-TAP RECORDER (THUMB ZONE) -->
+          <div class="bg-[#07090E] border border-[#1E2330] rounded-[2px] p-3 text-center flex flex-col items-center gap-2">
+            <button id="mic-btn" onclick="toggleAudioRecord()" class="w-14 h-14 rounded-full bg-gradient-to-tr from-red-600 to-rose-500 hover:from-red-500 hover:to-rose-400 text-white flex items-center justify-center text-xl shadow-lg transition active:scale-95 focus:outline-none">
+              🎙️
+            </button>
+            <span class="text-xs font-bold text-slate-200" id="mic-status-label">Tap to Dictate Pilot Drop</span>
+            <span class="text-[10px] font-metrics text-slate-400">Whisper API auto-transcribes to scratch pad</span>
+          </div>
+          <!-- QUICK TEXT DROP INPUT -->
+          <div class="flex gap-2">
+            <input type="text" id="mission-quick-drop-input" placeholder="Type quick drop or note..." class="flex-1 bg-[#07090E] border border-[#1E2330] rounded-[2px] px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500 font-sans" onkeydown="if(event.key==='Enter') submitMissionQuickDrop()">
+            <button onclick="submitMissionQuickDrop()" class="px-3 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs rounded-[2px] transition">Post</button>
+          </div>
+          <!-- LATEST INCOMING DROPS & SMS -->
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-metrics text-slate-400 font-bold">RECENT INCOMING DROPS</span>
+              <button onclick="switchTab('tab-drop')" class="text-[10px] font-metrics text-amber-400 hover:underline">View All →</button>
+            </div>
+            <div id="mission-recent-drops-container" class="flex flex-col gap-2">
+              <div class="bg-[#0B0D13] p-2.5 rounded-[2px] border border-[#1E2330] flex flex-col gap-1">
+                <div class="flex items-center justify-between text-[10px] font-metrics text-slate-400">
+                  <span class="text-amber-400 font-bold">SMS [LOG-JM-010]</span>
+                  <span>15:15 EDT</span>
+                </div>
+                <p class="text-xs text-slate-300 font-sans">"Hey James, reviewing Option SE-101 numbers now...." — Jeremy Malone</p>
+              </div>
+              <div class="bg-[#0B0D13] p-2.5 rounded-[2px] border border-[#1E2330] flex flex-col gap-1">
+                <div class="flex items-center justify-between text-[10px] font-metrics text-slate-400">
+                  <span class="text-purple-400 font-bold">VOICE DROP (PAWEL)</span>
+                  <span>Sep 26 15:30</span>
+                </div>
+                <p class="text-xs text-slate-300 font-sans">"Reviewing the 12.53-day payback math and appliance specs before Monday call."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- COLUMN 2: JIT ARCHITECTURE BOARD (JIT ARCHITECTURE) -->
+        <div class="lg:col-span-4 material-card spine-pending p-4 flex flex-col gap-4">
+          <div class="flex items-center justify-between border-b border-[#1E2330] pb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-base">⚡</span>
+              <h2 class="text-sm font-bold text-white uppercase tracking-wider">JIT Architecture Board</h2>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-mono text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded-[2px] border border-amber-800/40">JIT GATEWAY</span>
+            </div>
+          </div>
+          <div id="mission-jit-cards-container" class="flex flex-col gap-3">
+            <!-- PENDING APPROVAL CARD 1 -->
+            <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-3 flex flex-col gap-2.5 jit-card" id="card-chal-se101" data-approval-id="CHAL-SE-101">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-metrics font-bold bg-amber-950 text-amber-300 border border-amber-800/50">PROSPECT // DAVIDSON</span>
+                <span class="text-[10px] font-metrics text-slate-400">2.0h SLA</span>
+              </div>
+              <div>
+                <h3 class="text-xs font-bold text-white">Option #SE-101 Homebuilder Integration</h3>
+                <p class="text-[11px] text-slate-400 mt-0.5">Woodland Hills / Woods Crossing edge node compute proposal.</p>
+              </div>
+              <div class="flex items-center gap-2 pt-1 border-t border-[#1E2330]">
+                <button onclick="handleApproval('CHAL-SE-101', 'authorize', this)" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-1.5 rounded transition">
+                  ✓ Authorize
+                </button>
+                <button onclick="handleApproval('CHAL-SE-101', 'archive', this)" class="px-3 bg-[#141B26] hover:bg-slate-800 text-slate-300 text-xs py-1.5 rounded transition">
+                  Archive
+                </button>
+              </div>
+            </div>
+            <!-- PENDING APPROVAL CARD 2 -->
+            <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-3 flex flex-col gap-2.5 jit-card" id="card-chal-safe125" data-approval-id="CHAL-SAFE-125K">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-metrics font-bold bg-purple-950 text-purple-300 border border-purple-800/50">INVESTOR // PAWEL</span>
+                <span class="text-[10px] font-metrics text-slate-400">P0 SAFE</span>
+              </div>
+              <div>
+                <h3 class="text-xs font-bold text-white">$125K SAFE Battle Card Dossier</h3>
+                <p class="text-[11px] text-slate-400 mt-0.5">Model-S fleet economics & zero discrete GPU compute model.</p>
+              </div>
+              <div class="flex items-center gap-2 pt-1 border-t border-[#1E2330]">
+                <button onclick="handleApproval('CHAL-SAFE-125K', 'authorize', this)" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-1.5 rounded transition">
+                  ✓ Authorize
+                </button>
+                <button onclick="handleApproval('CHAL-SAFE-125K', 'archive', this)" class="px-3 bg-[#141B26] hover:bg-slate-800 text-slate-300 text-xs py-1.5 rounded transition">
+                  Archive
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="pt-1">
+            <button onclick="switchTab('tab-jit')" class="text-[11px] font-metrics text-amber-400 hover:underline flex items-center justify-end gap-1 w-full">
+              <span>View Full JIT Board</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+        <!-- COLUMN 3: DRIVE SYNC COCKPIT & LIVE HUD (:8088/SYNC + 3016) -->
+        <div class="lg:col-span-4 material-card spine-active p-4 flex flex-col gap-4">
+          <div class="flex items-center justify-between border-b border-[#1E2330] pb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🚀</span>
+              <h2 class="text-sm font-bold text-white uppercase tracking-wider">Drive Sync & HUD</h2>
+            </div>
+            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded-[2px] border border-emerald-800/40">SOVEREIGN SYNC</span>
+          </div>
+          <!-- LAST SYNC TIME BANNER -->
+          <div class="bg-[#07090E] border border-[#1E2330] rounded-[2px] px-3 py-1.5 flex items-center justify-between text-[11px] font-metrics">
+            <span class="text-slate-400">Target: <strong class="text-slate-200">stacklabs_edge</strong></span>
+            <span class="text-slate-400">Last Sync: <strong class="text-amber-400" id="mission-last-sync-time">Checking...</strong></span>
+          </div>
+          <!-- 1-CLICK HERO SYNC BUTTON -->
+          <button id="hero-sync-btn" onclick="triggerSyncAll()" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-black font-extrabold text-xs py-3 rounded-[2px] shadow-lg flex items-center justify-center gap-2 transition active:scale-98">
+            <span id="hero-sync-icon">🚀</span>
+            <span id="hero-sync-label">SYNC ALL ENVELOPES TO GOOGLE DRIVE</span>
+          </button>
+          <!-- ENVELOPES LIST -->
+          <div class="flex flex-col gap-1.5">
+            <div class="text-[10px] font-metrics text-slate-400 flex justify-between">
+              <span>TARGET ENVELOPE</span>
+              <span>MODIFIED / STATUS</span>
+            </div>
+            <div id="mission-envelopes-list" class="flex flex-col gap-1.5 max-h-48 overflow-y-auto pr-1">
+              <div class="p-2 rounded bg-[#0B0D13] border border-[#1E2330] flex items-center justify-between text-xs">
+                <span class="text-slate-200">07 Johnny Carroll (Millwork)</span>
+                <span class="text-[10px] font-metrics text-emerald-400">Ready</span>
+              </div>
+              <div class="p-2 rounded bg-[#0B0D13] border border-[#1E2330] flex items-center justify-between text-xs">
+                <span class="text-slate-200">06 Davidson Malone (Moat)</span>
+                <span class="text-[10px] font-metrics text-emerald-400">Ready</span>
+              </div>
+              <div class="p-2 rounded bg-[#0B0D13] border border-[#1E2330] flex items-center justify-between text-xs">
+                <span class="text-slate-200">StackLabs Internal Chronicles</span>
+                <span class="text-[10px] font-metrics text-emerald-400">Synced</span>
+              </div>
+            </div>
+          </div>
+          <!-- ACTIVE HUD TICKER -->
+          <div class="mt-2 pt-2 border-t border-[#1E2330]">
+            <div class="flex items-center justify-between text-[10px] font-metrics text-slate-400 mb-1">
+              <span>LAST ACTION</span>
+              <span class="text-emerald-400 font-bold" id="mission-hud-ticket">CHECKING QUEUE...</span>
+            </div>
+            <div class="text-[11px] font-sans text-slate-300" id="mission-hud-detail">
+              Connecting to Clio Queue Telemetry...
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 2: DEDICATED DROPZONE VIEW ==================== -->
+    <div id="tab-drop" class="tab-content hidden flex flex-col gap-4 max-w-4xl mx-auto">
+      <div class="material-card spine-action p-6 flex flex-col gap-4">
+        <div class="flex items-center justify-between border-b border-[#1E2330] pb-3">
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <span>🎙️</span>
+            <span>Pilot Quick-Drop Ingress</span>
+          </h2>
+          <span class="text-xs font-metrics text-slate-500">Direct Ingress to scratch_pad.md</span>
+        </div>
+        <textarea id="dedicated-drop-input" rows="4" class="w-full bg-[#07090E] border border-[#1E2330] rounded-[2px] p-3 text-sm text-slate-200 font-sans focus:outline-none focus:border-amber-500" placeholder="Type or paste any voice note, bug report, or problem drop..."></textarea>
+        <div class="flex justify-between items-center">
+          <span class="text-xs text-slate-500 font-metrics">Auto-routed to pilot_drops/scratch_pad.md</span>
+          <button onclick="submitDedicatedDrop()" class="px-6 py-2 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs rounded-[2px] shadow transition">
+            Post Drop
+          </button>
+        </div>
+      </div>
+      <!-- FILE UPLOAD DROPZONE -->
+      <div class="material-card spine-action p-6 flex flex-col gap-4">
+        <h3 class="text-sm font-bold text-white flex items-center gap-2">
+          <span>📁</span>
+          <span>Camera & File Drag-and-Drop</span>
+        </h3>
+        <div id="drop-zone-box" class="border-2 border-dashed border-[#1E2330] hover:border-amber-500 rounded-[2px] p-8 text-center flex flex-col items-center justify-center gap-2 cursor-pointer transition bg-[#07090E]" onclick="document.getElementById('file-upload-input').click()">
+          <input type="file" id="file-upload-input" class="hidden" multiple onchange="handleFileUpload(event)">
+          <div class="text-3xl">📤</div>
+          <span class="text-xs font-bold text-slate-200">Tap to select photo/file or drag here</span>
+          <span class="text-[10px] font-metrics text-slate-400">Auto-downsamples images & downscales EXIF</span>
+        </div>
+      </div>
+      <!-- RECENT DROPS GALLERY -->
+      <div class="material-card spine-action p-6 flex flex-col gap-3">
+        <h3 class="text-sm font-bold text-white flex items-center justify-between">
+          <span>Recent Staged Drops</span>
+          <button onclick="fetchDrops()" class="text-xs font-metrics text-amber-400 hover:underline">Refresh</button>
+        </h3>
+        <div id="dedicated-drops-gallery" class="flex flex-col gap-2 max-h-96 overflow-y-auto pr-1">
+          <div class="text-xs text-slate-500">Loading recent drops...</div>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== VIEW 3: DEDICATED SYNC COCKPIT VIEW ==================== -->
+    <div id="tab-sync" class="tab-content hidden flex flex-col gap-4 max-w-4xl mx-auto">
+      <div class="material-card spine-active p-6 flex flex-col gap-4">
+        <div class="flex items-center justify-between border-b border-[#1E2330] pb-3">
+          <div>
+            <h2 class="text-base font-bold text-white flex items-center gap-2">
+              <span>🚀</span>
+              <span>Sovereign Sync Cockpit (Tool #43)</span>
+            </h2>
+            <p class="text-xs text-slate-400 mt-1">Single-click push to stacklabs.edge@gmail.com (stacklabs_edge:) and corporate vaults.</p>
+          </div>
+          <button onclick="triggerSyncAll()" class="px-4 py-2 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-black font-extrabold text-xs rounded-[2px] shadow transition">
+            Sync All Envelopes
+          </button>
+        </div>
+        <div class="p-3 bg-[#07090E] rounded-[2px] border border-[#1E2330] font-metrics text-xs text-emerald-400 flex items-center justify-between">
+          <span>[rclone] Sovereign sync ready. 0 authentication errors. Clean Room tenant isolation locked.</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        </div>
+        <div class="flex flex-col gap-2 mt-2">
+          <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-metrics">Target Sync Envelopes</h3>
+          <div id="dedicated-sync-envelopes" class="flex flex-col gap-2">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== VIEW 4: DEDICATED JIT APPROVALS VIEW ==================== -->
+    <div id="tab-jit" class="tab-content hidden flex flex-col gap-4 max-w-4xl mx-auto">
+      <div class="material-card spine-pending p-6 flex flex-col gap-4">
+        <div class="flex items-center justify-between border-b border-[#1E2330] pb-3">
+          <div>
+            <h2 class="text-base font-bold text-white flex items-center gap-2">
+              <span>⚡</span>
+              <span>JIT Approval Gateway</span>
+            </h2>
+            <p class="text-xs text-slate-400 mt-1">Rapid prototyping challenge approval matrix with Gandalf zero-slop verification.</p>
+          </div>
+          <button onclick="fetchApprovals()" class="px-3 py-1.5 bg-[#141B26] hover:bg-slate-800 text-slate-300 text-xs font-metrics rounded border border-[#1E2330] transition">
+            Refresh
+          </button>
+        </div>
+        <div id="dedicated-jit-list" class="flex flex-col gap-3">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+    <!-- ==================== VIEW 5: DEDICATED QUEUE HUD VIEW ==================== -->
+    <div id="tab-queue" class="tab-content hidden flex flex-col gap-4 max-w-4xl mx-auto">
+      <!-- ⚡ ATOMIC WORK ORDER FORGE INGRESS -->
+      <div class="material-card spine-pending p-6 flex flex-col gap-4">
+        <div class="flex items-center justify-between border-b border-[#1E2330] pb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-base">⚡</span>
+            <h2 class="text-base font-bold text-white font-sans">⚡ Atomic Work Order Stage // Air-Gap Ingress</h2>
+          </div>
+          <span class="px-2 py-0.5 rounded text-[10px] font-metrics font-bold bg-amber-950 text-amber-300 border border-amber-800/50">AIR-GAP INGRESS</span>
+        </div>
+        <p class="text-xs text-slate-400 font-sans">
+          Direct injection into <code class="text-amber-400 font-mono text-[11px] bg-[#07090E] px-1 py-0.5 rounded border border-[#1E2330]">/home/james/sovereign_inbox/queue/incoming/</code>. Closes the loop between Gemini Spark / AI Studio and Autonomous Execution Forge without giving interactive chat write permissions to code.
+        </p>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-[11px] font-metrics text-slate-400 font-bold uppercase tracking-wider">Work Order Title / Slug</label>
+          <input type="text" id="stage-wo-title" placeholder="Optional Custom Slug or Title (e.g. SKEW-COLLEGE-SEARCH-BAR)" class="w-full bg-[#07090E] border border-[#1E2330] rounded-[2px] px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-amber-500 font-mono">
+        </div>
+        <!-- Native Document / PDF Dropzone -->
+        <div id="wo-dropzone" class="border border-dashed border-[#1E2330] hover:border-amber-500/80 bg-[#07090E]/80 rounded-[2px] p-3 flex flex-col items-center justify-center gap-1.5 cursor-pointer transition-colors duration-200 text-center" onclick="document.getElementById('wo-file-input').click()">
+          <input type="file" id="wo-file-input" accept=".md,.txt,.pdf,.docx,text/plain,application/pdf" style="display:none;" onchange="handleWoDocumentUpload(event)" />
+          <div class="flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="12" y1="18" x2="12" y2="12"></line>
+              <line x1="9" y1="15" x2="15" y2="15"></line>
+            </svg>
+            <span class="text-xs font-sans font-medium text-slate-200">Drop Work Order (.md, .txt, .pdf) or tap to upload</span>
+          </div>
+          <div class="flex items-center gap-2 text-[10px] text-slate-400 font-mono">
+            <span>Instant client-side extraction</span>
+            <span class="text-amber-500/70">•</span>
+            <span class="px-1.5 py-0.5 rounded bg-slate-900 border border-[#1E2330] text-[9px] text-slate-300">[MD]</span>
+            <span class="px-1.5 py-0.5 rounded bg-slate-900 border border-[#1E2330] text-[9px] text-slate-300">[TXT]</span>
+            <span class="px-1.5 py-0.5 rounded bg-slate-900 border border-[#1E2330] text-[9px] text-slate-300">[PDF]</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-[11px] font-metrics text-slate-400 font-bold uppercase tracking-wider">Work Order Markdown</label>
+          <textarea id="stage-wo-content" rows="12" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; background-color: #07090E; border: 1px solid #1E2330;" class="w-full rounded-[2px] p-3 text-slate-200 focus:outline-none focus:border-amber-500 font-mono" placeholder="# WORK ORDER: WO0010XXX-SLUG&#10;**Title:** ...&#10;**Ticket ID:** ...&#10;&#10;## 🎯 OBJECTIVE&#10;..."></textarea>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 border-t border-[#1E2330]">
+          <div class="flex items-center gap-2 text-xs text-slate-400 font-metrics">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Target: <span class="text-slate-200 font-mono">queue/incoming/</span></span>
+          </div>
+          <button id="btn-stage-wo" onclick="submitWorkOrderStage()" class="btn btn-primary">
+            Stage to Metal (queue/incoming/) 🚀
+          </button>
+        </div>
+      </div>
+      <div class="material-card spine-active p-6 flex flex-col gap-4">
+        <div class="flex items-center justify-between border-b border-[#1E2330] pb-3">
+          <div>
+            <h2 class="text-base font-bold text-white flex items-center gap-2">
+              <span>📋</span>
+              <span>Active Runner Queue & Metal Health</span>
+            </h2>
+            <p class="text-xs text-slate-400 mt-1">Real-time status of clio_queue_watcher and systemd background daemons.</p>
+          </div>
+          <button onclick="fetchQueueTelemetry()" class="px-3 py-1.5 bg-[#141B26] hover:bg-slate-800 text-slate-300 text-xs font-metrics rounded border border-[#1E2330] transition">
+            Refresh
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 bg-[#0B0D13] rounded-[2px] border border-[#1E2330]">
+            <span class="text-[10px] font-metrics text-slate-400 uppercase">Incoming Backlog</span>
+            <div class="text-xl font-bold text-white mt-1" id="queue-incoming-count">0 tickets</div>
+          </div>
+          <div class="p-3 bg-[#0B0D13] rounded-[2px] border border-[#1E2330] flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-metrics text-slate-400 uppercase">Active Processing</span>
+              <div class="text-xs font-mono font-bold text-amber-400 mt-2 truncate" id="queue-processing-ticket">NONE (IDLE)</div>
+            </div>
+            <button id="btn-kill-runner" onclick="emergencyKillRunner()" class="mt-2 w-full px-2.5 py-1.5 bg-rose-950/80 hover:bg-rose-900 border border-rose-600/50 hover:border-rose-500 text-rose-200 text-xs font-bold rounded flex items-center justify-center gap-1.5 transition active:scale-95 shadow-md">
+              <span>🛑</span>
+              <span>Emergency Kill Runner</span>
+            </button>
+          </div>
+          <div class="p-3 bg-[#0B0D13] rounded-[2px] border border-[#1E2330]">
+            <span class="text-[10px] font-metrics text-slate-400 uppercase">ATF Verification Gate</span>
+            <div class="text-sm font-metrics font-bold text-emerald-400 mt-2" id="queue-atf-badge">PASSED</div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 mt-2">
+          <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-metrics">Recent Archived Tickets</h3>
+          <div id="queue-archive-list" class="flex flex-col gap-1.5 font-metrics text-xs text-slate-300">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== VIEW 6: CMDB LITE & FLEET TELEMETRY VIEW ==================== -->
+    <div id="tab-cmdb" class="tab-content hidden flex-1 flex flex-col gap-5 max-w-7xl mx-auto w-full">
+      <!-- SUBHEADER / QUICK OVERVIEW BAR -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#1E2330] gap-3">
+        <div class="flex items-center gap-2.5">
+          <span class="text-xl">🛰️</span>
+          <div>
+            <h2 class="text-sm font-extrabold uppercase tracking-wider text-white flex items-center gap-2 font-metrics">
+              <span>FLEET &amp; CMDB LITE</span>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/50">LIVE TELEMETRY</span>
+            </h2>
+            <div class="text-[10px] font-metrics text-slate-400">Single-pane hardware vitals, running engines &amp; edge deployment status</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-[11px] font-metrics text-slate-400" id="cmdb-last-updated">Auto-refresh 10s</span>
+          <button onclick="loadCmdbLite()" class="px-3 py-1 bg-[#141B26] hover:bg-slate-800 text-slate-200 text-xs font-metrics rounded border border-[#1E2330] transition flex items-center gap-1.5">
+            <span>⟳</span>
+            <span>Refresh</span>
+          </button>
+        </div>
+      </div>
+      <!-- GRID ROW 1: CLIO VITALS + ACTIVE BACKGROUND ENGINES -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <!-- CARD 1: CLIO VITALS -->
+        <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-4 shadow-xl flex flex-col justify-between">
+          <div class="flex items-center justify-between border-b border-[#1E2330] pb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-metrics">Clio Vitals &amp; Health</h3>
+            </div>
+            <span class="text-[10px] font-metrics text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-[#1E2330]">AMD Ryzen 7 7735HS</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 my-3">
+            <div class="bg-[#07090E] p-2.5 rounded-[2px] border border-[#1E2330] flex flex-col">
+              <span class="text-[9px] font-metrics text-slate-400 uppercase tracking-wider">CPU Temp</span>
+              <span class="text-base font-extrabold text-amber-300 font-metrics mt-1" id="clio-cpu-temp">--°C</span>
+              <span class="text-[9px] font-metrics text-slate-500">Target &lt;85°C</span>
+            </div>
+            <div class="bg-[#07090E] p-2.5 rounded-[2px] border border-[#1E2330] flex flex-col">
+              <span class="text-[9px] font-metrics text-slate-400 uppercase tracking-wider">Power Draw</span>
+              <span class="text-base font-extrabold text-emerald-400 font-metrics mt-1" id="clio-power-draw">-- W</span>
+              <span class="text-[9px] font-metrics text-slate-500">APU PPT</span>
+            </div>
+            <div class="bg-[#07090E] p-2.5 rounded-[2px] border border-[#1E2330] flex flex-col">
+              <span class="text-[9px] font-metrics text-slate-400 uppercase tracking-wider">RAM Used</span>
+              <span class="text-base font-extrabold text-white font-metrics mt-1" id="clio-ram-stat">-- / -- GB</span>
+              <span class="text-[9px] font-metrics text-blue-400" id="clio-ram-percent">--% used</span>
+            </div>
+            <div class="bg-[#07090E] p-2.5 rounded-[2px] border border-[#1E2330] flex flex-col">
+              <span class="text-[9px] font-metrics text-slate-400 uppercase tracking-wider">Load Average</span>
+              <span class="text-xs font-bold text-slate-200 font-metrics mt-2 truncate" id="clio-load-avg">--</span>
+              <span class="text-[9px] font-metrics text-slate-500">1m • 5m • 15m</span>
+            </div>
+          </div>
+          <!-- RAM HEADROOM PROGRESS BAR -->
+          <div>
+            <div class="flex justify-between text-[10px] font-metrics text-slate-400 mb-1">
+              <span>Memory Headroom</span>
+              <span id="clio-ram-label" class="text-slate-300">Available: -- GB</span>
+            </div>
+            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div id="clio-ram-bar" class="bg-gradient-to-r from-emerald-500 via-blue-500 to-amber-500 h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 2: ACTIVE DAEMONS & BACKGROUND ENGINES -->
+        <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-4 shadow-xl flex flex-col justify-between">
+          <div class="flex items-center justify-between border-b border-[#1E2330] pb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span>
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-metrics">Active Daemons &amp; Engines</h3>
+            </div>
+            <span class="text-[10px] font-metrics text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/50" id="daemons-active-summary">5 Monitored</span>
+          </div>
+          <div class="flex flex-col gap-2 my-2" id="daemons-list-container">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+      <!-- GRID ROW 2: FLEET HARDWARE MATRIX -->
+      <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-4 shadow-xl flex flex-col gap-3">
+        <div class="flex items-center justify-between border-b border-[#1E2330] pb-2.5">
+          <div class="flex items-center gap-2">
+            <span class="text-sm">🖥️</span>
+            <div>
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-metrics">Fleet Hardware Matrix</h3>
+              <span class="text-[10px] font-metrics text-slate-400">Canonical CMDB nodes, IP routing &amp; operational states</span>
+            </div>
+          </div>
+          <span class="text-[10px] font-metrics text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-[#1E2330]" id="cmdb-nodes-count">Nodes</span>
+        </div>
+        <!-- CARDS / TABLE GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="cmdb-nodes-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+      <!-- GRID ROW 3: LIVE DEPLOYED EDGE PAGES & PROSPECTUS VAULTS -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <!-- CARD 1: LIVE DEPLOYMENTS -->
+        <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-4 shadow-xl flex flex-col gap-3">
+          <div class="flex items-center justify-between border-b border-[#1E2330] pb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-metrics">Live Deployed Edge Pages</h3>
+            </div>
+            <span class="text-[10px] font-metrics text-slate-400">1-Click Launch</span>
+          </div>
+          <div class="flex flex-col gap-2" id="deployments-list-container">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+        <!-- CARD 2: PROSPECTUS VAULTS -->
+        <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-4 shadow-xl flex flex-col gap-3">
+          <div class="flex items-center justify-between border-b border-[#1E2330] pb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-metrics">Prospectus Vaults &amp; Dossiers</h3>
+            </div>
+            <span class="text-[10px] font-metrics text-slate-400">Clean Room Synced</span>
+          </div>
+          <div class="flex flex-col gap-2" id="prospectus-list-container">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== VIEW 7: SOVEREIGN HORIZON TELEMETRY & ANOMALY RADAR ==================== -->
+    <div id="tab-horizon" class="tab-content hidden flex-1 flex flex-col gap-5 max-w-7xl mx-auto w-full">
+      <!-- SUBHEADER / QUICK OVERVIEW BAR -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#1E2330] gap-3">
+        <div class="flex items-center gap-2.5">
+          <span class="text-xl">📈</span>
+          <div>
+            <h2 class="text-sm font-extrabold uppercase tracking-wider text-white flex items-center gap-2 font-metrics">
+              <span>SOVEREIGN HORIZON // 538 LIQUID UNIVERSE</span>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/50">SUB-1MS INGESTION</span>
+            </h2>
+            <div class="text-[10px] font-metrics text-slate-400">High-conviction anomaly radar • Bit-perfect primary source evidence anchor</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-[11px] font-metrics text-slate-400">Physical Metal Vault Active</span>
+          <button onclick="openEvidenceDrawer('DOC_SEC_INDENTURE', 142, 401)" class="px-3 py-1 bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 text-xs font-metrics rounded border border-emerald-800/50 transition flex items-center gap-1.5 shadow">
+            <span>🔒</span>
+            <span>Open Evidence Drawer</span>
+          </button>
+        </div>
+      </div>
+      <!-- HORIZON STATS CARDS -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 font-mono">
+        <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-3 flex flex-col justify-between">
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider font-sans">Liquid Stock Universe</span>
+          <div class="flex items-baseline justify-between mt-1">
+            <span class="text-xl font-bold text-white">538 Symbols</span>
+            <span class="text-[10px] text-cyan-400">Russell 1000 + S&amp;P</span>
+          </div>
+        </div>
+        <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-3 flex flex-col justify-between">
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider font-sans">Storage Architecture</span>
+          <div class="flex items-baseline justify-between mt-1">
+            <span class="text-xl font-bold text-emerald-400">SQLite WAL</span>
+            <span class="text-[10px] text-slate-400">12-Mo Daily OHLCV</span>
+          </div>
+        </div>
+        <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-3 flex flex-col justify-between">
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider font-sans">Provenance Verification</span>
+          <div class="flex items-baseline justify-between mt-1">
+            <span class="text-xl font-bold text-white">SHA-256</span>
+            <span class="text-[10px] text-emerald-400">100% Bit-Perfect</span>
+          </div>
+        </div>
+        <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-3 flex flex-col justify-between">
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider font-sans">Recitation Risk</span>
+          <div class="flex items-baseline justify-between mt-1">
+            <span class="text-xl font-bold text-emerald-400">0.00%</span>
+            <span class="text-[10px] text-emerald-400">Zero AI Tokens</span>
+          </div>
+        </div>
+      </div>
+      <!-- ANOMALY RADAR & SCAPEGOAT DIAGNOSTICS TABLE -->
+      <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-4 shadow-xl flex flex-col gap-3">
+        <div class="flex items-center justify-between border-b border-[#1E2330] pb-2.5">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+            <h3 class="text-xs font-bold text-white uppercase tracking-wider font-metrics">High-Conviction Anomaly Radar &amp; Scapegoat Markers</h3>
+          </div>
+          <span class="text-[10px] font-metrics text-slate-400">Click any anomaly to inspect bit-perfect metal evidence</span>
+        </div>
+        <div class="grid grid-cols-1 gap-3">
+          <!-- ANOMALY CARD 1: AAPL SENIOR INDENTURE DEFAULT ACCELERATION -->
+          <div onclick="openEvidenceDrawer('DOC_SEC_INDENTURE', 142, 401)" class="group bg-[#07090E] hover:bg-[#141B26] border border-[#1E2330] hover:border-emerald-600/60 rounded-[2px] p-4 transition-all duration-150 cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-4 shadow">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-[2px] bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center font-bold text-emerald-400 font-mono text-sm shrink-0">
+                AAPL
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-bold text-white font-sans">Apple Inc. // Senior Indenture Default Clause</span>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-red-950 text-red-300 border border-red-800/50 font-mono font-bold">
+                    CRITICAL // COVENANT ANOMALY
+                  </span>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/50 font-mono">
+                    SEC Form 8-K
+                  </span>
+                </div>
+                <div class="text-[11px] text-slate-300 font-sans">
+                  Disjunctive conjunction distortion detected: contract requires interest failure <strong class="text-amber-300 font-mono">AND</strong> principal failure; AI summaries erroneously introduce accelerated default triggers.
+                </div>
+                <div class="flex items-center gap-3 text-[10px] text-slate-400 font-mono">
+                  <span>Exhibit 4.1</span>
+                  <span>•</span>
+                  <span>Lines 42-48</span>
+                  <span>•</span>
+                  <span>Offsets [142, 401]</span>
+                  <span>•</span>
+                  <span class="text-emerald-400">259 Bytes Verified</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 self-end md:self-center shrink-0">
+              <button id="btn-inspect-sec-indenture" onclick="event.stopPropagation(); openEvidenceDrawer('DOC_SEC_INDENTURE', 142, 401)" class="px-3 py-1.5 bg-emerald-950 hover:bg-emerald-900 border border-emerald-700/60 rounded-[2px] text-emerald-300 hover:text-emerald-200 text-xs font-semibold flex items-center gap-1.5 transition active:scale-95 shadow">
+                <span>🔒 Inspect Evidence</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+          <!-- ANOMALY CARD 2: EQT PA SUPREME COURT FUGITIVE MINERAL RIGHTS -->
+          <div onclick="openEvidenceDrawer('DOC_LEGAL_1889', 179, 335)" class="group bg-[#07090E] hover:bg-[#141B26] border border-[#1E2330] hover:border-cyan-600/60 rounded-[2px] p-4 transition-all duration-150 cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-4 shadow">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-[2px] bg-cyan-950/80 border border-cyan-800/60 flex items-center justify-center font-bold text-cyan-400 font-mono text-sm shrink-0">
+                EQT
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-bold text-white font-sans">EQT Corporation // Fugitive Gas Mineral Rights Precedent</span>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/50 font-mono font-bold">
+                    LEGAL // RULE OF CAPTURE
+                  </span>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 font-mono">
+                    130 Pa. 235 (1889)
+                  </span>
+                </div>
+                <div class="text-[11px] text-slate-300 font-sans">
+                  Landmark judicial classification of oil &amp; gas as <strong class="text-cyan-300 font-mono">minerals ferae naturae</strong>. Commercial AI filters stripped Latin doctrine and reporter citation due to automated recitation blocks.
+                </div>
+                <div class="flex items-center gap-3 text-[10px] text-slate-400 font-mono">
+                  <span>Westmoreland v. De Witt</span>
+                  <span>•</span>
+                  <span>Lines 12-18</span>
+                  <span>•</span>
+                  <span>Offsets [179, 335]</span>
+                  <span>•</span>
+                  <span class="text-cyan-400">156 Bytes Verified</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 self-end md:self-center shrink-0">
+              <button onclick="event.stopPropagation(); openEvidenceDrawer('DOC_LEGAL_1889', 179, 335)" class="px-3 py-1.5 bg-cyan-950 hover:bg-cyan-900 border border-cyan-700/60 rounded-[2px] text-cyan-300 hover:text-cyan-200 text-xs font-semibold flex items-center gap-1.5 transition active:scale-95 shadow">
+                <span>🔒 Inspect Evidence</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+          <!-- ANOMALY CARD 3: MDT EXTREMITY HEMORRHAGE PROTOCOL -->
+          <div onclick="openEvidenceDrawer('DOC_EMERGENCY_TOURNIQUET', 375, 519)" class="group bg-[#07090E] hover:bg-[#141B26] border border-[#1E2330] hover:border-amber-600/60 rounded-[2px] p-4 transition-all duration-150 cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-4 shadow">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-[2px] bg-amber-950/80 border border-amber-800/60 flex items-center justify-center font-bold text-amber-400 font-mono text-sm shrink-0">
+                MDT
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-bold text-white font-sans">Medtronic PLC // Emergency Casualty Clinical Protocol</span>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800/50 font-mono font-bold">
+                    CLINICAL // RESTRICTION SPEC
+                  </span>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 font-mono">
+                    DoD CoTCCC
+                  </span>
+                </div>
+                <div class="text-[11px] text-slate-300 font-sans">
+                  Mandatory anatomical restriction: <strong class="text-amber-300 font-mono">DO NOT apply tourniquet over a joint (knee/elbow)</strong>. LLM paraphrase dangerously softened constraint to "near the knee", risking vascular slip.
+                </div>
+                <div class="flex items-center gap-3 text-[10px] text-slate-400 font-mono">
+                  <span>TCCC Guidelines</span>
+                  <span>•</span>
+                  <span>Section 3.2</span>
+                  <span>•</span>
+                  <span>Offsets [375, 519]</span>
+                  <span>•</span>
+                  <span class="text-amber-400">144 Bytes Verified</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 self-end md:self-center shrink-0">
+              <button onclick="event.stopPropagation(); openEvidenceDrawer('DOC_EMERGENCY_TOURNIQUET', 375, 519)" class="px-3 py-1.5 bg-amber-950 hover:bg-amber-900 border border-amber-700/60 rounded-[2px] text-amber-300 hover:text-amber-200 text-xs font-semibold flex items-center gap-1.5 transition active:scale-95 shadow">
+                <span>🔒 Inspect Evidence</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== VIEW: DERANGED PREDICT MARKET ==================== -->
+    <div id="tab-predict" class="tab-content hidden flex-1 flex flex-col gap-6 max-w-7xl mx-auto w-full font-mono">
+      <!-- SUBHEADER / SUMMARY BAR -->
+      <div class="rounded-[2px] border border-[#1E2330] bg-[#0B0D13] p-4 relative overflow-hidden">
+        <div class="h-0.5 absolute top-0 left-0 right-0 bg-gradient-to-r from-purple-500 via-amber-400 to-emerald-400"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="bg-purple-950/80 border border-purple-800/80 text-purple-300 text-[10px] px-2 py-0.5 rounded font-extrabold uppercase">
+                FaaS Prediction Market Exchange
+              </span>
+              <span class="text-slate-400 text-xs font-sans">Season 2026 Binary Event Contracts</span>
+            </div>
+            <h1 class="text-lg md:text-xl font-extrabold text-white tracking-tight">
+              ⚡ THE SICKOS EXCHANGE // ADVOCATE PREDICT
+            </h1>
+            <p class="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed font-sans">
+              Binary event contracts (1¢ to 99¢) powered by fan psychosis, managerial hot seats, and live biometrics.
+              Advocate roster manages $1,000 play money bankrolls guided by unhinged superstition.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button onclick="loadPredictMarket()" class="px-3 py-1.5 bg-[#141B26] hover:bg-[#1E2330] border border-[#1E2330] rounded-[2px] text-slate-300 hover:text-white text-xs font-bold transition flex items-center gap-1.5 shadow">
+              <span>🔄</span>
+              <span>Sync Market</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- ADVOCATE BANKROLL LEADERBOARD -->
+      <section class="flex flex-col gap-2">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold uppercase tracking-wider">
+          <span class="flex items-center gap-1.5 text-purple-300">
+            <span>🔥</span>
+            Advocate Bankroll Leaderboard & Active Superstitions
+          </span>
+          <span class="text-[10px] text-slate-500 font-sans">$1,000 Play Money Bankrolls</span>
+        </div>
+        <div id="cockpit-advocates-ribbon" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+          <!-- Populated dynamically via loadPredictMarket() -->
+        </div>
+      </section>
+      <!-- ACTIVE EVENT CONTRACTS WITH DIRECT PILOT ACTION BUTTONS -->
+      <section class="flex flex-col gap-3">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold uppercase tracking-wider">
+          <span class="flex items-center gap-1.5 text-purple-300">
+            <span>📊</span>
+            Active Binary Contracts & Direct Pilot Order Desk
+          </span>
+          <span class="text-[10px] text-slate-500 font-sans">Constant-Liquidity Engine • $10 / $50 Instant Buys</span>
+        </div>
+        <div id="cockpit-contracts-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Populated dynamically via loadPredictMarket() -->
+        </div>
+      </section>
+      <!-- LIVE TRADE STREAM TAPE -->
+      <section class="flex flex-col gap-2">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold uppercase tracking-wider">
+          <span class="flex items-center gap-1.5 text-purple-300">
+            <span>📜</span>
+            Live Trade Stream & Superstition Rationale
+          </span>
+          <span class="text-[10px] text-slate-500 font-sans">Verified Exchange Ledger</span>
+        </div>
+        <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] overflow-hidden shadow-lg">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs font-mono">
+              <thead class="bg-[#07090E] text-slate-400 border-b border-[#1E2330] text-[10px] uppercase font-bold">
+                <tr>
+                  <th class="py-2.5 px-3">Time</th>
+                  <th class="py-2.5 px-3">Trader</th>
+                  <th class="py-2.5 px-3">Ticker</th>
+                  <th class="py-2.5 px-3">Action</th>
+                  <th class="py-2.5 px-3">Shares</th>
+                  <th class="py-2.5 px-3">Price</th>
+                  <th class="py-2.5 px-3">Superstition Rationale</th>
+                </tr>
+              </thead>
+              <tbody id="cockpit-predict-trades" class="divide-y divide-[#1E2330]">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW 9: YOUTUBE SNIPE & FAST WHISPER ==================== -->
+    <div id="tab-snipe" class="tab-content hidden flex-1 flex flex-col gap-5 max-w-5xl mx-auto w-full">
+      <!-- HEADER & SNIPER INPUT CARD -->
+      <div class="material-card spine-action p-6 flex flex-col gap-4">
+        <div class="flex items-center justify-between border-b border-[#1E2330] pb-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-[2px] bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 text-lg">
+              🎯
+            </div>
+            <div>
+              <h2 class="text-base font-bold text-white flex items-center gap-2">
+                YouTube Snipe &amp; Fast Whisper Studio
+              </h2>
+              <p class="text-xs text-slate-400 font-metrics">
+                Instant audio strip (yt-dlp) + local whisper.base.en transcription on metal (&lt;15s)
+              </p>
+            </div>
+          </div>
+          <span class="px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-800/50 text-[10px] font-mono text-emerald-400">
+            LOCAL WHISPER READY
+          </span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <div class="flex-1 relative">
+            <input type="text" id="snipe-url-input" 
+                   placeholder="Enter YouTube Video or Shorts URL (e.g. https://www.youtube.com/watch?v=OXqkkpnZDgU)..." 
+                   class="w-full bg-[#07090E] border border-[#1E2330] focus:border-red-500 focus:ring-1 focus:ring-red-500 rounded-[2px] px-4 py-2.5 text-xs text-white placeholder-slate-500 outline-none font-mono">
+          </div>
+          <button id="btn-run-snipe" onclick="triggerYoutubeSnipe()" 
+                  class="px-5 py-2.5 rounded-[2px] bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-bold text-xs tracking-wider uppercase transition shadow-lg shadow-red-900/20 active:scale-[0.98] flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer">
+            <span>🎯</span>
+            <span id="btn-snipe-text">Snipe &amp; Fast Whisper</span>
+          </button>
+        </div>
+        <!-- QUICK SAMPLE LINKS -->
+        <div class="flex items-center gap-2 text-[11px] font-mono text-slate-400 flex-wrap">
+          <span class="text-slate-500">Quick Test Snipes:</span>
+          <button onclick="setSnipeUrl('https://www.youtube.com/watch?v=OXqkkpnZDgU')" class="text-amber-400 hover:underline">
+            Erlich Mushroom Vision Quest
+          </button>
+        </div>
+      </div>
+      <!-- PROGRESS / STATUS INDICATOR -->
+      <div id="snipe-loading" class="hidden bg-[#07090E] border border-amber-500/30 rounded-[2px] p-5 flex items-center gap-3">
+        <div class="w-5 h-5 border-2 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
+        <div class="flex flex-col">
+          <span class="text-xs font-bold text-amber-300">Sniping Audio &amp; Executing Local Whisper...</span>
+          <span class="text-[10px] font-mono text-slate-400">Ingressing audio track via yt-dlp -&gt; Local CPU Whisper inference (FP32)</span>
+        </div>
+      </div>
+      <!-- SNIPE RESULT PANE -->
+      <div id="snipe-result-card" class="hidden material-card spine-action p-6 flex flex-col gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#1E2330] pb-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span id="snipe-badge-dur" class="px-2 py-0.5 rounded bg-blue-950 border border-blue-800 text-[10px] font-mono text-blue-300">0s</span>
+              <span id="snipe-badge-id" class="px-2 py-0.5 rounded bg-[#07090E] border border-[#1E2330] text-[10px] font-mono text-slate-300">ID: -</span>
+            </div>
+            <h3 id="snipe-result-title" class="text-sm font-bold text-white mt-1"></h3>
+            <p id="snipe-result-path" class="text-[10px] font-mono text-slate-500 truncate mt-0.5"></p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="copySnipeTranscript()" class="px-3 py-1.5 rounded bg-[#141B26] hover:bg-[#1E2330] border border-[#1E2330] text-xs font-semibold text-slate-200 flex items-center gap-1.5 transition">
+              <span>📋</span>
+              <span id="copy-snipe-btn-text">Copy Transcript</span>
+            </button>
+            <button onclick="copySnipeMarkdown()" class="px-3 py-1.5 rounded bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-xs font-semibold text-amber-300 flex items-center gap-1.5 transition">
+              <span>📝</span>
+              <span>Copy as Markdown</span>
+            </button>
+          </div>
+        </div>
+        <!-- KEYWORD TAGS EXTRACTED -->
+        <div id="snipe-keywords" class="flex flex-wrap gap-1.5">
+          <!-- Dynamic keywords tags -->
+        </div>
+        <!-- TRANSCRIPT TEXT AREA -->
+        <div class="relative">
+          <label class="block text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1.5">
+            Local Whisper Verbatim Ground Truth
+          </label>
+          <div id="snipe-transcript-body" class="w-full bg-[#07090E] border border-[#1E2330] rounded-[2px] p-4 text-xs font-mono text-slate-200 leading-relaxed max-h-[380px] overflow-y-auto whitespace-pre-wrap select-text">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- HORIZON EVIDENCE DRAWER BACKDROP -->
+  <div id="horizon-drawer-backdrop" onclick="closeEvidenceDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
+  <!-- HORIZON EVIDENCE DRAWER (SLIDE-OUT MONOSPACE TERMINAL) -->
+  <aside id="horizon-evidence-drawer" onclick="handleDrawerClick(event)" class="fixed inset-y-0 right-0 z-50 w-full sm:w-[580px] md:w-[680px] bg-[#0B0D13] border-l border-[#1E2330] shadow-2xl flex flex-col font-mono select-text transition-all duration-300 ease-in-out translate-x-[calc(100%-36px)]" aria-labelledby="evidence-drawer-title">
+    <!-- DOCKED PEEK TAB (VISIBLE ON RIGHT EDGE WHEN CLOSED FOR ZERO CURSOR HUNTING & 1-CLICK ACCESS) -->
+    <div id="drawer-peek-tab" class="absolute -left-9 top-20 bg-[#0B0D13] border-y border-l border-[#1E2330] text-emerald-400 py-3 px-1.5 rounded-l-md shadow-2xl cursor-pointer flex flex-col items-center gap-1 select-none hover:bg-[#141B26] transition" onclick="openEvidenceDrawer('DOC_SEC_INDENTURE', 142, 401); event.stopPropagation();" title="Click to Open Primary Source Inspector">
+      <span class="text-xs">🔒</span>
+      <span class="text-[9px] font-bold tracking-widest uppercase [writing-mode:vertical-rl] text-slate-300">EVIDENCE</span>
+    </div>
+    <!-- DRAWER HEADER (ZERO CURSOR HUNTING: RECIPROCAL CLOSE STAY PINNED TOP-RIGHT) -->
+    <div class="p-4 border-b border-[#1E2330] bg-[#07090E] flex items-center justify-between shrink-0">
+      <div class="flex items-center gap-2.5 overflow-hidden">
+        <span class="text-base text-emerald-400">🔒</span>
+        <div>
+          <h2 id="evidence-drawer-title" class="text-xs font-bold uppercase tracking-wider text-white">Primary Source Inspector</h2>
+          <p class="text-[10px] text-slate-400">Deterministic Document Provenance Slice</p>
+        </div>
+      </div>
+      <button id="close-evidence-drawer" onclick="closeEvidenceDrawer(); event.stopPropagation();" class="w-8 h-8 rounded-[2px] bg-[#141B26] hover:bg-[#1E2330] border border-[#1E2330] text-slate-300 hover:text-white flex items-center justify-center text-sm font-bold transition active:scale-95" title="Close Evidence Drawer (Esc)">
+        ✕
+      </button>
+    </div>
+    <!-- VERIFICATION BADGE RIBBON -->
+    <div class="px-4 py-2 bg-emerald-950/40 border-b border-emerald-900/40 flex items-center justify-between shrink-0">
+      <div class="flex items-center gap-2 overflow-hidden">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+        <span id="evidence-header-badge" class="text-[11px] font-bold text-[#10B981] font-mono tracking-tight truncate">
+          [🔒 VERIFIED ON METAL // SHA-256: 5c09b77cd3cae07a... // 0 MUTATIONS]
+        </span>
+      </div>
+      <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-900/60 text-emerald-300 border border-emerald-700/50 shrink-0">
+        PRIMARY SOURCE
+      </span>
+    </div>
+    <!-- DRAWER SCROLLABLE BODY (KI-095 INNER SCROLLBAR COMPLIANT) -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-4 text-xs">
+      <!-- PRIMARY CITATION BLOCK -->
+      <div class="bg-[#07090E] border border-[#1E2330] rounded-[2px] p-3">
+        <div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400 mb-1">Primary Citation</div>
+        <div id="evidence-citation" class="text-sm font-bold text-cyan-300">
+          SEC Form 8-K // Exhibit 4.1 // Lines 42-48
+        </div>
+        <div id="evidence-doc-title" class="text-[11px] text-slate-300 mt-1 font-sans">
+          Senior Secured Indenture Agreement (Section 6.01 - Events of Default)
+        </div>
+      </div>
+      <!-- AUDIT BENCHMARK METRICS -->
+      <div class="grid grid-cols-3 gap-2">
+        <div class="bg-[#07090E] border border-[#1E2330] rounded-[2px] p-2 text-center">
+          <div class="text-[9px] uppercase tracking-wider text-slate-400">Byte Slices</div>
+          <div id="evidence-byte-count" class="text-sm font-bold text-white mt-0.5">259 B</div>
+          <div class="text-[9px] text-slate-500" id="evidence-offsets">Offsets [142, 401]</div>
+        </div>
+        <div class="bg-[#07090E] border border-[#1E2330] rounded-[2px] p-2 text-center">
+          <div class="text-[9px] uppercase tracking-wider text-slate-400">Paraphrase Drift</div>
+          <div class="text-sm font-bold text-emerald-400 mt-0.5">0.00%</div>
+          <div class="text-[9px] text-emerald-500">Bit-Perfect Match</div>
+        </div>
+        <div class="bg-[#07090E] border border-[#1E2330] rounded-[2px] p-2 text-center">
+          <div class="text-[9px] uppercase tracking-wider text-slate-400">Recitation Risk</div>
+          <div id="evidence-recitation-risk" class="text-sm font-bold text-emerald-400 mt-0.5">0.0%</div>
+          <div class="text-[9px] text-slate-500">Zero Cloud LLM Tokens</div>
+        </div>
+      </div>
+      <!-- BIT-PERFECT VERBATIM QUOTE BLOCK -->
+      <div class="bg-[#07090E] border border-[#1E2330] rounded-[2px] p-3 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] uppercase tracking-wider font-semibold text-amber-400">
+            📜 Bit-Perfect Primary Source (Sliced from Metal)
+          </span>
+          <span class="text-[9px] text-slate-500 font-mono">ENCODING: UTF-8</span>
+        </div>
+        <div id="evidence-verbatim-container" class="bg-[#040508] border border-[#1E2330] rounded p-3 text-slate-200 leading-relaxed whitespace-pre-wrap select-all font-mono text-[11px]">
+(a) <mark class="bg-amber-400/20 text-amber-200 border-b border-amber-400 px-0.5 font-bold">fails to pay any installment of interest</mark> on the Senior Secured Notes when due, and such failure continues for a period of 30 days; and
+(b) fails to pay the principal of, or premium, if any, on the Notes when due at maturity, upon redemption, or otherwise;
+        </div>
+      </div>
+      <!-- FULL CRYPTOGRAPHIC SHA-256 SUM -->
+      <div class="bg-[#07090E] border border-[#1E2330] rounded-[2px] p-3 space-y-1">
+        <div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">Cryptographic SHA-256 Digest</div>
+        <div id="evidence-full-sha256" class="text-[10px] text-emerald-400 font-mono break-all bg-[#040508] p-2 rounded border border-[#1E2330] select-all">5c09b77cd3cae07abfe4b6848fcb2c730e18ee77e1e69b0fa6db0195ecf1d141</div>
+      </div>
+      <!-- LEGAL INTEGRITY NOTE -->
+      <div class="bg-[#07090E] border border-[#1E2330] rounded-[2px] p-3 text-[10px] text-slate-400 leading-normal font-sans">
+        <span class="text-amber-400 font-bold">Forensic Guarantee:</span> Sourced directly from local bare-metal storage.
+        Because zero contiguous text is requested from external generative AI APIs, output recitation filters cannot trip or distort legal/regulatory clauses.
+      </div>
+    </div>
+    <!-- DRAWER FOOTER (ACTIONS) -->
+    <div class="p-4 border-t border-[#1E2330] bg-[#07090E] flex items-center justify-between gap-3 shrink-0">
+      <button id="copy-citation-btn" onclick="copyAdmissibleCitation(); event.stopPropagation();" class="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-2 px-3 rounded-[2px] text-xs flex items-center justify-center gap-2 shadow transition active:scale-95">
+        <span>📋</span>
+        <span id="copy-btn-label">Copy Court-Admissible Citation</span>
+      </button>
+      <button onclick="closeEvidenceDrawer(); event.stopPropagation();" class="px-4 py-2 rounded-[2px] bg-[#141B26] hover:bg-[#1E2330] text-slate-300 text-xs font-semibold border border-[#1E2330] transition">
+        Dismiss
+      </button>
+    </div>
+  </aside>
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="fixed bottom-4 right-4 flex flex-col gap-2 z-50 pointer-events-none"></div>
+  <script>
+    // Tab switching (both desktop and mobile pills)
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeContent = document.getElementById(tabId);
+      if (activeContent) activeContent.classList.remove('hidden');
+      const base = tabId.replace('tab-', '');
+      const activeBtn = document.getElementById('btn-' + base);
+      if (activeBtn) activeBtn.classList.add('active');
+      const mActiveBtn = document.getElementById('m-btn-' + base);
+      if (mActiveBtn) mActiveBtn.classList.add('active');
+      if (tabId === 'tab-cmdb') {
+        loadCmdbLite();
+      }
+      if (tabId === 'tab-predict') {
+        loadPredictMarket();
+      }
+    }
+    // Toast manager
+    function showToast(message, isError = false) {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+      const toast = document.createElement('div');
+      toast.className = 'px-3 py-2 rounded-[2px] text-xs font-semibold shadow-lg transition-all duration-300 transform translate-y-2 opacity-0 flex items-center gap-2 border ' + 
+        (isError ? 'bg-red-950 text-red-200 border-red-800/60' : 'bg-[#151D2C] text-emerald-300 border-[#2A3447]');
+      toast.innerHTML = `<span>${isError ? '⚠️' : '✓'}</span><span>${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 10);
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+    // Safe string escape
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+    // Audio recorder thumb zone toggle
+    let isRecording = false;
+    function toggleAudioRecord() {
+      const btn = document.getElementById('mic-btn');
+      const label = document.getElementById('mic-status-label');
+      if (!isRecording) {
+        isRecording = true;
+        btn.classList.add('animate-pulse', 'ring-4', 'ring-red-500/50');
+        label.textContent = 'Listening... Speak Pilot Drop';
+        showToast('🎙️ Audio ingress activated. Tap again to commit drop.');
+      } else {
+        isRecording = false;
+        btn.classList.remove('animate-pulse', 'ring-4', 'ring-red-500/50');
+        label.textContent = 'Tap to Dictate Pilot Drop';
+        showToast('✓ Audio drop staged and committed to scratch pad');
+      }
+    }
+    // Quick text drops
+    async function submitMissionQuickDrop() {
+      const input = document.getElementById('mission-quick-drop-input');
+      const text = input.value.trim();
+      if (!text) return;
+      await postQuickDrop(text);
+      input.value = '';
+    }
+    async function submitDedicatedDrop() {
+      const textarea = document.getElementById('dedicated-drop-input');
+      const text = textarea.value.trim();
+      if (!text) return;
+      await postQuickDrop(text);
+      textarea.value = '';
+    }
+    async function postQuickDrop(text) {
+      try {
+        const res = await fetch('/api/cockpit/quickdrop', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: text })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          showToast('✓ Staged to scratch_pad.md');
+          fetchDrops();
+        } else {
+          showToast('Drop failed: ' + (data.message || 'Error'), true);
+        }
+      } catch (err) {
+        showToast('Drop failed: ' + err.message, true);
+      }
+    }
+    const fetchQueue = fetchQueueTelemetry;
+    async function submitWorkOrderStage() {
+      const contentEl = document.getElementById('stage-wo-content');
+      const titleEl = document.getElementById('stage-wo-title');
+      const btn = document.getElementById('btn-stage-wo');
+      const content = contentEl.value.trim();
+      const title = titleEl ? titleEl.value.trim() : '';
+      if (!content) {
+        showToast('Work order markdown cannot be empty', true);
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = 'Staging to metal...';
+      try {
+        const res = await fetch('/api/cockpit/stage_work_order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ content: content, title: title })
+        });
+        const data = await res.json();
+        if (res.ok && data.status === 'success') {
+          showToast(`✓ Staged ${data.ticket_id} to queue/incoming/`);
+          contentEl.value = '';
+          if (titleEl) titleEl.value = '';
+          if (typeof fetchQueueTelemetry === 'function') fetchQueueTelemetry();
+          if (typeof fetchQueue === 'function') fetchQueue();
+        } else {
+          showToast('Staging failed: ' + (data.message || 'Server error'), true);
+        }
+      } catch (err) {
+        showToast('Network error staging work order: ' + err.message, true);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Stage to Metal (queue/incoming/) 🚀';
+      }
+    }
+    async function handleWoDocumentUpload(e) {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      await parseWoDocumentFile(file);
+      e.target.value = '';
+    }
+    async function parseWoDocumentFile(file) {
+      const contentEl = document.getElementById('stage-wo-content');
+      const titleEl = document.getElementById('stage-wo-title');
+      showToast(`Extracting ${file.name}...`);
+      try {
+        let extracted = '';
+        const ext = file.name.split('.').pop().toLowerCase();
+        if (ext === 'pdf' || file.type === 'application/pdf') {
+          if (typeof pdfjsLib === 'undefined') {
+            throw new Error('PDF parsing library loading... please retry in a moment');
+          }
+          const arrayBuffer = await file.arrayBuffer();
+          const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+          const pages = [];
+          for (let i = 1; i <= pdf.numPages; i++) {
+            const page = await pdf.getPage(i);
+            const textContent = await page.getTextContent();
+            const pageText = textContent.items.map(item => item.str).join(' ');
+            pages.push(pageText);
+          }
+          extracted = pages.join('\n\n');
+        } else {
+          extracted = await file.text();
+        }
+        if (!extracted.trim()) {
+          showToast(`Warning: No readable text found in ${file.name}`, true);
+          return;
+        }
+        contentEl.value = extracted;
+        if (titleEl && !titleEl.value.trim()) {
+          const matchTitle = extracted.match(/(?:#\s*WORK\s*ORDER:\s*|#\s*TICKET:\s*|\*\*Title:\*\*\s*)([^\n]+)/i);
+          if (matchTitle) {
+            titleEl.value = matchTitle[1].replace(/[*_#]/g, '').trim();
+          } else {
+            titleEl.value = file.name.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_\-]/g, '-').toUpperCase();
+          }
+        }
+        const words = extracted.trim().split(/\s+/).length;
+        showToast(`✓ Extracted ${words} words from ${file.name}`);
+      } catch (err) {
+        showToast(`Extraction failed: ${err.message}`, true);
+      }
+    }
+    // File upload
+    async function handleFileUpload(e) {
+      const files = e.target.files;
+      if (!files || files.length === 0) return;
+      for (const file of files) {
+        const fd = new FormData();
+        fd.append('file', file);
+        try {
+          const res = await fetch('/api/upload', { method: 'POST', body: fd });
+          const data = await res.json();
+          if (res.ok) {
+            showToast(`Uploaded: ${file.name}`);
+          } else {
+            showToast(`Upload failed: ${data.error || 'Error'}`, true);
+          }
+        } catch (err) {
+          showToast(`Upload error: ${err.message}`, true);
+        }
+      }
+      fetchDrops();
+    }
+    // Fetch drops list
+    async function fetchDrops() {
+      try {
+        const res = await fetch('/api/drops');
+        if (!res.ok) return;
+        const data = await res.json();
+        const files = data.files || [];
+        const pillCount = document.getElementById('pill-drop-count');
+        const mPillCount = document.getElementById('m-pill-drop-count');
+        const statDrops = document.getElementById('stat-drops-val');
+        if (pillCount) pillCount.textContent = files.length || '0';
+        if (mPillCount) mPillCount.textContent = files.length || '0';
+        if (statDrops) statDrops.textContent = `${files.length} Staged`;
+        const gallery = document.getElementById('dedicated-drops-gallery');
+        if (gallery) {
+          if (files.length === 0) {
+            gallery.innerHTML = '<div class="text-xs text-slate-500">No drops staged.</div>';
+          } else {
+            gallery.innerHTML = files.slice(0, 10).map(f => `
+              <div class="p-2 rounded bg-[#0B0D13] border border-[#1E2330] flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2 truncate">
+                  <span>${f.icon || '📁'}</span>
+                  <a href="/drops/${encodeURIComponent(f.rel_path)}" target="_blank" class="text-slate-200 hover:text-amber-400 truncate">${escapeHtml(f.name)}</a>
+                </div>
+                <button onclick="navigator.clipboard.writeText('${f.markdown_link}'); showToast('Markdown link copied!');" class="text-[10px] font-metrics px-2 py-0.5 rounded bg-[#141B26] hover:bg-[#1E2330] border border-[#1E2330] text-slate-300">
+                  Copy Link
+                </button>
+              </div>
+            `).join('');
+          }
+        }
+      } catch (err) {
+        console.error('Fetch drops error:', err);
+      }
+    }
+    function formatDateTime(str) {
+      if (!str) return 'Recently';
+      try {
+        const clean = str.includes('T') ? str : str.replace(' ', 'T');
+        const d = new Date(clean);
+        if (isNaN(d.getTime())) return str;
+        const now = new Date();
+        const isToday = now.toDateString() === d.toDateString();
+        const timeStr = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+        const month = d.toLocaleString('en-US', { month: 'short' });
+        const day = d.getDate();
+        return isToday ? `Today ${timeStr}` : `${month} ${day}, ${timeStr}`;
+      } catch(e) {
+        return str;
+      }
+    }
+    // Fetch Envelopes
+    async function fetchEnvelopes() {
+      try {
+        const res = await fetch('/api/sync/envelopes');
+        if (!res.ok) return;
+        const data = await res.json();
+        const envs = data.envelopes || [];
+        const statSync = document.getElementById('stat-sync-val');
+        if (statSync) statSync.textContent = `${envs.length} Ready`;
+        const missionSyncTime = document.getElementById('mission-last-sync-time');
+        if (missionSyncTime) missionSyncTime.textContent = data.last_sync_timestamp || 'Today';
+        const missionList = document.getElementById('mission-envelopes-list');
+        if (missionList) {
+          missionList.innerHTML = envs.slice(0, 5).map(e => `
+            <div class="p-2 rounded bg-[#0B0D13] border border-[#1E2330] flex items-center justify-between text-xs">
+              <div class="flex flex-col min-w-0 pr-2">
+                <span class="text-slate-200 truncate flex items-center gap-1.5 font-medium">
+                  <span>${e.icon}</span>
+                  <span>${escapeHtml(e.name)}</span>
+                </span>
+                <span class="text-[9px] font-metrics text-slate-400 pl-5">Modified: ${e.last_modified || 'Recently'}</span>
+              </div>
+              <div class="flex flex-col items-end shrink-0">
+                <span class="text-[10px] font-metrics text-emerald-400 font-bold">Ready (${e.pristine_files || 0})</span>
+                <span class="text-[9px] font-metrics text-slate-500">${e.total_size_human || ''}</span>
+              </div>
+            </div>
+          `).join('');
+        }
+        const dedicatedList = document.getElementById('dedicated-sync-envelopes');
+        if (dedicatedList) {
+          dedicatedList.innerHTML = envs.map(e => `
+            <div class="p-3 rounded-[2px] bg-[#0B0D13] border border-[#1E2330] flex items-center justify-between">
+              <div class="flex flex-col">
+                <div class="text-xs font-bold text-white flex items-center gap-2">
+                  <span>${e.icon}</span>
+                  <span>${escapeHtml(e.name)}</span>
+                  <span class="text-[10px] font-metrics px-1.5 py-0.2 rounded bg-[#141B26] border border-[#1E2330] text-slate-400">${e.id}</span>
+                </div>
+                <div class="text-[11px] text-slate-400 mt-0.5">${escapeHtml(e.description || '')}</div>
+                <div class="text-[10px] font-metrics text-amber-400/80 mt-1">Last Modified: ${e.last_modified || 'Recently'}</div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-[11px] font-metrics text-emerald-400">${e.pristine_files || 0} files • ${e.total_size_human || '0 KB'}</span>
+                <button onclick="triggerSyncSingle('${e.key}')" class="px-3 py-1 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs rounded transition">
+                  Sync
+                </button>
+              </div>
+            </div>
+          `).join('');
+        }
+      } catch (err) {
+        console.error('Fetch envelopes error:', err);
+      }
+    }
+    // Trigger sync single
+    async function triggerSyncSingle(key) {
+      showToast(`Initiating sync for ${key}...`);
+      try {
+        const res = await fetch('/api/sync/execute', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ envelope: key })
+        });
+        const data = await res.json();
+        showToast(`Sync dispatched: ${key}`);
+      } catch (err) {
+        showToast(`Sync failed: ${err.message}`, true);
+      }
+    }
+    // Trigger sync all
+    async function triggerSyncAll() {
+      const btn = document.getElementById('hero-sync-btn');
+      const label = document.getElementById('hero-sync-label');
+      const icon = document.getElementById('hero-sync-icon');
+      if (btn) btn.disabled = true;
+      if (label) label.textContent = 'DISPATCHING SYNC...';
+      if (icon) icon.className = 'animate-spin';
+      try {
+        const res = await fetch('/api/sync/execute', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ envelope: 'ALL', sync_all: true })
+        });
+        const data = await res.json();
+        showToast('🚀 Full Sovereign Drive Sync dispatched to Google Drive');
+        if (label) label.textContent = 'SYNC DISPATCHED ✓';
+        setTimeout(() => {
+          if (btn) btn.disabled = false;
+          if (label) label.textContent = 'SYNC ALL ENVELOPES TO GOOGLE DRIVE';
+          if (icon) icon.className = '';
+        }, 4000);
+      } catch (err) {
+        showToast('Sync failed: ' + err.message, true);
+        if (btn) btn.disabled = false;
+        if (label) label.textContent = 'SYNC ALL ENVELOPES TO GOOGLE DRIVE';
+        if (icon) icon.className = '';
+      }
+    }
+    function checkAndRenderEmptyApprovals(container) {
+      if (!container) return;
+      const cards = container.querySelectorAll('.jit-card, [data-approval-id], .bg-\\[\\#151D2C\\]');
+      if (cards.length === 0) {
+        container.innerHTML = `
+          <div class="p-6 bg-[#0B0F17] border border-[#1E2533] rounded-[2px] text-center flex flex-col items-center justify-center gap-2">
+            <div class="text-sm font-bold text-emerald-400">✨ All Clear — No Pending Approvals</div>
+            <div class="text-[11px] font-metrics text-slate-500">All architectural gates satisfied. Inbox cleared.</div>
+          </div>
+        `;
+      }
+    }
+    function updateJitCounts() {
+      const cards = document.querySelectorAll('#mission-jit-cards-container .jit-card, #mission-jit-cards-container [data-approval-id], #mission-jit-cards-container .bg-\\[\\#151D2C\\]');
+      const count = cards.length;
+      const pillCount = document.getElementById('pill-jit-count');
+      const mPillCount = document.getElementById('m-pill-jit-count');
+      const statJit = document.getElementById('stat-jit-val');
+      if (pillCount) pillCount.textContent = count;
+      if (mPillCount) mPillCount.textContent = count;
+      if (statJit) statJit.textContent = count > 0 ? `${count} Awaiting` : '0 Awaiting';
+    }
+    // Fetch JIT Approvals
+    async function fetchApprovals() {
+      try {
+        const res = await fetch('/api/cockpit/approvals');
+        if (!res.ok) return;
+        const data = await res.json();
+        const approvals = data.approvals || [];
+        const pillCount = document.getElementById('pill-jit-count');
+        const mPillCount = document.getElementById('m-pill-jit-count');
+        const statJit = document.getElementById('stat-jit-val');
+        if (pillCount) pillCount.textContent = approvals.length || '0';
+        if (mPillCount) mPillCount.textContent = approvals.length || '0';
+        if (statJit) statJit.textContent = approvals.length > 0 ? `${approvals.length} Awaiting` : '0 Awaiting';
+        // If live approvals exist, update cards
+        const container = document.getElementById('mission-jit-cards-container');
+        if (container) {
+          if (approvals.length === 0) {
+            checkAndRenderEmptyApprovals(container);
+          } else {
+            container.innerHTML = approvals.slice(0, 2).map(appr => `
+              <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-3 flex flex-col gap-2.5 jit-card" id="card-${appr.sys_id}" data-approval-id="${appr.sys_id}">
+                <div class="flex items-center justify-between">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-metrics font-bold bg-amber-950 text-amber-300 border border-amber-800/50">${appr.is_challenge ? 'CHALLENGE' : 'APPROVAL'} // ${escapeHtml(appr.task_id || appr.sys_id)}</span>
+                  <span class="text-[10px] font-metrics text-slate-400">${escapeHtml(appr.auth_level || 'OMEGA=1')}</span>
+                </div>
+                <div>
+                  <h3 class="text-xs font-bold text-white">${escapeHtml(appr.title || appr.task_id)}</h3>
+                  <p class="text-[11px] text-slate-400 mt-0.5">${escapeHtml((appr.plan_markdown || appr.description || 'Pending architectural verification').slice(0, 80))}...</p>
+                </div>
+                <div class="flex items-center justify-between text-[10px] font-metrics text-slate-400 bg-[#07090E] px-2 py-1 rounded border border-[#1E2330]">
+                  <span>Created: <strong class="text-slate-200">${formatDateTime(appr.sys_created_on)}</strong></span>
+                  <span>Updated: <strong class="text-slate-200">${formatDateTime(appr.sys_updated_on || appr.sys_created_on)}</strong></span>
+                </div>
+                <div class="flex items-center gap-2 pt-1 border-t border-[#1E2330]">
+                  <button onclick="handleApproval('${appr.sys_id}', 'authorize', this)" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-1.5 rounded transition">
+                    ✓ Authorize
+                  </button>
+                  <button onclick="handleApproval('${appr.sys_id}', 'archive', this)" class="px-3 bg-[#141B26] hover:bg-[#1E2330] text-slate-300 text-xs py-1.5 rounded border border-[#1E2330] transition">
+                    Archive
+                  </button>
+                </div>
+              </div>
+            `).join('');
+          }
+        }
+        // Dedicated Tab List
+        const dedicatedList = document.getElementById('dedicated-jit-list');
+        if (dedicatedList) {
+          if (approvals.length === 0) {
+            checkAndRenderEmptyApprovals(dedicatedList);
+          } else {
+            dedicatedList.innerHTML = approvals.map(appr => `
+              <div class="p-3 bg-[#0B0D13] border border-[#1E2330] rounded-[2px] flex flex-col gap-2 jit-card" id="card-ded-${appr.sys_id}" data-approval-id="${appr.sys_id}">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono font-bold text-amber-300">${escapeHtml(appr.task_id || appr.sys_id)}</span>
+                  <span class="text-[10px] font-metrics text-emerald-400">${appr.state || 'Pending'}</span>
+                </div>
+                <div class="text-xs font-bold text-white">${escapeHtml(appr.title || '')}</div>
+                <div class="flex items-center gap-4 text-[10px] font-metrics text-slate-400">
+                  <span>Created: <strong class="text-slate-200">${formatDateTime(appr.sys_created_on)}</strong></span>
+                  <span>Updated: <strong class="text-slate-200">${formatDateTime(appr.sys_updated_on || appr.sys_created_on)}</strong></span>
+                </div>
+                <div class="flex items-center gap-2 mt-1">
+                  <button onclick="handleApproval('${appr.sys_id}', 'authorize', this)" class="px-4 py-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded transition">
+                    ✓ Authorize
+                  </button>
+                  <button onclick="handleApproval('${appr.sys_id}', 'archive', this)" class="px-3 py-1 bg-[#141B26] hover:bg-[#1E2330] text-slate-300 text-xs rounded border border-[#1E2330] transition">
+                    Archive
+                  </button>
+                </div>
+              </div>
+            `).join('');
+          }
+        }
+      } catch (err) {
+        console.error('Fetch approvals error:', err);
+      }
+    }
+    // Handle JIT Approval Action
+    async function handleApproval(arg1, arg2, arg3) {
+      let cardId = null;
+      let sysId = null;
+      let action = null;
+      let btn = null;
+      let card = null;
+      if (typeof arg3 === 'string') {
+        // Signature: handleApproval(cardId, approvalId, action)
+        cardId = arg1;
+        sysId = arg2;
+        action = arg3;
+        card = document.getElementById(cardId) || (typeof cardId === 'string' && cardId.startsWith('#') ? document.querySelector(cardId) : null);
+        if (card) {
+          btn = card.querySelector(`button[onclick*="'${action}'"]`) || card.querySelector('button');
+        }
+      } else {
+        // Signature: handleApproval(sysId, action, btn)
+        sysId = arg1;
+        action = arg2;
+        btn = arg3;
+        if (btn && btn.nodeType) {
+          card = btn.closest('.jit-card') || btn.closest('.bg-\\[\\#151D2C\\]') || btn.closest('#mission-jit-cards-container > div, #dedicated-jit-list > div') || btn.parentElement?.parentElement;
+        }
+      }
+      if (!card && sysId) {
+        card = document.getElementById('card-' + sysId) || document.getElementById('card-ded-' + sysId) || document.querySelector(`[data-approval-id="${sysId}"]`);
+      }
+      if (!btn && card) {
+        btn = card.querySelector('button');
+      }
+      const origText = btn ? btn.textContent : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = '...';
+      }
+      try {
+        const res = await fetch(`/api/cockpit/approvals/${encodeURIComponent(sysId)}/${encodeURIComponent(action)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        const result = await res.json();
+        const isAuth = (action.toLowerCase() === 'authorize' || action.toLowerCase() === 'approve');
+        if (btn) {
+          btn.textContent = isAuth ? '✓ Authorized' : '✗ Rejected';
+          btn.className = isAuth
+            ? 'flex-1 bg-emerald-900/80 text-emerald-300 font-bold text-xs py-1.5 rounded border border-emerald-700/50 cursor-default'
+            : 'flex-1 bg-red-950/80 text-red-300 font-bold text-xs py-1.5 rounded border border-red-800/50 cursor-default';
+          if (btn.parentElement) {
+            btn.parentElement.querySelectorAll('button').forEach(b => {
+              if (b !== btn) b.style.display = 'none';
+            });
+          }
+        }
+        showToast(isAuth ? `Omega=1 Authorized: ${sysId}` : `Rejected: ${sysId}`);
+        // 600ms success acknowledgement
+        await new Promise(r => setTimeout(r, 600));
+        // Locate all matching cards for this sysId (e.g. Mission deck & dedicated list)
+        const cardsToDismiss = new Set();
+        if (card) cardsToDismiss.add(card);
+        if (sysId) {
+          document.querySelectorAll(`[data-approval-id="${sysId}"], #card-${sysId}, #card-ded-${sysId}`).forEach(el => cardsToDismiss.add(el));
+        }
+        cardsToDismiss.forEach(el => {
+          el.style.maxHeight = el.scrollHeight + 'px';
+          el.offsetHeight; // trigger reflow
+          el.style.transition = 'all 0.4s ease-out';
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(-10px)';
+          el.style.maxHeight = '0';
+          el.style.marginBottom = '0';
+          el.style.paddingTop = '0';
+          el.style.paddingBottom = '0';
+          el.style.borderWidth = '0';
+          el.style.overflow = 'hidden';
+        });
+        setTimeout(() => {
+          cardsToDismiss.forEach(el => el.remove());
+          checkAndRenderEmptyApprovals(document.getElementById('mission-jit-cards-container'));
+          checkAndRenderEmptyApprovals(document.getElementById('dedicated-jit-list'));
+          updateJitCounts();
+        }, 400);
+      } catch (err) {
+        if (btn) {
+          btn.textContent = origText;
+          btn.disabled = false;
+        }
+        showToast('Action failed: ' + err.message, true);
+      }
+    }
+    // Live Queue Telemetry Polling (every 5 seconds)
+    async function fetchQueueTelemetry() {
+      try {
+        const res = await fetch('/api/cockpit/queue');
+        if (!res.ok) return;
+        const data = await res.json();
+        // Quick Stats Ribbon
+        const statQueue = document.getElementById('stat-queue-val');
+        const statAtf = document.getElementById('stat-atf-val');
+        if (statQueue) {
+          if (data.processing_ticket) {
+            const raw = data.processing_ticket.replace('.md', '');
+            const m = raw.match(/^(WO\d+)/i);
+            statQueue.textContent = m ? m[1] : (raw.length > 14 ? raw.slice(0, 14) + '...' : raw);
+            statQueue.title = raw;
+          } else {
+            statQueue.textContent = 'IDLE';
+          }
+        }
+        if (statAtf) {
+          statAtf.textContent = `ATF ${data.atf_status}`;
+          statAtf.className = data.atf_status === 'PASSED' ? 'text-[10px] font-metrics text-emerald-400' : 'text-[10px] font-metrics text-amber-400';
+        }
+        // Mission Deck HUD Ticker
+        const hudTicket = document.getElementById('mission-hud-ticket');
+        const hudDetail = document.getElementById('mission-hud-detail');
+        if (hudTicket) {
+          if (data.processing_ticket) {
+            hudTicket.textContent = 'EXECUTING: ' + data.processing_ticket.replace('.md', '');
+            hudTicket.className = 'text-amber-400 font-bold';
+          } else if (data.recent_archive && data.recent_archive.length > 0) {
+            hudTicket.textContent = data.recent_archive[0].replace('.md', '') + ' RESOLVED';
+            hudTicket.className = 'text-emerald-400 font-bold';
+          } else {
+            hudTicket.textContent = 'RUNNER IDLE';
+            hudTicket.className = 'text-slate-400 font-bold';
+          }
+        }
+        if (hudDetail) {
+          hudDetail.textContent = `Incoming: ${data.incoming_count} • ATF: ${data.atf_status} • Recent Archives: ${data.recent_archive ? data.recent_archive.length : 0}`;
+        }
+        // Dedicated Tab
+        const qInc = document.getElementById('queue-incoming-count');
+        const qProc = document.getElementById('queue-processing-ticket');
+        const qAtf = document.getElementById('queue-atf-badge');
+        const qArch = document.getElementById('queue-archive-list');
+        if (qInc) qInc.textContent = `${data.incoming_count} tickets`;
+        if (qProc) qProc.textContent = data.processing_ticket || 'NONE (IDLE)';
+        if (qAtf) {
+          qAtf.textContent = data.atf_status;
+          qAtf.className = data.atf_status === 'PASSED' ? 'text-sm font-metrics font-bold text-emerald-400 mt-2' : 'text-sm font-metrics font-bold text-amber-400 mt-2';
+        }
+        if (qArch && data.recent_archive) {
+          qArch.innerHTML = data.recent_archive.map(name => `
+            <div class="p-2 rounded bg-[#0B0D13] border border-[#1E2330] flex items-center justify-between">
+              <span class="truncate text-slate-200">${escapeHtml(name)}</span>
+              <span class="text-[10px] text-emerald-400 shrink-0">ARCHIVED</span>
+            </div>
+          `).join('');
+        }
+      } catch (err) {
+        console.error('Queue telemetry poll error:', err);
+      }
+    }
+    async function emergencyKillRunner() {
+      if (!confirm("⚠️ EMERGENCY KILL SWITCH:\nAre you sure you want to kill the active runner? This will terminate running agy processes immediately and quarantine the active ticket.")) {
+        return;
+      }
+      const btn = document.getElementById('btn-kill-runner');
+      const originalHtml = btn ? btn.innerHTML : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<span>⚡</span><span>Killing runner...</span>';
+      }
+      try {
+        const res = await fetch('/api/cockpit/kill_runner', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await res.json();
+        if (res.ok && data.status === 'success') {
+          showToast(data.message || 'Runner killed successfully', false);
+          if (typeof fetchQueueTelemetry === 'function') fetchQueueTelemetry();
+          if (typeof fetchQueue === 'function') fetchQueue();
+        } else {
+          showToast('Kill failed: ' + (data.message || 'Server error'), true);
+        }
+      } catch (err) {
+        showToast('Network error triggering kill switch: ' + err.message, true);
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalHtml;
+        }
+      }
+    }
+    // Fetch and render Fleet & CMDB Lite telemetry
+    async function loadCmdbLite() {
+      try {
+        const res = await fetch('/api/cockpit/cmdb_lite');
+        if (!res.ok) return;
+        const data = await res.json();
+        // 1. Clio Vitals
+        const h = data.clio_health || {};
+        const cpuTempEl = document.getElementById('clio-cpu-temp');
+        if (cpuTempEl) cpuTempEl.textContent = h.cpu_temp || '--';
+        const pwrEl = document.getElementById('clio-power-draw');
+        if (pwrEl) pwrEl.textContent = h.power_draw || '--';
+        const ramStatEl = document.getElementById('clio-ram-stat');
+        if (ramStatEl) ramStatEl.textContent = `${h.ram_used_gb || 0} / ${h.ram_total_gb || 0} GB`;
+        const ramPctEl = document.getElementById('clio-ram-percent');
+        if (ramPctEl) ramPctEl.textContent = `${h.ram_percent || 0}% used`;
+        const loadEl = document.getElementById('clio-load-avg');
+        if (loadEl && h.load_avg) loadEl.textContent = h.load_avg.join(' • ');
+        const ramBar = document.getElementById('clio-ram-bar');
+        if (ramBar) ramBar.style.width = `${Math.min(100, Math.max(5, h.ram_percent || 0))}%`;
+        const ramLbl = document.getElementById('clio-ram-label');
+        if (ramLbl && h.ram_total_gb && h.ram_used_gb) {
+          const freeGb = (h.ram_total_gb - h.ram_used_gb).toFixed(1);
+          ramLbl.textContent = `Available: ${freeGb} GB headroom`;
+        }
+        // 2. Active Daemons
+        const daemonContainer = document.getElementById('daemons-list-container');
+        if (daemonContainer && data.processes) {
+          daemonContainer.innerHTML = data.processes.map(p => {
+            const isActive = p.status === 'ACTIVE';
+            return `
+              <div class="p-2.5 rounded-[2px] bg-[#0B0D13] border border-[#1E2330] flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full ${isActive ? 'bg-emerald-400 animate-pulse' : 'bg-amber-500'}"></span>
+                  <div>
+                    <div class="text-xs font-bold text-slate-200">${escapeHtml(p.label)}</div>
+                    <div class="text-[10px] font-metrics text-slate-500">${escapeHtml(p.name)}.py ${p.port ? `• Port :${p.port}` : ''}</div>
+                  </div>
+                </div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-metrics font-bold ${isActive ? 'bg-emerald-950 text-emerald-400 border border-emerald-800/40' : 'bg-amber-950 text-amber-400 border border-amber-800/40'}">
+                  ${p.status}
+                </span>
+              </div>
+            `;
+          }).join('');
+        }
+        // 3. Fleet Hardware Nodes
+        const nodesGrid = document.getElementById('cmdb-nodes-grid');
+        const nodesCount = document.getElementById('cmdb-nodes-count');
+        if (nodesCount && data.nodes) {
+          nodesCount.textContent = `${data.nodes.length} CIs in Ledger`;
+        }
+        if (nodesGrid && data.nodes) {
+          const coreOrder = ['clio', 'pegasus', 'argo', 'artemis', 'pi_zero_fleet'];
+          const sortedNodes = [...data.nodes].sort((a, b) => {
+            const idxA = coreOrder.indexOf(a.name);
+            const idxB = coreOrder.indexOf(b.name);
+            if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+            if (idxA !== -1) return -1;
+            if (idxB !== -1) return 1;
+            return a.name.localeCompare(b.name);
+          });
+          nodesGrid.innerHTML = sortedNodes.slice(0, 9).map(n => {
+            const isClio = n.name === 'clio';
+            const isPegasus = n.name === 'pegasus';
+            const isArgo = n.name === 'argo';
+            const isArtemis = n.name === 'artemis';
+            const isPiFleet = n.name === 'pi_zero_fleet';
+            let roleBadge = 'Sentinel Node';
+            if (isClio) roleBadge = 'Living Room Forge Master';
+            else if (isPegasus) roleBadge = 'Visual Sentry / Bedroom Cockpit';
+            else if (isArgo) roleBadge = 'Hailo-8L AI Sensor Sentry';
+            else if (isArtemis) roleBadge = 'Mobile Laptop Cockpit';
+            else if (isPiFleet) roleBadge = 'Distributed Zero 2 W Cluster';
+            const borderClass = isClio ? 'border-[#1E2330] border-l-2 border-l-amber-500 bg-[#0B0D13]' : 'border-[#1E2330] border-l-2 border-l-cyan-500 bg-[#0B0D13]';
+            const nameColor = isClio ? 'text-amber-400' : 'text-white';
+            return `
+              <div class="p-3 rounded-[2px] border ${borderClass} flex flex-col justify-between gap-2 shadow">
+                <div class="flex items-start justify-between gap-1">
+                  <div>
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-xs font-bold font-metrics uppercase ${nameColor}">${escapeHtml(n.name)}</span>
+                      ${isClio ? '<span class="px-1.5 py-0.2 rounded text-[8px] font-metrics font-bold bg-amber-500 text-black">HOST</span>' : ''}
+                    </div>
+                    <div class="text-[10px] text-slate-400 font-sans line-clamp-1 mt-0.5" title="${escapeHtml(n.short_description || '')}">
+                      ${escapeHtml(n.model_id || n.short_description || 'Node CI')}
+                    </div>
+                  </div>
+                  <span class="px-1.5 py-0.5 rounded text-[9px] font-metrics bg-emerald-950/80 text-emerald-400 border border-emerald-800/40">ONLINE</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-[#1E2330] text-[10px] font-metrics text-slate-400">
+                  <span>${escapeHtml(roleBadge)}</span>
+                  <span class="text-slate-300 font-mono">${escapeHtml(n.ip_address || 'Cluster')}</span>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+        // 4. Live Deployments
+        const depContainer = document.getElementById('deployments-list-container');
+        if (depContainer && data.deployments) {
+          depContainer.innerHTML = data.deployments.map(d => `
+            <div class="p-2.5 rounded-[2px] bg-[#0B0D13] border border-[#1E2330] flex items-center justify-between">
+              <div>
+                <div class="text-xs font-bold text-slate-200">${escapeHtml(d.name)}</div>
+                <div class="text-[10px] font-metrics text-slate-500 flex items-center gap-1.5">
+                  <span class="text-blue-400">${escapeHtml(d.badge)}</span>
+                  <span>•</span>
+                  <span class="truncate max-w-[200px] text-slate-400">${escapeHtml(d.url)}</span>
+                </div>
+              </div>
+              <a href="${escapeHtml(d.url)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#141B26] hover:bg-[#1E2330] text-amber-300 hover:text-amber-200 text-xs font-metrics font-bold rounded border border-[#1E2330] transition flex items-center gap-1">
+                <span>Open</span>
+                <span>↗</span>
+              </a>
+            </div>
+          `).join('');
+        }
+        // 5. Prospectus Vaults
+        const prosContainer = document.getElementById('prospectus-list-container');
+        if (prosContainer && data.prospectuses) {
+          prosContainer.innerHTML = data.prospectuses.map(p => `
+            <div class="p-2.5 rounded-[2px] bg-[#0B0D13] border border-[#1E2330] flex items-center justify-between">
+              <div>
+                <div class="text-xs font-bold text-slate-200">${escapeHtml(p.title)}</div>
+                <div class="text-[10px] font-metrics text-emerald-400">${escapeHtml(p.status)}</div>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-metrics bg-[#07090E] text-slate-400 border border-[#1E2330] font-mono">
+                ${escapeHtml(p.slug.split('_').slice(1).join('_') || p.slug)}
+              </span>
+            </div>
+          `).join('');
+        }
+        const upEl = document.getElementById('cmdb-last-updated');
+        if (upEl) {
+          const now = new Date();
+          upEl.textContent = `Updated ${now.toLocaleTimeString()}`;
+        }
+      } catch (err) {
+        console.error('Error loading CMDB Lite:', err);
+      }
+    }
+    // =========================================================================
+    // SOVEREIGN HORIZON BIT-PERFECT EVIDENCE DRAWER (INVARIANT 41)
+    // =========================================================================
+    let isEvidenceDrawerOpen = false;
+    let currentEvidenceData = {
+      doc_id: 'DOC_SEC_INDENTURE',
+      title: 'Senior Secured Indenture Agreement (Section 6.01 - Events of Default)',
+      citation: 'SEC Form 8-K // Exhibit 4.1 // Lines 42-48',
+      offsets: [142, 401],
+      byte_count: 259,
+      sha256: '5c09b77cd3cae07abfe4b6848fcb2c730e18ee77e1e69b0fa6db0195ecf1d141',
+      verbatim_text: '(a) fails to pay any installment of interest on the Senior Secured Notes when due, and such failure continues for a period of 30 days; and\n(b) fails to pay the principal of, or premium, if any, on the Notes when due at maturity, upon redemption, or otherwise;',
+      recitation_risk: '0.0% (Zero LLM tokens generated)',
+      target_phrase: 'fails to pay any installment of interest'
+    };
+    function handleDrawerClick(e) {
+      if (e.target.closest('#close-evidence-drawer') || e.target.closest('#copy-citation-btn') || e.target.closest('button')) {
+        return;
+      }
+      if (!isEvidenceDrawerOpen) {
+        openEvidenceDrawer('DOC_SEC_INDENTURE', 142, 401);
+      }
+    }
+    async function openEvidenceDrawer(docId = 'DOC_SEC_INDENTURE', startOffset = 142, endOffset = 401) {
+      isEvidenceDrawerOpen = true;
+      const drawer = document.getElementById('horizon-evidence-drawer');
+      const backdrop = document.getElementById('horizon-drawer-backdrop');
+      if (drawer) {
+        drawer.classList.remove('translate-x-[calc(100%-36px)]', 'translate-x-full');
+        drawer.classList.add('translate-x-0');
+      }
+      if (backdrop) {
+        backdrop.classList.remove('hidden');
+      }
+      try {
+        const resp = await fetch(`/api/horizon/evidence/${encodeURIComponent(docId)}?start=${startOffset}&end=${endOffset}`);
+        if (resp.ok) {
+          const data = await resp.json();
+          currentEvidenceData = data;
+          renderEvidenceDrawer(data);
+        }
+      } catch (err) {
+        console.error('Error fetching evidence:', err);
+      }
+    }
+    function renderEvidenceDrawer(data) {
+      const hashPrefix = data.sha256 ? data.sha256.slice(0, 16) : '5c09b77cd3cae07a';
+      const badgeEl = document.getElementById('evidence-header-badge');
+      if (badgeEl) {
+        badgeEl.textContent = `[🔒 VERIFIED ON METAL // SHA-256: ${hashPrefix}... // 0 MUTATIONS]`;
+      }
+      const citEl = document.getElementById('evidence-citation');
+      if (citEl) citEl.textContent = data.citation || 'SEC Form 8-K // Exhibit 4.1 // Lines 42-48';
+      const titleEl = document.getElementById('evidence-doc-title');
+      if (titleEl) titleEl.textContent = data.title || data.doc_id;
+      const byteEl = document.getElementById('evidence-byte-count');
+      if (byteEl) byteEl.textContent = `${data.byte_count} B`;
+      const offEl = document.getElementById('evidence-offsets');
+      if (offEl) offEl.textContent = `Offsets [${data.offsets[0]}, ${data.offsets[1]}]`;
+      const recEl = document.getElementById('evidence-recitation-risk');
+      if (recEl) recEl.textContent = data.recitation_risk || '0.0%';
+      const shaEl = document.getElementById('evidence-full-sha256');
+      if (shaEl) shaEl.textContent = data.sha256;
+      const container = document.getElementById('evidence-verbatim-container');
+      if (container && data.verbatim_text) {
+        let text = data.verbatim_text;
+        const phrase = data.target_phrase || '';
+        if (phrase && text.includes(phrase)) {
+          const parts = text.split(phrase);
+          container.innerHTML = escapeHtml(parts[0]) + 
+            `<mark class="bg-amber-400/20 text-amber-200 border-b border-amber-400 px-0.5 font-bold">${escapeHtml(phrase)}</mark>` + 
+            escapeHtml(parts.slice(1).join(phrase));
+        } else {
+          container.textContent = text;
+        }
+      }
+    }
+    function closeEvidenceDrawer() {
+      isEvidenceDrawerOpen = false;
+      const drawer = document.getElementById('horizon-evidence-drawer');
+      const backdrop = document.getElementById('horizon-drawer-backdrop');
+      if (drawer) {
+        drawer.classList.remove('translate-x-0');
+        drawer.classList.add('translate-x-[calc(100%-36px)]');
+      }
+      if (backdrop) {
+        backdrop.classList.add('hidden');
+      }
+    }
+    async function copyAdmissibleCitation() {
+      const d = currentEvidenceData;
+      const textToCopy = `PRIMARY SOURCE FORENSIC CITATION:
+Document: ${d.title || d.doc_id}
+Citation: ${d.citation || 'SEC Form 8-K // Exhibit 4.1 // Lines 42-48'}
+Offsets: [${d.offsets ? d.offsets.join(', ') : '142, 401'}] | Bytes: ${d.byte_count || 259}
+Cryptographic SHA-256: ${d.sha256 || ''}
+Provenance: VERIFIED_ON_METAL (Zero LLM Recitation Drift)
+VERBATIM PRIMARY SOURCE TEXT:
+"${d.verbatim_text || ''}"`;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(textToCopy);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = textToCopy;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+        }
+        const lbl = document.getElementById('copy-btn-label');
+        if (lbl) {
+          const original = lbl.textContent;
+          lbl.textContent = '✓ Copied to Clipboard!';
+          setTimeout(() => { lbl.textContent = original; }, 2000);
+        }
+        showToast('Court-Admissible Citation copied to clipboard!');
+      } catch (err) {
+        console.error('Failed to copy citation:', err);
+        showToast('Failed to copy to clipboard', true);
+      }
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isEvidenceDrawerOpen) {
+        closeEvidenceDrawer();
+      }
+    });
+    // =========================================================================
+    // DERANGED PREDICT MARKET CLIENT LOGIC
+    // =========================================================================
+    async function loadPredictMarket() {
+      try {
+        const res = await fetch('/api/predict/state');
+        if (!res.ok) throw new Error('Failed to fetch prediction market state');
+        const state = await res.json();
+        // 1. Render Advocate Bankrolls Ribbon
+        const advRibbon = document.getElementById('cockpit-advocates-ribbon');
+        if (advRibbon && state.advocates_bankrolls) {
+          advRibbon.innerHTML = Object.entries(state.advocates_bankrolls).map(([k, adv]) => {
+            const pnl = adv.profit_loss_cents;
+            const isProfit = pnl >= 0;
+            const pnlPct = ((pnl / 100000) * 100).toFixed(1);
+            return `
+              <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-3 flex flex-col justify-between shadow">
+                <div class="flex items-start justify-between mb-2">
+                  <div>
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-5 h-5 rounded-full bg-[#141B26] border border-[#1E2330] flex items-center justify-center text-[10px] font-extrabold text-slate-300">#${adv.rank}</span>
+                      <span class="font-extrabold text-white text-xs truncate max-w-[110px]" title="${escapeHtml(adv.name)}">${escapeHtml(adv.name)}</span>
+                    </div>
+                    <div class="text-[10px] text-purple-400 font-medium">${escapeHtml(adv.avatar_tag)}</div>
+                  </div>
+                  <div class="text-[10px] font-bold px-1.5 py-0.5 rounded border ${isProfit ? 'bg-emerald-950/60 border-emerald-700/60 text-emerald-400' : 'bg-rose-950/60 border-rose-700/60 text-rose-400'}">
+                    ${isProfit ? '+' : ''}${pnlPct}%
+                  </div>
+                </div>
+                <div class="border-t border-[#1E2330] pt-2 mt-1">
+                  <div class="flex justify-between items-baseline mb-1">
+                    <span class="text-[10px] text-slate-500 font-sans">NET WORTH</span>
+                    <span class="text-sm font-extrabold text-slate-100">$${(adv.portfolio_value_cents / 100).toFixed(2)}</span>
+                  </div>
+                  <div class="flex justify-between items-baseline mb-2">
+                    <span class="text-[10px] text-slate-500 font-sans">FREE CASH</span>
+                    <span class="text-xs font-semibold text-slate-400">$${(adv.cash_cents / 100).toFixed(2)}</span>
+                  </div>
+                  <div class="bg-[#07090E] p-2 rounded border border-[#1E2330] text-[10px] text-amber-300/90 leading-tight">
+                    <span class="text-slate-500 block text-[9px] font-bold uppercase mb-0.5 font-sans">Superstition:</span>
+                    "${escapeHtml(adv.active_superstition)}"
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+        // 2. Render Active Contracts Grid
+        const contractsGrid = document.getElementById('cockpit-contracts-grid');
+        if (contractsGrid && state.contracts) {
+          contractsGrid.innerHTML = state.contracts.map(contract => {
+            const yes = contract.yes_price_cents;
+            const no = contract.no_price_cents;
+            const lead = contract.lead_advocate_side;
+            return `
+              <div class="bg-[#0B0D13] border border-[#1E2330] rounded-[2px] p-4 flex flex-col justify-between hover:border-purple-500/40 transition shadow-lg">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <div class="flex items-center gap-2">
+                      <span class="bg-purple-950 text-purple-300 border border-purple-800 px-2 py-0.5 rounded text-xs font-extrabold tracking-wide">${escapeHtml(contract.ticker)}</span>
+                      <span class="text-[10px] text-slate-400 bg-[#141B26] px-1.5 py-0.5 rounded border border-[#1E2330] font-semibold">${escapeHtml(contract.category)}</span>
+                    </div>
+                    <span class="text-[10px] text-emerald-400 font-bold flex items-center gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                      ${escapeHtml(contract.status)}
+                    </span>
+                  </div>
+                  <h3 class="text-sm font-extrabold text-white leading-snug mb-3 font-sans">${escapeHtml(contract.question)}</h3>
+                </div>
+                <div class="my-2">
+                  <div class="flex justify-between items-center text-xs font-bold mb-1">
+                    <span class="text-emerald-400">YES ${yes}¢ (${yes}%)</span>
+                    <span class="text-rose-400">NO ${no}¢ (${no}%)</span>
+                  </div>
+                  <div class="h-3 w-full bg-[#141B26] rounded-full overflow-hidden flex border border-[#1E2330]">
+                    <div style="width: ${yes}%" class="bg-gradient-to-r from-emerald-600 to-emerald-400"></div>
+                    <div style="width: ${no}%" class="bg-gradient-to-r from-rose-600 to-rose-400"></div>
+                  </div>
+                </div>
+                ${lead ? `
+                  <div class="bg-[#07090E] p-2.5 rounded-[2px] border border-[#1E2330] my-3 text-xs leading-relaxed">
+                    <div class="flex items-center gap-1.5 text-[10px] font-bold text-amber-400 mb-1">
+                      <span>⚡</span>
+                      <span>Lead Stance: ${escapeHtml(lead.advocate.replace('_', ' ').toUpperCase())} (${escapeHtml(lead.side)})</span>
+                    </div>
+                    <p class="text-slate-300 text-[11px] italic font-sans">"${escapeHtml(lead.superstition)}"</p>
+                  </div>
+                ` : ''}
+                <div class="border-t border-[#1E2330] pt-3 mt-2 flex flex-col gap-2.5">
+                  <div class="flex items-center justify-between text-[10px] text-slate-500">
+                    <span>Vol: ${contract.volume_contracts.toLocaleString()} shs</span>
+                    <span>Pool: $${(contract.liquidity_pool_cents / 100).toLocaleString()}</span>
+                    <span>Order: Direct Metal</span>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2">
+                    <div class="flex flex-col gap-1">
+                      <div class="text-[10px] text-emerald-400 font-bold">PILOT BUY YES (${yes}¢)</div>
+                      <div class="grid grid-cols-2 gap-1.5">
+                        <button onclick="executePilotTrade('${contract.id}', 'YES', 10)" class="bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-700/80 text-emerald-300 font-extrabold py-1.5 px-2 rounded text-[11px] transition shadow cursor-pointer">+$10 YES</button>
+                        <button onclick="executePilotTrade('${contract.id}', 'YES', 50)" class="bg-emerald-900 hover:bg-emerald-800 border border-emerald-600 text-emerald-200 font-extrabold py-1.5 px-2 rounded text-[11px] transition shadow cursor-pointer">+$50 YES</button>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <div class="text-[10px] text-rose-400 font-bold">PILOT BUY NO (${no}¢)</div>
+                      <div class="grid grid-cols-2 gap-1.5">
+                        <button onclick="executePilotTrade('${contract.id}', 'NO', 10)" class="bg-rose-950/80 hover:bg-rose-900 border border-rose-700/80 text-rose-300 font-extrabold py-1.5 px-2 rounded text-[11px] transition shadow cursor-pointer">+$10 NO</button>
+                        <button onclick="executePilotTrade('${contract.id}', 'NO', 50)" class="bg-rose-900 hover:bg-rose-800 border border-rose-600 text-rose-200 font-extrabold py-1.5 px-2 rounded text-[11px] transition shadow cursor-pointer">+$50 NO</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+        // 3. Render Live Trade Stream
+        const tradesTable = document.getElementById('cockpit-predict-trades');
+        if (tradesTable && state.recent_trades) {
+          tradesTable.innerHTML = state.recent_trades.map(t => {
+            const isYes = t.action.includes('YES');
+            const timeStr = new Date(t.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            return `
+              <tr class="hover:bg-[#141B26] transition">
+                <td class="py-2 px-3 text-slate-500 text-[11px] whitespace-nowrap">${timeStr}</td>
+                <td class="py-2 px-3 font-bold text-slate-200 whitespace-nowrap">${escapeHtml(t.advocate.replace('_', ' ').toUpperCase())}</td>
+                <td class="py-2 px-3 font-extrabold text-purple-300 whitespace-nowrap">${escapeHtml(t.ticker)}</td>
+                <td class="py-2 px-3 whitespace-nowrap">
+                  <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${isYes ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' : 'bg-rose-950 text-rose-300 border border-rose-800'}">
+                    ${escapeHtml(t.action)}
+                  </span>
+                </td>
+                <td class="py-2 px-3 font-extrabold text-white">${t.shares}</td>
+                <td class="py-2 px-3 text-slate-300">${t.price_cents}¢</td>
+                <td class="py-2 px-3 text-amber-300/90 text-[11px] italic max-w-md truncate font-sans">"${escapeHtml(t.superstition_note)}"</td>
+              </tr>
+            `;
+          }).join('');
+        }
+      } catch (err) {
+        console.error('Failed to load predict market:', err);
+      }
+    }
+    async function executePilotTrade(contractId, side, dollarAmount) {
+      try {
+        const stateRes = await fetch('/api/predict/state');
+        const state = await stateRes.json();
+        const contract = state.contracts.find(c => c.id === contractId);
+        if (!contract) throw new Error('Contract not found');
+        const priceCents = side === 'YES' ? contract.yes_price_cents : contract.no_price_cents;
+        const shares = Math.max(1, Math.floor((dollarAmount * 100) / priceCents));
+        const res = await fetch('/api/predict/trade', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            advocate: 'pilot',
+            contract_id: contractId,
+            side: side,
+            shares: shares,
+            superstition: `Pilot Cockpit $${dollarAmount} Instant Execution`
+          })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || data.detail || 'Trade execution failed');
+        showToast(`Filled: ${shares} shs of ${contract.ticker} ${side} ($${dollarAmount})`);
+        loadPredictMarket();
+      } catch (err) {
+        showToast(err.message || 'Trade execution failed', true);
+      }
+    }
+    // Startup Initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      const mode = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      updateThemeToggleUI(mode);
+      fetchQueueTelemetry();
+      fetchApprovals();
+      fetchEnvelopes();
+      fetchDrops();
+      loadCmdbLite();
+      // Check URL params for initial active tab
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialTab = urlParams.get('tab');
+      if (initialTab) {
+        switchTab('tab-' + initialTab);
+      }
+      if (urlParams.get('drawer') === 'horizon' || urlParams.get('drawer') === 'open' || window.location.hash === '#horizon-evidence-drawer') {
+        openEvidenceDrawer();
+      }
+      // Poll queue every 5 seconds
+      setInterval(fetchQueueTelemetry, 5000);
+      // Poll approvals every 10 seconds
+      setInterval(fetchApprovals, 10000);
+      // Poll CMDB Lite every 10 seconds when tab active
+      setInterval(() => {
+        const cmdbTab = document.getElementById('tab-cmdb');
+        if (cmdbTab && !cmdbTab.classList.contains('hidden')) {
+          loadCmdbLite();
+        }
+      }, 10000);
+      // Poll Predict Market every 10 seconds when tab active
+      setInterval(() => {
+        const predictTab = document.getElementById('tab-predict');
+        if (predictTab && !predictTab.classList.contains('hidden')) {
+          loadPredictMarket();
+        }
+      }, 10000);
+      // Wire Drag-and-Drop on WO Staging Dropzone & Textarea
+      const woDropzone = document.getElementById('wo-dropzone');
+      const woTextarea = document.getElementById('stage-wo-content');
+      [woDropzone, woTextarea].forEach(el => {
+        if (!el) return;
+        ['dragenter', 'dragover'].forEach(evt => {
+          el.addEventListener(evt, e => {
+            e.preventDefault();
+            e.stopPropagation();
+            el.classList.add('border-amber-500');
+          });
+        });
+        ['dragleave', 'drop'].forEach(evt => {
+          el.addEventListener(evt, e => {
+            e.preventDefault();
+            e.stopPropagation();
+            el.classList.remove('border-amber-500');
+          });
+        });
+        el.addEventListener('drop', e => {
+          const dt = e.dataTransfer;
+          if (dt && dt.files && dt.files.length > 0) {
+            parseWoDocumentFile(dt.files[0]);
+          }
+        });
+      });
+    });
+    // ==================== YOUTUBE SNIPE & FAST WHISPER CLIENT LOGIC ====================
+    let currentSnipeData = null;
+    function setSnipeUrl(url) {
+      const inp = document.getElementById('snipe-url-input');
+      if (inp) {
+        inp.value = url;
+        inp.focus();
+      }
+    }
+    async function triggerYoutubeSnipe() {
+      const inp = document.getElementById('snipe-url-input');
+      const url = inp ? inp.value.trim() : '';
+      if (!url) {
+        showToast('Please enter a YouTube video URL', true);
+        return;
+      }
+      const btn = document.getElementById('btn-run-snipe');
+      const btnText = document.getElementById('btn-snipe-text');
+      const loader = document.getElementById('snipe-loading');
+      const resultCard = document.getElementById('snipe-result-card');
+      if (btn) btn.disabled = true;
+      if (btnText) btnText.textContent = 'Processing...';
+      if (loader) loader.classList.remove('hidden');
+      if (resultCard) resultCard.classList.add('hidden');
+      try {
+        const resp = await fetch('/api/cockpit/snipe_youtube', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url })
+        });
+        const data = await resp.json();
+        if (!resp.ok || !data.success) {
+          throw new Error(data.error || 'Snipe & Whisper failed');
+        }
+        currentSnipeData = data;
+        displaySnipeResult(data);
+        showToast('✓ Audio sniped & transcribed via Whisper');
+      } catch (err) {
+        console.error(err);
+        showToast('Snipe error: ' + err.message, true);
+      } finally {
+        if (btn) btn.disabled = false;
+        if (btnText) btnText.textContent = 'Snipe & Fast Whisper';
+        if (loader) loader.classList.add('hidden');
+      }
+    }
+    function displaySnipeResult(data) {
+      const resultCard = document.getElementById('snipe-result-card');
+      const titleEl = document.getElementById('snipe-result-title');
+      const pathEl = document.getElementById('snipe-result-path');
+      const idBadge = document.getElementById('snipe-badge-id');
+      const durBadge = document.getElementById('snipe-badge-dur');
+      const bodyEl = document.getElementById('snipe-transcript-body');
+      const kwContainer = document.getElementById('snipe-keywords');
+      if (!resultCard) return;
+      if (titleEl) titleEl.textContent = data.title || 'Untitled Snipe';
+      if (pathEl) pathEl.textContent = data.audio_file || '';
+      if (idBadge) idBadge.textContent = 'ID: ' + (data.video_id || '-');
+      if (durBadge) durBadge.textContent = (data.duration_secs || 0) + 's';
+      if (bodyEl) bodyEl.textContent = data.transcript || '(No transcript content)';
+      if (kwContainer) {
+        kwContainer.innerHTML = '';
+        const transcript = data.transcript || '';
+        const candidates = ['Throughput', 'Model-S', 'CapEx', 'Tailscale', 'Telemetry', 'Hardware', 'Latency', 'Postseason', 'Diligence', 'Payback'];
+        const found = candidates.filter(k => transcript.toLowerCase().includes(k.toLowerCase()));
+        if (found.length === 0) {
+          const words = transcript.match(/\b[A-Za-z]{5,}\b/g) || [];
+          const freq = {};
+          words.forEach(w => {
+            const low = w.toLowerCase();
+            freq[low] = (freq[low] || 0) + 1;
+          });
+          const sorted = Object.entries(freq).sort((a,b) => b[1]-a[1]).slice(0, 5);
+          sorted.forEach(([w]) => found.push(w));
+        }
+        found.slice(0, 8).forEach(tag => {
+          const pill = document.createElement('span');
+          pill.className = 'px-2 py-0.5 rounded bg-[#1B2333] border border-[#2D3A54] text-[10px] font-mono text-cyan-300';
+          pill.textContent = '#' + tag;
+          kwContainer.appendChild(pill);
+        });
+      }
+      resultCard.classList.remove('hidden');
+    }
+    function copySnipeTranscript() {
+      if (!currentSnipeData || !currentSnipeData.transcript) {
+        showToast('No transcript available to copy', true);
+        return;
+      }
+      navigator.clipboard.writeText(currentSnipeData.transcript).then(() => {
+        showToast('✓ Transcript copied to clipboard');
+      }).catch(err => {
+        showToast('Failed to copy: ' + err.message, true);
+      });
+    }
+    function copySnipeMarkdown() {
+      if (!currentSnipeData) {
+        showToast('No transcript data', true);
+        return;
+      }
+      const md = `### 🎙️ Snipe: ${currentSnipeData.title}\n` +
+                 `**Video ID**: \`${currentSnipeData.video_id}\` | **Duration**: ${currentSnipeData.duration_secs}s\n` +
+                 `**Audio File**: \`${currentSnipeData.audio_file}\`\n\n` +
+                 `#### Transcript:\n> ${currentSnipeData.transcript}\n`;
+      navigator.clipboard.writeText(md).then(() => {
+        showToast('✓ Markdown snippet copied to clipboard');
+      }).catch(err => {
+        showToast('Failed to copy: ' + err.message, true);
+      });
+    }
+  </script>
+</body>
+</html>

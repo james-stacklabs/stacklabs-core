@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sovereign OS • Daemon Pulse HUD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- SOVEREIGN VOID (DEFAULT) --- */
+        :root, [data-theme="sovereign"] {
+          --bg-base: #080a0f;
+          --bg-surface: #0f141f;
+          --bg-card: #151c2c;
+          --border-dim: #222d42;
+          --border-bright: #364665;
+          --accent-cyan: #00f0ff;
+          --accent-emerald: #00ff88;
+          --accent-amber: #ffb800;
+          --accent-crimson: #ff3366;
+          --text-primary: #f0f4fc;
+          --text-secondary: #8c9cb8;
+          --text-muted: #536482;
+          --hero-bg: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+          --hero-glow: rgba(0, 255, 136, 0.35);
+          --hero-text: #000000;
+        }
+
+        /* --- STARK S / IRON MAN HUD --- */
+        [data-theme="stark"] {
+          --bg-base: #100407;
+          --bg-surface: #1c090e;
+          --bg-card: #2a0e16;
+          --border-dim: #4d1a27;
+          --border-bright: #7a2b3d;
+          --accent-cyan: #00d4ff; /* Arc Reactor Glow */
+          --accent-emerald: #ffd700; /* Hot-Rod Gold */
+          --accent-amber: #ffaa00;
+          --accent-crimson: #ff2a4b; /* Hot-Rod Crimson */
+          --text-primary: #fff5f7;
+          --text-secondary: #c49ba5;
+          --text-muted: #735059;
+          --hero-bg: linear-gradient(135deg, #e62429 0%, #ffd700 100%);
+          --hero-glow: rgba(230, 36, 41, 0.45);
+          --hero-text: #000000;
+        }
+
+        /* --- AMAZIN' METS (CITI FIELD CLASSIC) --- */
+        [data-theme="mets"] {
+          --bg-base: #000b1c;
+          --bg-surface: #001636;
+          --bg-card: #002252;
+          --border-dim: #003680;
+          --border-bright: #0055cc;
+          --accent-cyan: #ff5910; /* Home Run Apple Orange */
+          --accent-emerald: #00b4d8; /* Mets Sky Blue */
+          --accent-amber: #ffa600;
+          --accent-crimson: #ff3344;
+          --text-primary: #ffffff;
+          --text-secondary: #a8c4f0;
+          --text-muted: #4d73aa;
+          --hero-bg: linear-gradient(135deg, #002D72 0%, #FF5910 100%);
+          --hero-glow: rgba(255, 89, 16, 0.45);
+          --hero-text: #ffffff;
+        }
+
+        :root, [data-theme] {
+          --bg-void: var(--bg-base);
+          --surface-panel: var(--bg-surface);
+          --surface-card: var(--bg-card);
+          --surface-hover: var(--border-bright);
+          --border-subtle: var(--border-dim);
+          --border-accent: var(--accent-cyan);
+          --neon-cyan: var(--accent-cyan);
+          --neon-emerald: var(--accent-emerald);
+          --neon-amber: var(--accent-amber);
+          --neon-rose: var(--accent-crimson);
+          --text-main: var(--text-primary);
+        }
+
+        .theme-strip {
+          display: flex;
+          background: var(--bg-card);
+          border: 1px solid var(--border-dim);
+          border-radius: 20px;
+          padding: 2px;
+          gap: 2px;
+        }
+        .theme-btn {
+          background: none;
+          border: none;
+          color: var(--text-muted);
+          font-size: 11px;
+          font-weight: 700;
+          padding: 3px 8px;
+          border-radius: 16px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+        .theme-btn.active {
+          background: var(--accent-cyan);
+          color: #000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            background-color: var(--bg-void);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, sans-serif;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 180, 216, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.04) 0%, transparent 45%);
+        }
+
+        /* Top Header */
+        header {
+            height: 58px;
+            background: rgba(13, 18, 29, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            flex-shrink: 0;
+            z-index: 10;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-crest {
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.25), rgba(16, 185, 129, 0.25));
+            border: 1px solid var(--neon-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            box-shadow: 0 0 14px rgba(0, 180, 216, 0.3);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-subtitle {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-nav {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: #cbd5e1;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-nav:hover {
+            background: rgba(0, 180, 216, 0.15);
+            border-color: var(--neon-cyan);
+            color: #fff;
+        }
+
+        .clock-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid var(--border-subtle);
+            padding: 5px 11px;
+            border-radius: 6px;
+            color: var(--neon-cyan);
+        }
+
+        /* Main Workspace Frame */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 16px 24px;
+            gap: 16px;
+            overflow: hidden;
+            min-height: 0;
+        }
+
+        /* Hero Row */
+        .hero-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .hero-card {
+            background: var(--surface-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .hero-card.live {
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+
+        .hero-card.stale {
+            border-color: rgba(244, 63, 94, 0.4);
+        }
+
+        .hero-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-title-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-beacon-wrap {
+            position: relative;
+            width: 14px;
+            height: 14px;
+        }
+
+        .status-beacon-ring {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.35);
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        .status-beacon-dot {
+            position: relative;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--neon-emerald);
+            box-shadow: 0 0 10px var(--neon-emerald);
+        }
+
+        .status-beacon-dot.stale {
+            background: var(--neon-rose);
+            box-shadow: 0 0 10px var(--neon-rose);
+        }
+        .status-beacon-ring.stale {
+            background: rgba(244, 63, 94, 0.35);
+            animation: none;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.6); opacity: 0; }
+            100% { transform: scale(0.95); opacity: 0; }
+        }
+
+        .hero-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .hero-status-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--neon-emerald);
+        }
+
+        .hero-status-tag.stale {
+            background: rgba(244, 63, 94, 0.15);
+            border-color: rgba(244, 63, 94, 0.3);
+            color: var(--neon-rose);
+        }
+
+        .hero-ticker {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .ticker-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            letter-spacing: -0.5px;
+        }
+
+        .ticker-label {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .hero-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .metric-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            padding: 4px 9px;
+            border-radius: 5px;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .metric-pill span.key {
+            color: var(--text-muted);
+        }
+        .metric-pill span.val {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Split Workspace Content */
+        .workspace-split {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 16px;
+            min-height: 0; /* Crucial for KI-095 inner flexbox scrolling */
+        }
+
+        .panel {
+            background: var(--surface-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .panel-header {
+            height: 42px;
+            background: rgba(255, 255, 255, 0.025);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            flex-shrink: 0;
+        }
+
+        .panel-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .panel-body {
+            flex: 1;
+            padding: 14px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* Custom Inner Scrollbar (KI-095) */
+        .panel-body::-webkit-scrollbar {
+            width: 4px;
+        }
+        .panel-body::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .panel-body::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 2px;
+        }
+        .panel-body::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-cyan);
+        }
+
+        /* Log Stream Terminal */
+        .log-terminal {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
+            line-height: 1.65;
+            color: #cbd5e1;
+            white-space: pre-wrap;
+            word-break: break-all;
+            user-select: text;
+        }
+
+        .log-line {
+            padding: 3px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            display: flex;
+            gap: 8px;
+        }
+
+        .log-line:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .log-time {
+            color: #64748b;
+            flex-shrink: 0;
+        }
+
+        .log-tag {
+            color: var(--neon-cyan);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .log-msg {
+            color: #e2e8f0;
+            word-break: break-all;
+        }
+
+        /* Scratchpad Preview Box */
+        .scratchpad-view {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
+            line-height: 1.55;
+            color: #cbd5e1;
+            white-space: pre-wrap;
+            user-select: text;
+        }
+
+        .scratchpad-active-banner {
+            background: rgba(0, 180, 216, 0.12);
+            border-left: 3px solid var(--neon-cyan);
+            padding: 9px 12px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 12px;
+            font-size: 12px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Footer Bar */
+        footer {
+            height: 38px;
+            background: rgba(13, 18, 29, 0.95);
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            font-size: 11.5px;
+            color: var(--text-muted);
+            flex-shrink: 0;
+        }
+
+        .footer-services {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .service-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+        }
+
+        .service-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--neon-emerald);
+            box-shadow: 0 0 6px var(--neon-emerald);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header -->
+    <header>
+        <div class="brand">
+            <div class="brand-crest">⚡</div>
+            <div class="brand-text">
+                <div class="brand-title">SOVEREIGN DAEMON PULSE <span style="font-size:10px; background:rgba(0,180,216,0.2); color:var(--neon-cyan); border:1px solid rgba(0,180,216,0.3); padding:2px 6px; border-radius:4px;">LIVE HUD</span></div>
+                <div class="brand-subtitle">Autonomous Workhorse Engine Room • Node Clio (.70) • Cockpit Gateway</div>
+            </div>
+        </div>
+        <div class="header-actions">
+            <div class="theme-strip">
+              <button class="theme-btn active" data-theme="sovereign" title="Sovereign Void">⚡ Void</button>
+              <button class="theme-btn" data-theme="stark" title="Stark S Suit">🦾 Stark</button>
+              <button class="theme-btn" data-theme="mets" title="Amazin' Mets">⚾ Mets</button>
+            </div>
+            <a href="/" class="btn-nav">📷 Pilot Drops</a>
+            <a href="/sync" class="btn-nav" style="border-color: rgba(0,255,136,0.35); color: #00ff88;">🚀 Sync Cockpit</a>
+            <a href="https://clio.taila01894.ts.net:8095/" target="_blank" class="btn-nav">🏛️ SDLC Portal</a>
+            <div class="clock-badge" id="liveClock">00:00:00 EDT</div>
+        </div>
+    </header>
+
+    <!-- Main Workspace Frame -->
+    <main>
+        <!-- Hero Row: Poller Liveness -->
+        <div class="hero-row">
+            <!-- Scratchpad Poller Card -->
+            <div class="hero-card live" id="spCard">
+                <div class="hero-header">
+                    <div class="hero-title-group">
+                        <div class="status-beacon-wrap">
+                            <div class="status-beacon-ring" id="spBeaconRing"></div>
+                            <div class="status-beacon-dot" id="spBeaconDot"></div>
+                        </div>
+                        <div class="hero-name">Scratchpad & Pilot Drops Poller</div>
+                    </div>
+                    <div class="hero-status-tag" id="spStatusTag">LISTENING</div>
+                </div>
+                <div class="hero-ticker">
+                    <div class="ticker-val" id="spTickerVal">0.0s</div>
+                    <div class="ticker-label">since last poll cycle</div>
+                </div>
+                <div class="hero-pills">
+                    <div class="metric-pill"><span class="key">PID:</span> <span class="val" id="spPid">--</span></div>
+                    <div class="metric-pill"><span class="key">Polls:</span> <span class="val" id="spPollCount">--</span></div>
+                    <div class="metric-pill"><span class="key">SHA:</span> <span class="val" id="spSha">--</span></div>
+                    <div class="metric-pill"><span class="key">Unresolved:</span> <span class="val" id="spUnresolved">0</span></div>
+                    <div class="metric-pill"><span class="key">Service:</span> <span class="val">scratch-pad-poller.service</span></div>
+                </div>
+            </div>
+
+            <!-- FanStack Statcast Poller Card -->
+            <div class="hero-card live" id="fsCard">
+                <div class="hero-header">
+                    <div class="hero-title-group">
+                        <div class="status-beacon-wrap">
+                            <div class="status-beacon-ring" id="fsBeaconRing"></div>
+                            <div class="status-beacon-dot" id="fsBeaconDot"></div>
+                        </div>
+                        <div class="hero-name">FanStack Statcast Poller</div>
+                    </div>
+                    <div class="hero-status-tag" id="fsStatusTag">STREAMING</div>
+                </div>
+                <div class="hero-ticker">
+                    <div class="ticker-val" id="fsTickerVal">0.0s</div>
+                    <div class="ticker-label">since live Statcast sync</div>
+                </div>
+                <div class="hero-pills">
+                    <div class="metric-pill"><span class="key">PID:</span> <span class="val" id="fsPid">--</span></div>
+                    <div class="metric-pill"><span class="key">Live Games:</span> <span class="val" id="fsGames">0</span></div>
+                    <div class="metric-pill" style="max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><span class="key">Last Play:</span> <span class="val" id="fsLastPlay">--</span></div>
+                    <div class="metric-pill"><span class="key">Service:</span> <span class="val">fanstack-poller.service</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Split Workspace Content -->
+        <div class="workspace-split">
+            <!-- Left: Scratchpad Active Queue -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <span>📝</span>
+                        <span>Scratchpad Active State & Work Order Queue</span>
+                    </div>
+                    <span style="font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-muted);">/pilot_drops/scratch_pad.md</span>
+                </div>
+                <div class="panel-body" id="scratchpadBody">
+                    <div class="scratchpad-active-banner" id="activeOrderBanner">
+                        <span>⚡</span>
+                        <span id="activeOrderText">Scanning scratchpad...</span>
+                    </div>
+                    <pre class="scratchpad-view" id="scratchpadView">Loading scratchpad contents...</pre>
+                </div>
+            </div>
+
+            <!-- Right: Rolling Log Stream Tail -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <span>⚡</span>
+                        <span>Poller Execution Stream (Live Tail)</span>
+                    </div>
+                    <span style="font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--neon-cyan);">logs/scratch_pad_poller.log</span>
+                </div>
+                <div class="panel-body" id="logBody">
+                    <div class="log-terminal" id="logTerminal">Loading log stream...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Bar -->
+    <footer>
+        <div class="footer-services">
+            <div class="service-badge"><div class="service-dot"></div> scratch-pad-poller: ACTIVE</div>
+            <div class="service-badge"><div class="service-dot"></div> fanstack-poller: ACTIVE</div>
+            <div class="service-badge"><div class="service-dot"></div> pilot-drop: :8088</div>
+            <div class="service-badge"><div class="service-dot"></div> sdlc-portal: :8095</div>
+        </div>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:11px; color:#64748b;">
+            Auto-refreshes every 1.5s • KI-095 Viewport Locked
+        </div>
+    </footer>
+
+    <script>
+        let lastSpServerSec = 0;
+        let lastFsServerSec = 0;
+        let lastFetchTime = performance.now();
+
+        // Update live clock
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('en-US', { hour12: false, timeZone: 'America/New_York' }) + ' EDT';
+            document.getElementById('liveClock').textContent = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // High-frequency sub-second relative ticker (100ms)
+        function updateTickers() {
+            const elapsedSinceFetch = (performance.now() - lastFetchTime) / 1000;
+            const currentSpSec = Math.max(0, lastSpServerSec + elapsedSinceFetch);
+            const currentFsSec = Math.max(0, lastFsServerSec + elapsedSinceFetch);
+
+            const spTickerEl = document.getElementById('spTickerVal');
+            const fsTickerEl = document.getElementById('fsTickerVal');
+
+            if (spTickerEl) spTickerEl.textContent = currentSpSec.toFixed(1) + 's';
+            if (fsTickerEl) fsTickerEl.textContent = currentFsSec.toFixed(1) + 's';
+
+            // Staleness visual guards
+            const spCard = document.getElementById('spCard');
+            const spDot = document.getElementById('spBeaconDot');
+            const spRing = document.getElementById('spBeaconRing');
+            const spTag = document.getElementById('spStatusTag');
+
+            if (currentSpSec > 8.0) {
+                spCard.className = 'hero-card stale';
+                spDot.className = 'status-beacon-dot stale';
+                spRing.className = 'status-beacon-ring stale';
+                spTag.className = 'hero-status-tag stale';
+                spTag.textContent = 'STALE';
+            } else {
+                spCard.className = 'hero-card live';
+                spDot.className = 'status-beacon-dot';
+                spRing.className = 'status-beacon-ring';
+            }
+
+            const fsCard = document.getElementById('fsCard');
+            const fsDot = document.getElementById('fsBeaconDot');
+            const fsRing = document.getElementById('fsBeaconRing');
+            const fsTag = document.getElementById('fsStatusTag');
+
+            if (currentFsSec > 12.0) {
+                fsCard.className = 'hero-card stale';
+                fsDot.className = 'status-beacon-dot stale';
+                fsRing.className = 'status-beacon-ring stale';
+                fsTag.className = 'hero-status-tag stale';
+                fsTag.textContent = 'STALE';
+            } else {
+                fsCard.className = 'hero-card live';
+                fsDot.className = 'status-beacon-dot';
+                fsRing.className = 'status-beacon-ring';
+            }
+        }
+        setInterval(updateTickers, 100);
+
+        // Fetch live state from /api/pulse
+        async function fetchPulse() {
+            try {
+                const res = await fetch('/api/pulse');
+                if (!res.ok) return;
+                const data = await res.json();
+
+                lastFetchTime = performance.now();
+                lastSpServerSec = data.scratch_pad_poller.delta_seconds || 0;
+                lastFsServerSec = data.fanstack_poller.delta_seconds || 0;
+
+                // Update Scratchpad Poller Hero
+                const sp = data.scratch_pad_poller;
+                if (sp) {
+                    document.getElementById('spPid').textContent = sp.pid || '--';
+                    document.getElementById('spPollCount').textContent = sp.poll_count ? '#' + sp.poll_count.toLocaleString() : '--';
+                    document.getElementById('spSha').textContent = sp.scratch_pad_sha256 || '--';
+                    document.getElementById('spUnresolved').textContent = sp.unresolved_tasks_count !== undefined ? sp.unresolved_tasks_count : '0';
+                    const spTag = document.getElementById('spStatusTag');
+                    if (sp.delta_seconds <= 8.0) {
+                        spTag.className = 'hero-status-tag';
+                        spTag.textContent = sp.status || 'LISTENING';
+                    }
+                }
+
+                // Update FanStack Poller Hero
+                const fs = data.fanstack_poller;
+                if (fs) {
+                    document.getElementById('fsPid').textContent = fs.pid || '--';
+                    document.getElementById('fsGames').textContent = fs.active_games_count !== undefined ? fs.active_games_count : '0';
+                    document.getElementById('fsLastPlay').textContent = fs.last_play_desc || 'In-between pitches';
+                    const fsTag = document.getElementById('fsStatusTag');
+                    if (fs.delta_seconds <= 12.0) {
+                        fsTag.className = 'hero-status-tag';
+                        fsTag.textContent = fs.status || 'STREAMING';
+                    }
+                }
+
+                // Update Scratchpad Active Order & View
+                document.getElementById('activeOrderText').textContent = data.active_work_order || 'No active work orders';
+                document.getElementById('scratchpadView').textContent = data.scratch_pad_preview || '(scratch_pad.md is empty)';
+
+                // Update Log Terminal
+                const terminal = document.getElementById('logTerminal');
+                if (data.log_tail && data.log_tail.length > 0) {
+                    terminal.innerHTML = data.log_tail.map(line => {
+                        const escaped = line.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                        return `<div class="log-line"><span class="log-msg">${escaped}</span></div>`;
+                    }).join('');
+                    
+                    const logBody = document.getElementById('logBody');
+                    logBody.scrollTop = logBody.scrollHeight;
+                }
+            } catch (err) {
+                console.error("Pulse fetch error:", err);
+            }
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('sovereign_theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === theme);
+            });
+        }
+        const savedTheme = localStorage.getItem('sovereign_theme') || 'sovereign';
+        setTheme(savedTheme);
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+            btn.addEventListener('click', () => setTheme(btn.dataset.theme));
+        });
+
+        // Poll every 1.5s
+        fetchPulse();
+        setInterval(fetchPulse, 1500);
+    </script>
+</body>
+</html>
