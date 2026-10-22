@@ -1,0 +1,12 @@
+[Unit]
+Description=Sovereign OS Work Order Polling Daemon Service
+After=network.target
+
+[Service]
+Type=simple
+User=james
+ExecStart=/bin/bash /home/james/SovereignOS/scripts/work_order_poll_daemon.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

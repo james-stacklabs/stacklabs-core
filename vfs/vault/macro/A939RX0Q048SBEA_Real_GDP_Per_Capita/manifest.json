@@ -1,0 +1,12 @@
+{
+  "series_slug": "A939RX0Q048SBEA_Real_GDP_Per_Capita",
+  "data_source": "Federal Reserve Economic Data (FRED)",
+  "observation_count": 9,
+  "start_date": "1947-01-01",
+  "end_date": "2026-01-01",
+  "latest_reading": "69840.0",
+  "associated_lenses": [
+    "GHOST_GDP_DECOUPLING",
+    "COGNITIVE_FRICTION_ATROPHY"
+  ]
+}

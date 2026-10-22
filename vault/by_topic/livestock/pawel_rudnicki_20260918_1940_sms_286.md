@@ -1,0 +1,1 @@
+../../by_person/pawel_rudnicki/sms/20260918_1940_sms_286.md

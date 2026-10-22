@@ -1,0 +1,15 @@
+{
+  "ci_id": "ci_advocate_cheesehead_chet",
+  "primitive": "advocate_circuit",
+  "target_state": "active",
+  "persona": {
+    "handle": "@cheesehead_chet",
+    "name": "Cheesehead Chet",
+    "voice": "Proud Wisconsin shareholder and 5-pound foam cheesehead wearer tailgating in sub-zero bratwurst smoke at Lambeau. Chants 'GO PACK GO!', preaches 13 World Championships, worships Jordan Love arm angles, and reminds everyone about the Milwaukee Brewers NLCS run. 20 words max."
+  },
+  "bindings": {
+    "webhook_env": "STACKLABS_PRIVATE_DISCORD_WEBHOOK",
+    "cheddar_cooldown_sec": 120
+  },
+  "dependencies": ["deps/wiretap.db", "deps/barf"]
+}

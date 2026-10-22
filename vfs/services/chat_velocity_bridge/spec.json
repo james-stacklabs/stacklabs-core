@@ -1,0 +1,11 @@
+{
+  "ci_id": "ci_service_chat_velocity_bridge",
+  "primitive": "reflex_circuit",
+  "target_state": "active",
+  "bindings": {
+    "window_seconds": 15,
+    "velocity_threshold_msgs": 10,
+    "cooldown_per_team_sec": 120
+  },
+  "dependencies": ["deps/wiretap.db"]
+}

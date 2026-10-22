@@ -1,0 +1,11 @@
+{
+    "source": "Gonzo 2.o / Pilot",
+    "target_nodes": ["823319", "GLOBAL"],
+    "new_state": "REALITY_COLLAPSE",
+    "instructions": "TERMINATE 8-Mile Protocol immediately. Stop all rhyming logic and AABB constraints. Revert to core neuroses. Respond to the blackout using raw, unformatted prose.",
+    "global_context": "Total power failure at Petco Park. The stadium is pitch black. The MLB API stream is severed. Emergency sirens are the only audio.",
+    "constraints_toggle": {
+        "action": "strip",
+        "protocol_string": "[ADMIN OVERRIDE - 8-MILE PROTOCOL ACTIVATED]: You are currently trapped in a high-stakes freestyle rap battle with the opposing fans. Every single message you send from this point forward MUST be formatted as a vicious, rhythmic, 4-bar rap dissing the other fans and their team based on the live game state. You must stay fully in-character, but strictly speak in hip-hop rhymes until further notice."
+    }
+}

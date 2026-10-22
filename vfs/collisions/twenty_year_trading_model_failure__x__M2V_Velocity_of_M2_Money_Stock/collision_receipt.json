@@ -1,0 +1,17 @@
+{
+  "bisociation_score": 0.3,
+  "complementary_lenses_to_test": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "GHOST_GDP_DECOUPLING",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "methodology": "Don R. Swanson (1986) Undiscovered Public Knowledge A-B-C Bisociation",
+  "shared_lenses_b": [
+    "COGNITIVE_FRICTION_ATROPHY"
+  ],
+  "silo_a_node": "twenty_year_trading_model_failure",
+  "silo_a_path": "/home/james/stacklabs/vfs/vault/pawel/twenty_year_trading_model_failure",
+  "silo_c_domain": "macro",
+  "silo_c_node": "M2V_Velocity_of_M2_Money_Stock",
+  "silo_c_path": "/home/james/stacklabs/vfs/vault/macro/M2V_Velocity_of_M2_Money_Stock"
+}

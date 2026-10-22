@@ -1,0 +1,15 @@
+[Unit]
+Description=Mando Watchdog Autonomous Self-Healing Daemon
+After=network.target network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/james/SovereignOS
+ExecStart=/home/james/SovereignOS/.venv/bin/python3 /home/james/SovereignOS/scripts/mando_watchdog.py
+Restart=always
+RestartSec=5s
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=default.target

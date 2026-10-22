@@ -1,0 +1,10 @@
+{
+  "service": "swanson_collider_sentinel",
+  "contract_version": "SL-ARCH-2026-01-REV4",
+  "required_artifact": "/home/james/stacklabs/vfs/collisions/latest_ranked_collisions.json",
+  "required_key": "blind_spot_lenses_c_minus_a",
+  "lenses": [
+    "TOPOLOGICAL_CASCADE_FAULT",
+    "LATENCY_INVERSION_BOUNDARY"
+  ]
+}

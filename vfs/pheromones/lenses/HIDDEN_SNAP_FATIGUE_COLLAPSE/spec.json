@@ -1,0 +1,11 @@
+{
+  "category": "TRENCH_ATTRITION",
+  "created_at": "2026-10-21T04:27:35Z",
+  "description": "Flags offensive/defensive fronts where cumulative snap count exceeds threshold preceding late-game run/pass efficiency drop.",
+  "hit_count": 64,
+  "json_filter_spec": "{\"metric\":\"yards_before_contact_delta\",\"min_prior_snaps\":65,\"quarter\":4}",
+  "lens_name": "4th-Quarter Trench Snap-Count Cliff",
+  "lens_slug": "HIDDEN_SNAP_FATIGUE_COLLAPSE",
+  "sql_predicate_template": "q4_yards_before_contact_delta >= 1.8 AND cumulative_def_snaps >= 65",
+  "updated_at": "2026-10-22T07:58:16Z"
+}

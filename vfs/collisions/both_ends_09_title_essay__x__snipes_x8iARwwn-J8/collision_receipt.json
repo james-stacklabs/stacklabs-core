@@ -1,0 +1,39 @@
+{
+  "adamic_adar_raw": 0.6714,
+  "blind_spot_lenses_c_minus_a": [
+    "GHOST_GDP_DECOUPLING",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "collision_id": "both_ends_09_title_essay__x__snipes_x8iARwwn-J8",
+  "composite_raw": 0.9714,
+  "crucible_brief_3bullet": "1. STRUCTURAL THESIS LOCK (71929.4 us VFS Bisociation): I ran 'Essay 9: Both Ends of the Curve' through my local POSIX VFS Swanson Collider; it locked directly onto [SNIPES] The Pat McAfee Show Live | Monday October 20th 2025 via shared lens ASYMMETRIC_TAIL_CONTAGION, THERMODYNAMIC_ENERGY_CEILING (Adamic-Adar specificity 0.671).\n\n2. EMPIRICAL GROUND-TRUTH RECEIPT (SNIPES): 'They are an AI that is actually able to read another AI that is trying to stop them, and every once in a while they just out-joust him... Well, unplug these motherfuckers! They are taking our jobs. They are drinking...\n\n3. THE UNEXAMINED BLIND SPOT (GHOST_GDP_DECOUPLING): In my local VFS graph, The Pat McAfee Show Live | Monday October 20th 2025 also triggers GHOST_GDP_DECOUPLING (synthetic corporate ledger output decoupling from real human wage velocity and physical capacity utilization (FRED M2V / PRS85006092))—a second-order failure vector absent from your current draft that belongs in The Breeze.",
+  "empirical_node_id": "x8iARwwn-J8",
+  "empirical_node_key": "snipes:x8iARwwn-J8",
+  "empirical_receipt": " 'They are an AI that is actually able to read another AI that is trying to stop them, and every once in a while they just out-joust him... Well, unplug these motherfuckers! They are taking our jobs. They are drinking up all our water. When you just unplug them? Too late.'",
+  "empirical_silo": "snipes",
+  "empirical_title": "The Pat McAfee Show Live | Monday October 20th 2025",
+  "essay_slug": "both_ends_09_title_essay",
+  "essay_summary": "Why energy comes from both ends of a curve and none from the middle. Bell curves vs. nuclear binding energy curves. Balance living at extremes.",
+  "essay_title": "Essay 9: Both Ends of the Curve",
+  "essay_unmatched_lenses_a_minus_c": [],
+  "generated_at_utc": "2026-10-22T04:20:45.569617+00:00",
+  "normalized_score": 0.9138,
+  "rank": 2,
+  "sha256_receipt": "6ab793847ebff6e8f51e53a33752e4a5991b8af8f4fe20e23036688083a674d3",
+  "shared_lens_count": 2,
+  "shared_lenses": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "THERMODYNAMIC_ENERGY_CEILING"
+  ],
+  "symmetric_difference_lenses": [
+    "GHOST_GDP_DECOUPLING",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "three_hop_transitive_chains": [
+    "pawel:both_ends_09_title_essay -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8 -> [GHOST_GDP_DECOUPLING] -> macro:A939RX0Q048SBEA_Real_GDP_Per_Capita",
+    "pawel:both_ends_09_title_essay -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8 -> [GHOST_GDP_DECOUPLING] -> macro:GFDEGDQ188S_Federal_Debt_Percent_of_GDP_FDR_to_Present",
+    "pawel:both_ends_09_title_essay -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8 -> [GHOST_GDP_DECOUPLING] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity"
+  ],
+  "traversal_latency_us": 71929.38,
+  "triad_acoustic_snipe": "snipes:x8iARwwn-J8"
+}

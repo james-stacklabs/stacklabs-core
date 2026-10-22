@@ -1,0 +1,16 @@
+{
+  "bisociation_score": 0.4,
+  "complementary_lenses_to_test": [
+    "COGNITIVE_FRICTION_ATROPHY",
+    "THERMODYNAMIC_ENERGY_CEILING"
+  ],
+  "methodology": "Don R. Swanson (1986) Undiscovered Public Knowledge A-B-C Bisociation",
+  "shared_lenses_b": [
+    "ASYMMETRIC_TAIL_CONTAGION"
+  ],
+  "silo_a_node": "both_ends_09_title_essay",
+  "silo_a_path": "/home/james/stacklabs/vfs/vault/pawel/both_ends_09_title_essay",
+  "silo_c_domain": "swanson_benchmark",
+  "silo_c_node": "SWANSON_1988_MIGRAINE_MAGNESIUM",
+  "silo_c_path": "/home/james/stacklabs/vfs/vault/swanson_benchmark/SWANSON_1988_MIGRAINE_MAGNESIUM"
+}

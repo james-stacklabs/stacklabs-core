@@ -1,0 +1,10 @@
+{
+  "report_slug": "mer_data_electricity_monthly",
+  "data_source": "U.S. Energy Information Administration (EIA)",
+  "raw_file": "mer_data_electricity_monthly.csv",
+  "size_bytes": 1144169,
+  "associated_lenses": [
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ]
+}

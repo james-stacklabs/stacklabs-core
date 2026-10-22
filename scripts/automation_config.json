@@ -1,0 +1,15 @@
+{
+ "pipeline_id": "sovereign_event_media_v1",
+ "trigger_source": "/home/james/sovereign_inbox/camera_events/",
+ "asset_dest": "https://clio.taila01894.ts.net:3016/?domain=GLOBAL&room=persona_center",
+ "pipelines": {
+ "metsy_bird_chase": {
+ "style_anchor": "metsy_collar.png",
+ "prompt_modifiers": ["cartoon_expression_sheet", "mets_jersey_continuity", "playful_action_pose"]
+ },
+ "metsy_gulley_lounging": {
+ "style_anchor": "metsy_collar.png",
+ "prompt_modifiers": ["cartoon_expression_sheet", "lying_in_gulley_like_a_weirdo", "comic_style"]
+ }
+ }
+}

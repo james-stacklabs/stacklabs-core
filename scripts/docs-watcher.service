@@ -1,0 +1,12 @@
+[Unit]
+Description=Sovereign OS Documentation Sync Watcher Service
+After=network.target
+
+[Service]
+Type=simple
+User=james
+ExecStart=/bin/bash /home/james/SovereignOS/scripts/docs_sync_watcher.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

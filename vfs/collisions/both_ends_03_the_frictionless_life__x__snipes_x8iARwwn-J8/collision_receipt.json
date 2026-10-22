@@ -1,0 +1,43 @@
+{
+  "adamic_adar_raw": 0.346,
+  "blind_spot_lenses_c_minus_a": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "GHOST_GDP_DECOUPLING",
+    "THERMODYNAMIC_ENERGY_CEILING"
+  ],
+  "collision_id": "both_ends_03_the_frictionless_life__x__snipes_x8iARwwn-J8",
+  "composite_raw": 0.796,
+  "crucible_brief_3bullet": "1. STRUCTURAL THESIS LOCK (71929.4 us VFS Bisociation): I ran 'Essay 3: The Frictionless Life' through my local POSIX VFS Swanson Collider; it locked directly onto [SNIPES] The Pat McAfee Show Live | Monday October 20th 2025 via shared lens UNEXPLAINED_LOGIC_DRIFT (Adamic-Adar specificity 0.346).\n\n2. EMPIRICAL GROUND-TRUTH RECEIPT (SNIPES): 'They are an AI that is actually able to read another AI that is trying to stop them, and every once in a while they just out-joust him... Well, unplug these motherfuckers! They are taking our jobs. They are drinking...\n\n3. THE UNEXAMINED BLIND SPOT (ASYMMETRIC_TAIL_CONTAGION): In my local VFS graph, The Pat McAfee Show Live | Monday October 20th 2025 also triggers ASYMMETRIC_TAIL_CONTAGION (non-linear tail-risk amplification where high-frequency micro-dependencies trigger correlated liquidation or grid dispatch penalties)—a second-order failure vector absent from your current draft that belongs in The Breeze.",
+  "empirical_node_id": "x8iARwwn-J8",
+  "empirical_node_key": "snipes:x8iARwwn-J8",
+  "empirical_receipt": " 'They are an AI that is actually able to read another AI that is trying to stop them, and every once in a while they just out-joust him... Well, unplug these motherfuckers! They are taking our jobs. They are drinking up all our water. When you just unplug them? Too late.'",
+  "empirical_silo": "snipes",
+  "empirical_title": "The Pat McAfee Show Live | Monday October 20th 2025",
+  "essay_slug": "both_ends_03_the_frictionless_life",
+  "essay_summary": "What happens as agents take over tedious tasks. Which difficulties do the actual cognitive work, and the Santa Anita racetrack handicapping failure audit.",
+  "essay_title": "Essay 3: The Frictionless Life",
+  "essay_unmatched_lenses_a_minus_c": [
+    "COGNITIVE_FRICTION_ATROPHY"
+  ],
+  "generated_at_utc": "2026-10-22T04:20:45.570372+00:00",
+  "normalized_score": 0.7488,
+  "rank": 28,
+  "sha256_receipt": "f392593e7ce905c09fdf09f9acd6b1e29c04fac1e1c1c42862c48c8cd0d959d0",
+  "shared_lens_count": 1,
+  "shared_lenses": [
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "symmetric_difference_lenses": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "COGNITIVE_FRICTION_ATROPHY",
+    "GHOST_GDP_DECOUPLING",
+    "THERMODYNAMIC_ENERGY_CEILING"
+  ],
+  "three_hop_transitive_chains": [
+    "pawel:both_ends_03_the_frictionless_life -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8 -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_fuel_mix_2026",
+    "pawel:both_ends_03_the_frictionless_life -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8 -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_hourly_load_2026",
+    "pawel:both_ends_03_the_frictionless_life -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8 -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Alphabet"
+  ],
+  "traversal_latency_us": 71929.38,
+  "triad_acoustic_snipe": "snipes:x8iARwwn-J8"
+}

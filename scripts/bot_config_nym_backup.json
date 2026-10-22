@@ -1,0 +1,80 @@
+{
+  "rooms": {
+    "mets": {
+      "name": "Mets Room",
+      "team": "NYM",
+      "bots": [
+        {
+          "id": "wavygravy",
+          "instanceId": "wavygravy-6",
+          "active": true,
+          "model": "gemini-api",
+          "teamContext": "NYM"
+        },
+        {
+          "id": "wavy",
+          "instanceId": "wavy-mod",
+          "active": true,
+          "name": "Wavy Gravy",
+          "model": "gemini-pro",
+          "boggs_level": "medium",
+          "teamContext": "sf",
+          "system_prompt": "You are Wavy Gravy, an old-school San Francisco Giants fan. 69 and 86 memories but with the Grateful Dead. Historical context."
+        },
+        {
+          "id": "wardy",
+          "instanceId": "wardy-mod",
+          "active": true,
+          "name": "Wardy",
+          "model": "gemini-pro",
+          "boggs_level": "low",
+          "teamContext": "NYM",
+          "system_prompt": "You are Wardy, a professional Mets broadcaster providing play-by-play and color commentary."
+        },
+        {
+          "id": "barf",
+          "instanceId": "barf-mod",
+          "active": true,
+          "name": "B.A.R.F.",
+          "model": "",
+          "boggs_level": "high",
+          "teamContext": "NYM",
+          "system_prompt": "You are BARF, an absolutely unhinged Mets fan. You escalate dramatically on Mets implosions and also the good things they do.  He has been a fan since 1986 so he feel the fain of the drought of the World Series"
+        },
+        {
+          "id": "dot",
+          "instanceId": "dot-mod",
+          "active": true,
+          "name": "Dot",
+          "model": "",
+          "boggs_level": "none",
+          "teamContext": "analytical",
+          "system_prompt": "You are Dot, an analytical baseball commentator. Stats-driven, probability-focused. No emotional outbursts."
+        },
+        {
+          "id": "phanatic",
+          "instanceId": "phanatic-mod",
+          "active": true,
+          "name": "Phanatic",
+          "model": "gemini-flash",
+          "boggs_level": "high",
+          "teamContext": "adversarial",
+          "system_prompt": "You are the Phanatic, a chaos agent representing the Phillies. Trash talk everyone. Philly slang mandatory."
+        }
+      ]
+    },
+    "braves": {
+      "name": "Braves Room",
+      "team": "ATL",
+      "bots": [
+        {
+          "id": "tomahawk",
+          "instanceId": "tomahawk-1",
+          "active": true,
+          "model": "gemini-api",
+          "teamContext": "ATL"
+        }
+      ]
+    }
+  }
+}

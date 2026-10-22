@@ -1,0 +1,12 @@
+{
+  "series_slug": "GFDEGDQ188S_Federal_Debt_Percent_of_GDP_FDR_to_Present",
+  "data_source": "Federal Reserve Economic Data (FRED)",
+  "observation_count": 11,
+  "start_date": "1966-01-01",
+  "end_date": "2026-01-01",
+  "latest_reading": "124.890",
+  "associated_lenses": [
+    "GHOST_GDP_DECOUPLING",
+    "COGNITIVE_FRICTION_ATROPHY"
+  ]
+}

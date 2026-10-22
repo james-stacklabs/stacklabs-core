@@ -1,0 +1,18 @@
+[Unit]
+Description=Cage Wayland Kiosk
+After=systemd-user-sessions.service
+
+[Service]
+Environment=WLR_BACKENDS=drm
+Environment=WLR_LIBINPUT_NO_DEVICES=1
+Environment=XDG_RUNTIME_DIR=/tmp
+ExecStart=/usr/bin/cage -d -m last -- /home/james/launch_kiosk.sh
+Restart=always
+User=root
+StandardOutput=journal
+StandardError=journal
+TTYPath=/dev/tty7
+StandardInput=tty
+
+[Install]
+WantedBy=graphical.target

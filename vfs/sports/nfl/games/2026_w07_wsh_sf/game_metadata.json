@@ -1,0 +1,26 @@
+{
+  "game_pk": "401873008",
+  "sport": "NFL",
+  "season": 2026,
+  "week": "Week 7",
+  "date": "2026-10-19",
+  "kickoff_time": "20:15 EDT",
+  "broadcast_network": "ESPN / ABC (Monday Night Football)",
+  "venue": "Levi's Stadium, Santa Clara, CA",
+  "attendance": 68500,
+  "weather": "64\u00b0F, Clear, Wind 7mph NW",
+  "home_team": {
+    "code": "SF",
+    "name": "San Francisco 49ers",
+    "score": 23,
+    "record": "5-2"
+  },
+  "away_team": {
+    "code": "WSH",
+    "name": "Washington Commanders",
+    "score": 17,
+    "record": "5-2"
+  },
+  "headline": "49ers Edge Commanders 23-17 in Defensive Monday Night Dogfight",
+  "referee_crew": "Clete Blakeman"
+}

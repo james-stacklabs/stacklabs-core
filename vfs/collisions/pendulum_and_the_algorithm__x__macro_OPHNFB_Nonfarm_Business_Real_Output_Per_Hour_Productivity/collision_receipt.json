@@ -1,0 +1,33 @@
+{
+  "adamic_adar_raw": 0.8195,
+  "blind_spot_lenses_c_minus_a": [],
+  "collision_id": "pendulum_and_the_algorithm__x__macro_OPHNFB_Nonfarm_Business_Real_Output_Per_Hour_Productivity",
+  "composite_raw": 0.8195,
+  "crucible_brief_3bullet": "1. STRUCTURAL THESIS LOCK (71929.4 us VFS Bisociation): I ran 'The Pendulum and the Algorithm: Why AI Makes Human Labor Unnecessary' through my local POSIX VFS Swanson Collider; it locked directly onto [MACRO] OPHNFB Nonfarm Business Real Output Per Hour Productivity via shared lens COGNITIVE_FRICTION_ATROPHY, GHOST_GDP_DECOUPLING (Adamic-Adar specificity 0.820).\n\n2. EMPIRICAL GROUND-TRUTH RECEIPT (MACRO): Empirical MACRO telemetry node (OPHNFB_Nonfarm_Business_Real_Output_Per_Hour_Productivity) confirms physical bottleneck constraints. | Live Broadcast Phase-Lock: Pat McAfee Show: 'They are taking our jobs. They are drinking up all our water. When you just unplug them? Too late.'\n\n3. THE FALSIFICATION TEST FOR THE BREEZE (COGNITIVE_FRICTION_ATROPHY): To stress-test this thesis against degradation of human operator downside defense when iterative friction is removed inside a closed single-model loop, where does your framework draw the quantitative line when OPHNFB Nonfarm Business Real Output Per Hour Productivity hits non-linear tail contagion?",
+  "empirical_node_id": "OPHNFB_Nonfarm_Business_Real_Output_Per_Hour_Productivity",
+  "empirical_node_key": "macro:OPHNFB_Nonfarm_Business_Real_Output_Per_Hour_Productivity",
+  "empirical_receipt": "",
+  "empirical_silo": "macro",
+  "empirical_title": "OPHNFB Nonfarm Business Real Output Per Hour Productivity",
+  "essay_slug": "pendulum_and_the_algorithm",
+  "essay_summary": "Historical analysis of the 90-year labor rule across FDR, LBJ, and Reagan eras. Proves capital no longer needs labor to compound, leading to Ghost GDP and grid-enforced delay.",
+  "essay_title": "The Pendulum and the Algorithm: Why AI Makes Human Labor Unnecessary",
+  "essay_unmatched_lenses_a_minus_c": [
+    "THERMODYNAMIC_ENERGY_CEILING"
+  ],
+  "generated_at_utc": "2026-10-22T04:20:45.570259+00:00",
+  "normalized_score": 0.7709,
+  "rank": 23,
+  "sha256_receipt": "e96f12362cf485a4fc53e15c981b3b86d3d6b9f91d28f4cd44cdb711feffa5a0",
+  "shared_lens_count": 2,
+  "shared_lenses": [
+    "COGNITIVE_FRICTION_ATROPHY",
+    "GHOST_GDP_DECOUPLING"
+  ],
+  "symmetric_difference_lenses": [
+    "THERMODYNAMIC_ENERGY_CEILING"
+  ],
+  "three_hop_transitive_chains": [],
+  "traversal_latency_us": 71929.38,
+  "triad_acoustic_snipe": "snipes:x8iARwwn-J8"
+}

@@ -1,0 +1,16 @@
+{
+  "bisociation_score": 0.4,
+  "complementary_lenses_to_test": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "LATENCY_INVERSION_BOUNDARY"
+  ],
+  "methodology": "Don R. Swanson (1986) Undiscovered Public Knowledge A-B-C Bisociation",
+  "shared_lenses_b": [
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ],
+  "silo_a_node": "both_ends_12_one_in_a_billion",
+  "silo_a_path": "/home/james/stacklabs/vfs/vault/pawel/both_ends_12_one_in_a_billion",
+  "silo_c_domain": "cmdb",
+  "silo_c_node": "exchange-ny-02",
+  "silo_c_path": "/home/james/stacklabs/vfs/cmdb/logical/exchange-ny-02"
+}

@@ -1,0 +1,22 @@
+{
+  "video_id": "05_one_in_a_billion_evt_posix",
+  "title": "Investigation 05: One-in-a-Billion Tail Arithmetic vs. EVT & 541ns Local POSIX VFS",
+  "url": "https://bothendsofthecurve.com/essays/one-in-a-billion-every-day",
+  "duration_sec": 44.0,
+  "generated_at": "2026-10-22T09:53:21.905332+00:00",
+  "sha256_report": "f8afb7903d32317775e5b611f9406a2370b6c2dfad40aa86233d4415b264639a",
+  "summary_bullets": [
+    "Poisson Tail Law (Essay 12): At N = 10^10 operations/day and p = 10^-9 fault probability, E[K] = N*p = 10 guaranteed daily tail collisions (0.8312 CMDB bisociation score).",
+    "ArXiv 2610.27214v1 EVT Proof: Empirical CVaR collapses in scarce tail regimes; Peaks-Over-Threshold Extreme Value Theory gradients preserve deep-hedging solvency.",
+    "Essay 20 & 541ns Local POSIX VFS: Traversing 474,568 nodes locally takes 541ns per edge vs. multi-day cloud API rate-limit stalls, proving why local storage planes + .rclone-ignore gates are mandatory."
+  ],
+  "collisions": [
+    {
+      "timestamp": "arXiv:2610.27214v1 / Monolith:02",
+      "essay_target": "Essay 12: One in a Billion, Every Day & Essay 20: Owning a Piece",
+      "bridge": "Peaks-Over-Threshold EVT & 541ns Local NVMe Traversal vs. Cloud Rate-Limit Cascades",
+      "synthesis": "Connects high-frequency tail failure math directly to local POSIX VFS ownership and perimeter sync hygiene."
+    }
+  ],
+  "audio_url": "/drops/spaces/pawel/snipes/05_one_in_a_billion_evt_posix/advocate_rant.mp3"
+}

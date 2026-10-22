@@ -1,0 +1,15 @@
+[Unit]
+Description=Sovereign Knot Core Consensus Gateway (Port 3016)
+After=network.target network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/james/SovereignOS/sovereign_knot_core
+ExecStart=/home/james/SovereignOS/.venv/bin/python3 -m uvicorn app_gateway:app --host 0.0.0.0 --port 3016
+Restart=always
+RestartSec=5s
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=default.target

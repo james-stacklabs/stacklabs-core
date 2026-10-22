@@ -1,0 +1,1592 @@
+{
+  "status": "success",
+  "generated_at_utc": "2026-10-22T05:38:56Z",
+  "total_nodes_scanned": 35,
+  "total_collisions": 77,
+  "collisions": [
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__sec_risk_Constellation_Energy",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "sec_risk:Constellation_Energy",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.4,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Constellation_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Duke_Energy"
+      ],
+      "sha256_receipt": "f36f48f4b5fecdd8f9bf7ce4aba295bffe29129a3e00bd51c93977ec2e82b068",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 1
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__sec_risk_Duke_Energy",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "sec_risk:Duke_Energy",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.4,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Duke_Energy",
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Duke_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy"
+      ],
+      "sha256_receipt": "fa2f90701ab8656d51efe869c25004ae31b3ff2ac116b03b91855bebcec15f47",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 2
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__sec_risk_NextEra_Energy",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "sec_risk:NextEra_Energy",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.4,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:NextEra_Energy",
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:NextEra_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy"
+      ],
+      "sha256_receipt": "7e1bfca493dfe74fd6e541829e0d31b3df1f0ea08ed09c2cba6c6878307cd642",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 3
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__ercot_ercot_hourly_load_2026",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "ercot:ercot_hourly_load_2026",
+      "target_silo": "ercot",
+      "normalized_score": 0.4,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_hourly_load_2026",
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_hourly_load_2026 -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy"
+      ],
+      "sha256_receipt": "24e66fac64750e39df5b9e6a092eaec4d06834715b56632b004c7b4ad75744a6",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 4
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__ercot_ercot_fuel_mix_2026",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "ercot:ercot_fuel_mix_2026",
+      "target_silo": "ercot",
+      "normalized_score": 0.4,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_fuel_mix_2026",
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_fuel_mix_2026 -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy"
+      ],
+      "sha256_receipt": "7b5c53dd182d0112b6618060a7d4d5709794272afc2860e0400fae5297a62606",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 5
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__sec_risk_Alphabet",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "sec_risk:Alphabet",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.4,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Alphabet",
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Alphabet -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy"
+      ],
+      "sha256_receipt": "81afca8324e3b318c75a6686e329d006c4a82d5d0475a996a315f8c444dbbd11",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 6
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__sec_risk_Microsoft",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "sec_risk:Microsoft",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.4,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Microsoft",
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Microsoft -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy"
+      ],
+      "sha256_receipt": "b908906a4544f2a4b618659be17426111338f18458f61a8ad966e5478384c288",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 7
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__snipes_x8iARwwn-J8",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "snipes:x8iARwwn-J8",
+      "target_silo": "snipes",
+      "normalized_score": 0.3333,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "GHOST_GDP_DECOUPLING",
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8",
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8 -> [GHOST_GDP_DECOUPLING] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity",
+        "monoliths:monolith_02_latency_boundary_collapses -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8 -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "8ac4d266bf7a98217113a49b9cba582f52e1c6a6725c238cbd6b4a019b0d281e",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 8
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__snipes_x8iARwwn-J8",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "snipes:x8iARwwn-J8",
+      "target_silo": "snipes",
+      "normalized_score": 0.3333,
+      "shared_lenses": [
+        "THERMODYNAMIC_ENERGY_CEILING",
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "GHOST_GDP_DECOUPLING"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8 -> [GHOST_GDP_DECOUPLING] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8 -> [ASYMMETRIC_TAIL_CONTAGION] -> monoliths:monolith_02_latency_boundary_collapses"
+      ],
+      "sha256_receipt": "d0c05739578fc2189fa1cdc929f02cf41be1d6c4dee9ddd515ed2bf09c5b8b30",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 9
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__snipes_x8iARwwn-J8",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "snipes:x8iARwwn-J8",
+      "target_silo": "snipes",
+      "normalized_score": 0.3333,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "GHOST_GDP_DECOUPLING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "THERMODYNAMIC_ENERGY_CEILING",
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> snipes:x8iARwwn-J8",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> snipes:x8iARwwn-J8 -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> snipes:x8iARwwn-J8 -> [THERMODYNAMIC_ENERGY_CEILING] -> monoliths:monolith_02_latency_boundary_collapses"
+      ],
+      "sha256_receipt": "236b0e69835f4a3093768c01f380b9e0ab04927c02c5694901cffea9896147d7",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 10
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "0b5bb4549f2280df906a8e758881851b87c0601feca3ae5e0043585c6044562d",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 11
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "66fc3aeee4a2c3df8d0bef36130ceb0c0d902280a2cdbf24c52a750da8a9f671",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 12
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "1dea671c99ceaa2236f874f07edb64f4a25973730f84a06e056c95fdc151bbef",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 13
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "57ec41213ea91ff4684fc5653969adbc91760df6863372d4fe6c89099ec141bb",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 14
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "d24ddcb163b22a58c45f92600765f185e5a7d25090b9ef7fa446b68c28198865",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 15
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "6d4af2c3f1835f82f3c6a7ea2cfc05febf35800e850d29bb84dfb522f1f989d0",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 16
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "c27b0302053506ec3ec3981e4aa27626763c2e97ed78ec38686e88d442c58b49",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 17
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "4bfb619f5c2972aa2a9a88b8126c10880a18611ae92398dcae03fe8aa8369ac2",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 18
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "911026a352cef5135d99f71865e1c39a62cf807c21ef7ce6772207df177ada30",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 19
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "ab3c6551399fc36be544bc1b39b9d3efc50d83f24164eb9162942303d98ebd86",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 20
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "ceede8101cb824edea218e441ade7779b3b3994447b0325540f0c932be5362cd",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 21
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "8d0b95dde6f010627ec54a5e4f40e1d14ea15040a6addad8af7bf19f2cc0fe19",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 22
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "9e0749c301d7977b137cdaa1dd7ecb72c890f89c97506cbc8ba23a05551d2977",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 23
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "f1d4d8d3b09e9b25d62c221dc2b053ec0c2ea5fe8fac0f06771eb2495be09315",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 24
+    },
+    {
+      "collision_id": "monolith_02_latency_boundary_collapses__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1",
+      "source_monolith": "monoliths:monolith_02_latency_boundary_collapses",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1",
+        "monoliths:monolith_02_latency_boundary_collapses -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "5dfbe0e9451dbd43622527f6a299a77e8a6244f5e6930b4d2b55e6a14a0c0144",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 25
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1 -> [LATENCY_INVERSION_BOUNDARY] -> monoliths:monolith_02_latency_boundary_collapses"
+      ],
+      "sha256_receipt": "8e95c2c9ad4d565ecd39ab1839312a772793697168f96c8ff4379d693d6a5b46",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 26
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "b92d9b571418aab1ab4f0291ca334e2991ed102db6818fc0b6ff6efe22298b4f",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 27
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "be698846f065c827dfda6f9305dc2df0b63f46ef757e50e779abad7a744d5fca",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 28
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "89cdbb009422c94940bab01ecce54c9c9cf52e88ff253798678e408751e4df35",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 29
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "ff6cc9ca5e43c1475591de056dbb887392fda0c6f549ef0c1f390551add209be",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 30
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "6a0aa49a5ab31288e3b0363ac361937148c58a1a153ba1f50d807d9572fcc15c",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 31
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "d61d90c58fc427c8b244a43206a2b87e6b838527989a52cdcd7642aea8465e03",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 32
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "0948f2aaaffd4c5d195b8a6d57549d5c83c9c3d5c31a3a824fd52a77b736a4fa",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 33
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "a0fa933bcd3ded31d14b48e98374b1631f31920a8e2cd98044e3054f9a2199a8",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 34
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "6f27cbcd8e7fd917f921f7bbbd5ea4e00477bee533a0f3b4261f7ad8d1608cbf",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 35
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "2fd39953d50cd7430bbec4d9e6e1c58c1b93112dfd6c1c814d227fd2c071d544",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 36
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "7f5e07d0783f9c28c67e8b44d0e9f458142c5f3047b043f6a7ca510854b84385",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 37
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "2bc232fd6316ebc9c840421e581471543772fa42ce94dd99206535d8777c967f",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 38
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "ee8ed04b059b72f8ab4c825723c1011f47c80abbb06c313d947e8edeea2f813e",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 39
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [UNEXPLAINED_LOGIC_DRIFT] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1 -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1"
+      ],
+      "sha256_receipt": "24fdadcb5039157aee55d40a8f40f8df5f07289f57eb8d051ecf7d96bb2308f0",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 40
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__macro_M2SL_M2_Money_Stock_Broad_Liquidity",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "macro:M2SL_M2_Money_Stock_Broad_Liquidity",
+      "target_silo": "macro",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "GHOST_GDP_DECOUPLING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "COGNITIVE_FRICTION_ATROPHY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity -> [COGNITIVE_FRICTION_ATROPHY] -> macro:OPHNFB_Nonfarm_Business_Real_Output_Per_Hour_Productivity"
+      ],
+      "sha256_receipt": "979175365adbb1c98c6897bc34a5ac7f7a48f94daf328fd24e7fa341cb5489cc",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 41
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__macro_OPHNFB_Nonfarm_Business_Real_Output_Per_Hour_Productivity",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "macro:OPHNFB_Nonfarm_Business_Real_Output_Per_Hour_Productivity",
+      "target_silo": "macro",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "GHOST_GDP_DECOUPLING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "COGNITIVE_FRICTION_ATROPHY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:OPHNFB_Nonfarm_Business_Real_Output_Per_Hour_Productivity",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:OPHNFB_Nonfarm_Business_Real_Output_Per_Hour_Productivity -> [COGNITIVE_FRICTION_ATROPHY] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity"
+      ],
+      "sha256_receipt": "ea0f6db134810197a9a93dd56b5730f467ca4f8791334f364cc588bccfa89586",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 42
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__macro_TCU_Total_Capacity_Utilization_Industry",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "macro:TCU_Total_Capacity_Utilization_Industry",
+      "target_silo": "macro",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "GHOST_GDP_DECOUPLING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "COGNITIVE_FRICTION_ATROPHY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:TCU_Total_Capacity_Utilization_Industry",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:TCU_Total_Capacity_Utilization_Industry -> [COGNITIVE_FRICTION_ATROPHY] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity"
+      ],
+      "sha256_receipt": "9515e6ae0038277911764028da84e32964a41440e61081c71629bffb26f68aaf",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 43
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__macro_UNRATE_Civilian_Unemployment_Rate",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "macro:UNRATE_Civilian_Unemployment_Rate",
+      "target_silo": "macro",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "GHOST_GDP_DECOUPLING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "COGNITIVE_FRICTION_ATROPHY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:UNRATE_Civilian_Unemployment_Rate",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:UNRATE_Civilian_Unemployment_Rate -> [COGNITIVE_FRICTION_ATROPHY] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity"
+      ],
+      "sha256_receipt": "7bc39f96c3305bb25f5a7f859a9617ffee2b88cf02148ff26fdb1ef0e590396a",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 44
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__macro_PRS85006092_Labor_Share_Nonfarm_Business_Sector",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "macro:PRS85006092_Labor_Share_Nonfarm_Business_Sector",
+      "target_silo": "macro",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "GHOST_GDP_DECOUPLING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "COGNITIVE_FRICTION_ATROPHY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:PRS85006092_Labor_Share_Nonfarm_Business_Sector",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:PRS85006092_Labor_Share_Nonfarm_Business_Sector -> [COGNITIVE_FRICTION_ATROPHY] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity"
+      ],
+      "sha256_receipt": "6e33b212996c43a39000ffcac40d0900a7045ed7f04cedcd1069465c4f921355",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 45
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__macro_M2V_Velocity_of_M2_Money_Stock",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "macro:M2V_Velocity_of_M2_Money_Stock",
+      "target_silo": "macro",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "GHOST_GDP_DECOUPLING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "COGNITIVE_FRICTION_ATROPHY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:M2V_Velocity_of_M2_Money_Stock",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:M2V_Velocity_of_M2_Money_Stock -> [COGNITIVE_FRICTION_ATROPHY] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity"
+      ],
+      "sha256_receipt": "5027b07fff7fd61fdc63d9ebb3176542a72d1fe8afec4325517a5a508a7a858b",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 46
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__macro_A939RX0Q048SBEA_Real_GDP_Per_Capita",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "macro:A939RX0Q048SBEA_Real_GDP_Per_Capita",
+      "target_silo": "macro",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "GHOST_GDP_DECOUPLING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "COGNITIVE_FRICTION_ATROPHY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:A939RX0Q048SBEA_Real_GDP_Per_Capita",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:A939RX0Q048SBEA_Real_GDP_Per_Capita -> [COGNITIVE_FRICTION_ATROPHY] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity"
+      ],
+      "sha256_receipt": "113cc6cf9e90dea5105894975c7864021179bbd20c7a779a0bf02b425a45acb5",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 47
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__macro_GFDEGDQ188S_Federal_Debt_Percent_of_GDP_FDR_to_Present",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "macro:GFDEGDQ188S_Federal_Debt_Percent_of_GDP_FDR_to_Present",
+      "target_silo": "macro",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "GHOST_GDP_DECOUPLING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "COGNITIVE_FRICTION_ATROPHY"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:GFDEGDQ188S_Federal_Debt_Percent_of_GDP_FDR_to_Present",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [GHOST_GDP_DECOUPLING] -> macro:GFDEGDQ188S_Federal_Debt_Percent_of_GDP_FDR_to_Present -> [COGNITIVE_FRICTION_ATROPHY] -> macro:M2SL_M2_Money_Stock_Broad_Liquidity"
+      ],
+      "sha256_receipt": "b91eb2b02cfc6ccb4d3315daacfda43fd03b9e681b93b73c00e7e15f3713b73f",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 48
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30055v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "9e8ca89d84ae2efa2a7fb15e5d118f0c605129ae8b23afca25767ed0a97647ce",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 49
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29208v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "c7b3dceeee111f6cc62018fe5230fdb68013e93933d35fd4c5ae1fba18a26f50",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 50
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28471v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "14020cea708810d337feb96dad06a1b242ac0de00a122ec0a30c0d16efbb4275",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 51
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "e06d79dac10f6eba3e5dd2f09024ee6b8fc2501c6b1ac2fabfda4a2a79a8a72a",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 52
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "90e4e9b84972a22d8fe2c581bc8d48abe0ec94074f77933e62e71b326181c9d8",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 53
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28582v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "6b940d566ba3afd58171a27b552aafc1c44d76a3e8889fe12a69f0b21cb54174",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 54
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_29847v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "f5ba0c8556eb967eb60e5036491b533e73a92b5bb3069fb62c9cd3b04e540aaa",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 55
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Theoretical_Economics_Mechanism_Design_econ_TH_2610_28783v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "30659e325cf38ca4f55ca3ec0fbc8e7c6c154d3ee1e7e39ab036f9475c557b58",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 56
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29988v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "b316def2bb7b5fb4ea1aaffd644c7213bc75b79c7de138720878e5eaae7222b0",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 57
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29873v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "32a8945854a4cfe2ca8ba77b3a7a9c5e4eb44f03cd93136a5bb23094cc3e22b7",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 58
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_29652v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "1389216bd4d75956dcaf9bbde43e6c85516ee6b310116c334936dc40b45609b3",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 59
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Distributed_Parallel_Cluster_Computing_cs_DC_2610_29820v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "3c8118474578d6d4aff9263d13c6be555508ee62aaf0848df56d156c99b29794",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 60
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "a5307d32bac9b340bad4f80441e84620275bdf95b9be53c940ee2b9e93849a4b",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 61
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_26324v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "d06076d1d5dccb7715e4c8559989eb58c9b48137b2845f43be93644c837167b1",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 62
+    },
+    {
+      "collision_id": "monolith_01_posix_vfs_enterprise__x__arxiv_Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1",
+      "source_monolith": "monoliths:monolith_01_posix_vfs_enterprise",
+      "target_node": "arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1",
+      "target_silo": "arxiv",
+      "normalized_score": 0.2,
+      "shared_lenses": [
+        "LATENCY_INVERSION_BOUNDARY"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "UNEXPLAINED_LOGIC_DRIFT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1",
+        "monoliths:monolith_01_posix_vfs_enterprise -> [LATENCY_INVERSION_BOUNDARY] -> arxiv:Risk_Management_Market_Microstructure_q-fin_RM_2610_27214v1 -> [UNEXPLAINED_LOGIC_DRIFT] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "5a6643c92d03786c6aa68fac3b07033bedb972489d7221b5503d9e597ba4b86f",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 63
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__sec_risk_Constellation_Energy",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "sec_risk:Constellation_Energy",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Constellation_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Duke_Energy",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Constellation_Energy -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "6903e25ae9fd2516d3c3510ca5e5754d979f9548df769cd172d027ed71e8a88a",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 64
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__sec_risk_Duke_Energy",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "sec_risk:Duke_Energy",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Duke_Energy",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Duke_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Duke_Energy -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "fb86b95bdab01c71492e73898ac84b38a55fa8778ee2ca4b17c25c49c247932a",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 65
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__sec_risk_NextEra_Energy",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "sec_risk:NextEra_Energy",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:NextEra_Energy",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:NextEra_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:NextEra_Energy -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "dd002b2e47ad58a3b7569fa43723c6a9deab5a1df00eaade5b0b0c4203df40d7",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 66
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__ercot_ercot_hourly_load_2026",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "ercot:ercot_hourly_load_2026",
+      "target_silo": "ercot",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> ercot:ercot_hourly_load_2026",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> ercot:ercot_hourly_load_2026 -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> ercot:ercot_hourly_load_2026 -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "8dc71fe70567fbf46fca893ca9b15e17340ac9cbe055a987c501700fe6439bcb",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 67
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__ercot_ercot_fuel_mix_2026",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "ercot:ercot_fuel_mix_2026",
+      "target_silo": "ercot",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> ercot:ercot_fuel_mix_2026",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> ercot:ercot_fuel_mix_2026 -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> ercot:ercot_fuel_mix_2026 -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "0f65e5ccbd7034266ad4b3e3b347bd4745439e422a7b43dda9ad607d8d10d08f",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 68
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__sec_risk_Alphabet",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "sec_risk:Alphabet",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Alphabet",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Alphabet -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Alphabet -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "0e5996ed2600d7fa8c374158eb6e2b00c2ca92629b5149a13cf40553d683bf39",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 69
+    },
+    {
+      "collision_id": "monolith_04_small_ball_soto_tensor_core__x__sec_risk_Microsoft",
+      "source_monolith": "monoliths:monolith_04_small_ball_soto_tensor_core",
+      "target_node": "sec_risk:Microsoft",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "THERMODYNAMIC_ENERGY_CEILING"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "ASYMMETRIC_TAIL_CONTAGION",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Microsoft",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Microsoft -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_04_small_ball_soto_tensor_core -> [THERMODYNAMIC_ENERGY_CEILING] -> sec_risk:Microsoft -> [ASYMMETRIC_TAIL_CONTAGION] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "20e223e4c9db29e7d95691ddb1ab02584680d0343e6eafc293e2ef5047433398",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 70
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__sec_risk_Constellation_Energy",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "sec_risk:Constellation_Energy",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "THERMODYNAMIC_ENERGY_CEILING",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Constellation_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Duke_Energy",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Constellation_Energy -> [THERMODYNAMIC_ENERGY_CEILING] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "b78f10afbd15084f5bb98e66eaa5539f07b9bafb294d2486a8d45bfde55fa74d",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 71
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__sec_risk_Duke_Energy",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "sec_risk:Duke_Energy",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "THERMODYNAMIC_ENERGY_CEILING",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Duke_Energy",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Duke_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Duke_Energy -> [THERMODYNAMIC_ENERGY_CEILING] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "1c1ed482b2adea412ee6c57ba42e3e76ef87d8eed4f7b8ccccf1ae3dd7bf09ec",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 72
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__sec_risk_NextEra_Energy",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "sec_risk:NextEra_Energy",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "THERMODYNAMIC_ENERGY_CEILING",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:NextEra_Energy",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:NextEra_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:NextEra_Energy -> [THERMODYNAMIC_ENERGY_CEILING] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "ae17db9444f40db5670dea6a8eca125a48934f0cb11dd70c98f476960b4021f1",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 73
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__ercot_ercot_hourly_load_2026",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "ercot:ercot_hourly_load_2026",
+      "target_silo": "ercot",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "THERMODYNAMIC_ENERGY_CEILING",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_hourly_load_2026",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_hourly_load_2026 -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_hourly_load_2026 -> [THERMODYNAMIC_ENERGY_CEILING] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "3a305ce5e4f5ac9e8fdc3353d0c3004c64b3f5a201fb722c10334cc728e6b5dc",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 74
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__ercot_ercot_fuel_mix_2026",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "ercot:ercot_fuel_mix_2026",
+      "target_silo": "ercot",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "THERMODYNAMIC_ENERGY_CEILING",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_fuel_mix_2026",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_fuel_mix_2026 -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_fuel_mix_2026 -> [THERMODYNAMIC_ENERGY_CEILING] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "2de0a1d7c10827f677186d8ba7b888c65d586f19f133bd9bcfacf3bf4cf25108",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 75
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__sec_risk_Alphabet",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "sec_risk:Alphabet",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "THERMODYNAMIC_ENERGY_CEILING",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Alphabet",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Alphabet -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Alphabet -> [THERMODYNAMIC_ENERGY_CEILING] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "38c60b9f4052d7bd8e4d8adae6a7e8a01cbb2fc10ec4145e6e130ee631eb897f",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 76
+    },
+    {
+      "collision_id": "monolith_03_ohtani_reconciliation_tax__x__sec_risk_Microsoft",
+      "source_monolith": "monoliths:monolith_03_ohtani_reconciliation_tax",
+      "target_node": "sec_risk:Microsoft",
+      "target_silo": "sec_risk",
+      "normalized_score": 0.1667,
+      "shared_lenses": [
+        "ASYMMETRIC_TAIL_CONTAGION"
+      ],
+      "blind_spot_lenses_c_minus_a": [
+        "THERMODYNAMIC_ENERGY_CEILING",
+        "TOPOLOGICAL_CASCADE_FAULT"
+      ],
+      "transitive_chains": [
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Microsoft",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Microsoft -> [TOPOLOGICAL_CASCADE_FAULT] -> sec_risk:Constellation_Energy",
+        "monoliths:monolith_03_ohtani_reconciliation_tax -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Microsoft -> [THERMODYNAMIC_ENERGY_CEILING] -> snipes:x8iARwwn-J8"
+      ],
+      "sha256_receipt": "684e2c167b1103148e15b261f9297caf3763e8c118ec658a51047e528617f3de",
+      "discovered_at_utc": "2026-10-22T05:38:56Z",
+      "rank": 77
+    }
+  ]
+}

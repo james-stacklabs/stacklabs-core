@@ -1,0 +1,72 @@
+[
+  {
+    "id": "19861025_001",
+    "inning": 10,
+    "outs": 0,
+    "batter": "Wally Backman",
+    "pitcher": "Calvin Schiraldi",
+    "outcome": "flied_out",
+    "location": "left_field",
+    "description": "Backman flied out to left."
+  },
+  {
+    "id": "19861025_002",
+    "inning": 10,
+    "outs": 1,
+    "batter": "Keith Hernandez",
+    "pitcher": "Calvin Schiraldi",
+    "outcome": "flied_out",
+    "location": "center_field",
+    "description": "Hernandez flied to center."
+  },
+  {
+    "id": "19861025_003",
+    "inning": 10,
+    "outs": 2,
+    "batter": "Gary Carter",
+    "pitcher": "Calvin Schiraldi",
+    "outcome": "single",
+    "location": "left_field",
+    "description": "Carter singled to left."
+  },
+  {
+    "id": "19861025_004",
+    "inning": 10,
+    "outs": 2,
+    "batter": "Kevin Mitchell",
+    "pitcher": "Calvin Schiraldi",
+    "outcome": "single",
+    "location": "center_field",
+    "description": "Mitchell singled to center; Carter to second."
+  },
+  {
+    "id": "19861025_005",
+    "inning": 10,
+    "outs": 2,
+    "batter": "Ray Knight",
+    "pitcher": "Calvin Schiraldi",
+    "outcome": "single",
+    "location": "center_field",
+    "description": "Knight singled to center; Carter scored; Mitchell to third."
+  },
+  {
+    "id": "19861025_006",
+    "inning": 10,
+    "outs": 2,
+    "batter": "Mookie Wilson",
+    "pitcher": "Bob Stanley",
+    "outcome": "wild_pitch",
+    "location": "home_plate",
+    "description": "Stanley threw a wild pitch; Mitchell scored; Knight to second."
+  },
+  {
+    "id": "19861025_007",
+    "inning": 10,
+    "outs": 2,
+    "batter": "Mookie Wilson",
+    "pitcher": "Bob Stanley",
+    "outcome": "error",
+    "location": "first_base",
+    "description": "Wilson reached on an error by Buckner; Knight scored."
+  }
+]

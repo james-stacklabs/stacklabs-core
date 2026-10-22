@@ -1,0 +1,12 @@
+{
+  "bisociation_score": 0.87,
+  "complementary_lenses_to_test": [
+    "EXPLOSIVE_PLAY_SKEW_MIRAGE"
+  ],
+  "node_a": "ALA",
+  "node_c": "CFB_SLATE",
+  "shared_lenses_b": [
+    "HIDDEN_SNAP_FATIGUE_COLLAPSE",
+    "LOW_VOL_MONEY_DOWN_STUFF"
+  ]
+}

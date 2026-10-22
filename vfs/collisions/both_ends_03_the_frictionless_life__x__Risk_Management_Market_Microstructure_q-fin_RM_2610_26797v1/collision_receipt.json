@@ -1,0 +1,16 @@
+{
+  "bisociation_score": 0.4,
+  "complementary_lenses_to_test": [
+    "COGNITIVE_FRICTION_ATROPHY",
+    "LATENCY_INVERSION_BOUNDARY"
+  ],
+  "methodology": "Don R. Swanson (1986) Undiscovered Public Knowledge A-B-C Bisociation",
+  "shared_lenses_b": [
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "silo_a_node": "both_ends_03_the_frictionless_life",
+  "silo_a_path": "/home/james/stacklabs/vfs/vault/pawel/both_ends_03_the_frictionless_life",
+  "silo_c_domain": "arxiv",
+  "silo_c_node": "Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1",
+  "silo_c_path": "/home/james/stacklabs/vfs/vault/arxiv/Risk_Management_Market_Microstructure_q-fin_RM_2610_26797v1"
+}

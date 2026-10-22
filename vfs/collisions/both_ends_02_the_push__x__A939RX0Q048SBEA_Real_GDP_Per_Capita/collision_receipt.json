@@ -1,0 +1,16 @@
+{
+  "bisociation_score": 0.4,
+  "complementary_lenses_to_test": [
+    "GHOST_GDP_DECOUPLING",
+    "LATENCY_INVERSION_BOUNDARY"
+  ],
+  "methodology": "Don R. Swanson (1986) Undiscovered Public Knowledge A-B-C Bisociation",
+  "shared_lenses_b": [
+    "COGNITIVE_FRICTION_ATROPHY"
+  ],
+  "silo_a_node": "both_ends_02_the_push",
+  "silo_a_path": "/home/james/stacklabs/vfs/vault/pawel/both_ends_02_the_push",
+  "silo_c_domain": "macro",
+  "silo_c_node": "A939RX0Q048SBEA_Real_GDP_Per_Capita",
+  "silo_c_path": "/home/james/stacklabs/vfs/vault/macro/A939RX0Q048SBEA_Real_GDP_Per_Capita"
+}

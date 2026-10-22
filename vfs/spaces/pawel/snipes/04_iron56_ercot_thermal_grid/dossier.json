@@ -1,0 +1,22 @@
+{
+  "video_id": "04_iron56_ercot_thermal_grid",
+  "title": "Investigation 04: Iron-56 Equilibrium Blindness vs. ERCOT Thermal Grid & Transformer Oil",
+  "url": "https://bothendsofthecurve.com/essays/both-ends-of-the-curve",
+  "duration_sec": 42.0,
+  "generated_at": "2026-10-22T09:51:10.875362+00:00",
+  "sha256_report": "16e56ddab50d431be6d5fc009353ed6817219e31bcc9d4dc700c9ba038553fb6",
+  "summary_bullets": [
+    "Iron-56 & 3,000K Kiln Isomorphism: At the peak of nuclear binding energy (d(E_B/A)/dA = 0) and thermal cavity equilibrium (Delta T -> 0), extractable work and optical contrast vanish.",
+    "ERCOT & SEC Constellation Lock (1.000 Bisociation): Consensus AI capital crowds the warm middle while physical substation transformers face multi-year interconnect queues.",
+    "Tail Breakdown Gate: Dielectric transformer oil (energy.cartridge Node 7) undergoes discontinuous gas-bubble phase transition above 110C during ERCOT peak load spikes."
+  ],
+  "collisions": [
+    {
+      "timestamp": "ERCOT:2026 / Wiki:949041",
+      "essay_target": "Essay 9: Both Ends of the Curve & Regime-Shift Tail Friction",
+      "bridge": "Iron-56 Binding Peak & 3,000K Kiln Glare vs. Substation Transformer Dielectric Breakdown",
+      "synthesis": "Unifies nuclear binding energy, blackbody radiation, and physical power grid bottlenecks into a single equilibrium-blindness law."
+    }
+  ],
+  "audio_url": "/drops/spaces/pawel/snipes/04_iron56_ercot_thermal_grid/advocate_rant.mp3"
+}

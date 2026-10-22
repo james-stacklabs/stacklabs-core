@@ -1,0 +1,9 @@
+{
+  "entity_name": "NextEra_Energy",
+  "cik": "0000753308",
+  "source": "SEC EDGAR Form 10-K Disclosures",
+  "associated_lenses": [
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ]
+}

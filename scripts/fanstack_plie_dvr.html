@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FanStack PLIE DVR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-void: #0f1115;
+            --neon-cyan: #00f3ff;
+            --neon-magenta: #ff00ff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--deep-void);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--neon-cyan);
+            margin: 0;
+        }
+
+        .dashboard {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .panel {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .panel-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-magenta);
+            margin-bottom: 15px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+        }
+
+        .chat-window {
+            height: 350px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-bubble {
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            max-width: 85%;
+        }
+
+        .chat-dot {
+            background: rgba(0, 243, 255, 0.2);
+            border-left: 3px solid var(--neon-cyan);
+            align-self: flex-start;
+        }
+
+        .chat-barf {
+            background: rgba(255, 0, 255, 0.2);
+            border-right: 3px solid var(--neon-magenta);
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .rom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.85rem;
+        }
+
+        .rom-table th, .rom-table td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .rom-table th { color: var(--neon-cyan); }
+        .row-active { background: rgba(0, 243, 255, 0.2); transition: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>FANSTACK <span>DVR PLIE ENGINE</span></h1>
+        <div style="font-family: monospace; color: #aaa;">Game: 1986 WS Game 6 (NYM vs BOS)</div>
+    </div>
+
+    <div class="dashboard">
+        <!-- Video Player -->
+        <div class="panel">
+            <div class="panel-title">HoloDex Main Viewport</div>
+            <video id="game-video" controls poster="https://img.youtube.com/vi/B0jV_kNs2p0/maxresdefault.jpg">
+                <!-- Using the local python route to bypass CORS -->
+                <source src="/media/YTDown.com_YouTube_1986-World-Series-Game-6-Red-Sox-_-Mets_Media_B0jV_kNs2p0_001_480p.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            
+            <table class="rom-table" id="rom-matrix">
+                <thead>
+                    <tr>
+                        <th>TIME</th>
+                        <th>BATTER</th>
+                        <th>EVENT</th>
+                        <th>EV (mph)</th>
+                        <th>LA (deg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Chat / Govee Monitor -->
+        <div class="panel">
+            <div class="panel-title">Persona Stream & UDP Array</div>
+            <div class="chat-window" id="chat">
+                <div class="chat-bubble chat-dot"><strong>[Dot] (System)</strong><br>Awaiting video ignition. ROM matrix loaded and holding for sync.</div>
+            </div>
+            
+            <div style="margin-top:20px; text-align: center; font-family: monospace; font-size: 0.8rem; color: #888;" id="udp-status">
+                Govee Array: [STANDBY]
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // MOCK SYNCED ROM:
+        // We estimate these seconds. Extracted from the Bro-Decoder.
+        // Once `ffmpeg` extracts the frames, you can update "trigger_time" locally to perfectly align.
+        const synchronizedROM = [
+            { trigger_time: 15, batter: "K. Mitchell", outcome: "single", ev: 98.4, la: 8.2, dot: "Mitchell loops it into center. Exit Velo clocked at 98.4. Mets are alive.", barf: "KEVIN MITCHELL! THEY AINT DEAD YET!", colorCmd: "hit" },
+            { trigger_time: 35, batter: "R. Knight", outcome: "single", ev: 91.2, la: 14.5, dot: "Knight follows it up. 91.2 mph over second base.", barf: "O-M-G CARTER SCORES!! ONE RUN GAME!", colorCmd: "hit" },
+            { trigger_time: 55, batter: "M. Wilson", outcome: "wild_pitch", ev: "N/A", la: "N/A", dot: "Stanley loses grip on the 2-2 pitch. Mitchell scores from third.", barf: "WILD PITCH! TIE GAME! TIE GAME! I CAN'T BREATHE!", colorCmd: "wild_pitch" },
+            { trigger_time: 75, batter: "M. Wilson", outcome: "error", ev: 71.3, la: -14.2, dot: "Wilson grounds a slow chopper down the first base line. -14.2 LA.", barf: "IT GETS THROUGH BUCKNER! HERE COMES KNIGHT! METS WIN! METS WIN!", colorCmd: "error" }
+        ];
+
+        const video = document.getElementById('game-video');
+        const chatWindow = document.getElementById('chat');
+        const udpStatus = document.getElementById('udp-status');
+        const matrixBody = document.querySelector('#rom-matrix tbody');
+
+        // Populate Table
+        synchronizedROM.forEach((row, i) => {
+            const tr = document.createElement('tr');
+            tr.id = `row-${i}`;
+            tr.innerHTML = `
+                <td>00:${row.trigger_time < 10 ? '0'+row.trigger_time:row.trigger_time}</td>
+                <td>${row.batter}</td>
+                <td>${row.outcome.toUpperCase()}</td>
+                <td>${row.ev}</td>
+                <td>${row.la}</td>
+            `;
+            matrixBody.appendChild(tr);
+        });
+
+        function appendChat(who, text) {
+            const div = document.createElement('div');
+            div.className = `chat-bubble chat-${who}`;
+            div.innerHTML = `<strong>[${who === 'dot' ? 'Dot' : 'Barf'}]</strong><br>${text}`;
+            chatWindow.appendChild(div);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        async function triggerUDP(command) {
+            udpStatus.innerText = "Govee Array: [FIRING 8 NODES...]";
+            udpStatus.style.color = "var(--neon-magenta)";
+            
+            try {
+                await fetch('/api/govee/trigger', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ event_type: command })
+                });
+                setTimeout(() => {
+                    udpStatus.innerText = "Govee Array: [DISPATCHED]";
+                    udpStatus.style.color = "var(--neon-cyan)";
+                }, 1000);
+            } catch(e) {
+                console.error(e);
+            }
+        }
+
+        let currentEventIdx = 0;
+
+        video.addEventListener('timeupdate', () => {
+            const ct = video.currentTime;
+            if(currentEventIdx < synchronizedROM.length) {
+                const nxt = synchronizedROM[currentEventIdx];
+                if(ct > nxt.trigger_time) {
+                    // Trigger EVENT!
+                    document.getElementById(`row-${currentEventIdx}`).classList.add('row-active');
+                    appendChat('dot', nxt.dot);
+                    setTimeout(() => appendChat('barf', nxt.barf), 1500);
+                    
+                    triggerUDP(nxt.colorCmd);
+                    currentEventIdx++;
+                }
+            }
+        });
+
+        // Seek reset logic
+        video.addEventListener('seeked', () => {
+            currentEventIdx = synchronizedROM.findIndex(r => r.trigger_time > video.currentTime);
+            if(currentEventIdx === -1) currentEventIdx = synchronizedROM.length;
+            // Clear highlights
+            document.querySelectorAll('.row-active').forEach(e => e.classList.remove('row-active'));
+        });
+    </script>
+</body>
+</html>

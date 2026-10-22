@@ -1,0 +1,22 @@
+{
+  "video_id": "02_opaque_logic_teacher_bias",
+  "title": "Investigation 02: Three Lines of Opaque Logic vs. ArXiv Teacher Bias & Control Layers",
+  "url": "https://bothendsofthecurve.com/essays/twenty-year-trading-model-shock",
+  "duration_sec": 43.0,
+  "generated_at": "2026-10-22T09:47:05.126285+00:00",
+  "sha256_report": "7cf206cb9ea6d3562157448b6215a637b8c36a0e641bd995459884ce7143d59b",
+  "summary_bullets": [
+    "ArXiv 2610.26797v1 Proof (231,521 Outcomes): Pretrained teacher representations carry latent directional bias (17.5 decibans incoherence) that backtest temperature calibration cannot detect when regime signs flip.",
+    "ArXiv 2610.26324v1 Control Proof (2,627 Positions): Across a 29% market drawdown, external stop/target brackets contained 97.5% of gross losses even when unprofitable agents drifted.",
+    "Tail Breakdown Gate: Correlated pretrained backbones trigger simultaneous stop-loss cascades in thin order books, making human prose auditability (Rule 1) mandatory."
+  ],
+  "collisions": [
+    {
+      "timestamp": "arXiv:2610.26797v1",
+      "essay_target": "The 20-Year Trading Model Shock (\u00a71-\u00a72 Capable vs. Feeling Capable)",
+      "bridge": "17.5-Deciban Calibration Blindness vs. Three Lines of Unexplainable Risk Code",
+      "synthesis": "Proves mathematically why backtest calibration diagnostics fail to detect sign-flipped teacher bias during regime shifts."
+    }
+  ],
+  "audio_url": "/drops/spaces/pawel/snipes/02_opaque_logic_teacher_bias/advocate_rant.mp3"
+}

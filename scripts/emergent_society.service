@@ -1,0 +1,20 @@
+[Unit]
+Description=Sovereign OS Emergent Society Simulation Engine Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=james
+WorkingDirectory=/home/james/SovereignOS
+ExecStart=/home/james/SovereignOS/.venv/bin/python3 scripts/emergent_society_daemon.py
+Restart=always
+RestartSec=5s
+Environment=EMERGENT_SOCIETY_DB=/home/james/SovereignOS/data/emergent_society.db
+Environment=EMERGENT_SOCIETY_PORT=8098
+Environment=SIM_TICK_INTERVAL=5.0
+EnvironmentFile=-/home/james/SovereignOS/.env
+MemoryMax=1G
+CPUQuota=15%
+
+[Install]
+WantedBy=multi-user.target

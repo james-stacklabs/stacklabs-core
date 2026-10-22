@@ -1,0 +1,53 @@
+{
+  "status": "success",
+  "user_slug": "james",
+  "workspace": "/vfs/spaces/james",
+  "video_id": "BxpyAt5w54w",
+  "url": "https://www.youtube.com/watch?v=BxpyAt5w54w",
+  "title": "How We\u2019ll Get to Alpha-Centauri | Cosmic Queries #115",
+  "channel": "StarTalk",
+  "duration": "1:00:14",
+  "bullets": [
+    {
+      "timestamp": "30:14",
+      "headline": "Human Probability Blindness and the Illusion of the Hot Hand",
+      "verbatimQuote": "Statistics is one of the last branches of math to be invented, which should tell us something about how ill-equipped our brain wiring is to think statistically about the world.",
+      "tag": "STATISTICAL FALLACY"
+    },
+    {
+      "timestamp": "38:15",
+      "headline": "Why Fractals Break Down Across Physical Scales",
+      "verbatimQuote": "What makes fractals work is that the same rules that applied on one scale are applying on another scale... In the universe, that's not how it works. There are large scale forces that do not readily translate to small scale forces.",
+      "tag": "PHYSICAL SCALING"
+    },
+    {
+      "timestamp": "53:20",
+      "headline": "Thermal Blindness: The Kiln Phenomenon and Infrared Camouflage",
+      "verbatimQuote": "That pottery gets hotter and hotter and hotter... until it reaches the same temperature as the glowing walls, and then it disappears. Because it is the same glowing temperature surface as everything else.",
+      "tag": "THERMAL DYNAMICS"
+    }
+  ],
+  "collisions": [
+    {
+      "file": "BxpyAt5w54w_transcript.md",
+      "vfs_path": "/vfs/spaces/james/transcripts/BxpyAt5w54w_transcript.md",
+      "score": 0.99,
+      "overlap_count": 1025,
+      "matched_terms": [
+        "ability",
+        "able",
+        "absolute",
+        "absolutely",
+        "accelerate",
+        "acceleration",
+        "accept",
+        "access"
+      ],
+      "excerpt": "# \ud83c\udf99\ufe0f Audio Transcript: BxpyAt5w54w.m4a > **Transcribed by**: Artemis Metal Workstation (NVIDIA GTX 1060 6GB GDDR5 / CUDA) > **Model**: Faster-Whisper `base.en` (`int8_float32`) > *"
+    }
+  ],
+  "summary_markdown": "# Personal VFS Dossier: How We\u2019ll Get to Alpha-Centauri | Cosmic Queries #115\n\n- **Workspace:** `/vfs/spaces/james`\n- **Channel:** StarTalk\n- **Duration:** 1:00:14\n- **Source URL:** https://www.youtube.com/watch?v=BxpyAt5w54w\n\n## 3-Bullet Executive Brief\n\n### [30:14] Human Probability Blindness and the Illusion of the Hot Hand `STATISTICAL FALLACY`\n> *\"Statistics is one of the last branches of math to be invented, which should tell us something about how ill-equipped our brain wiring is to think statistically about the world.\"*\n\n### [38:15] Why Fractals Break Down Across Physical Scales `PHYSICAL SCALING`\n> *\"What makes fractals work is that the same rules that applied on one scale are applying on another scale... In the universe, that's not how it works. There are large scale forces that do not readily translate to small scale forces.\"*\n\n### [53:20] Thermal Blindness: The Kiln Phenomenon and Infrared Camouflage `THERMAL DYNAMICS`\n> *\"That pottery gets hotter and hotter and hotter... until it reaches the same temperature as the glowing walls, and then it disappears. Because it is the same glowing temperature surface as everything else.\"*\n\n## Personal VFS Space Collisions\n\n- **BxpyAt5w54w_transcript.md** (`/vfs/spaces/james/transcripts/BxpyAt5w54w_transcript.md`) \u2014 Score `0.99` (1025 shared terms: `ability, able, absolute, absolutely, accelerate, acceleration, accept, access`)\n",
+  "audio_url": "/drops/spaces/james/snipes/BxpyAt5w54w/advocate_rant.mp3",
+  "audio_duration_seconds": 55.39,
+  "timestamp": "2026-10-22T09:09:21Z"
+}

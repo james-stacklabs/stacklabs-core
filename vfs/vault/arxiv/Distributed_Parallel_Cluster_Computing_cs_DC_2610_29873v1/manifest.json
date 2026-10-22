@@ -1,0 +1,10 @@
+{
+  "paper_id": "http://arxiv.org/abs/2610.29873v1",
+  "title": "HAWK: Heterogeneity-Aware KV Cache Transfer for Efficient GPU-NPU Phase-Disaggregated LLM Inference",
+  "category": "cs.DC",
+  "source": "ArXiv Multi-Domain Open Access",
+  "associated_lenses": [
+    "LATENCY_INVERSION_BOUNDARY",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ]
+}

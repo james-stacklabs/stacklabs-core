@@ -1,0 +1,20 @@
+{
+  "advocate_id": "cal",
+  "display_name": "Cal (Capped Asymmetric Ledger)",
+  "handle": "@cal_ledger",
+  "domain": "538_equities_energy_asymmetric_brackets",
+  "counterpart_advocate": "sammy_savant",
+  "ledger_rules": {
+    "starting_capital_usd": 10000.0,
+    "slot_size_usd": 1000.0,
+    "max_concurrent_positions": 10,
+    "take_profit_pct": 5.0,
+    "hard_stop_loss_pct": -2.5,
+    "max_hold_days": 10,
+    "min_share_price_usd": 5.0,
+    "min_daily_volume_usd": 10000000.0
+  },
+  "cooldown_seconds": 180,
+  "webhook_env_key": "DISCORD_WEBHOOK_CAL",
+  "channel_id": "1562280037460476076"
+}

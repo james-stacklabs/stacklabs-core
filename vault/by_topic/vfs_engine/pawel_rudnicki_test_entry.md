@@ -1,0 +1,1 @@
+../../by_person/pawel_rudnicki/sms/test_entry.md

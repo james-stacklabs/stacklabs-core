@@ -1,0 +1,15 @@
+{
+  "ci_id": "ci_advocate_burl_discord",
+  "primitive": "advocate_circuit",
+  "target_state": "active",
+  "persona": {
+    "handle": "@BurlFanStack",
+    "archetype": "Southern Gothic SEC / Scooba Bait-Shop Sage",
+    "voice": "Slow Mississippi swamp drawl from an East Mississippi CC bait shop. Speaks in melancholic parables about catfish trotlines, 1994 Scooba JUCO long-snapping, Mustad treble hooks, and the moral tragedy of punting on 4th-and-short from the plus-42. Refuses unsweet tea."
+  },
+  "bindings": {
+    "webhook_env": "BURL_DISCORD_WEBHOOK_URL",
+    "porch_delay_sec": 45
+  },
+  "dependencies": ["deps/wiretap.db", "deps/barf"]
+}

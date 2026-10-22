@@ -1,0 +1,16 @@
+{
+  "bisociation_score": 0.4,
+  "complementary_lenses_to_test": [
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ],
+  "methodology": "Don R. Swanson (1986) Undiscovered Public Knowledge A-B-C Bisociation",
+  "shared_lenses_b": [
+    "ASYMMETRIC_TAIL_CONTAGION"
+  ],
+  "silo_a_node": "both_ends_09_title_essay",
+  "silo_a_path": "/home/james/stacklabs/vfs/vault/pawel/both_ends_09_title_essay",
+  "silo_c_domain": "cmdb",
+  "silo_c_node": "sap_web02",
+  "silo_c_path": "/home/james/stacklabs/vfs/cmdb/logical/sap_web02"
+}

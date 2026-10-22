@@ -1,0 +1,5 @@
+{
+  "title": "Latency Inversion Boundary & Edge Determination",
+  "description": "Relying on multi-second cloud round-trips for sub-millisecond physical or financial decisions where local POSIX read models provide immutable defense.",
+  "category": "Silicon Architecture & Latency Boundaries"
+}

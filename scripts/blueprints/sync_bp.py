@@ -5,166 +5,95 @@ from scripts.dead_drop_common import *  # noqa: F401,F403
 bp = Blueprint("sync", __name__)
 
 
-SYNC_DROPZONE_DIR = Path("/home/james/sovereign_inbox/notebook_sync/StackLabs_Internal/weekly_additions")
+from pathlib import Path
+from typing import Any, Dict, List
+import re
 
+CANONICAL_SYNC_DIRS = [
+    Path("/home/james/stacklabs/notebook_sync"),
+    Path("/home/james/stacklabs_inbox/notebook_sync"),
+    Path("/home/james/stacklabs/dossiers"),
+]
 
+SYNC_DROPZONE_DIR = Path("/home/james/stacklabs_inbox/notebook_sync/StackLabs_Internal/weekly_additions")
 SYNC_DROPZONE_DIR.mkdir(parents=True, exist_ok=True)
+NOTEBOOK_SYNC_BASE_DIR = Path("/home/james/stacklabs/notebook_sync")
 
 
-NOTEBOOK_SYNC_BASE_DIR = Path("/home/james/sovereign_inbox/notebook_sync")
+def get_smart_icon(folder_name: str) -> str:
+    """Assigns contextual icons based on folder classification."""
+    fn = folder_name.lower()
+    if any(k in fn for k in ["wildseed", "weed", "green"]):
+        return "🌿"
+    elif any(k in fn for k in ["carroll", "wood", "millwork", "cabinet"]):
+        return "🪵"
+    elif any(k in fn for k in ["davidson", "malone", "builder", "home"]):
+        return "🏗️"
+    elif any(k in fn for k in ["arkle", "vet", "dog", "puppy", "feline"]):
+        return "🐾"
+    elif any(k in fn for k in ["sanjuan", "island", "travel"]):
+        return "🌴"
+    elif any(k in fn for k in ["horizon", "quant", "market", "trade"]):
+        return "📊"
+    elif any(k in fn for k in ["fanstack", "faas", "sports", "barf"]):
+        return "⚡"
+    elif any(k in fn for k in ["internal", "stacklabs", "core"]):
+        return "🛡️"
+    elif any(k in fn for k in ["weekly", "addition", "chronicle"]):
+        return "📦"
+    return "📁"
 
 
-def discover_notebook_envelopes() -> Dict[str, Dict[str, Any]]:
+def discover_notebook_envelopes() -> List[Dict[str, Any]]:
     """
-    Dynamically scans /home/james/sovereign_inbox/notebook_sync for all subdirectories.
-    Automatically generates key, name, id, icon, remote, path, description, hue.
-    Guarantees: Dropping ANY new directory into notebook_sync/ instantly surfaces in UI with ZERO code changes.
+    Dynamically discovers sync envelopes across canonical StackLabs paths.
+    Eliminates hardcoded paths and legacy sovereign_inbox references.
     """
-    envelopes: Dict[str, Dict[str, Any]] = {}
-    if not NOTEBOOK_SYNC_BASE_DIR.exists():
-        return envelopes
+    envelopes: List[Dict[str, Any]] = []
+    seen_keys = set()
 
-    subdirs: List[Path] = [
-        d for d in NOTEBOOK_SYNC_BASE_DIR.iterdir()
-        if d.is_dir() and not d.name.startswith('.')
-    ]
+    for base_dir in CANONICAL_SYNC_DIRS:
+        if not base_dir.exists() or not base_dir.is_dir():
+            continue
 
-    weekly_path = NOTEBOOK_SYNC_BASE_DIR / "StackLabs_Internal" / "weekly_additions"
-    if weekly_path.is_dir() and not any(d.name == "weekly_additions" for d in subdirs):
-        subdirs.append(weekly_path)
+        for entry in sorted(base_dir.iterdir()):
+            if not entry.is_dir() or entry.name.startswith("."):
+                continue
 
-    preferred_order = [
-        "07_JohnnyCarroll_Prospectus",
-        "03_WildSeed_Sovereign_Swarm",
-        "06_Davidson_Malone_Prospectus",
-        "04_ArkleVet_Prospectus",
-        "05_SanJuan_Prospectus",
-        "02_Edge_Platform_Engineering",
-        "StackLabs_Internal",
-        "weekly_additions",
-        "15_Horizon_Internal",
-        "16_Emergent_Society"
-    ]
+            key = entry.name
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
 
-    def sort_key(d: Path):
-        k = d.name
-        if k in preferred_order:
-            return (0, preferred_order.index(k), k)
-        m = re.match(r'^(\d+)', k)
-        if m:
-            return (1, int(m.group(1)), k)
-        return (2, 0, k.lower())
+            # Count valid document sources (.md, .pdf, .txt, .csv, .json)
+            valid_sources = [
+                f for f in entry.glob("*")
+                if f.is_file() and f.suffix.lower() in [".md", ".pdf", ".txt", ".csv", ".json"]
+            ]
 
-    subdirs.sort(key=sort_key)
+            # Format human-readable title
+            clean_name = key.replace("_", " ").strip()
+            
+            # Map remote target (default to stacklabs_edge: or stacklabs_vault:)
+            remote_target = f"stacklabs_vault:Corporate_Records/{key}" if "internal" in key.lower() else f"stacklabs_edge:{key}"
 
-    known_labels = {
-        "07_JohnnyCarroll_Prospectus": "07 Johnny Carroll",
-        "03_WildSeed_Sovereign_Swarm": "03 WildSeed Swarm",
-        "06_Davidson_Malone_Prospectus": "06 Davidson Malone",
-        "04_ArkleVet_Prospectus": "04 Arkle Vet",
-        "05_SanJuan_Prospectus": "05 San Juan",
-        "05_SanJuanIslands_Authority": "05 San Juan Islands",
-        "02_Edge_Platform_Engineering": "02 Edge Platform",
-        "15_Horizon_Internal": "15 Horizon Internal",
-        "16_Emergent_Society": "16 Emergent Society",
-        "StackLabs_Internal": "StackLabs Internal",
-        "weekly_additions": "weekly_additions"
-    }
-
-    known_descriptions = {
-        "07_JohnnyCarroll_Prospectus": "Glendale Custom Cabinetry & Millwork Prospectus",
-        "03_WildSeed_Sovereign_Swarm": "WildSeed Extracts Living Soil & Solventless Terpene Swarm (29 Sources)",
-        "06_Davidson_Malone_Prospectus": "Davidson Homes / Jeremy Malone Builder Moat",
-        "04_ArkleVet_Prospectus": "Arkle Veterinary Care Search Authority",
-        "05_SanJuan_Prospectus": "Better Properties San Juan Islands Authority",
-        "02_Edge_Platform_Engineering": "Model-S Physical Constants, TCO Economics & Fleet Architecture",
-        "15_Horizon_Internal": "Horizon Predictive Forensics & Primary Source Inspector",
-        "16_Emergent_Society": "The SICKO Exchange // Autonomous Dive Bar Simulation & Hemodynamic Engine",
-        "StackLabs_Internal": "Master Engineering Chronicles & Daily Deliverables",
-        "weekly_additions": "Standalone Non-Consolidatable Weekly Assets"
-    }
-
-    for d in subdirs:
-        key = d.name
-        kl = key.lower()
-
-        # Clean formatted label
-        if key in known_labels:
-            name = known_labels[key]
-        else:
-            s = key.replace('_', ' ').strip()
-            for suff in [' Prospectus', ' Engineering', ' Authority', ' Swarm']:
-                if s.endswith(suff):
-                    s = s[:-len(suff)].strip()
-            name = s or key
-
-        # Smart contextual icon
-        if any(w in kl for w in ['wildseed', 'weed']):
-            icon = '🌿'
-        elif any(w in kl for w in ['carroll', 'wood', 'cabinet', 'millwork']):
-            icon = '🪚'
-        elif any(w in kl for w in ['davidson', 'malone', 'builder']):
-            icon = '🏗️'
-        elif any(w in kl for w in ['arkle', 'vet', 'dog', 'puppy', 'feline', 'canine']) or re.search(r'\bcat\b', kl):
-            icon = '🐾'
-        elif any(w in kl for w in ['sanjuan', 'island']):
-            icon = '🌲'
-        elif any(w in kl for w in ['edge', 'model']):
-            icon = '⚡'
-        elif any(w in kl for w in ['internal', 'stacklabs']):
-            icon = '🛡️'
-        elif any(w in kl for w in ['weekly', 'addition']):
-            icon = '📦'
-        elif any(w in kl for w in ['society', 'emergent']):
-            icon = '🏛️'
-        else:
-            icon = '📁'
-
-        # Remote target mapping
-        if key == "StackLabs_Internal":
-            remote = "stacklabs_edge:StackLabs_Internal"
-        elif 'weekly' in kl or 'addition' in kl:
-            remote = "stacklabs_edge:weekly_additions"
-        else:
-            remote = f"stacklabs_edge:{key}"
-
-        # Short ID
-        m = re.match(r'^(\d+)', key)
-        if m:
-            envelope_id = m.group(1).zfill(2)
-        elif 'internal' in kl:
-            envelope_id = "INT"
-        elif 'weekly' in kl or 'addition' in kl:
-            envelope_id = "WK"
-        else:
-            parts = [w for w in re.split(r'[^a-zA-Z0-9]+', key) if w]
-            if len(parts) >= 2:
-                envelope_id = (parts[0][0] + parts[1][0]).upper()
-            elif parts:
-                envelope_id = parts[0][:3].upper()
-            else:
-                envelope_id = "DIR"
-
-        # Theme Hue
-        hue = 'gold' if envelope_id in ['07', '06', '02', 'INT'] else 'cyan'
-
-        description = known_descriptions.get(key, f"Tactical Vector Dossier: {name}")
-
-        envelopes[key] = {
-            "key": key,
-            "name": name,
-            "id": envelope_id,
-            "icon": icon,
-            "path": d,
-            "remote": remote,
-            "description": description,
-            "hue": hue
-        }
+            envelopes.append({
+                "key": key,
+                "name": clean_name,
+                "local_path": str(entry),
+                "path": str(entry),
+                "icon": get_smart_icon(key),
+                "remote": remote_target,
+                "source_count": len(valid_sources),
+                "pristine_files": len(valid_sources),
+                "status": "READY" if valid_sources else "EMPTY",
+                "last_modified": int(entry.stat().st_mtime) if entry.exists() else 0,
+            })
 
     return envelopes
 
 
-NOTEBOOK_ENVELOPES: Dict[str, Dict[str, Any]] = discover_notebook_envelopes()
+NOTEBOOK_ENVELOPES: Dict[str, Dict[str, Any]] = {e["key"]: e for e in discover_notebook_envelopes()}
 
 
 CLEAN_ROOM_LANES: Dict[str, List[str]] = {
@@ -225,18 +154,17 @@ class SovereignSyncService:
         self.lock = threading.Lock()
 
     def get_envelopes(self) -> Dict[str, Dict[str, Any]]:
-        """Dynamically discovers all notebook sync envelopes."""
-        return discover_notebook_envelopes()
+        """Dynamically discovers all notebook sync envelopes as a dict keyed by envelope key."""
+        envs = discover_notebook_envelopes()
+        return {e["key"]: e for e in envs}
 
     def get_envelopes_summary(self) -> Dict[str, Any]:
-        """Returns summary of all dynamically discovered notebook envelopes with counts and paths."""
-        summary = []
-        source_exts = {'.md', '.pdf', '.txt'}
-        all_envelopes = self.get_envelopes()
-        last_sync_time = "Unknown"
+        """Returns summary of all dynamically discovered notebook envelopes."""
+        envs = discover_notebook_envelopes()
+        last_sync_time = "Recently"
         for candidate_log in [
-            Path("/home/james/SovereignOS/logs/sync_to_gdrive.log"),
-            Path("/home/james/SovereignOS/logs/sync.log")
+            Path("/home/james/stacklabs/logs/sync_to_gdrive.log"),
+            Path("/home/james/stacklabs/logs/sync.log")
         ]:
             if candidate_log.exists():
                 try:
@@ -246,58 +174,11 @@ class SovereignSyncService:
                 except OSError:
                     pass
 
-        for key, env in all_envelopes.items():
-            p: Path = env["path"]
-            total_files = 0
-            pristine_files = 0
-            clutter_files = 0
-            total_bytes = 0
-            last_mtime = 0.0
-            if p.exists():
-                for item in p.iterdir():
-                    if item.is_file() and not item.name.startswith('.'):
-                        total_files += 1
-                        ext = item.suffix.lower()
-                        if ext in source_exts:
-                            pristine_files += 1
-                        else:
-                            clutter_files += 1
-                        try:
-                            st = item.stat()
-                            total_bytes += st.st_size
-                            if st.st_mtime > last_mtime:
-                                last_mtime = st.st_mtime
-                        except OSError:
-                            pass
-
-            if last_mtime > 0:
-                dt = datetime.fromtimestamp(last_mtime)
-                last_mtime_human = dt.strftime("%b %d, %H:%M EDT")
-                last_mtime_iso = dt.isoformat()
-            else:
-                last_mtime_human = "Never"
-                last_mtime_iso = None
-
-            summary.append({
-                "key": key,
-                "name": env["name"],
-                "id": env.get("id", key[:2]),
-                "icon": env["icon"],
-                "hue": env.get("hue", "cyan"),
-                "path": str(env["path"]),
-                "remote": env["remote"],
-                "description": env.get("description", ""),
-                "total_files": total_files,
-                "pristine_files": pristine_files,
-                "clutter_files": clutter_files,
-                "total_bytes": total_bytes,
-                "total_size_human": self._format_size(total_bytes),
-                "last_modified": last_mtime_human,
-                "last_modified_iso": last_mtime_iso
-            })
         return {
-            "status": "success",
-            "envelopes": summary,
+            "status": "ok",
+            "envelopes": envs,
+            "total_envelopes": len(envs),
+            "last_sync_time": last_sync_time,
             "last_sync_timestamp": last_sync_time
         }
 
@@ -318,12 +199,12 @@ class SovereignSyncService:
             env = {
                 "name": envelope_key,
                 "icon": "📁",
-                "path": target_dir,
+                "path": str(target_dir),
                 "remote": f"stacklabs_edge:{envelope_key}",
                 "description": f"Vector Dossier: {envelope_key}"
             }
         else:
-            target_dir = env["path"]
+            target_dir = Path(env["path"])
 
         files: List[Dict[str, Any]] = []
         total_bytes = 0
@@ -395,7 +276,7 @@ class SovereignSyncService:
             env = {"path": target_dir}
         else:
             env = all_envelopes[envelope_key]
-            target_dir = env["path"]
+            target_dir = Path(env["path"])
 
         if not target_dir.exists():
             return {"status": "success", "envelope": envelope_key, "deleted_files": [], "deleted_dirs": [], "count": 0}
@@ -452,12 +333,12 @@ class SovereignSyncService:
         if envelope_key and envelope_key in all_envelopes:
             env = all_envelopes[envelope_key]
             remotes = [env["remote"]]
-            source_dir = env["path"]
+            source_dir = Path(env["path"])
             mode = "ENVELOPE"
             envelope_name = env["name"]
         elif target_key and target_key in REMOTE_TARGETS:
             remotes = REMOTE_TARGETS[target_key]
-            source_dir = self.dropzone_dir
+            source_dir = Path(self.dropzone_dir)
             mode = "LEGACY_TARGET"
             envelope_name = target_key
         else:
@@ -465,11 +346,11 @@ class SovereignSyncService:
             env = all_envelopes.get(envelope_key, {
                 "name": "07 Johnny Carroll",
                 "icon": "🪚",
-                "path": NOTEBOOK_SYNC_BASE_DIR / envelope_key,
+                "path": str(NOTEBOOK_SYNC_BASE_DIR / envelope_key),
                 "remote": f"stacklabs_edge:{envelope_key}"
             })
             remotes = [env["remote"]]
-            source_dir = env["path"]
+            source_dir = Path(env["path"])
             mode = "ENVELOPE"
             envelope_name = env["name"]
 
@@ -682,7 +563,7 @@ class SovereignSyncService:
                 if not lane_sync_files:
                     msg_queue.put({
                         "event": "log",
-                        "data": {"line": f"ℹ️ Skipping sovereign_os:StackLabs_Edge/{lane_name}/ (0 files selected)"}
+                        "data": {"line": f"ℹ️ Skipping stacklabs_edge:{lane_name}/ (0 files selected)"}
                     })
                     continue
 
@@ -804,10 +685,10 @@ def api_sync_execute():
     dry_run = bool(data.get("dry_run", False))
     clean_mode = bool(data.get("clean_mode", True))
 
-    if envelope == "ALL" or data.get("sync_all"):
+    if envelope == "ALL" or data.get("sync_all") or (not envelope and not target):
         def run_all_sync():
             try:
-                subprocess.run(["/bin/bash", "/home/james/SovereignOS/scripts/sync_to_gdrive.sh"], capture_output=True, text=True, timeout=120)
+                subprocess.run(["/bin/bash", "/home/james/stacklabs/scripts/sync_to_gdrive.sh"], capture_output=True, text=True, timeout=120)
             except Exception as e:
                 logger.error(f"Error executing sync_to_gdrive: {e}")
         threading.Thread(target=run_all_sync, daemon=True).start()
@@ -882,8 +763,8 @@ def api_drive_sync_inbox():
     def run_bridge():
         try:
             logger.info("Executing Google Drive Drop Bridge via API trigger...")
-            py_bin = "/home/james/SovereignOS/.venv/bin/python3"
-            script_path = "/home/james/SovereignOS/scripts/drive_drop_bridge.py"
+            py_bin = "/home/james/stacklabs/.venv/bin/python3"
+            script_path = "/home/james/stacklabs/scripts/drive_drop_bridge.py"
             subprocess.run([py_bin, script_path, "--once"], capture_output=True, text=True, timeout=120)
         except Exception as e:
             logger.error(f"Error executing drive drop bridge: {e}")

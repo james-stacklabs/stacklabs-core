@@ -1,0 +1,13 @@
+{
+  "id": "monolith:monolith_03_ohtani_reconciliation_tax",
+  "slug": "monolith_03_ohtani_reconciliation_tax",
+  "title": "The Ramp-Up Tax vs. The Reconciliation Tax: The Ohtani Deferred Contract",
+  "silo": "monoliths",
+  "lenses": [
+    "GHOST_GDP_DECOUPLING",
+    "RECONCILIATION_TAX",
+    "OHTANI_DEFERRED_CAPITAL",
+    "ASYMMETRIC_TAIL_CONTAGION"
+  ],
+  "registered_at_utc": "2026-10-22T01:30:00Z"
+}

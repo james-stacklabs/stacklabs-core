@@ -1,0 +1,19 @@
+CONFIRMED ISSUES:
+1. /api/teams (get_teams) defined TWICE with DIFFERENT logic:
+   - Line 1940: queries cmdb_ci JOIN cmdb_ci_ai_persona (this one wins, FastAPI uses first match)
+   - Line 3024: queries a standalone `persona` table (dead code, never runs)
+   The `persona` table is the one actually read/written everywhere else in personas.py
+   (list_personas, get_persona, update_persona, create_ai_persona, etc.) The cmdb_ci_ai_persona
+   join looks like the older/abandoned path. Recommend keeping the persona-table version live.
+
+2. voice_heal_service router is registered TWICE:
+   - Line 49-53 (top of file): from scripts.voice_heal_service / fastapi_app.include_router(...)
+   - Line 1762-1765 (mid-file): from voice_heal_service import router as _voice_heal_router / include_router(...)
+   Same router, included under two different local names. Harmless at runtime (FastAPI just
+   double-registers identical routes) but pure redundancy. Dropping the second one.
+
+WORTH CHECKING (can't confirm without hot_takes_service.py, which wasn't uploaded):
+3. Line 1819 defines GET /api/hot_takes locally, AND the included hot_takes_service router's
+   own comment block claims it also serves "GET /api/hot_takes — retrieve saved hot takes from DB".
+   If hot_takes_service.py defines the same path, that's a third duplicate-route situation.
+   Have Antigravity grep hot_takes_service.py for @router.get("/api/hot_takes" to confirm.

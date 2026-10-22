@@ -1,0 +1,9 @@
+{
+  "dataset_name": "ercot_hourly_load_2026",
+  "source": "Electric Reliability Council of Texas (ERCOT)",
+  "file": "ercot_hourly_load_2026.csv",
+  "associated_lenses": [
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "ASYMMETRIC_TAIL_CONTAGION"
+  ]
+}

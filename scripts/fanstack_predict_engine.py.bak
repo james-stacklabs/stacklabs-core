@@ -1,0 +1,379 @@
+#!/usr/bin/env python3
+"""
+fanstack_predict_engine.py — The Sovereign Degenerate Syndicate Prediction Exchange Engine
+========================================================================================
+Path: /home/james/SovereignOS/scripts/fanstack_predict_engine.py
+
+Core engine for FaaS local prediction market:
+- Manages state in data/deranged_market_state.json
+- Implements constant-liquidity pricing shifts (1¢ to 99¢)
+- Manages advocate bankrolls ($1,000 play money), positions, and active superstitions
+- Handles trade execution and contract resolution
+- Exposes both FastAPI APIRouter and Flask Blueprint helpers
+"""
+
+import os
+import json
+import logging
+import threading
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Dict, Any, Optional
+
+logger = logging.getLogger("fanstack_predict_engine")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+
+STATE_FILE = Path("/home/james/SovereignOS/data/deranged_market_state.json")
+_FILE_LOCK = threading.Lock()
+
+INITIAL_BANKROLL_CENTS = 100000  # $1,000.00
+
+
+def get_current_timestamp() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def load_market_state() -> Dict[str, Any]:
+    with _FILE_LOCK:
+        if not STATE_FILE.exists():
+            raise FileNotFoundError(f"Market state file not found at {STATE_FILE}")
+        with open(STATE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+
+def save_market_state(state: Dict[str, Any]) -> None:
+    with _FILE_LOCK:
+        state["updated_at"] = get_current_timestamp()
+        STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        temp_file = STATE_FILE.with_suffix(".tmp")
+        with open(temp_file, "w", encoding="utf-8") as f:
+            json.dump(state, f, indent=2)
+        temp_file.replace(STATE_FILE)
+
+
+def recalculate_advocate_bankrolls(state: Dict[str, Any]) -> None:
+    """Recalculate portfolio value, P&L, and ranks for all advocates."""
+    contracts_by_id = {c["id"]: c for c in state.get("contracts", [])}
+    advocates = state.get("advocates_bankrolls", {})
+
+    for adv_id, adv in advocates.items():
+        pos_value = 0
+        for pos in adv.get("positions", []):
+            contract = contracts_by_id.get(pos["contract_id"])
+            if contract and contract.get("status") == "OPEN":
+                price = contract["yes_price_cents"] if pos["side"] == "YES" else contract["no_price_cents"]
+                pos_value += pos["shares"] * price
+            elif contract and contract.get("status") in ("RESOLVED_YES", "RESOLVED_NO"):
+                # Position in resolved contract handled at resolution time
+                pass
+
+        adv["portfolio_value_cents"] = adv["cash_cents"] + pos_value
+        adv["profit_loss_cents"] = adv["portfolio_value_cents"] - INITIAL_BANKROLL_CENTS
+
+    # Rank advocates by portfolio value descending
+    sorted_advocates = sorted(advocates.items(), key=lambda item: item[1]["portfolio_value_cents"], reverse=True)
+    for rank, (adv_id, adv) in enumerate(sorted_advocates, 1):
+        adv["rank"] = rank
+
+
+def execute_trade(
+    advocate_id: str,
+    contract_id: str,
+    side: str,
+    shares: int,
+    superstition_note: str = ""
+) -> Dict[str, Any]:
+    """
+    Executes a market order trade for an advocate.
+    """
+    side = side.upper().strip()
+    if side not in ("YES", "NO"):
+        raise ValueError(f"Invalid side '{side}'. Must be 'YES' or 'NO'.")
+    if shares <= 0:
+        raise ValueError(f"Shares must be positive integer, got {shares}")
+
+    state = load_market_state()
+
+    # Find contract
+    contract = next((c for c in state.get("contracts", []) if c["id"] == contract_id), None)
+    if not contract:
+        raise ValueError(f"Contract '{contract_id}' not found.")
+    if contract.get("status") != "OPEN":
+        raise ValueError(f"Contract '{contract_id}' is not OPEN (status: {contract.get('status')}).")
+
+    # Ensure advocate exists
+    advocates = state.setdefault("advocates_bankrolls", {})
+    if advocate_id not in advocates:
+        advocates[advocate_id] = {
+            "name": advocate_id.replace("_", " ").title(),
+            "avatar_tag": "Syndicate Trader",
+            "cash_cents": INITIAL_BANKROLL_CENTS,
+            "portfolio_value_cents": INITIAL_BANKROLL_CENTS,
+            "profit_loss_cents": 0,
+            "rank": len(advocates) + 1,
+            "active_superstition": superstition_note or "Statistical Gambler",
+            "positions": []
+        }
+
+    advocate = advocates[advocate_id]
+
+    price_cents = contract["yes_price_cents"] if side == "YES" else contract["no_price_cents"]
+    total_cost_cents = shares * price_cents
+
+    if advocate["cash_cents"] < total_cost_cents:
+        raise ValueError(
+            f"Insufficient funds for {advocate_id}: requires {total_cost_cents}¢ ($ {total_cost_cents/100:.2f}), "
+            f"has {advocate['cash_cents']}¢ ($ {advocate['cash_cents']/100:.2f})."
+        )
+
+    # Deduct cash
+    advocate["cash_cents"] -= total_cost_cents
+
+    # Update or add position
+    positions = advocate.setdefault("positions", [])
+    existing_pos = next((p for p in positions if p["contract_id"] == contract_id and p["side"] == side), None)
+    if existing_pos:
+        old_shares = existing_pos["shares"]
+        old_cost = old_shares * existing_pos["avg_price_cents"]
+        new_shares = old_shares + shares
+        existing_pos["avg_price_cents"] = int(round((old_cost + total_cost_cents) / new_shares))
+        existing_pos["shares"] = new_shares
+    else:
+        positions.append({
+            "contract_id": contract_id,
+            "side": side,
+            "shares": shares,
+            "avg_price_cents": price_cents
+        })
+
+    # Shift price via liquidity impact
+    liquidity_pool = contract.get("liquidity_pool_cents", 50000)
+    # Price shift proportional to shares relative to pool
+    price_impact = max(1, int(round((shares * 1000) / liquidity_pool)))
+
+    if side == "YES":
+        new_yes = min(99, max(1, contract["yes_price_cents"] + price_impact))
+        contract["yes_price_cents"] = new_yes
+        contract["no_price_cents"] = 100 - new_yes
+    else:
+        new_no = min(99, max(1, contract["no_price_cents"] + price_impact))
+        contract["no_price_cents"] = new_no
+        contract["yes_price_cents"] = 100 - new_no
+
+    # Update contract volume and liquidity
+    contract["volume_contracts"] = contract.get("volume_contracts", 0) + shares
+    contract["liquidity_pool_cents"] = liquidity_pool + total_cost_cents
+
+    # Update lead advocate callout & superstition if provided
+    if superstition_note:
+        advocate["active_superstition"] = superstition_note
+        contract["lead_advocate_side"] = {
+            "advocate": advocate_id,
+            "side": side,
+            "superstition": superstition_note
+        }
+
+    # Record trade
+    trade_record = {
+        "timestamp": get_current_timestamp(),
+        "advocate": advocate_id,
+        "ticker": contract["ticker"],
+        "action": f"BUY {side}",
+        "shares": shares,
+        "price_cents": price_cents,
+        "superstition_note": superstition_note or advocate.get("active_superstition", "")
+    }
+    recent_trades = state.setdefault("recent_trades", [])
+    recent_trades.insert(0, trade_record)
+    state["recent_trades"] = recent_trades[:50]  # Keep last 50
+
+    # Recalculate portfolio values & rankings
+    recalculate_advocate_bankrolls(state)
+
+    # Save to disk
+    save_market_state(state)
+
+    logger.info(
+        f"Trade executed: {advocate_id} bought {shares} {contract['ticker']} {side} @ {price_cents}¢. "
+        f"New Price: YES={contract['yes_price_cents']}¢ / NO={contract['no_price_cents']}¢"
+    )
+
+    return {
+        "success": True,
+        "trade": trade_record,
+        "contract": contract,
+        "advocate": advocate
+    }
+
+
+def resolve_contract(contract_id: str, outcome: str) -> Dict[str, Any]:
+    """
+    Resolves an open contract as 'YES' or 'NO'. Winners get $1.00 (100¢) per share.
+    """
+    outcome = outcome.upper().strip()
+    if outcome not in ("YES", "NO"):
+        raise ValueError(f"Invalid outcome '{outcome}'. Must be 'YES' or 'NO'.")
+
+    state = load_market_state()
+    contract = next((c for c in state.get("contracts", []) if c["id"] == contract_id), None)
+    if not contract:
+        raise ValueError(f"Contract '{contract_id}' not found.")
+    if contract.get("status") != "OPEN":
+        raise ValueError(f"Contract '{contract_id}' is already {contract.get('status')}.")
+
+    contract["status"] = f"RESOLVED_{outcome}"
+    contract["yes_price_cents"] = 100 if outcome == "YES" else 0
+    contract["no_price_cents"] = 0 if outcome == "YES" else 100
+
+    # Payout winners
+    advocates = state.get("advocates_bankrolls", {})
+    payout_summary = {}
+
+    for adv_id, adv in advocates.items():
+        remaining_positions = []
+        payout = 0
+        for pos in adv.get("positions", []):
+            if pos["contract_id"] == contract_id:
+                if pos["side"] == outcome:
+                    payout += pos["shares"] * 100
+            else:
+                remaining_positions.append(pos)
+        adv["cash_cents"] += payout
+        adv["positions"] = remaining_positions
+        if payout > 0:
+            payout_summary[adv_id] = payout
+
+    recalculate_advocate_bankrolls(state)
+    save_market_state(state)
+
+    logger.info(f"Contract {contract_id} resolved as {outcome}. Payouts: {payout_summary}")
+    return {
+        "success": True,
+        "contract_id": contract_id,
+        "outcome": outcome,
+        "payouts": payout_summary
+    }
+
+
+# =========================================================================
+# FASTAPI ROUTER SETUP
+# =========================================================================
+def get_fastapi_router():
+    try:
+        from fastapi import APIRouter, HTTPException
+        from pydantic import BaseModel, Field
+
+        router = APIRouter(prefix="/api/predict", tags=["Deranged Predict"])
+
+        class TradeRequest(BaseModel):
+            advocate: str = Field(..., description="Advocate ID (e.g. barf, southie_sully, pilot)")
+            contract_id: str = Field(..., description="Contract ID")
+            side: str = Field(..., description="'YES' or 'NO'")
+            shares: int = Field(..., gt=0, description="Number of shares to buy")
+            superstition: Optional[str] = Field("", description="Superstitious rationale")
+
+        class ResolveRequest(BaseModel):
+            contract_id: str
+            outcome: str
+
+        @router.get("/state")
+        def api_get_predict_state():
+            try:
+                return load_market_state()
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=str(e))
+
+        @router.post("/trade")
+        def api_post_predict_trade(req: TradeRequest):
+            try:
+                result = execute_trade(
+                    advocate_id=req.advocate,
+                    contract_id=req.contract_id,
+                    side=req.side,
+                    shares=req.shares,
+                    superstition_note=req.superstition or ""
+                )
+                return result
+            except ValueError as ve:
+                raise HTTPException(status_code=400, detail=str(ve))
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=str(e))
+
+        @router.post("/resolve")
+        def api_post_predict_resolve(req: ResolveRequest):
+            try:
+                result = resolve_contract(contract_id=req.contract_id, outcome=req.outcome)
+                return result
+            except ValueError as ve:
+                raise HTTPException(status_code=400, detail=str(ve))
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=str(e))
+
+        return router
+    except ImportError:
+        logger.warning("FastAPI not installed; get_fastapi_router unavailable.")
+        return None
+
+
+# =========================================================================
+# FLASK BLUEPRINT SETUP
+# =========================================================================
+def register_flask_routes(app):
+    """Register /api/predict routes on a Flask application."""
+    from flask import request, jsonify
+
+    @app.route("/api/predict/state", methods=["GET"])
+    def flask_predict_state():
+        try:
+            return jsonify(load_market_state())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/predict/trade", methods=["POST"])
+    def flask_predict_trade():
+        data = request.get_json(force=True, silent=True) or {}
+        advocate = data.get("advocate")
+        contract_id = data.get("contract_id")
+        side = data.get("side")
+        shares = data.get("shares", 0)
+        superstition = data.get("superstition", "")
+
+        if not advocate or not contract_id or not side or not shares:
+            return jsonify({"error": "Missing required fields: advocate, contract_id, side, shares"}), 400
+
+        try:
+            shares = int(shares)
+            res = execute_trade(advocate, contract_id, side, shares, superstition)
+            return jsonify(res)
+        except ValueError as ve:
+            return jsonify({"error": str(ve)}), 400
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/predict/resolve", methods=["POST"])
+    def flask_predict_resolve():
+        data = request.get_json(force=True, silent=True) or {}
+        contract_id = data.get("contract_id")
+        outcome = data.get("outcome")
+        if not contract_id or not outcome:
+            return jsonify({"error": "Missing contract_id or outcome"}), 400
+        try:
+            res = resolve_contract(contract_id, outcome)
+            return jsonify(res)
+        except ValueError as ve:
+            return jsonify({"error": str(ve)}), 400
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "--test":
+        print("Testing market state loading and trade execution...")
+        state = load_market_state()
+        print(f"Loaded market: {state['market_title']} ({len(state['contracts'])} contracts)")
+        res = execute_trade("southie_sully", "SAV-UNDR-W04", "NO", 50, "Testing Kelly criterion on Sully's superstition")
+        print("Trade test success:", res["trade"])
+        sys.exit(0)
+    else:
+        print(json.dumps(load_market_state(), indent=2))

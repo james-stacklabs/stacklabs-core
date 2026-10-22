@@ -1,0 +1,12 @@
+{
+  "series_slug": "OPHNFB_Nonfarm_Business_Real_Output_Per_Hour_Productivity",
+  "data_source": "Federal Reserve Economic Data (FRED)",
+  "observation_count": 11,
+  "start_date": "1947-01-01",
+  "end_date": "2026-01-01",
+  "latest_reading": "116.480",
+  "associated_lenses": [
+    "GHOST_GDP_DECOUPLING",
+    "COGNITIVE_FRICTION_ATROPHY"
+  ]
+}

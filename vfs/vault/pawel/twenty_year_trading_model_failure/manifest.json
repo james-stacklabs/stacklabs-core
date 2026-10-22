@@ -1,0 +1,12 @@
+{
+  "slug": "twenty_year_trading_model_failure",
+  "title": "The 20-Year Trading Model Shock & Downside Defense",
+  "author": "Pawel Rudnicki",
+  "date": "2026-10-04",
+  "summary": "An AI rebuilt parts of a 20-year trading model with 3 lines of unexplainable logic. Works in backtests, but undefensible under adverse market conditions. The core allocator dilemma: capable or feeling capable.",
+  "associated_lenses": [
+    "UNEXPLAINED_LOGIC_DRIFT",
+    "COGNITIVE_FRICTION_ATROPHY",
+    "ASYMMETRIC_TAIL_CONTAGION"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "adamic_adar_raw": 0.6714,
+  "blind_spot_lenses_c_minus_a": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "collision_id": "pendulum_and_the_algorithm__x__snipes_x8iARwwn-J8",
+  "composite_raw": 0.9714,
+  "crucible_brief_3bullet": "1. STRUCTURAL THESIS LOCK (71929.4 us VFS Bisociation): I ran 'The Pendulum and the Algorithm: Why AI Makes Human Labor Unnecessary' through my local POSIX VFS Swanson Collider; it locked directly onto [SNIPES] The Pat McAfee Show Live | Monday October 20th 2025 via shared lens GHOST_GDP_DECOUPLING, THERMODYNAMIC_ENERGY_CEILING (Adamic-Adar specificity 0.671).\n\n2. EMPIRICAL GROUND-TRUTH RECEIPT (SNIPES): 'They are an AI that is actually able to read another AI that is trying to stop them, and every once in a while they just out-joust him... Well, unplug these motherfuckers! They are taking our jobs. They are drinking...\n\n3. THE UNEXAMINED BLIND SPOT (ASYMMETRIC_TAIL_CONTAGION): In my local VFS graph, The Pat McAfee Show Live | Monday October 20th 2025 also triggers ASYMMETRIC_TAIL_CONTAGION (non-linear tail-risk amplification where high-frequency micro-dependencies trigger correlated liquidation or grid dispatch penalties)—a second-order failure vector absent from your current draft that belongs in The Breeze.",
+  "empirical_node_id": "x8iARwwn-J8",
+  "empirical_node_key": "snipes:x8iARwwn-J8",
+  "empirical_receipt": " 'They are an AI that is actually able to read another AI that is trying to stop them, and every once in a while they just out-joust him... Well, unplug these motherfuckers! They are taking our jobs. They are drinking up all our water. When you just unplug them? Too late.'",
+  "empirical_silo": "snipes",
+  "empirical_title": "The Pat McAfee Show Live | Monday October 20th 2025",
+  "essay_slug": "pendulum_and_the_algorithm",
+  "essay_summary": "Historical analysis of the 90-year labor rule across FDR, LBJ, and Reagan eras. Proves capital no longer needs labor to compound, leading to Ghost GDP and grid-enforced delay.",
+  "essay_title": "The Pendulum and the Algorithm: Why AI Makes Human Labor Unnecessary",
+  "essay_unmatched_lenses_a_minus_c": [
+    "COGNITIVE_FRICTION_ATROPHY"
+  ],
+  "generated_at_utc": "2026-10-22T04:20:45.569692+00:00",
+  "normalized_score": 0.9138,
+  "rank": 4,
+  "sha256_receipt": "6121daa3a0391452ea2f7e32759b78de1a2da6937c6e7f86e319ea891c348590",
+  "shared_lens_count": 2,
+  "shared_lenses": [
+    "GHOST_GDP_DECOUPLING",
+    "THERMODYNAMIC_ENERGY_CEILING"
+  ],
+  "symmetric_difference_lenses": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "COGNITIVE_FRICTION_ATROPHY",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "three_hop_transitive_chains": [
+    "pawel:pendulum_and_the_algorithm -> [GHOST_GDP_DECOUPLING] -> snipes:x8iARwwn-J8 -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_fuel_mix_2026",
+    "pawel:pendulum_and_the_algorithm -> [GHOST_GDP_DECOUPLING] -> snipes:x8iARwwn-J8 -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_hourly_load_2026",
+    "pawel:pendulum_and_the_algorithm -> [GHOST_GDP_DECOUPLING] -> snipes:x8iARwwn-J8 -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Alphabet"
+  ],
+  "traversal_latency_us": 71929.38,
+  "triad_acoustic_snipe": "snipes:x8iARwwn-J8"
+}

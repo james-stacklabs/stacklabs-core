@@ -1,0 +1,10 @@
+{
+  "paper_id": "http://arxiv.org/abs/2610.30055v1",
+  "title": "A Real-time tax compliance architecture for VAT split payments with Making Tax Smart and Open Banking",
+  "category": "cs.DC",
+  "source": "ArXiv Multi-Domain Open Access",
+  "associated_lenses": [
+    "LATENCY_INVERSION_BOUNDARY",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ]
+}

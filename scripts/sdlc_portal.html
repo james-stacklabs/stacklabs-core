@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign SDLC Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Vesper Synthwave Chic */
+  --bg-primary: #0d0814;
+  --bg-secondary: #140d1f;
+  --bg-card: #1c122b;
+  --bg-hover: #2d1b45;
+  --border: #3b2559;
+  --border-glow: #ff2a85;
+  --text-primary: #f5f0ff;
+  --text-secondary: #b3a5cc;
+  --text-muted: #756691;
+  --amber: #ff2a85; /* Remapped to Neon Pink accent */
+  --amber-dim: #b31458;
+  --amber-glow: rgba(255, 42, 133, 0.15);
+  --green: #00f2fe; /* Remapped to Neon Cyan */
+  --green-dim: #00a8b3;
+  --red: #ff3333;
+  --red-dim: #991a1a;
+  --blue: #7000ff; /* Deep Neon Purple */
+  --blue-dim: #450099;
+  --purple: #bf00ff;
+  --cyan: #00f2fe;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── HEADER ─────────────────────────────────── */
+.header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--amber);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-hex {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--amber), var(--amber-dim));
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-hex span {
+  color: var(--bg-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.node-badge {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg-primary);
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ── STATS BAR ──────────────────────────────── */
+.stats-bar {
+  display: flex;
+  gap: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+.stat-cell {
+  flex: 1;
+  background: var(--bg-secondary);
+  padding: 14px 20px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+}
+
+.stat-cell.open .stat-value { color: var(--blue); }
+.stat-cell.done .stat-value { color: var(--green); }
+.stat-cell.blocked .stat-value { color: var(--red); }
+.stat-cell.deferred .stat-value { color: var(--text-muted); }
+
+/* ── TOOLBAR ────────────────────────────────── */
+.toolbar {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.5px;
+}
+
+.filter-btn:hover {
+  border-color: var(--border-glow);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: var(--amber-glow);
+  border-color: var(--amber-dim);
+  color: var(--amber);
+}
+
+.btn-create {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: 1px solid var(--amber-dim);
+  background: linear-gradient(135deg, rgba(240, 165, 0, 0.15), rgba(240, 165, 0, 0.05));
+  color: var(--amber);
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.btn-create:hover {
+  background: linear-gradient(135deg, rgba(240, 165, 0, 0.25), rgba(240, 165, 0, 0.1));
+  border-color: var(--amber);
+  box-shadow: 0 0 20px rgba(240, 165, 0, 0.1);
+}
+
+/* ── TICKET TABLE ───────────────────────────── */
+.table-wrap {
+  padding: 0 24px 24px;
+}
+
+.ticket-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.ticket-table th {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 60px;
+  background: var(--bg-primary);
+}
+
+.ticket-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(42, 47, 62, 0.5);
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.ticket-table tr:hover td {
+  background: var(--bg-hover);
+  cursor: pointer;
+}
+
+.ticket-id {
+  font-weight: 600;
+  color: var(--cyan);
+  font-size: 11px;
+}
+
+.ticket-title {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.ticket-desc {
+  color: var(--text-muted);
+  font-size: 11px;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── BADGES ─────────────────────────────────── */
+.badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.badge-status-OPEN { background: rgba(74, 158, 255, 0.15); color: var(--blue); border: 1px solid var(--blue-dim); }
+.badge-status-DONE { background: rgba(0, 214, 143, 0.15); color: var(--green); border: 1px solid var(--green-dim); }
+.badge-status-CLOSED { background: rgba(85, 93, 116, 0.15); color: var(--text-muted); border: 1px solid var(--border); }
+.badge-status-DEFERRED { background: rgba(85, 93, 116, 0.1); color: var(--text-muted); border: 1px solid var(--border); }
+.badge-status-IN_PROGRESS { background: rgba(240, 165, 0, 0.15); color: var(--amber); border: 1px solid var(--amber-dim); }
+.badge-status-BLOCKED { background: rgba(255, 71, 87, 0.15); color: var(--red); border: 1px solid var(--red-dim); }
+
+.badge-priority-P0 { background: rgba(255, 71, 87, 0.2); color: var(--red); border: 1px solid var(--red-dim); }
+.badge-priority-P1 { background: rgba(240, 165, 0, 0.15); color: var(--amber); border: 1px solid var(--amber-dim); }
+.badge-priority-P2 { background: rgba(74, 158, 255, 0.1); color: var(--blue); border: 1px solid var(--blue-dim); }
+.badge-priority-P3 { background: rgba(85, 93, 116, 0.1); color: var(--text-muted); border: 1px solid var(--border); }
+
+.badge-type-INC { background: rgba(255, 71, 87, 0.1); color: var(--red); }
+.badge-type-STORY { background: rgba(180, 122, 255, 0.1); color: var(--purple); }
+.badge-type-BUG { background: rgba(240, 165, 0, 0.1); color: var(--amber); }
+
+.ci-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg-primary);
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+/* ── MODAL ──────────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  width: 560px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--amber);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.modal-close:hover { color: var(--text-primary); }
+
+.modal-body {
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 10px 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--amber-dim);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-row .form-group { flex: 1; }
+
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 8px 16px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.btn-cancel:hover { border-color: var(--border-glow); }
+
+.btn-submit {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, var(--amber), var(--amber-dim));
+  border: none;
+  color: var(--bg-primary);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.btn-submit:hover {
+  box-shadow: 0 0 20px rgba(240, 165, 0, 0.2);
+}
+
+/* ── STATUS QUICK-EDIT ──────────────────────── */
+.status-select {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  padding: 3px 6px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  cursor: pointer;
+  outline: none;
+}
+
+/* ── EMPTY STATE ────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+
+.empty-state .hex {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+/* ── TOAST ──────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--green-dim);
+  color: var(--green);
+  padding: 12px 20px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  z-index: 300;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.error {
+  border-color: var(--red-dim);
+  color: var(--red);
+}
+
+/* ── ANIMATIONS ─────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ticket-table tbody tr {
+  animation: fadeIn 0.2s ease forwards;
+  opacity: 0;
+}
+
+.ticket-table tbody tr:nth-child(1) { animation-delay: 0.02s; }
+.ticket-table tbody tr:nth-child(2) { animation-delay: 0.04s; }
+.ticket-table tbody tr:nth-child(3) { animation-delay: 0.06s; }
+.ticket-table tbody tr:nth-child(4) { animation-delay: 0.08s; }
+.ticket-table tbody tr:nth-child(5) { animation-delay: 0.10s; }
+.ticket-table tbody tr:nth-child(6) { animation-delay: 0.12s; }
+.ticket-table tbody tr:nth-child(7) { animation-delay: 0.14s; }
+.ticket-table tbody tr:nth-child(8) { animation-delay: 0.16s; }
+.ticket-table tbody tr:nth-child(9) { animation-delay: 0.18s; }
+.ticket-table tbody tr:nth-child(10) { animation-delay: 0.20s; }
+
+/* ── SCROLLBAR ──────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-glow); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">
+      <div class="logo-hex"><span>S</span></div>
+      Sovereign SDLC
+    </div>
+    <span class="node-badge">NODE .73 &middot; clio.taila01894.ts.net:8095</span>
+  </div>
+  <div class="header-actions">
+    <span class="node-badge" id="clock"></span>
+  </div>
+</div>
+
+<div class="stats-bar" id="stats-bar">
+  <div class="stat-cell"><div class="stat-value" id="stat-total">-</div><div class="stat-label">Total</div></div>
+  <div class="stat-cell open"><div class="stat-value" id="stat-open">-</div><div class="stat-label">Open</div></div>
+  <div class="stat-cell" style="--accent: var(--amber);"><div class="stat-value" id="stat-progress" style="color:var(--amber)">-</div><div class="stat-label">In Progress</div></div>
+  <div class="stat-cell done"><div class="stat-value" id="stat-done">-</div><div class="stat-label">Done</div></div>
+  <div class="stat-cell blocked"><div class="stat-value" id="stat-blocked">-</div><div class="stat-label">Blocked</div></div>
+  <div class="stat-cell deferred"><div class="stat-value" id="stat-deferred">-</div><div class="stat-label">Deferred</div></div>
+</div>
+
+<div class="toolbar">
+  <div class="filters">
+    <button class="filter-btn active" onclick="setFilter(null)">All</button>
+    <button class="filter-btn" onclick="setFilter('OPEN')">Open</button>
+    <button class="filter-btn" onclick="setFilter('IN_PROGRESS')">In Progress</button>
+    <button class="filter-btn" onclick="setFilter('DONE')">Done</button>
+    <button class="filter-btn" onclick="setFilter('BLOCKED')">Blocked</button>
+    <button class="filter-btn" onclick="setFilter('DEFERRED')">Deferred</button>
+    <select id="filter-type" class="filter-btn" style="margin-left:8px; background:var(--bg-primary);" onchange="setTypeFilter(this.value)">
+      <option value="">All Types</option>
+      <option value="STORY">Story</option>
+      <option value="INC">Incident</option>
+      <option value="BUG">Bug</option>
+    </select>
+    <select id="filter-ci" class="filter-btn" style="margin-left:4px; background:var(--bg-primary);" onchange="setCIFilter(this.value)">
+      <option value="">All CIs</option>
+      <option value="CI-ANTIGRAVITY">CI-ANTIGRAVITY</option>
+      <option value="CI-ARTEMIS-1">CI-ARTEMIS-1</option>
+      <option value="CI-NODE-73">CI-NODE-73</option>
+      <option value="CI-PILOT">CI-PILOT</option>
+      <option value="UNASSIGNED">Unassigned</option>
+    </select>
+  </div>
+  <button class="btn-create" onclick="openModal()">+ New Ticket</button>
+</div>
+
+<div class="table-wrap">
+  <table class="ticket-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Assigned CI</th>
+        <th>Sprint</th>
+        <th>SP</th>
+      </tr>
+    </thead>
+    <tbody id="ticket-body"></tbody>
+  </table>
+  <div class="empty-state" id="empty-state" style="display:none">
+    <div class="hex">⬡</div>
+    <div>No tickets match filter</div>
+  </div>
+</div>
+
+<!-- CREATE / EDIT MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modal-title">New Ticket</h2>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="edit-id">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" id="f-title" placeholder="Short descriptive title">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="f-description" placeholder="What needs to be done?"></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Type</label>
+          <select id="f-type">
+            <option value="STORY">STORY</option>
+            <option value="INC">INCIDENT</option>
+            <option value="BUG">BUG</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Priority</label>
+          <select id="f-priority">
+            <option value="P0">P0 — Critical</option>
+            <option value="P1">P1 — High</option>
+            <option value="P2" selected>P2 — Medium</option>
+            <option value="P3">P3 — Low</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Risk Level</label>
+          <select id="f-risk">
+            <option value="LOW">LOW</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="HIGH">HIGH</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Story Points</label>
+          <input type="number" id="f-sp" value="3" min="0" max="21">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Assigned CI</label>
+          <select id="f-ci">
+            <option value="">Unassigned</option>
+            <option value="CI-ANTIGRAVITY">CI-ANTIGRAVITY</option>
+            <option value="CI-ARTEMIS-1">CI-ARTEMIS-1</option>
+            <option value="CI-NODE-73">CI-NODE-73</option>
+            <option value="CI-PILOT">CI-PILOT</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Sprint</label>
+          <input type="text" id="f-sprint" placeholder="SPRINT-2026-04-02">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Acceptance Criteria</label>
+        <textarea id="f-criteria" placeholder="How do we know it's done?"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" id="btn-export" style="display:none; background:rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: var(--green);" onclick="exportCurrentTicket()">Export MD</button>
+      <button class="btn-cancel" id="btn-flat-page" style="display:none; background:rgba(0, 180, 216, 0.1); border-color: rgba(0, 180, 216, 0.3); color: var(--cyan);" onclick="viewFlatPage()">View Flat Page</button>
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-submit" onclick="submitTicket()">Create Ticket</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API = window.location.origin + '/api';
+let currentFilter = null;
+let currentTypeFilter = null;
+let currentCIFilter = null;
+let editMode = false;
+
+// ── CLOCK ─────────────────────────────────────
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent = now.toLocaleTimeString('en-US', {
+    hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit'
+  }) + ' ET';
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ── TOAST ─────────────────────────────────────
+function toast(msg, isError = false) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast show' + (isError ? ' error' : '');
+  setTimeout(() => el.className = 'toast', 2500);
+}
+
+// ── LOAD STATS ────────────────────────────────
+async function loadStats() {
+  try {
+    const res = await fetch(API + '/stats');
+    const data = await res.json();
+    document.getElementById('stat-total').textContent = data.total || 0;
+    document.getElementById('stat-open').textContent = data.by_status?.OPEN || 0;
+    document.getElementById('stat-progress').textContent = data.by_status?.IN_PROGRESS || 0;
+    document.getElementById('stat-done').textContent = data.by_status?.DONE || 0;
+    document.getElementById('stat-blocked').textContent = data.by_status?.BLOCKED || 0;
+    document.getElementById('stat-deferred').textContent = data.by_status?.DEFERRED || 0;
+  } catch (e) {
+    console.error('Stats load failed:', e);
+  }
+}
+
+// ── LOAD TICKETS ──────────────────────────────
+async function loadTickets() {
+  try {
+    let url = API + '/tickets';
+    if (currentFilter) url += '?status=' + currentFilter;
+    const res = await fetch(url);
+    let tickets = await res.json();
+    
+    if (currentTypeFilter) {
+      tickets = tickets.filter(t => t.ticket_type === currentTypeFilter);
+    }
+    if (currentCIFilter) {
+      if (currentCIFilter === 'UNASSIGNED') {
+        tickets = tickets.filter(t => !t.assigned_ci || t.assigned_ci === '');
+      } else {
+        tickets = tickets.filter(t => t.assigned_ci === currentCIFilter);
+      }
+    }
+
+    const body = document.getElementById('ticket-body');
+    const empty = document.getElementById('empty-state');
+    
+    if (tickets.length === 0) {
+      body.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+    
+    empty.style.display = 'none';
+    body.innerHTML = tickets.map(t => `
+      <tr onclick="openEdit('${t.id}')">
+        <td><span class="ticket-id">${t.id}</span></td>
+        <td><span class="badge badge-type-${t.ticket_type || 'STORY'}">${t.ticket_type || 'STORY'}</span></td>
+        <td class="ticket-title">${esc(t.title)}</td>
+        <td class="ticket-desc" title="${esc(t.description || '')}">${esc(t.description || '—')}</td>
+        <td><span class="badge badge-priority-${t.priority}">${t.priority}</span></td>
+        <td>
+          <select class="status-select" onclick="event.stopPropagation()" onchange="quickStatus('${t.id}', this.value)">
+            ${['OPEN','IN_PROGRESS','DONE','BLOCKED','DEFERRED','CLOSED'].map(s => 
+              `<option value="${s}" ${t.status === s ? 'selected' : ''}>${s}</option>`
+            ).join('')}
+          </select>
+        </td>
+        <td>${t.assigned_ci ? `<span class="ci-tag">${t.assigned_ci}</span>` : '<span style="color:var(--text-muted)">—</span>'}</td>
+        <td style="font-size:10px;color:var(--text-muted)">${t.sprint_id || '—'}</td>
+        <td style="text-align:center;color:var(--text-secondary)">${t.story_points || '—'}</td>
+      </tr>
+    `).join('');
+  } catch (e) {
+    console.error('Ticket load failed:', e);
+    toast('Failed to load tickets', true);
+  }
+}
+
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+// ── FILTER ────────────────────────────────────
+function setFilter(status) {
+  currentFilter = status;
+  document.querySelectorAll('.filters > button.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  loadTickets();
+}
+
+function setTypeFilter(type) {
+  currentTypeFilter = type;
+  loadTickets();
+}
+
+function setCIFilter(ci) {
+  currentCIFilter = ci;
+  loadTickets();
+}
+
+// ── QUICK STATUS CHANGE ───────────────────────
+async function quickStatus(id, newStatus) {
+  try {
+    await fetch(API + '/tickets/' + id, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: newStatus })
+    });
+    toast(`${id} → ${newStatus}`);
+    loadStats();
+    loadTickets();
+  } catch (e) {
+    toast('Update failed', true);
+  }
+}
+
+// ── MODAL ─────────────────────────────────────
+function openModal() {
+  editMode = false;
+  document.getElementById('btn-export').style.display = 'none';
+  document.getElementById('btn-flat-page').style.display = 'none';
+  document.getElementById('modal-title').textContent = 'New Ticket';
+  document.getElementById('edit-id').value = '';
+  document.getElementById('f-title').value = '';
+  document.getElementById('f-description').value = '';
+  document.getElementById('f-type').value = 'STORY';
+  document.getElementById('f-priority').value = 'P2';
+  document.getElementById('f-risk').value = 'LOW';
+  document.getElementById('f-sp').value = '3';
+  document.getElementById('f-ci').value = '';
+  document.getElementById('f-sprint').value = '';
+  document.getElementById('f-criteria').value = '';
+  document.querySelector('.btn-submit').textContent = 'Create Ticket';
+  document.getElementById('modal-overlay').classList.add('open');
+  document.getElementById('f-title').focus();
+}
+
+async function openEdit(id) {
+  try {
+    const res = await fetch(API + '/tickets/' + id);
+    const t = await res.json();
+    editMode = true;
+    document.getElementById('btn-export').style.display = 'inline-block';
+    document.getElementById('btn-flat-page').style.display = 'inline-block';
+    document.getElementById('modal-title').textContent = 'Edit ' + id;
+    document.getElementById('edit-id').value = id;
+    document.getElementById('f-title').value = t.title || '';
+    document.getElementById('f-description').value = t.description || '';
+    document.getElementById('f-type').value = t.ticket_type || 'STORY';
+    document.getElementById('f-priority').value = t.priority || 'P3';
+    document.getElementById('f-risk').value = t.risk_level || 'LOW';
+    document.getElementById('f-sp').value = t.story_points || 0;
+    document.getElementById('f-ci').value = t.assigned_ci || '';
+    document.getElementById('f-sprint').value = t.sprint_id || '';
+    document.getElementById('f-criteria').value = t.acceptance_criteria || '';
+    document.querySelector('.btn-submit').textContent = 'Update Ticket';
+    document.getElementById('modal-overlay').classList.add('open');
+  } catch (e) {
+    toast('Failed to load ticket', true);
+  }
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+function exportCurrentTicket() {
+  const editId = document.getElementById('edit-id').value;
+  if (!editId) return;
+  window.open(API + '/tickets/' + editId + '/export', '_blank');
+}
+
+function viewFlatPage() {
+  const editId = document.getElementById('edit-id').value;
+  if (!editId) return;
+  window.open('/tickets/' + editId, '_blank');
+}
+
+async function submitTicket() {
+  const payload = {
+    title: document.getElementById('f-title').value,
+    description: document.getElementById('f-description').value,
+    ticket_type: document.getElementById('f-type').value,
+    priority: document.getElementById('f-priority').value,
+    risk_level: document.getElementById('f-risk').value,
+    story_points: parseInt(document.getElementById('f-sp').value) || 0,
+    assigned_ci: document.getElementById('f-ci').value,
+    sprint_id: document.getElementById('f-sprint').value,
+    acceptance_criteria: document.getElementById('f-criteria').value,
+  };
+  
+  if (!payload.title.trim()) {
+    toast('Title is required', true);
+    return;
+  }
+  
+  try {
+    const editId = document.getElementById('edit-id').value;
+    const url = editId ? API + '/tickets/' + editId : API + '/tickets';
+    const method = editId ? 'PUT' : 'POST';
+    
+    const res = await fetch(url, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    toast(`${data.id} ${editId ? 'updated' : 'created'}`);
+    closeModal();
+    loadStats();
+    loadTickets();
+  } catch (e) {
+    toast('Submit failed', true);
+  }
+}
+
+// ── KEYBOARD ──────────────────────────────────
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'n' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName === 'BODY') {
+    e.preventDefault();
+    openModal();
+  }
+});
+
+// ── INIT ──────────────────────────────────────
+loadStats();
+loadTickets();
+// Auto-refresh every 30s
+setInterval(() => { loadStats(); loadTickets(); }, 30000);
+</script>
+
+</body>
+</html>

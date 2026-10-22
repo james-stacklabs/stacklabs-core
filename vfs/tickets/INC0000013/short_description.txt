@@ -1,0 +1,1 @@
+EMAIL is slow when an attachment is involved

@@ -1,0 +1,17 @@
+{
+  "bisociation_score": 0.3,
+  "complementary_lenses_to_test": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "COGNITIVE_FRICTION_ATROPHY",
+    "LATENCY_INVERSION_BOUNDARY"
+  ],
+  "methodology": "Don R. Swanson (1986) Undiscovered Public Knowledge A-B-C Bisociation",
+  "shared_lenses_b": [
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "silo_a_node": "twenty_year_trading_model_failure",
+  "silo_a_path": "/home/james/stacklabs/vfs/vault/pawel/twenty_year_trading_model_failure",
+  "silo_c_domain": "arxiv",
+  "silo_c_node": "Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1",
+  "silo_c_path": "/home/james/stacklabs/vfs/vault/arxiv/Distributed_Parallel_Cluster_Computing_cs_DC_2610_30114v1"
+}

@@ -1,0 +1,22 @@
+{
+  "video_id": "01_ghost_gdp_macro_velocity",
+  "title": "Investigation 01: Ghost GDP Decoupling vs. FRED Labor Share & M2 Velocity",
+  "url": "https://bothendsofthecurve.com/essays/the-pendulum-and-the-algorithm",
+  "duration_sec": 43.0,
+  "generated_at": "2026-10-22T09:43:32.436573+00:00",
+  "sha256_report": "cf22ccb271c56ba4efbaf405d4139107362d3057d8d4482a72afb4ea8620f6c1",
+  "summary_bullets": [
+    "FRED Empirical Lock (0.933 Bisociation): Real Output/Hr (OPHNFB: 116.480) decouples from Labor Share (PRS85006092: 88.920) while M2 Velocity (M2V) stalls at 1.394.",
+    "Structural Isomorphism: V_M2 = lambda_L * V_L + (1 - lambda_L) * V_K; shifting income from high-MPC households to low-turnover algorithmic balance sheets depresses clearing velocity.",
+    "Tail Breakdown Gate: Sovereign and consumer debt service requires nominal payroll velocity; below lambda_crit, synthetic supply hits a deflationary clearing wall."
+  ],
+  "collisions": [
+    {
+      "timestamp": "FRED:PRS85006092",
+      "essay_target": "The Pendulum and the Algorithm (\u00a72 Ghost GDP)",
+      "bridge": "Labor Share (88.920) vs. Output/Hr (116.480) & M2 Velocity (1.394)",
+      "synthesis": "Quantifies the exact macroeconomic signature of Ghost GDP across post-war Federal Reserve series."
+    }
+  ],
+  "audio_url": "/drops/spaces/pawel/snipes/01_ghost_gdp_macro_velocity/advocate_rant.mp3"
+}

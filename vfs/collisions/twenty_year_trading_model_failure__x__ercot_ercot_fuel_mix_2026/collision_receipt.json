@@ -1,0 +1,43 @@
+{
+  "adamic_adar_raw": 0.417,
+  "blind_spot_lenses_c_minus_a": [
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ],
+  "collision_id": "twenty_year_trading_model_failure__x__ercot_ercot_fuel_mix_2026",
+  "composite_raw": 0.717,
+  "crucible_brief_3bullet": "1. STRUCTURAL THESIS LOCK (71929.4 us VFS Bisociation): I ran 'The 20-Year Trading Model Shock & Downside Defense' through my local POSIX VFS Swanson Collider; it locked directly onto [ERCOT] ercot fuel mix 2026 via shared lens ASYMMETRIC_TAIL_CONTAGION (Adamic-Adar specificity 0.417).\n\n2. EMPIRICAL GROUND-TRUTH RECEIPT (ERCOT): Empirical ERCOT telemetry node (ercot_fuel_mix_2026) confirms physical bottleneck constraints. | Live Broadcast Phase-Lock: Pat McAfee Show: 'They are taking our jobs. They are drinking up all our water. When you just unplug them? Too late.'\n\n3. THE UNEXAMINED BLIND SPOT (THERMODYNAMIC_ENERGY_CEILING): In my local VFS graph, ercot fuel mix 2026 also triggers THERMODYNAMIC_ENERGY_CEILING (1,100 TWh data center power ceiling, 5-to-7 year transmission interconnect queues, evaporative cooling water draw, and ERCOT reserve margin limits)—a second-order failure vector absent from your current draft that belongs in The Breeze.",
+  "empirical_node_id": "ercot_fuel_mix_2026",
+  "empirical_node_key": "ercot:ercot_fuel_mix_2026",
+  "empirical_receipt": "",
+  "empirical_silo": "ercot",
+  "empirical_title": "ercot fuel mix 2026",
+  "essay_slug": "twenty_year_trading_model_failure",
+  "essay_summary": "An AI rebuilt parts of a 20-year trading model with 3 lines of unexplainable logic. Works in backtests, but undefensible under adverse market conditions. The core allocator dilemma: capable or feeling capable.",
+  "essay_title": "The 20-Year Trading Model Shock & Downside Defense",
+  "essay_unmatched_lenses_a_minus_c": [
+    "COGNITIVE_FRICTION_ATROPHY",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "generated_at_utc": "2026-10-22T04:20:45.570405+00:00",
+  "normalized_score": 0.6745,
+  "rank": 29,
+  "sha256_receipt": "a2871a06a3517e13be330df15dc910bcdc0b8bb94adaca1296d79766547aee68",
+  "shared_lens_count": 1,
+  "shared_lenses": [
+    "ASYMMETRIC_TAIL_CONTAGION"
+  ],
+  "symmetric_difference_lenses": [
+    "COGNITIVE_FRICTION_ATROPHY",
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "TOPOLOGICAL_CASCADE_FAULT",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "three_hop_transitive_chains": [
+    "pawel:twenty_year_trading_model_failure -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_fuel_mix_2026 -> [THERMODYNAMIC_ENERGY_CEILING] -> energy_cartridge:1",
+    "pawel:twenty_year_trading_model_failure -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_fuel_mix_2026 -> [THERMODYNAMIC_ENERGY_CEILING] -> energy_cartridge:10",
+    "pawel:twenty_year_trading_model_failure -> [ASYMMETRIC_TAIL_CONTAGION] -> ercot:ercot_fuel_mix_2026 -> [THERMODYNAMIC_ENERGY_CEILING] -> energy_cartridge:11"
+  ],
+  "traversal_latency_us": 71929.38,
+  "triad_acoustic_snipe": "snipes:x8iARwwn-J8"
+}

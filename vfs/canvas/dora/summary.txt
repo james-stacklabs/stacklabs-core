@@ -1,0 +1,5 @@
+Victron 48V Off-Grid Solar Hub
+Battery: 98.4%
+Solar Ingress: 1,420W
+Inverter: PASSIVE_NOMINAL
+Shore: DISCONNECTED

@@ -1,0 +1,2064 @@
+{
+  "timestamp": "2026-10-01T15:11:40.492844",
+  "total_migrated": 293,
+  "domain_counts": {
+    "01_Governance_and_ITSM": 99,
+    "02_Edge_Hardware_and_Mesh": 23,
+    "03_Market_Intelligence": 7,
+    "04_Advocate_Swarms": 58,
+    "99_Legacy_Archive": 106
+  },
+  "moves": [
+    {
+      "filename": "09272026_SOVEREIGN_ESSAY_THE_PHYSICAL_CIRCUIT_BREAKER_FOR_AI_SWARMS.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/09272026_SOVEREIGN_ESSAY_THE_PHYSICAL_CIRCUIT_BREAKER_FOR_AI_SWARMS.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/09272026_SOVEREIGN_ESSAY_THE_PHYSICAL_CIRCUIT_BREAKER_FOR_AI_SWARMS.md",
+      "symlink_target": "../../04_Advocate_Swarms/09272026_SOVEREIGN_ESSAY_THE_PHYSICAL_CIRCUIT_BREAKER_FOR_AI_SWARMS.md"
+    },
+    {
+      "filename": "09272026_SOVEREIGN_ESSAY_THE_SYCOPHANCY_TAX.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/09272026_SOVEREIGN_ESSAY_THE_SYCOPHANCY_TAX.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/09272026_SOVEREIGN_ESSAY_THE_SYCOPHANCY_TAX.md",
+      "symlink_target": "../../99_Legacy_Archive/09272026_SOVEREIGN_ESSAY_THE_SYCOPHANCY_TAX.md"
+    },
+    {
+      "filename": "09272026_SOVEREIGN_WHITEPAPER_THE_PHYSICAL_CIRCUIT_BREAKER_FOR_AI_SWARMS.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/09272026_SOVEREIGN_WHITEPAPER_THE_PHYSICAL_CIRCUIT_BREAKER_FOR_AI_SWARMS.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/09272026_SOVEREIGN_WHITEPAPER_THE_PHYSICAL_CIRCUIT_BREAKER_FOR_AI_SWARMS.md",
+      "symlink_target": "../../04_Advocate_Swarms/09272026_SOVEREIGN_WHITEPAPER_THE_PHYSICAL_CIRCUIT_BREAKER_FOR_AI_SWARMS.md"
+    },
+    {
+      "filename": "10_STACKLABS_ULTRON_TENANT_BOUNDARY.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/10_STACKLABS_ULTRON_TENANT_BOUNDARY.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/10_STACKLABS_ULTRON_TENANT_BOUNDARY.md",
+      "symlink_target": "../../01_Governance_and_ITSM/10_STACKLABS_ULTRON_TENANT_BOUNDARY.md"
+    },
+    {
+      "filename": "13_CANONICAL_COMMUNICATIONS_LOG_PAWEL_AND_JEREMY.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/13_CANONICAL_COMMUNICATIONS_LOG_PAWEL_AND_JEREMY.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/13_CANONICAL_COMMUNICATIONS_LOG_PAWEL_AND_JEREMY.md",
+      "symlink_target": "../../01_Governance_and_ITSM/13_CANONICAL_COMMUNICATIONS_LOG_PAWEL_AND_JEREMY.md"
+    },
+    {
+      "filename": "AI_ENTROPY_GOVERNANCE_AND_DETERMINISTIC_FENCE_CONFIGURATION.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/AI_ENTROPY_GOVERNANCE_AND_DETERMINISTIC_FENCE_CONFIGURATION.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/AI_ENTROPY_GOVERNANCE_AND_DETERMINISTIC_FENCE_CONFIGURATION.md",
+      "symlink_target": "../../01_Governance_and_ITSM/AI_ENTROPY_GOVERNANCE_AND_DETERMINISTIC_FENCE_CONFIGURATION.md"
+    },
+    {
+      "filename": "ARCHITECTURE_SPEC_SOVEREIGN_INTELLIGENCE_RADAR_SIR.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/ARCHITECTURE_SPEC_SOVEREIGN_INTELLIGENCE_RADAR_SIR.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/ARCHITECTURE_SPEC_SOVEREIGN_INTELLIGENCE_RADAR_SIR.md",
+      "symlink_target": "../../99_Legacy_Archive/ARCHITECTURE_SPEC_SOVEREIGN_INTELLIGENCE_RADAR_SIR.md"
+    },
+    {
+      "filename": "ARKLE_VET_PRODUCT_SHEET_EXECUTIVE_AND_TECH_SPEC.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/ARKLE_VET_PRODUCT_SHEET_EXECUTIVE_AND_TECH_SPEC.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/ARKLE_VET_PRODUCT_SHEET_EXECUTIVE_AND_TECH_SPEC.md",
+      "symlink_target": "../../04_Advocate_Swarms/ARKLE_VET_PRODUCT_SHEET_EXECUTIVE_AND_TECH_SPEC.md"
+    },
+    {
+      "filename": "Arkle Vet - COMMERCIAL PROPOSAL & SYSTEMS SPECIFICATION.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/Arkle Vet - COMMERCIAL PROPOSAL & SYSTEMS SPECIFICATION.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/Arkle Vet - COMMERCIAL PROPOSAL & SYSTEMS SPECIFICATION.md",
+      "symlink_target": "../../04_Advocate_Swarms/Arkle Vet - COMMERCIAL PROPOSAL & SYSTEMS SPECIFICATION.md"
+    },
+    {
+      "filename": "BARB_ELI5_PI_ZERO_DEPLOYMENT.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/BARB_ELI5_PI_ZERO_DEPLOYMENT.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/BARB_ELI5_PI_ZERO_DEPLOYMENT.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/BARB_ELI5_PI_ZERO_DEPLOYMENT.md"
+    },
+    {
+      "filename": "BATTLE_CARD_PAWEL_CLAUDE_TEARDOWN_AND_OBJECTIONS.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/BATTLE_CARD_PAWEL_CLAUDE_TEARDOWN_AND_OBJECTIONS.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/BATTLE_CARD_PAWEL_CLAUDE_TEARDOWN_AND_OBJECTIONS.md",
+      "symlink_target": "../../99_Legacy_Archive/BATTLE_CARD_PAWEL_CLAUDE_TEARDOWN_AND_OBJECTIONS.md"
+    },
+    {
+      "filename": "BLUNDERDOME_BROADCAST_NETWORK_AND_DYNAMIC_VIDEO_EXPANSION_MANUAL.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/BLUNDERDOME_BROADCAST_NETWORK_AND_DYNAMIC_VIDEO_EXPANSION_MANUAL.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/BLUNDERDOME_BROADCAST_NETWORK_AND_DYNAMIC_VIDEO_EXPANSION_MANUAL.md",
+      "symlink_target": "../../04_Advocate_Swarms/BLUNDERDOME_BROADCAST_NETWORK_AND_DYNAMIC_VIDEO_EXPANSION_MANUAL.md"
+    },
+    {
+      "filename": "CASE_STUDY_48_HOUR_ALGORITHMIC_RECLAMATION.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/CASE_STUDY_48_HOUR_ALGORITHMIC_RECLAMATION.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/CASE_STUDY_48_HOUR_ALGORITHMIC_RECLAMATION.md",
+      "symlink_target": "../../99_Legacy_Archive/CASE_STUDY_48_HOUR_ALGORITHMIC_RECLAMATION.md"
+    },
+    {
+      "filename": "CLIO_AGENTIC_ASSEMBLY_LINE_MANUAL.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/CLIO_AGENTIC_ASSEMBLY_LINE_MANUAL.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/CLIO_AGENTIC_ASSEMBLY_LINE_MANUAL.md",
+      "symlink_target": "../../99_Legacy_Archive/CLIO_AGENTIC_ASSEMBLY_LINE_MANUAL.md"
+    },
+    {
+      "filename": "COLAB_MCP_DOLPHIN_ADVOCATE_TRAINING_WHITEPAPER.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/COLAB_MCP_DOLPHIN_ADVOCATE_TRAINING_WHITEPAPER.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/COLAB_MCP_DOLPHIN_ADVOCATE_TRAINING_WHITEPAPER.md",
+      "symlink_target": "../../04_Advocate_Swarms/COLAB_MCP_DOLPHIN_ADVOCATE_TRAINING_WHITEPAPER.md"
+    },
+    {
+      "filename": "CONCEPT_TMI_TRIGGERED_ADVOCATE_SHORTS_ENGINE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/CONCEPT_TMI_TRIGGERED_ADVOCATE_SHORTS_ENGINE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/CONCEPT_TMI_TRIGGERED_ADVOCATE_SHORTS_ENGINE.md",
+      "symlink_target": "../../04_Advocate_Swarms/CONCEPT_TMI_TRIGGERED_ADVOCATE_SHORTS_ENGINE.md"
+    },
+    {
+      "filename": "COVENANT_2026_RULES_OF_THE_YARD.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/COVENANT_2026_RULES_OF_THE_YARD.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/COVENANT_2026_RULES_OF_THE_YARD.md",
+      "symlink_target": "../../01_Governance_and_ITSM/COVENANT_2026_RULES_OF_THE_YARD.md"
+    },
+    {
+      "filename": "Cherylyn_Executive_Briefing_Optimum_IT.pdf",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/Cherylyn_Executive_Briefing_Optimum_IT.pdf",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/Cherylyn_Executive_Briefing_Optimum_IT.pdf",
+      "symlink_target": "../../99_Legacy_Archive/Cherylyn_Executive_Briefing_Optimum_IT.pdf"
+    },
+    {
+      "filename": "DATABASE_SCHEMA.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/DATABASE_SCHEMA.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/DATABASE_SCHEMA.md",
+      "symlink_target": "../../99_Legacy_Archive/DATABASE_SCHEMA.md"
+    },
+    {
+      "filename": "DIGITAL_HOMESTEAD_INFRASTRUCTURE_DEVELOPMENT.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/DIGITAL_HOMESTEAD_INFRASTRUCTURE_DEVELOPMENT.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/DIGITAL_HOMESTEAD_INFRASTRUCTURE_DEVELOPMENT.md",
+      "symlink_target": "../../99_Legacy_Archive/DIGITAL_HOMESTEAD_INFRASTRUCTURE_DEVELOPMENT.md"
+    },
+    {
+      "filename": "DR_KOSMOS_CEREAL_AISLE_PROCLAMATION.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/DR_KOSMOS_CEREAL_AISLE_PROCLAMATION.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/DR_KOSMOS_CEREAL_AISLE_PROCLAMATION.md",
+      "symlink_target": "../../99_Legacy_Archive/DR_KOSMOS_CEREAL_AISLE_PROCLAMATION.md"
+    },
+    {
+      "filename": "ELI_JEREMY_MALONE_BUILDER_MOAT_DAVIDSON_HOMES.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/ELI_JEREMY_MALONE_BUILDER_MOAT_DAVIDSON_HOMES.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/ELI_JEREMY_MALONE_BUILDER_MOAT_DAVIDSON_HOMES.md",
+      "symlink_target": "../../99_Legacy_Archive/ELI_JEREMY_MALONE_BUILDER_MOAT_DAVIDSON_HOMES.md"
+    },
+    {
+      "filename": "ESSAY_KILLING_THE_EVERGREEN_CONTENT_CALENDAR.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/ESSAY_KILLING_THE_EVERGREEN_CONTENT_CALENDAR.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/ESSAY_KILLING_THE_EVERGREEN_CONTENT_CALENDAR.md",
+      "symlink_target": "../../99_Legacy_Archive/ESSAY_KILLING_THE_EVERGREEN_CONTENT_CALENDAR.md"
+    },
+    {
+      "filename": "EXECUTIVE_SYNDICATE_BRIEFING_MODEL_S.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/EXECUTIVE_SYNDICATE_BRIEFING_MODEL_S.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/EXECUTIVE_SYNDICATE_BRIEFING_MODEL_S.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/EXECUTIVE_SYNDICATE_BRIEFING_MODEL_S.md"
+    },
+    {
+      "filename": "Executive Brief - Sovereign Knot & Sentinel Governance (Pawel Rudnicki).md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/Executive Brief - Sovereign Knot & Sentinel Governance (Pawel Rudnicki).md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/Executive Brief - Sovereign Knot & Sentinel Governance (Pawel Rudnicki).md",
+      "symlink_target": "../../01_Governance_and_ITSM/Executive Brief - Sovereign Knot & Sentinel Governance (Pawel Rudnicki).md"
+    },
+    {
+      "filename": "Executive_Brief_Sovereign_Knot_Deterministic_Graders.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/Executive_Brief_Sovereign_Knot_Deterministic_Graders.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/Executive_Brief_Sovereign_Knot_Deterministic_Graders.md",
+      "symlink_target": "../../99_Legacy_Archive/Executive_Brief_Sovereign_Knot_Deterministic_Graders.md"
+    },
+    {
+      "filename": "FAAS_GOVERNANCE_INVARIANTS_28_29_30.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/FAAS_GOVERNANCE_INVARIANTS_28_29_30.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/FAAS_GOVERNANCE_INVARIANTS_28_29_30.md",
+      "symlink_target": "../../01_Governance_and_ITSM/FAAS_GOVERNANCE_INVARIANTS_28_29_30.md"
+    },
+    {
+      "filename": "FANSTACK_CHIN1_ADMIN_GUIDE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/FANSTACK_CHIN1_ADMIN_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/FANSTACK_CHIN1_ADMIN_GUIDE.md",
+      "symlink_target": "../../04_Advocate_Swarms/FANSTACK_CHIN1_ADMIN_GUIDE.md"
+    },
+    {
+      "filename": "FANSTACK_PERSONA_GENEALOGY_AND_LINEAGE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/FANSTACK_PERSONA_GENEALOGY_AND_LINEAGE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/FANSTACK_PERSONA_GENEALOGY_AND_LINEAGE.md",
+      "symlink_target": "../../04_Advocate_Swarms/FANSTACK_PERSONA_GENEALOGY_AND_LINEAGE.md"
+    },
+    {
+      "filename": "FANSTACK_PRODUCT_DATASHEET.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/FANSTACK_PRODUCT_DATASHEET.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/FANSTACK_PRODUCT_DATASHEET.md",
+      "symlink_target": "../../04_Advocate_Swarms/FANSTACK_PRODUCT_DATASHEET.md"
+    },
+    {
+      "filename": "FANSTACK_PROMPT_RECIPE_COOKBOOK.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/FANSTACK_PROMPT_RECIPE_COOKBOOK.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/FANSTACK_PROMPT_RECIPE_COOKBOOK.md",
+      "symlink_target": "../../04_Advocate_Swarms/FANSTACK_PROMPT_RECIPE_COOKBOOK.md"
+    },
+    {
+      "filename": "HOA_ZONING_PHYSICS_DEFENSE_PACKET.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/HOA_ZONING_PHYSICS_DEFENSE_PACKET.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/HOA_ZONING_PHYSICS_DEFENSE_PACKET.md",
+      "symlink_target": "../../99_Legacy_Archive/HOA_ZONING_PHYSICS_DEFENSE_PACKET.md"
+    },
+    {
+      "filename": "HOLODEX_PRO_STUDIO_V6_OPERATIONS_AND_ARCHITECTURE_MANUAL.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/HOLODEX_PRO_STUDIO_V6_OPERATIONS_AND_ARCHITECTURE_MANUAL.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/HOLODEX_PRO_STUDIO_V6_OPERATIONS_AND_ARCHITECTURE_MANUAL.md",
+      "symlink_target": "../../99_Legacy_Archive/HOLODEX_PRO_STUDIO_V6_OPERATIONS_AND_ARCHITECTURE_MANUAL.md"
+    },
+    {
+      "filename": "HOLOLINK_README.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/HOLOLINK_README.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/HOLOLINK_README.md",
+      "symlink_target": "../../99_Legacy_Archive/HOLOLINK_README.md"
+    },
+    {
+      "filename": "INSTITUTIONAL HARDWARE ENGINEERING SPECIFICATION & COMMERCIAL INFRASTRUCTURE BLUEPRINT.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/INSTITUTIONAL HARDWARE ENGINEERING SPECIFICATION & COMMERCIAL INFRASTRUCTURE BLUEPRINT.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/INSTITUTIONAL HARDWARE ENGINEERING SPECIFICATION & COMMERCIAL INFRASTRUCTURE BLUEPRINT.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/INSTITUTIONAL HARDWARE ENGINEERING SPECIFICATION & COMMERCIAL INFRASTRUCTURE BLUEPRINT.md"
+    },
+    {
+      "filename": "INTEL_2026_09_20_EMERY_AUDIO_SPECULATION.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/INTEL_2026_09_20_EMERY_AUDIO_SPECULATION.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/INTEL_2026_09_20_EMERY_AUDIO_SPECULATION.md",
+      "symlink_target": "../../99_Legacy_Archive/INTEL_2026_09_20_EMERY_AUDIO_SPECULATION.md"
+    },
+    {
+      "filename": "JIT_APPROVAL_CLI_ARCHITECTURE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/JIT_APPROVAL_CLI_ARCHITECTURE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/JIT_APPROVAL_CLI_ARCHITECTURE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/JIT_APPROVAL_CLI_ARCHITECTURE.md"
+    },
+    {
+      "filename": "KANBAN_JIT_SUBAGENT_UAT_GUIDE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/KANBAN_JIT_SUBAGENT_UAT_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/KANBAN_JIT_SUBAGENT_UAT_GUIDE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/KANBAN_JIT_SUBAGENT_UAT_GUIDE.md"
+    },
+    {
+      "filename": "KB0002_SOVEREIGN_OS_FANSTACK_HIBERNATION_PROTOCOL.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB0002_SOVEREIGN_OS_FANSTACK_HIBERNATION_PROTOCOL.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/KB0002_SOVEREIGN_OS_FANSTACK_HIBERNATION_PROTOCOL.md",
+      "symlink_target": "../../04_Advocate_Swarms/KB0002_SOVEREIGN_OS_FANSTACK_HIBERNATION_PROTOCOL.md"
+    },
+    {
+      "filename": "KB9012402_SOVEREIGN_OS_RCLONE_SYNC_ARCHITECTURE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012402_SOVEREIGN_OS_RCLONE_SYNC_ARCHITECTURE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012402_SOVEREIGN_OS_RCLONE_SYNC_ARCHITECTURE.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012402_SOVEREIGN_OS_RCLONE_SYNC_ARCHITECTURE.md"
+    },
+    {
+      "filename": "KB9012403_SOVEREIGN_OS_SYNC_NAMING_STANDARDS_FOR_SPARK_AGENTS.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012403_SOVEREIGN_OS_SYNC_NAMING_STANDARDS_FOR_SPARK_AGENTS.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/KB9012403_SOVEREIGN_OS_SYNC_NAMING_STANDARDS_FOR_SPARK_AGENTS.md",
+      "symlink_target": "../../01_Governance_and_ITSM/KB9012403_SOVEREIGN_OS_SYNC_NAMING_STANDARDS_FOR_SPARK_AGENTS.md"
+    },
+    {
+      "filename": "KB9012404_FANSTACK_MEDIA_STUDIO_CONSOLE_UIUX_ENGINEERING_SPECIFICATIONS.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012404_FANSTACK_MEDIA_STUDIO_CONSOLE_UIUX_ENGINEERING_SPECIFICATIONS.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/KB9012404_FANSTACK_MEDIA_STUDIO_CONSOLE_UIUX_ENGINEERING_SPECIFICATIONS.md",
+      "symlink_target": "../../04_Advocate_Swarms/KB9012404_FANSTACK_MEDIA_STUDIO_CONSOLE_UIUX_ENGINEERING_SPECIFICATIONS.md"
+    },
+    {
+      "filename": "KB9012405__STANDARDS_FELINE_RESCUE_AUTOMATION_PROTOCOLS.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012405__STANDARDS_FELINE_RESCUE_AUTOMATION_PROTOCOLS.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/KB9012405__STANDARDS_FELINE_RESCUE_AUTOMATION_PROTOCOLS.md",
+      "symlink_target": "../../01_Governance_and_ITSM/KB9012405__STANDARDS_FELINE_RESCUE_AUTOMATION_PROTOCOLS.md"
+    },
+    {
+      "filename": "KB9012406_HANDOVER_SYSTEM_SYNC_UPDATE_SPARK_AGENT_COMPLIANCE_GUIDE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012406_HANDOVER_SYSTEM_SYNC_UPDATE_SPARK_AGENT_COMPLIANCE_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012406_HANDOVER_SYSTEM_SYNC_UPDATE_SPARK_AGENT_COMPLIANCE_GUIDE.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012406_HANDOVER_SYSTEM_SYNC_UPDATE_SPARK_AGENT_COMPLIANCE_GUIDE.md"
+    },
+    {
+      "filename": "KB9012407_SOW_14B_DECENTRALIZED_WEB3_LIQUIDITY_DRIFT_TELEMETRY_INGRESS_NODAL_SWARM_DESIGN.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012407_SOW_14B_DECENTRALIZED_WEB3_LIQUIDITY_DRIFT_TELEMETRY_INGRESS_NODAL_SWARM_DESIGN.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/KB9012407_SOW_14B_DECENTRALIZED_WEB3_LIQUIDITY_DRIFT_TELEMETRY_INGRESS_NODAL_SWARM_DESIGN.md",
+      "symlink_target": "../../01_Governance_and_ITSM/KB9012407_SOW_14B_DECENTRALIZED_WEB3_LIQUIDITY_DRIFT_TELEMETRY_INGRESS_NODAL_SWARM_DESIGN.md"
+    },
+    {
+      "filename": "KB9012409_THE_L2_PRICING_RIFT_LOWLATENCY_TELEMETRY_ARBITRAGE_DECENTRALIZED_NODAL_SWARMS.md",
+      "domain": "03_Market_Intelligence",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012409_THE_L2_PRICING_RIFT_LOWLATENCY_TELEMETRY_ARBITRAGE_DECENTRALIZED_NODAL_SWARMS.md",
+      "new_path": "/home/james/SovereignOS/03_Market_Intelligence/KB9012409_THE_L2_PRICING_RIFT_LOWLATENCY_TELEMETRY_ARBITRAGE_DECENTRALIZED_NODAL_SWARMS.md",
+      "symlink_target": "../../03_Market_Intelligence/KB9012409_THE_L2_PRICING_RIFT_LOWLATENCY_TELEMETRY_ARBITRAGE_DECENTRALIZED_NODAL_SWARMS.md"
+    },
+    {
+      "filename": "KB9012411_SYSTEM_ARCHITECTURE_BLUEPRINT_PUBLICATIONGRADE_CROSSWORD_GENERATION_ENGINE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012411_SYSTEM_ARCHITECTURE_BLUEPRINT_PUBLICATIONGRADE_CROSSWORD_GENERATION_ENGINE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012411_SYSTEM_ARCHITECTURE_BLUEPRINT_PUBLICATIONGRADE_CROSSWORD_GENERATION_ENGINE.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012411_SYSTEM_ARCHITECTURE_BLUEPRINT_PUBLICATIONGRADE_CROSSWORD_GENERATION_ENGINE.md"
+    },
+    {
+      "filename": "KB9012412_SOVEREIGN_OS_BRAND_CARTRIDGE_SEEDING_INGESTION_BRIEF.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012412_SOVEREIGN_OS_BRAND_CARTRIDGE_SEEDING_INGESTION_BRIEF.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012412_SOVEREIGN_OS_BRAND_CARTRIDGE_SEEDING_INGESTION_BRIEF.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012412_SOVEREIGN_OS_BRAND_CARTRIDGE_SEEDING_INGESTION_BRIEF.md"
+    },
+    {
+      "filename": "KB9012413_FANSTACK_NEXTGENERATION_MULTIAGENT_SPORTS_TELEMETRY_COGNITIVE_ENTERTAINMENT.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012413_FANSTACK_NEXTGENERATION_MULTIAGENT_SPORTS_TELEMETRY_COGNITIVE_ENTERTAINMENT.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/KB9012413_FANSTACK_NEXTGENERATION_MULTIAGENT_SPORTS_TELEMETRY_COGNITIVE_ENTERTAINMENT.md",
+      "symlink_target": "../../04_Advocate_Swarms/KB9012413_FANSTACK_NEXTGENERATION_MULTIAGENT_SPORTS_TELEMETRY_COGNITIVE_ENTERTAINMENT.md"
+    },
+    {
+      "filename": "KB9012414__SYSTEM_ARCHITECTURE_SPECIFICATION_BOGGS_VS_DECORUM.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012414__SYSTEM_ARCHITECTURE_SPECIFICATION_BOGGS_VS_DECORUM.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012414__SYSTEM_ARCHITECTURE_SPECIFICATION_BOGGS_VS_DECORUM.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012414__SYSTEM_ARCHITECTURE_SPECIFICATION_BOGGS_VS_DECORUM.md"
+    },
+    {
+      "filename": "KB9012415_VARIETY_PUZZLE_GENERATION_ENGINE_V2.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012415_VARIETY_PUZZLE_GENERATION_ENGINE_V2.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012415_VARIETY_PUZZLE_GENERATION_ENGINE_V2.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012415_VARIETY_PUZZLE_GENERATION_ENGINE_V2.md"
+    },
+    {
+      "filename": "KB9012416_SO_GWEN_KNOWLEDGE_TRANSFER_STACKLABS_LLC_ARCHITECTURE_UPDATE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012416_SO_GWEN_KNOWLEDGE_TRANSFER_STACKLABS_LLC_ARCHITECTURE_UPDATE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012416_SO_GWEN_KNOWLEDGE_TRANSFER_STACKLABS_LLC_ARCHITECTURE_UPDATE.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012416_SO_GWEN_KNOWLEDGE_TRANSFER_STACKLABS_LLC_ARCHITECTURE_UPDATE.md"
+    },
+    {
+      "filename": "KB9012417_GEMINI_SPARK_GOOGLE_DRIVE_CLIO_INGRESS_PIPELINE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012417_GEMINI_SPARK_GOOGLE_DRIVE_CLIO_INGRESS_PIPELINE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/KB9012417_GEMINI_SPARK_GOOGLE_DRIVE_CLIO_INGRESS_PIPELINE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/KB9012417_GEMINI_SPARK_GOOGLE_DRIVE_CLIO_INGRESS_PIPELINE.md"
+    },
+    {
+      "filename": "KB9012418_STD2026FANSTACKNFL_FANSTACK_NFL_ARCHITECTURE_CANNED_MEDIA_SPECIFICATION.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012418_STD2026FANSTACKNFL_FANSTACK_NFL_ARCHITECTURE_CANNED_MEDIA_SPECIFICATION.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/KB9012418_STD2026FANSTACKNFL_FANSTACK_NFL_ARCHITECTURE_CANNED_MEDIA_SPECIFICATION.md",
+      "symlink_target": "../../04_Advocate_Swarms/KB9012418_STD2026FANSTACKNFL_FANSTACK_NFL_ARCHITECTURE_CANNED_MEDIA_SPECIFICATION.md"
+    },
+    {
+      "filename": "KB9012419_STD2026FANSTACKPREDICTIONMARKET_FANSTACK_PREDICTION_MARKET_ADVOCATE_BETTING_SPECIFICATION.md",
+      "domain": "03_Market_Intelligence",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012419_STD2026FANSTACKPREDICTIONMARKET_FANSTACK_PREDICTION_MARKET_ADVOCATE_BETTING_SPECIFICATION.md",
+      "new_path": "/home/james/SovereignOS/03_Market_Intelligence/KB9012419_STD2026FANSTACKPREDICTIONMARKET_FANSTACK_PREDICTION_MARKET_ADVOCATE_BETTING_SPECIFICATION.md",
+      "symlink_target": "../../03_Market_Intelligence/KB9012419_STD2026FANSTACKPREDICTIONMARKET_FANSTACK_PREDICTION_MARKET_ADVOCATE_BETTING_SPECIFICATION.md"
+    },
+    {
+      "filename": "KB9012420_STATEMENT_OF_WORK_SOW_PROJECT_FOOTYSTACK.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012420_STATEMENT_OF_WORK_SOW_PROJECT_FOOTYSTACK.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/KB9012420_STATEMENT_OF_WORK_SOW_PROJECT_FOOTYSTACK.md",
+      "symlink_target": "../../01_Governance_and_ITSM/KB9012420_STATEMENT_OF_WORK_SOW_PROJECT_FOOTYSTACK.md"
+    },
+    {
+      "filename": "KB9012421_FANSTACK_VELOCITY_MOVEMENT_FLOW_VIDEO_PROMPTS_SPECIFICATION.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012421_FANSTACK_VELOCITY_MOVEMENT_FLOW_VIDEO_PROMPTS_SPECIFICATION.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/KB9012421_FANSTACK_VELOCITY_MOVEMENT_FLOW_VIDEO_PROMPTS_SPECIFICATION.md",
+      "symlink_target": "../../04_Advocate_Swarms/KB9012421_FANSTACK_VELOCITY_MOVEMENT_FLOW_VIDEO_PROMPTS_SPECIFICATION.md"
+    },
+    {
+      "filename": "KB9012422_STACK_LABS_LLC_THE_SOVEREIGN_OS_THE_STORY_OF_DIGITAL_SOVEREIGNTY.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012422_STACK_LABS_LLC_THE_SOVEREIGN_OS_THE_STORY_OF_DIGITAL_SOVEREIGNTY.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012422_STACK_LABS_LLC_THE_SOVEREIGN_OS_THE_STORY_OF_DIGITAL_SOVEREIGNTY.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012422_STACK_LABS_LLC_THE_SOVEREIGN_OS_THE_STORY_OF_DIGITAL_SOVEREIGNTY.md"
+    },
+    {
+      "filename": "KB9012423_SOVEREIGN_OS_SEATED_ADVOCATES_AUDIT_MASTER_DATABASE_RECORDS.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012423_SOVEREIGN_OS_SEATED_ADVOCATES_AUDIT_MASTER_DATABASE_RECORDS.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/KB9012423_SOVEREIGN_OS_SEATED_ADVOCATES_AUDIT_MASTER_DATABASE_RECORDS.md",
+      "symlink_target": "../../04_Advocate_Swarms/KB9012423_SOVEREIGN_OS_SEATED_ADVOCATES_AUDIT_MASTER_DATABASE_RECORDS.md"
+    },
+    {
+      "filename": "KB9012424_PROJECT_METSY_THE_CHEROKEE_PURPLE_BODACIOUS_TOMATO_BREEDING_BRIEF_SESSION_KICKOFF.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012424_PROJECT_METSY_THE_CHEROKEE_PURPLE_BODACIOUS_TOMATO_BREEDING_BRIEF_SESSION_KICKOFF.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/KB9012424_PROJECT_METSY_THE_CHEROKEE_PURPLE_BODACIOUS_TOMATO_BREEDING_BRIEF_SESSION_KICKOFF.md",
+      "symlink_target": "../../04_Advocate_Swarms/KB9012424_PROJECT_METSY_THE_CHEROKEE_PURPLE_BODACIOUS_TOMATO_BREEDING_BRIEF_SESSION_KICKOFF.md"
+    },
+    {
+      "filename": "KB9012425__SO_GWEN_MARD_CAMPAIGN_ENGINE_ONBOARDING_BRIEF_MISSION_PACKET.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012425__SO_GWEN_MARD_CAMPAIGN_ENGINE_ONBOARDING_BRIEF_MISSION_PACKET.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/KB9012425__SO_GWEN_MARD_CAMPAIGN_ENGINE_ONBOARDING_BRIEF_MISSION_PACKET.md",
+      "symlink_target": "../../04_Advocate_Swarms/KB9012425__SO_GWEN_MARD_CAMPAIGN_ENGINE_ONBOARDING_BRIEF_MISSION_PACKET.md"
+    },
+    {
+      "filename": "KB9012426__SOVEREIGN_OS_WILDCARD_ADVOCATE_ONBOARDING_MASTER_TEMPLATE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012426__SOVEREIGN_OS_WILDCARD_ADVOCATE_ONBOARDING_MASTER_TEMPLATE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/KB9012426__SOVEREIGN_OS_WILDCARD_ADVOCATE_ONBOARDING_MASTER_TEMPLATE.md",
+      "symlink_target": "../../04_Advocate_Swarms/KB9012426__SOVEREIGN_OS_WILDCARD_ADVOCATE_ONBOARDING_MASTER_TEMPLATE.md"
+    },
+    {
+      "filename": "KB9012427__COOPER_CALLAHAN_COMPREHENSIVE_5PAGE_DEEP_LORE_DOSSIER.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012427__COOPER_CALLAHAN_COMPREHENSIVE_5PAGE_DEEP_LORE_DOSSIER.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012427__COOPER_CALLAHAN_COMPREHENSIVE_5PAGE_DEEP_LORE_DOSSIER.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012427__COOPER_CALLAHAN_COMPREHENSIVE_5PAGE_DEEP_LORE_DOSSIER.md"
+    },
+    {
+      "filename": "KB9012428__SOVEREIGN_OS_COOPER_CALLAHAN_GENESIS_LOOKBOOK_PRODUCTION_BIBLE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012428__SOVEREIGN_OS_COOPER_CALLAHAN_GENESIS_LOOKBOOK_PRODUCTION_BIBLE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012428__SOVEREIGN_OS_COOPER_CALLAHAN_GENESIS_LOOKBOOK_PRODUCTION_BIBLE.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012428__SOVEREIGN_OS_COOPER_CALLAHAN_GENESIS_LOOKBOOK_PRODUCTION_BIBLE.md"
+    },
+    {
+      "filename": "KB9012429_REPORT_SOVEREIGN_OS_CMDB_HARDWARE_NODE_TOPOLOGY_SPEC.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012429_REPORT_SOVEREIGN_OS_CMDB_HARDWARE_NODE_TOPOLOGY_SPEC.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/KB9012429_REPORT_SOVEREIGN_OS_CMDB_HARDWARE_NODE_TOPOLOGY_SPEC.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/KB9012429_REPORT_SOVEREIGN_OS_CMDB_HARDWARE_NODE_TOPOLOGY_SPEC.md"
+    },
+    {
+      "filename": "KB9012430_THE_GENESIS_OF_THE_STACKSEEDER_BAR_QUESTION.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012430_THE_GENESIS_OF_THE_STACKSEEDER_BAR_QUESTION.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/KB9012430_THE_GENESIS_OF_THE_STACKSEEDER_BAR_QUESTION.md",
+      "symlink_target": "../../99_Legacy_Archive/KB9012430_THE_GENESIS_OF_THE_STACKSEEDER_BAR_QUESTION.md"
+    },
+    {
+      "filename": "KB9012435_P1_INCIDENT_RECOVERY_RUNBOOK.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/KB9012435_P1_INCIDENT_RECOVERY_RUNBOOK.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/KB9012435_P1_INCIDENT_RECOVERY_RUNBOOK.md",
+      "symlink_target": "../../01_Governance_and_ITSM/KB9012435_P1_INCIDENT_RECOVERY_RUNBOOK.md"
+    },
+    {
+      "filename": "Kinetic_Forge_and_Playcall_Desk_Admin_Guide.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/Kinetic_Forge_and_Playcall_Desk_Admin_Guide.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/Kinetic_Forge_and_Playcall_Desk_Admin_Guide.md",
+      "symlink_target": "../../99_Legacy_Archive/Kinetic_Forge_and_Playcall_Desk_Admin_Guide.md"
+    },
+    {
+      "filename": "MARD_ENGINE_CAMPAIGN_VS_FANSTACK_SCHEMA_COMPASS.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/MARD_ENGINE_CAMPAIGN_VS_FANSTACK_SCHEMA_COMPASS.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/MARD_ENGINE_CAMPAIGN_VS_FANSTACK_SCHEMA_COMPASS.md",
+      "symlink_target": "../../04_Advocate_Swarms/MARD_ENGINE_CAMPAIGN_VS_FANSTACK_SCHEMA_COMPASS.md"
+    },
+    {
+      "filename": "MARD_Innovation_Backlog_Tracker.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/MARD_Innovation_Backlog_Tracker.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/MARD_Innovation_Backlog_Tracker.md",
+      "symlink_target": "../../04_Advocate_Swarms/MARD_Innovation_Backlog_Tracker.md"
+    },
+    {
+      "filename": "MARD_NEXUS_STUDIO_ARCHITECTURE_AND_TOC.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/MARD_NEXUS_STUDIO_ARCHITECTURE_AND_TOC.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/MARD_NEXUS_STUDIO_ARCHITECTURE_AND_TOC.md",
+      "symlink_target": "../../04_Advocate_Swarms/MARD_NEXUS_STUDIO_ARCHITECTURE_AND_TOC.md"
+    },
+    {
+      "filename": "MODEL_ARENA_USER_GUIDE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/MODEL_ARENA_USER_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/MODEL_ARENA_USER_GUIDE.md",
+      "symlink_target": "../../99_Legacy_Archive/MODEL_ARENA_USER_GUIDE.md"
+    },
+    {
+      "filename": "MODULE_01_SOLVENTLESS_EXTRACTION_THERMODYNAMICS.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/MODULE_01_SOLVENTLESS_EXTRACTION_THERMODYNAMICS.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/MODULE_01_SOLVENTLESS_EXTRACTION_THERMODYNAMICS.md",
+      "symlink_target": "../../99_Legacy_Archive/MODULE_01_SOLVENTLESS_EXTRACTION_THERMODYNAMICS.md"
+    },
+    {
+      "filename": "NOTEBOOKLM_AUDIO_SOURCE_SOVEREIGN_EDGE_125K.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/NOTEBOOKLM_AUDIO_SOURCE_SOVEREIGN_EDGE_125K.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/NOTEBOOKLM_AUDIO_SOURCE_SOVEREIGN_EDGE_125K.md",
+      "symlink_target": "../../99_Legacy_Archive/NOTEBOOKLM_AUDIO_SOURCE_SOVEREIGN_EDGE_125K.md"
+    },
+    {
+      "filename": "PAWEL_CALL_SCRIPT_WILDSEED_SAFE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/PAWEL_CALL_SCRIPT_WILDSEED_SAFE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/PAWEL_CALL_SCRIPT_WILDSEED_SAFE.md",
+      "symlink_target": "../../04_Advocate_Swarms/PAWEL_CALL_SCRIPT_WILDSEED_SAFE.md"
+    },
+    {
+      "filename": "PAWEL_PROOF_PACKET_AND_SANITY_CHECK.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/PAWEL_PROOF_PACKET_AND_SANITY_CHECK.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/PAWEL_PROOF_PACKET_AND_SANITY_CHECK.md",
+      "symlink_target": "../../99_Legacy_Archive/PAWEL_PROOF_PACKET_AND_SANITY_CHECK.md"
+    },
+    {
+      "filename": "PILOT_ANTIGRAVITY_SHARED_LEXICON.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/PILOT_ANTIGRAVITY_SHARED_LEXICON.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/PILOT_ANTIGRAVITY_SHARED_LEXICON.md",
+      "symlink_target": "../../01_Governance_and_ITSM/PILOT_ANTIGRAVITY_SHARED_LEXICON.md"
+    },
+    {
+      "filename": "PILOT_BIO_JAMES_CARROLL.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/PILOT_BIO_JAMES_CARROLL.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/PILOT_BIO_JAMES_CARROLL.md",
+      "symlink_target": "../../01_Governance_and_ITSM/PILOT_BIO_JAMES_CARROLL.md"
+    },
+    {
+      "filename": "PILOT_PASSPORT_CURRENT.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/PILOT_PASSPORT_CURRENT.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/PILOT_PASSPORT_CURRENT.md",
+      "symlink_target": "../../01_Governance_and_ITSM/PILOT_PASSPORT_CURRENT.md"
+    },
+    {
+      "filename": "PILOT_PREFLIGHT_CHECKLIST.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/PILOT_PREFLIGHT_CHECKLIST.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/PILOT_PREFLIGHT_CHECKLIST.md",
+      "symlink_target": "../../01_Governance_and_ITSM/PILOT_PREFLIGHT_CHECKLIST.md"
+    },
+    {
+      "filename": "PLAYBOOK_2026_JEREMY_MALONE_BUILDER_MOAT.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/PLAYBOOK_2026_JEREMY_MALONE_BUILDER_MOAT.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/PLAYBOOK_2026_JEREMY_MALONE_BUILDER_MOAT.md",
+      "symlink_target": "../../99_Legacy_Archive/PLAYBOOK_2026_JEREMY_MALONE_BUILDER_MOAT.md"
+    },
+    {
+      "filename": "PLAYCALL_DESK_ADMIN_GUIDE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/PLAYCALL_DESK_ADMIN_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/PLAYCALL_DESK_ADMIN_GUIDE.md",
+      "symlink_target": "../../99_Legacy_Archive/PLAYCALL_DESK_ADMIN_GUIDE.md"
+    },
+    {
+      "filename": "PORT_DIRECTORY.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/PORT_DIRECTORY.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/PORT_DIRECTORY.md",
+      "symlink_target": "../../99_Legacy_Archive/PORT_DIRECTORY.md"
+    },
+    {
+      "filename": "PROJECT_VERITAS_EXECUTIVE_PILOT_PROPOSAL.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/PROJECT_VERITAS_EXECUTIVE_PILOT_PROPOSAL.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/PROJECT_VERITAS_EXECUTIVE_PILOT_PROPOSAL.md",
+      "symlink_target": "../../01_Governance_and_ITSM/PROJECT_VERITAS_EXECUTIVE_PILOT_PROPOSAL.md"
+    },
+    {
+      "filename": "PROJECT_VERITAS_PRODUCTION_ROADMAP.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/PROJECT_VERITAS_PRODUCTION_ROADMAP.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/PROJECT_VERITAS_PRODUCTION_ROADMAP.md",
+      "symlink_target": "../../99_Legacy_Archive/PROJECT_VERITAS_PRODUCTION_ROADMAP.md"
+    },
+    {
+      "filename": "PROMPT_FOR_SPARK_50_NODE_FLEET_AND_CULDESAC_TESTBED.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/PROMPT_FOR_SPARK_50_NODE_FLEET_AND_CULDESAC_TESTBED.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/PROMPT_FOR_SPARK_50_NODE_FLEET_AND_CULDESAC_TESTBED.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/PROMPT_FOR_SPARK_50_NODE_FLEET_AND_CULDESAC_TESTBED.md"
+    },
+    {
+      "filename": "PROMPT_FOR_SPARK_ALGORITHMIC_RECLAMATION_WHITE_PAPER.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/PROMPT_FOR_SPARK_ALGORITHMIC_RECLAMATION_WHITE_PAPER.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/PROMPT_FOR_SPARK_ALGORITHMIC_RECLAMATION_WHITE_PAPER.md",
+      "symlink_target": "../../99_Legacy_Archive/PROMPT_FOR_SPARK_ALGORITHMIC_RECLAMATION_WHITE_PAPER.md"
+    },
+    {
+      "filename": "PROMPT_FOR_SPARK_CREATOR_STREAMER_OFFSEASON_DISPATCH.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/PROMPT_FOR_SPARK_CREATOR_STREAMER_OFFSEASON_DISPATCH.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/PROMPT_FOR_SPARK_CREATOR_STREAMER_OFFSEASON_DISPATCH.md",
+      "symlink_target": "../../99_Legacy_Archive/PROMPT_FOR_SPARK_CREATOR_STREAMER_OFFSEASON_DISPATCH.md"
+    },
+    {
+      "filename": "QWEN_COLAB_A100_HARNESS_OPERATOR_GUIDE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/QWEN_COLAB_A100_HARNESS_OPERATOR_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/QWEN_COLAB_A100_HARNESS_OPERATOR_GUIDE.md",
+      "symlink_target": "../../99_Legacy_Archive/QWEN_COLAB_A100_HARNESS_OPERATOR_GUIDE.md"
+    },
+    {
+      "filename": "REQ_0702_REPURPOSE_SAMTRACKER.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_0702_REPURPOSE_SAMTRACKER.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_0702_REPURPOSE_SAMTRACKER.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_0702_REPURPOSE_SAMTRACKER.md"
+    },
+    {
+      "filename": "REQ_0705_INTERACTIVE_CONCEPTS.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_0705_INTERACTIVE_CONCEPTS.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_0705_INTERACTIVE_CONCEPTS.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_0705_INTERACTIVE_CONCEPTS.md"
+    },
+    {
+      "filename": "REQ_20260824_FLORADEX_TELEPRESENCE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_20260824_FLORADEX_TELEPRESENCE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/REQ_20260824_FLORADEX_TELEPRESENCE.md",
+      "symlink_target": "../../04_Advocate_Swarms/REQ_20260824_FLORADEX_TELEPRESENCE.md"
+    },
+    {
+      "filename": "REQ_2026_08_07_PREDICTION_MARKET.md",
+      "domain": "03_Market_Intelligence",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_08_07_PREDICTION_MARKET.md",
+      "new_path": "/home/james/SovereignOS/03_Market_Intelligence/REQ_2026_08_07_PREDICTION_MARKET.md",
+      "symlink_target": "../../03_Market_Intelligence/REQ_2026_08_07_PREDICTION_MARKET.md"
+    },
+    {
+      "filename": "REQ_2026_08_23_MARD_CRAFTING_WORKSHOP.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_08_23_MARD_CRAFTING_WORKSHOP.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/REQ_2026_08_23_MARD_CRAFTING_WORKSHOP.md",
+      "symlink_target": "../../04_Advocate_Swarms/REQ_2026_08_23_MARD_CRAFTING_WORKSHOP.md"
+    },
+    {
+      "filename": "REQ_2026_08_23_MARD_ENGINE_TTRPG_STUDIO.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_08_23_MARD_ENGINE_TTRPG_STUDIO.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/REQ_2026_08_23_MARD_ENGINE_TTRPG_STUDIO.md",
+      "symlink_target": "../../04_Advocate_Swarms/REQ_2026_08_23_MARD_ENGINE_TTRPG_STUDIO.md"
+    },
+    {
+      "filename": "REQ_2026_08_23_SO_GWEN_QWEN_CAMPAIGN_INTEGRATION.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_08_23_SO_GWEN_QWEN_CAMPAIGN_INTEGRATION.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_2026_08_23_SO_GWEN_QWEN_CAMPAIGN_INTEGRATION.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_2026_08_23_SO_GWEN_QWEN_CAMPAIGN_INTEGRATION.md"
+    },
+    {
+      "filename": "REQ_2026_08_25_MARD_DND_CAMPAIGN_PORTAL.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_08_25_MARD_DND_CAMPAIGN_PORTAL.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/REQ_2026_08_25_MARD_DND_CAMPAIGN_PORTAL.md",
+      "symlink_target": "../../04_Advocate_Swarms/REQ_2026_08_25_MARD_DND_CAMPAIGN_PORTAL.md"
+    },
+    {
+      "filename": "REQ_2026_08_27_GENERATIVE_PHYSICS_OVERLAY.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_08_27_GENERATIVE_PHYSICS_OVERLAY.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_2026_08_27_GENERATIVE_PHYSICS_OVERLAY.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_2026_08_27_GENERATIVE_PHYSICS_OVERLAY.md"
+    },
+    {
+      "filename": "REQ_2026_08_31_PARTICLE_ACCELERATOR_LAB.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_08_31_PARTICLE_ACCELERATOR_LAB.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_2026_08_31_PARTICLE_ACCELERATOR_LAB.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_2026_08_31_PARTICLE_ACCELERATOR_LAB.md"
+    },
+    {
+      "filename": "REQ_2026_09_20_DIGITAL_HOMESTEAD_NEIGHBORHOOD_MESH_SPEC.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_09_20_DIGITAL_HOMESTEAD_NEIGHBORHOOD_MESH_SPEC.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/REQ_2026_09_20_DIGITAL_HOMESTEAD_NEIGHBORHOOD_MESH_SPEC.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/REQ_2026_09_20_DIGITAL_HOMESTEAD_NEIGHBORHOOD_MESH_SPEC.md"
+    },
+    {
+      "filename": "REQ_2026_CROSSTALK_50_50_SYMMETRY.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_CROSSTALK_50_50_SYMMETRY.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/REQ_2026_CROSSTALK_50_50_SYMMETRY.md",
+      "symlink_target": "../../04_Advocate_Swarms/REQ_2026_CROSSTALK_50_50_SYMMETRY.md"
+    },
+    {
+      "filename": "REQ_2026_CROSSTALK_LOUNGE_LAYOUT_POLISH.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_CROSSTALK_LOUNGE_LAYOUT_POLISH.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/REQ_2026_CROSSTALK_LOUNGE_LAYOUT_POLISH.md",
+      "symlink_target": "../../04_Advocate_Swarms/REQ_2026_CROSSTALK_LOUNGE_LAYOUT_POLISH.md"
+    },
+    {
+      "filename": "REQ_2026_PRECOG_ACOUSTIC_CUE_MATRIX.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_PRECOG_ACOUSTIC_CUE_MATRIX.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_2026_PRECOG_ACOUSTIC_CUE_MATRIX.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_2026_PRECOG_ACOUSTIC_CUE_MATRIX.md"
+    },
+    {
+      "filename": "REQ_2026_PREDICTION_MARKET_ADVOCATES.md",
+      "domain": "03_Market_Intelligence",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_PREDICTION_MARKET_ADVOCATES.md",
+      "new_path": "/home/james/SovereignOS/03_Market_Intelligence/REQ_2026_PREDICTION_MARKET_ADVOCATES.md",
+      "symlink_target": "../../03_Market_Intelligence/REQ_2026_PREDICTION_MARKET_ADVOCATES.md"
+    },
+    {
+      "filename": "REQ_2026_SOVEREIGN_FAN_PORTAL_LAYOUT_ALIGNMENT.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_SOVEREIGN_FAN_PORTAL_LAYOUT_ALIGNMENT.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_2026_SOVEREIGN_FAN_PORTAL_LAYOUT_ALIGNMENT.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_2026_SOVEREIGN_FAN_PORTAL_LAYOUT_ALIGNMENT.md"
+    },
+    {
+      "filename": "REQ_2026_SOVEREIGN_THUNDERDOME_NFL_STUDIO.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_SOVEREIGN_THUNDERDOME_NFL_STUDIO.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_2026_SOVEREIGN_THUNDERDOME_NFL_STUDIO.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_2026_SOVEREIGN_THUNDERDOME_NFL_STUDIO.md"
+    },
+    {
+      "filename": "REQ_2026_STREAM_CHAT_EMOTES_AND_MEDIA.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_STREAM_CHAT_EMOTES_AND_MEDIA.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_2026_STREAM_CHAT_EMOTES_AND_MEDIA.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_2026_STREAM_CHAT_EMOTES_AND_MEDIA.md"
+    },
+    {
+      "filename": "REQ_2026_THE_BLUNDERDOME_NFL_STUDIO.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_2026_THE_BLUNDERDOME_NFL_STUDIO.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/REQ_2026_THE_BLUNDERDOME_NFL_STUDIO.md",
+      "symlink_target": "../../04_Advocate_Swarms/REQ_2026_THE_BLUNDERDOME_NFL_STUDIO.md"
+    },
+    {
+      "filename": "REQ_28_MARD_TTRPG_PORTAL_ARCHITECTURE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_28_MARD_TTRPG_PORTAL_ARCHITECTURE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/REQ_28_MARD_TTRPG_PORTAL_ARCHITECTURE.md",
+      "symlink_target": "../../04_Advocate_Swarms/REQ_28_MARD_TTRPG_PORTAL_ARCHITECTURE.md"
+    },
+    {
+      "filename": "REQ_CMDB_PORTAL_STUDIO.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_CMDB_PORTAL_STUDIO.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/REQ_CMDB_PORTAL_STUDIO.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/REQ_CMDB_PORTAL_STUDIO.md"
+    },
+    {
+      "filename": "REQ_LEAN_RESTART_STACK_ARCHITECTURE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_LEAN_RESTART_STACK_ARCHITECTURE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_LEAN_RESTART_STACK_ARCHITECTURE.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_LEAN_RESTART_STACK_ARCHITECTURE.md"
+    },
+    {
+      "filename": "REQ_PIZZA_BOT_EQUITY_ENGINE_ARCHITECTURE.md",
+      "domain": "03_Market_Intelligence",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_PIZZA_BOT_EQUITY_ENGINE_ARCHITECTURE.md",
+      "new_path": "/home/james/SovereignOS/03_Market_Intelligence/REQ_PIZZA_BOT_EQUITY_ENGINE_ARCHITECTURE.md",
+      "symlink_target": "../../03_Market_Intelligence/REQ_PIZZA_BOT_EQUITY_ENGINE_ARCHITECTURE.md"
+    },
+    {
+      "filename": "REQ_PRECOG_VIDEO_INGEST.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_PRECOG_VIDEO_INGEST.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_PRECOG_VIDEO_INGEST.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_PRECOG_VIDEO_INGEST.md"
+    },
+    {
+      "filename": "REQ_SOVEREIGN_MEDIA_ARCHITECTURE_AND_USER_GUIDE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/REQ_SOVEREIGN_MEDIA_ARCHITECTURE_AND_USER_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/REQ_SOVEREIGN_MEDIA_ARCHITECTURE_AND_USER_GUIDE.md",
+      "symlink_target": "../../99_Legacy_Archive/REQ_SOVEREIGN_MEDIA_ARCHITECTURE_AND_USER_GUIDE.md"
+    },
+    {
+      "filename": "RESEARCH_LOCAL_AI_CLUSTERS_VS_HYPERSCALERS.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/RESEARCH_LOCAL_AI_CLUSTERS_VS_HYPERSCALERS.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/RESEARCH_LOCAL_AI_CLUSTERS_VS_HYPERSCALERS.md",
+      "symlink_target": "../../99_Legacy_Archive/RESEARCH_LOCAL_AI_CLUSTERS_VS_HYPERSCALERS.md"
+    },
+    {
+      "filename": "RUNBOOK_2026_PHASE_0_ZERO_HOUR_PROVISIONING_AND_STAGING.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/RUNBOOK_2026_PHASE_0_ZERO_HOUR_PROVISIONING_AND_STAGING.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/RUNBOOK_2026_PHASE_0_ZERO_HOUR_PROVISIONING_AND_STAGING.md",
+      "symlink_target": "../../01_Governance_and_ITSM/RUNBOOK_2026_PHASE_0_ZERO_HOUR_PROVISIONING_AND_STAGING.md"
+    },
+    {
+      "filename": "SDLC_EPIC_HIERARCHY_ARCHITECTURE_AND_OPERATIONS_MANUAL.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SDLC_EPIC_HIERARCHY_ARCHITECTURE_AND_OPERATIONS_MANUAL.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SDLC_EPIC_HIERARCHY_ARCHITECTURE_AND_OPERATIONS_MANUAL.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SDLC_EPIC_HIERARCHY_ARCHITECTURE_AND_OPERATIONS_MANUAL.md"
+    },
+    {
+      "filename": "SL_SPEC_2026_RECON_001.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SL_SPEC_2026_RECON_001.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SL_SPEC_2026_RECON_001.md",
+      "symlink_target": "../../99_Legacy_Archive/SL_SPEC_2026_RECON_001.md"
+    },
+    {
+      "filename": "SL_SPEC_2026_SJI_TOURISM_001.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SL_SPEC_2026_SJI_TOURISM_001.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SL_SPEC_2026_SJI_TOURISM_001.md",
+      "symlink_target": "../../99_Legacy_Archive/SL_SPEC_2026_SJI_TOURISM_001.md"
+    },
+    {
+      "filename": "SOVEREIGN_ADVOCATE_LOOKBOOK.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_ADVOCATE_LOOKBOOK.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/SOVEREIGN_ADVOCATE_LOOKBOOK.md",
+      "symlink_target": "../../04_Advocate_Swarms/SOVEREIGN_ADVOCATE_LOOKBOOK.md"
+    },
+    {
+      "filename": "SOVEREIGN_ADVOCATE_ONBOARDING_TEMPLATE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_ADVOCATE_ONBOARDING_TEMPLATE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/SOVEREIGN_ADVOCATE_ONBOARDING_TEMPLATE.md",
+      "symlink_target": "../../04_Advocate_Swarms/SOVEREIGN_ADVOCATE_ONBOARDING_TEMPLATE.md"
+    },
+    {
+      "filename": "SOVEREIGN_AMBIENT_EDGE_APPLIANCE_WHITEPAPER.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_AMBIENT_EDGE_APPLIANCE_WHITEPAPER.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/SOVEREIGN_AMBIENT_EDGE_APPLIANCE_WHITEPAPER.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/SOVEREIGN_AMBIENT_EDGE_APPLIANCE_WHITEPAPER.md"
+    },
+    {
+      "filename": "SOVEREIGN_CMDB_HARDWARE_SPEC.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_CMDB_HARDWARE_SPEC.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/SOVEREIGN_CMDB_HARDWARE_SPEC.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/SOVEREIGN_CMDB_HARDWARE_SPEC.md"
+    },
+    {
+      "filename": "SOVEREIGN_CMDB_MULTI_LLM_AI_AGENT_ARCHITECTURE.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_CMDB_MULTI_LLM_AI_AGENT_ARCHITECTURE.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/SOVEREIGN_CMDB_MULTI_LLM_AI_AGENT_ARCHITECTURE.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/SOVEREIGN_CMDB_MULTI_LLM_AI_AGENT_ARCHITECTURE.md"
+    },
+    {
+      "filename": "SOVEREIGN_CODEBASE_SMELLS_AND_TECH_DEBT_AUDIT.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_CODEBASE_SMELLS_AND_TECH_DEBT_AUDIT.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_CODEBASE_SMELLS_AND_TECH_DEBT_AUDIT.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_CODEBASE_SMELLS_AND_TECH_DEBT_AUDIT.md"
+    },
+    {
+      "filename": "SOVEREIGN_DATABASE_SCHEMA_INVARIANTS.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_DATABASE_SCHEMA_INVARIANTS.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOVEREIGN_DATABASE_SCHEMA_INVARIANTS.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOVEREIGN_DATABASE_SCHEMA_INVARIANTS.md"
+    },
+    {
+      "filename": "SOVEREIGN_DNA_VISUAL_GUIDE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_DNA_VISUAL_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_DNA_VISUAL_GUIDE.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_DNA_VISUAL_GUIDE.md"
+    },
+    {
+      "filename": "SOVEREIGN_EDGE_AND_DIGITAL_HOMESTEAD_MASTER_QA_CHEAT_SHEET.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_EDGE_AND_DIGITAL_HOMESTEAD_MASTER_QA_CHEAT_SHEET.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_EDGE_AND_DIGITAL_HOMESTEAD_MASTER_QA_CHEAT_SHEET.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_EDGE_AND_DIGITAL_HOMESTEAD_MASTER_QA_CHEAT_SHEET.md"
+    },
+    {
+      "filename": "SOVEREIGN_EDGE_AND_DIGITAL_HOMESTEAD_MASTER_QA_CHEAT_SHEET.pdf",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_EDGE_AND_DIGITAL_HOMESTEAD_MASTER_QA_CHEAT_SHEET.pdf",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_EDGE_AND_DIGITAL_HOMESTEAD_MASTER_QA_CHEAT_SHEET.pdf",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_EDGE_AND_DIGITAL_HOMESTEAD_MASTER_QA_CHEAT_SHEET.pdf"
+    },
+    {
+      "filename": "SOVEREIGN_EDGE_AUDIO_DRILL_CHEATSHEET.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_EDGE_AUDIO_DRILL_CHEATSHEET.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_EDGE_AUDIO_DRILL_CHEATSHEET.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_EDGE_AUDIO_DRILL_CHEATSHEET.md"
+    },
+    {
+      "filename": "SOVEREIGN_EDGE_GEMINI_APP_DRILL_QUIZ.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_EDGE_GEMINI_APP_DRILL_QUIZ.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOVEREIGN_EDGE_GEMINI_APP_DRILL_QUIZ.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOVEREIGN_EDGE_GEMINI_APP_DRILL_QUIZ.md"
+    },
+    {
+      "filename": "SOVEREIGN_EDGE_PILOT_PROGRAM_TECHNICAL_ARCHITECTURE_AND_MONETIZATION_BLUEPRINT.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_EDGE_PILOT_PROGRAM_TECHNICAL_ARCHITECTURE_AND_MONETIZATION_BLUEPRINT.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOVEREIGN_EDGE_PILOT_PROGRAM_TECHNICAL_ARCHITECTURE_AND_MONETIZATION_BLUEPRINT.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOVEREIGN_EDGE_PILOT_PROGRAM_TECHNICAL_ARCHITECTURE_AND_MONETIZATION_BLUEPRINT.md"
+    },
+    {
+      "filename": "SOVEREIGN_EDGE_PILOT_PROGRAM_TECHNICAL_ARCHITECTURE_AND_MONETIZATION_BLUEPRINT.pdf",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_EDGE_PILOT_PROGRAM_TECHNICAL_ARCHITECTURE_AND_MONETIZATION_BLUEPRINT.pdf",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOVEREIGN_EDGE_PILOT_PROGRAM_TECHNICAL_ARCHITECTURE_AND_MONETIZATION_BLUEPRINT.pdf",
+      "symlink_target": "../../01_Governance_and_ITSM/SOVEREIGN_EDGE_PILOT_PROGRAM_TECHNICAL_ARCHITECTURE_AND_MONETIZATION_BLUEPRINT.pdf"
+    },
+    {
+      "filename": "SOVEREIGN_EDGE_VISUAL_ARCHITECTURE_AND_CHARTS.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_EDGE_VISUAL_ARCHITECTURE_AND_CHARTS.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_EDGE_VISUAL_ARCHITECTURE_AND_CHARTS.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_EDGE_VISUAL_ARCHITECTURE_AND_CHARTS.md"
+    },
+    {
+      "filename": "SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER.md"
+    },
+    {
+      "filename": "SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER.pdf",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER.pdf",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER.pdf",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER.pdf"
+    },
+    {
+      "filename": "SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER_2026.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER_2026.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER_2026.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_KNOT_ARCHITECTURE_WHITE_PAPER_2026.md"
+    },
+    {
+      "filename": "SOVEREIGN_LEGAL_30_DAY_PILOT_RUNBOOK.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_LEGAL_30_DAY_PILOT_RUNBOOK.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOVEREIGN_LEGAL_30_DAY_PILOT_RUNBOOK.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOVEREIGN_LEGAL_30_DAY_PILOT_RUNBOOK.md"
+    },
+    {
+      "filename": "SOVEREIGN_LEGAL_HARDWARE_BOM_SPECIFICATION.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_LEGAL_HARDWARE_BOM_SPECIFICATION.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOVEREIGN_LEGAL_HARDWARE_BOM_SPECIFICATION.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOVEREIGN_LEGAL_HARDWARE_BOM_SPECIFICATION.md"
+    },
+    {
+      "filename": "SOVEREIGN_LEGAL_IT_SECURITY_AND_ETHICS_WHITEPAPER.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_LEGAL_IT_SECURITY_AND_ETHICS_WHITEPAPER.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOVEREIGN_LEGAL_IT_SECURITY_AND_ETHICS_WHITEPAPER.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOVEREIGN_LEGAL_IT_SECURITY_AND_ETHICS_WHITEPAPER.md"
+    },
+    {
+      "filename": "SOVEREIGN_NEURAL_FLYWHEEL_PILOT_EXPLAINER.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_NEURAL_FLYWHEEL_PILOT_EXPLAINER.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOVEREIGN_NEURAL_FLYWHEEL_PILOT_EXPLAINER.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOVEREIGN_NEURAL_FLYWHEEL_PILOT_EXPLAINER.md"
+    },
+    {
+      "filename": "SOVEREIGN_ORACLE_UI_CHEAT_SHEET.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_ORACLE_UI_CHEAT_SHEET.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_ORACLE_UI_CHEAT_SHEET.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_ORACLE_UI_CHEAT_SHEET.md"
+    },
+    {
+      "filename": "SOVEREIGN_OS_CHIN1_ADMIN_GUIDE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_OS_CHIN1_ADMIN_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_OS_CHIN1_ADMIN_GUIDE.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_OS_CHIN1_ADMIN_GUIDE.md"
+    },
+    {
+      "filename": "SOVEREIGN_OS_GLOSSARY.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_OS_GLOSSARY.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_OS_GLOSSARY.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_OS_GLOSSARY.md"
+    },
+    {
+      "filename": "SOVEREIGN_OS_ORIGIN_CHRONICLE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_OS_ORIGIN_CHRONICLE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_OS_ORIGIN_CHRONICLE.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_OS_ORIGIN_CHRONICLE.md"
+    },
+    {
+      "filename": "SOVEREIGN_PRICE_SHIELD_ARCHITECTURE_SPEC.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_PRICE_SHIELD_ARCHITECTURE_SPEC.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_PRICE_SHIELD_ARCHITECTURE_SPEC.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_PRICE_SHIELD_ARCHITECTURE_SPEC.md"
+    },
+    {
+      "filename": "SOVEREIGN_PYTHON_CORE_CODE_REVIEW_GUIDE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_PYTHON_CORE_CODE_REVIEW_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_PYTHON_CORE_CODE_REVIEW_GUIDE.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_PYTHON_CORE_CODE_REVIEW_GUIDE.md"
+    },
+    {
+      "filename": "SOVEREIGN_SENTINEL_PRODUCT_DATA_SHEET.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_SENTINEL_PRODUCT_DATA_SHEET.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_SENTINEL_PRODUCT_DATA_SHEET.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_SENTINEL_PRODUCT_DATA_SHEET.md"
+    },
+    {
+      "filename": "SOVEREIGN_USER_CREDENTIALS_CHEATSHEET.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOVEREIGN_USER_CREDENTIALS_CHEATSHEET.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SOVEREIGN_USER_CREDENTIALS_CHEATSHEET.md",
+      "symlink_target": "../../99_Legacy_Archive/SOVEREIGN_USER_CREDENTIALS_CHEATSHEET.md"
+    },
+    {
+      "filename": "SOW_01_ARKLE_VET_CTP.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_01_ARKLE_VET_CTP.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_01_ARKLE_VET_CTP.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_01_ARKLE_VET_CTP.md"
+    },
+    {
+      "filename": "SOW_02_GARDENSTACK_WILDSEED.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_02_GARDENSTACK_WILDSEED.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_02_GARDENSTACK_WILDSEED.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_02_GARDENSTACK_WILDSEED.md"
+    },
+    {
+      "filename": "SOW_038_SOVEREIGN_SYNC_ENGINE_AND_PORTAL_POWER_TOOL.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_038_SOVEREIGN_SYNC_ENGINE_AND_PORTAL_POWER_TOOL.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_038_SOVEREIGN_SYNC_ENGINE_AND_PORTAL_POWER_TOOL.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_038_SOVEREIGN_SYNC_ENGINE_AND_PORTAL_POWER_TOOL.md"
+    },
+    {
+      "filename": "SOW_039_THE_SOVEREIGN_OPERATOR_CONTROL_PLANE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_039_THE_SOVEREIGN_OPERATOR_CONTROL_PLANE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_039_THE_SOVEREIGN_OPERATOR_CONTROL_PLANE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_039_THE_SOVEREIGN_OPERATOR_CONTROL_PLANE.md"
+    },
+    {
+      "filename": "SOW_03_CANINE_C4ISR.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_03_CANINE_C4ISR.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_03_CANINE_C4ISR.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_03_CANINE_C4ISR.md"
+    },
+    {
+      "filename": "SOW_040_SOVEREIGN_MERKLE_AUDIT_CHAIN_AND_ADVERSARIAL_REVIEW_GATE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_040_SOVEREIGN_MERKLE_AUDIT_CHAIN_AND_ADVERSARIAL_REVIEW_GATE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_040_SOVEREIGN_MERKLE_AUDIT_CHAIN_AND_ADVERSARIAL_REVIEW_GATE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_040_SOVEREIGN_MERKLE_AUDIT_CHAIN_AND_ADVERSARIAL_REVIEW_GATE.md"
+    },
+    {
+      "filename": "SOW_041_CREATOR_SENTINEL_AND_OFFSEASON_ENGINE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_041_CREATOR_SENTINEL_AND_OFFSEASON_ENGINE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_041_CREATOR_SENTINEL_AND_OFFSEASON_ENGINE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_041_CREATOR_SENTINEL_AND_OFFSEASON_ENGINE.md"
+    },
+    {
+      "filename": "SOW_042_STACKLABS_VOICE_PROBLEM_INGRESS_AND_DROPZONE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_042_STACKLABS_VOICE_PROBLEM_INGRESS_AND_DROPZONE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_042_STACKLABS_VOICE_PROBLEM_INGRESS_AND_DROPZONE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_042_STACKLABS_VOICE_PROBLEM_INGRESS_AND_DROPZONE.md"
+    },
+    {
+      "filename": "SOW_04_FLOWMERCIAL_EMPIRE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_04_FLOWMERCIAL_EMPIRE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_04_FLOWMERCIAL_EMPIRE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_04_FLOWMERCIAL_EMPIRE.md"
+    },
+    {
+      "filename": "SOW_07_PRECOG_MULTIVERSE_TEMPORAL_PIPELINE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_07_PRECOG_MULTIVERSE_TEMPORAL_PIPELINE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_07_PRECOG_MULTIVERSE_TEMPORAL_PIPELINE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_07_PRECOG_MULTIVERSE_TEMPORAL_PIPELINE.md"
+    },
+    {
+      "filename": "SOW_08_MATCH_CENTER_TELEMETRY_PIPELINE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_08_MATCH_CENTER_TELEMETRY_PIPELINE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_08_MATCH_CENTER_TELEMETRY_PIPELINE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_08_MATCH_CENTER_TELEMETRY_PIPELINE.md"
+    },
+    {
+      "filename": "SOW_09_4D_TESSERACT_BASEBALL_CARD.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_09_4D_TESSERACT_BASEBALL_CARD.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_09_4D_TESSERACT_BASEBALL_CARD.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_09_4D_TESSERACT_BASEBALL_CARD.md"
+    },
+    {
+      "filename": "SOW_10_RELEASE_SPOTLIGHT_PORTAL.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_10_RELEASE_SPOTLIGHT_PORTAL.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_10_RELEASE_SPOTLIGHT_PORTAL.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_10_RELEASE_SPOTLIGHT_PORTAL.md"
+    },
+    {
+      "filename": "SOW_11_CMDB_PORT_MAPPING_ALIGNMENT.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_11_CMDB_PORT_MAPPING_ALIGNMENT.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_11_CMDB_PORT_MAPPING_ALIGNMENT.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_11_CMDB_PORT_MAPPING_ALIGNMENT.md"
+    },
+    {
+      "filename": "SOW_12_CROSSTALK_DASHBOARD_LAYOUT_SELECTOR.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_12_CROSSTALK_DASHBOARD_LAYOUT_SELECTOR.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_12_CROSSTALK_DASHBOARD_LAYOUT_SELECTOR.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_12_CROSSTALK_DASHBOARD_LAYOUT_SELECTOR.md"
+    },
+    {
+      "filename": "SOW_13_CROSSTALK_PANEL_B_OVERLAYS.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_13_CROSSTALK_PANEL_B_OVERLAYS.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_13_CROSSTALK_PANEL_B_OVERLAYS.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_13_CROSSTALK_PANEL_B_OVERLAYS.md"
+    },
+    {
+      "filename": "SOW_14_DISTRIBUTED_MICRO_MARKET_SWARM.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_14_DISTRIBUTED_MICRO_MARKET_SWARM.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_14_DISTRIBUTED_MICRO_MARKET_SWARM.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_14_DISTRIBUTED_MICRO_MARKET_SWARM.md"
+    },
+    {
+      "filename": "SOW_15_GENERATIVE_LOOT_SPORTS_WAGERING_ACCOLADE_SYNCHRONICITY.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_15_GENERATIVE_LOOT_SPORTS_WAGERING_ACCOLADE_SYNCHRONICITY.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_15_GENERATIVE_LOOT_SPORTS_WAGERING_ACCOLADE_SYNCHRONICITY.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_15_GENERATIVE_LOOT_SPORTS_WAGERING_ACCOLADE_SYNCHRONICITY.md"
+    },
+    {
+      "filename": "SOW_2026_08_25_MARD_DND_CAMPAIGN_PORTAL.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_08_25_MARD_DND_CAMPAIGN_PORTAL.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_08_25_MARD_DND_CAMPAIGN_PORTAL.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_08_25_MARD_DND_CAMPAIGN_PORTAL.md"
+    },
+    {
+      "filename": "SOW_2026_08_28_SOVEREIGN_MCP_GOVERNANCE_ENGINE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_08_28_SOVEREIGN_MCP_GOVERNANCE_ENGINE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_08_28_SOVEREIGN_MCP_GOVERNANCE_ENGINE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_08_28_SOVEREIGN_MCP_GOVERNANCE_ENGINE.md"
+    },
+    {
+      "filename": "SOW_2026_08_29_SOVEREIGN_COMMAND_HUB.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_08_29_SOVEREIGN_COMMAND_HUB.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_08_29_SOVEREIGN_COMMAND_HUB.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_08_29_SOVEREIGN_COMMAND_HUB.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_1986_WORLD_SERIES_GAME6_REPLAY.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_1986_WORLD_SERIES_GAME6_REPLAY.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_1986_WORLD_SERIES_GAME6_REPLAY.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_1986_WORLD_SERIES_GAME6_REPLAY.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_BETWEEN_INNINGS_INTERSTITIAL_911_TRIBUTE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_BETWEEN_INNINGS_INTERSTITIAL_911_TRIBUTE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_BETWEEN_INNINGS_INTERSTITIAL_911_TRIBUTE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_BETWEEN_INNINGS_INTERSTITIAL_911_TRIBUTE.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_FANSTACK_SIMULATION_PHASE_2_3.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_FANSTACK_SIMULATION_PHASE_2_3.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_FANSTACK_SIMULATION_PHASE_2_3.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_FANSTACK_SIMULATION_PHASE_2_3.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_GLOBAL_NON_PILOT_LOGIN_WIRETAP.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_GLOBAL_NON_PILOT_LOGIN_WIRETAP.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_GLOBAL_NON_PILOT_LOGIN_WIRETAP.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_GLOBAL_NON_PILOT_LOGIN_WIRETAP.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_HOTFIX_UNBOUND_LOCAL_TEMPERATURE_GEMINI_API.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_HOTFIX_UNBOUND_LOCAL_TEMPERATURE_GEMINI_API.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_HOTFIX_UNBOUND_LOCAL_TEMPERATURE_GEMINI_API.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_HOTFIX_UNBOUND_LOCAL_TEMPERATURE_GEMINI_API.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_JAKE_TAYLOR_AND_STATCAST_SAVANT_ORACLE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_JAKE_TAYLOR_AND_STATCAST_SAVANT_ORACLE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_JAKE_TAYLOR_AND_STATCAST_SAVANT_ORACLE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_JAKE_TAYLOR_AND_STATCAST_SAVANT_ORACLE.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_MARD_AGENTIC_CODING_ASSEMBLY_LINE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_MARD_AGENTIC_CODING_ASSEMBLY_LINE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_MARD_AGENTIC_CODING_ASSEMBLY_LINE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_MARD_AGENTIC_CODING_ASSEMBLY_LINE.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_NFL_BARF_UFL_APOLOGY_PLACEHOLDER.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_NFL_BARF_UFL_APOLOGY_PLACEHOLDER.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_NFL_BARF_UFL_APOLOGY_PLACEHOLDER.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_NFL_BARF_UFL_APOLOGY_PLACEHOLDER.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_OFFENSE_DEFENSE_ROLE_POLARITY_GEMINI_35.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_OFFENSE_DEFENSE_ROLE_POLARITY_GEMINI_35.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_OFFENSE_DEFENSE_ROLE_POLARITY_GEMINI_35.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_OFFENSE_DEFENSE_ROLE_POLARITY_GEMINI_35.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_OFFLINE_QWEN_PIPELINE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_OFFLINE_QWEN_PIPELINE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_OFFLINE_QWEN_PIPELINE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_OFFLINE_QWEN_PIPELINE.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_PURGE_RIBBON_RELIC_HUD.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_PURGE_RIBBON_RELIC_HUD.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_PURGE_RIBBON_RELIC_HUD.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_PURGE_RIBBON_RELIC_HUD.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_SOVEREIGN_ANTI_SURVEILLANCE_PRICE_SHIELD.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_SOVEREIGN_ANTI_SURVEILLANCE_PRICE_SHIELD.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_SOVEREIGN_ANTI_SURVEILLANCE_PRICE_SHIELD.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_SOVEREIGN_ANTI_SURVEILLANCE_PRICE_SHIELD.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_SUBWAY_SERIES_911_TRIBUTE_BROADCAST.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_SUBWAY_SERIES_911_TRIBUTE_BROADCAST.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_SUBWAY_SERIES_911_TRIBUTE_BROADCAST.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_SUBWAY_SERIES_911_TRIBUTE_BROADCAST.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_SUBWAY_SERIES_DYNAMIC_CHAT_WEEDSTACK_SEATING.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_SUBWAY_SERIES_DYNAMIC_CHAT_WEEDSTACK_SEATING.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_SUBWAY_SERIES_DYNAMIC_CHAT_WEEDSTACK_SEATING.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_SUBWAY_SERIES_DYNAMIC_CHAT_WEEDSTACK_SEATING.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_T15_PREGAME_AMBIENT_BANTER_COUNTDOWN.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_T15_PREGAME_AMBIENT_BANTER_COUNTDOWN.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_T15_PREGAME_AMBIENT_BANTER_COUNTDOWN.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_T15_PREGAME_AMBIENT_BANTER_COUNTDOWN.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_T26_LIVE_BATTER_WALKUP_ANNOUNCEMENT.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_T26_LIVE_BATTER_WALKUP_ANNOUNCEMENT.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_T26_LIVE_BATTER_WALKUP_ANNOUNCEMENT.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_T26_LIVE_BATTER_WALKUP_ANNOUNCEMENT.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_T27_ADVOCATE_ECHO_ERADICATION_QUOTA_SHIELD.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_T27_ADVOCATE_ECHO_ERADICATION_QUOTA_SHIELD.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_T27_ADVOCATE_ECHO_ERADICATION_QUOTA_SHIELD.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_T27_ADVOCATE_ECHO_ERADICATION_QUOTA_SHIELD.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_WEEDSTACK_KAYFABE_DISCOURSE_TUNING.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_WEEDSTACK_KAYFABE_DISCOURSE_TUNING.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_WEEDSTACK_KAYFABE_DISCOURSE_TUNING.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_WEEDSTACK_KAYFABE_DISCOURSE_TUNING.md"
+    },
+    {
+      "filename": "SOW_2026_09_11_WEEDSTACK_MEAN_GENE_GUERILLA_DISCOURSE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_11_WEEDSTACK_MEAN_GENE_GUERILLA_DISCOURSE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_11_WEEDSTACK_MEAN_GENE_GUERILLA_DISCOURSE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_11_WEEDSTACK_MEAN_GENE_GUERILLA_DISCOURSE.md"
+    },
+    {
+      "filename": "SOW_2026_09_12_BETWEEN_INNINGS_INTERMISSION_HUB.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_12_BETWEEN_INNINGS_INTERMISSION_HUB.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_12_BETWEEN_INNINGS_INTERMISSION_HUB.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_12_BETWEEN_INNINGS_INTERMISSION_HUB.md"
+    },
+    {
+      "filename": "SOW_2026_09_13_FANSTACK_IN_BREAK_ENTERTAINMENT_SUITE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_09_13_FANSTACK_IN_BREAK_ENTERTAINMENT_SUITE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_09_13_FANSTACK_IN_BREAK_ENTERTAINMENT_SUITE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_09_13_FANSTACK_IN_BREAK_ENTERTAINMENT_SUITE.md"
+    },
+    {
+      "filename": "SOW_2026_IRONCLAD_CMDB.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_2026_IRONCLAD_CMDB.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_2026_IRONCLAD_CMDB.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_2026_IRONCLAD_CMDB.md"
+    },
+    {
+      "filename": "SOW_Automated_UAT_Test_Framework.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_Automated_UAT_Test_Framework.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_Automated_UAT_Test_Framework.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_Automated_UAT_Test_Framework.md"
+    },
+    {
+      "filename": "SOW_DFCT0010002_AUTONOMOUS_DISPATCHER_EXECUTION_LOOP.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_DFCT0010002_AUTONOMOUS_DISPATCHER_EXECUTION_LOOP.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_DFCT0010002_AUTONOMOUS_DISPATCHER_EXECUTION_LOOP.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_DFCT0010002_AUTONOMOUS_DISPATCHER_EXECUTION_LOOP.md"
+    },
+    {
+      "filename": "SOW_ENG_WILDSEED_NODE_001_ON_PREMISE_DEPLOYMENT_PLAN.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_ENG_WILDSEED_NODE_001_ON_PREMISE_DEPLOYMENT_PLAN.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_ENG_WILDSEED_NODE_001_ON_PREMISE_DEPLOYMENT_PLAN.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_ENG_WILDSEED_NODE_001_ON_PREMISE_DEPLOYMENT_PLAN.md"
+    },
+    {
+      "filename": "SOW_ENHC0010011_MOBILE_PORTAL_ATTACHMENT_INGRESS.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_ENHC0010011_MOBILE_PORTAL_ATTACHMENT_INGRESS.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_ENHC0010011_MOBILE_PORTAL_ATTACHMENT_INGRESS.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_ENHC0010011_MOBILE_PORTAL_ATTACHMENT_INGRESS.md"
+    },
+    {
+      "filename": "SOW_ENHC_MOBILE_ANTIGRAVITY_BRIDGE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_ENHC_MOBILE_ANTIGRAVITY_BRIDGE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_ENHC_MOBILE_ANTIGRAVITY_BRIDGE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_ENHC_MOBILE_ANTIGRAVITY_BRIDGE.md"
+    },
+    {
+      "filename": "SOW_ENHC_MOBILE_REMOTE_NODES_ADMIN.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_ENHC_MOBILE_REMOTE_NODES_ADMIN.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_ENHC_MOBILE_REMOTE_NODES_ADMIN.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_ENHC_MOBILE_REMOTE_NODES_ADMIN.md"
+    },
+    {
+      "filename": "SOW_FANSTACK_SPORTS_MATCHUP_AND_MEDIA_EXPERIENCE_HUB.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_FANSTACK_SPORTS_MATCHUP_AND_MEDIA_EXPERIENCE_HUB.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_FANSTACK_SPORTS_MATCHUP_AND_MEDIA_EXPERIENCE_HUB.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_FANSTACK_SPORTS_MATCHUP_AND_MEDIA_EXPERIENCE_HUB.md"
+    },
+    {
+      "filename": "SOW_IDEA0010004_BALLPARKRADAR_SPATIAL_STATCAST.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_IDEA0010004_BALLPARKRADAR_SPATIAL_STATCAST.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_IDEA0010004_BALLPARKRADAR_SPATIAL_STATCAST.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_IDEA0010004_BALLPARKRADAR_SPATIAL_STATCAST.md"
+    },
+    {
+      "filename": "SOW_JIT_KANBAN_APPROVAL.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_JIT_KANBAN_APPROVAL.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_JIT_KANBAN_APPROVAL.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_JIT_KANBAN_APPROVAL.md"
+    },
+    {
+      "filename": "SOW_MANDO_REPAIR_OVERLAY.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_MANDO_REPAIR_OVERLAY.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_MANDO_REPAIR_OVERLAY.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_MANDO_REPAIR_OVERLAY.md"
+    },
+    {
+      "filename": "SOW_STRY0010008_FANSTACK_GENERATIVE_MEDIA_PIPELINE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_STRY0010008_FANSTACK_GENERATIVE_MEDIA_PIPELINE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_STRY0010008_FANSTACK_GENERATIVE_MEDIA_PIPELINE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_STRY0010008_FANSTACK_GENERATIVE_MEDIA_PIPELINE.md"
+    },
+    {
+      "filename": "SOW_STRY0010009_WHOS_ON_FIRST_SPATIAL_ENGINE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_STRY0010009_WHOS_ON_FIRST_SPATIAL_ENGINE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_STRY0010009_WHOS_ON_FIRST_SPATIAL_ENGINE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_STRY0010009_WHOS_ON_FIRST_SPATIAL_ENGINE.md"
+    },
+    {
+      "filename": "SOW_STRY0010033_FANCAST_NFL_LIVE_TELEMETRY_INGRESS.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_STRY0010033_FANCAST_NFL_LIVE_TELEMETRY_INGRESS.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_STRY0010033_FANCAST_NFL_LIVE_TELEMETRY_INGRESS.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_STRY0010033_FANCAST_NFL_LIVE_TELEMETRY_INGRESS.md"
+    },
+    {
+      "filename": "SOW_WO0010050_KANBAN_PURGE_CLOSED_SILO_AND_RECENTLY_RESOLVED.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_WO0010050_KANBAN_PURGE_CLOSED_SILO_AND_RECENTLY_RESOLVED.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_WO0010050_KANBAN_PURGE_CLOSED_SILO_AND_RECENTLY_RESOLVED.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_WO0010050_KANBAN_PURGE_CLOSED_SILO_AND_RECENTLY_RESOLVED.md"
+    },
+    {
+      "filename": "SOW_WO0010064_FANCAST_FAN_REACTION_CAM_AND_STREAM_DECK.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_WO0010064_FANCAST_FAN_REACTION_CAM_AND_STREAM_DECK.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_WO0010064_FANCAST_FAN_REACTION_CAM_AND_STREAM_DECK.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_WO0010064_FANCAST_FAN_REACTION_CAM_AND_STREAM_DECK.md"
+    },
+    {
+      "filename": "SOW_WO0010067_FANCAST_JETEXTRACTORS_STREAM_RESOLVER.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SOW_WO0010067_FANCAST_JETEXTRACTORS_STREAM_RESOLVER.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SOW_WO0010067_FANCAST_JETEXTRACTORS_STREAM_RESOLVER.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SOW_WO0010067_FANCAST_JETEXTRACTORS_STREAM_RESOLVER.md"
+    },
+    {
+      "filename": "SPARK_CRUCIBLE_PROPOSAL_CHAL-20260927-7814B0.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPARK_CRUCIBLE_PROPOSAL_CHAL-20260927-7814B0.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SPARK_CRUCIBLE_PROPOSAL_CHAL-20260927-7814B0.md",
+      "symlink_target": "../../99_Legacy_Archive/SPARK_CRUCIBLE_PROPOSAL_CHAL-20260927-7814B0.md"
+    },
+    {
+      "filename": "SPARK_DOCUMENT_CHAIN_OF_CUSTODY.json",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPARK_DOCUMENT_CHAIN_OF_CUSTODY.json",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SPARK_DOCUMENT_CHAIN_OF_CUSTODY.json",
+      "symlink_target": "../../99_Legacy_Archive/SPARK_DOCUMENT_CHAIN_OF_CUSTODY.json"
+    },
+    {
+      "filename": "SPARK_DOCUMENT_INGRESS_STANDARDS.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPARK_DOCUMENT_INGRESS_STANDARDS.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SPARK_DOCUMENT_INGRESS_STANDARDS.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SPARK_DOCUMENT_INGRESS_STANDARDS.md"
+    },
+    {
+      "filename": "SPARK_GEM_SYSTEM_INSTRUCTION.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPARK_GEM_SYSTEM_INSTRUCTION.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SPARK_GEM_SYSTEM_INSTRUCTION.md",
+      "symlink_target": "../../99_Legacy_Archive/SPARK_GEM_SYSTEM_INSTRUCTION.md"
+    },
+    {
+      "filename": "SPARK_MASTER_GOVERNANCE_AND_ARCHITECTURE_BIBLE.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPARK_MASTER_GOVERNANCE_AND_ARCHITECTURE_BIBLE.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/SPARK_MASTER_GOVERNANCE_AND_ARCHITECTURE_BIBLE.md",
+      "symlink_target": "../../01_Governance_and_ITSM/SPARK_MASTER_GOVERNANCE_AND_ARCHITECTURE_BIBLE.md"
+    },
+    {
+      "filename": "SPARK_STRATEGIC_BATTLE_CARD_PAWEL_RUDNICKI_MARD_CRUCIBLE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPARK_STRATEGIC_BATTLE_CARD_PAWEL_RUDNICKI_MARD_CRUCIBLE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/SPARK_STRATEGIC_BATTLE_CARD_PAWEL_RUDNICKI_MARD_CRUCIBLE.md",
+      "symlink_target": "../../04_Advocate_Swarms/SPARK_STRATEGIC_BATTLE_CARD_PAWEL_RUDNICKI_MARD_CRUCIBLE.md"
+    },
+    {
+      "filename": "SPEC_2026_ATF_MULTI_STACK_HARNESS_COMPLETION.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_2026_ATF_MULTI_STACK_HARNESS_COMPLETION.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SPEC_2026_ATF_MULTI_STACK_HARNESS_COMPLETION.md",
+      "symlink_target": "../../99_Legacy_Archive/SPEC_2026_ATF_MULTI_STACK_HARNESS_COMPLETION.md"
+    },
+    {
+      "filename": "SPEC_2026_FANSTACK_AS_A_SERVICE_FAAS_ARCHITECTURE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_2026_FANSTACK_AS_A_SERVICE_FAAS_ARCHITECTURE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/SPEC_2026_FANSTACK_AS_A_SERVICE_FAAS_ARCHITECTURE.md",
+      "symlink_target": "../../04_Advocate_Swarms/SPEC_2026_FANSTACK_AS_A_SERVICE_FAAS_ARCHITECTURE.md"
+    },
+    {
+      "filename": "SPEC_2026_SNC_DH_001_DIGITAL_HOMESTEAD_DAVIDSON_HOMES.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_2026_SNC_DH_001_DIGITAL_HOMESTEAD_DAVIDSON_HOMES.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SPEC_2026_SNC_DH_001_DIGITAL_HOMESTEAD_DAVIDSON_HOMES.md",
+      "symlink_target": "../../99_Legacy_Archive/SPEC_2026_SNC_DH_001_DIGITAL_HOMESTEAD_DAVIDSON_HOMES.md"
+    },
+    {
+      "filename": "SPEC_2026_SNC_DIGITAL_HOMESTEAD_BUILDER_SPEC.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_2026_SNC_DIGITAL_HOMESTEAD_BUILDER_SPEC.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SPEC_2026_SNC_DIGITAL_HOMESTEAD_BUILDER_SPEC.md",
+      "symlink_target": "../../99_Legacy_Archive/SPEC_2026_SNC_DIGITAL_HOMESTEAD_BUILDER_SPEC.md"
+    },
+    {
+      "filename": "SPEC_2026_VIDEO_PRODUCTION_DIGITAL_MAGNA_CARTA.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_2026_VIDEO_PRODUCTION_DIGITAL_MAGNA_CARTA.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SPEC_2026_VIDEO_PRODUCTION_DIGITAL_MAGNA_CARTA.md",
+      "symlink_target": "../../99_Legacy_Archive/SPEC_2026_VIDEO_PRODUCTION_DIGITAL_MAGNA_CARTA.md"
+    },
+    {
+      "filename": "SPEC_50_NODE_FLEET_ROLLOUT_AND_CULDESAC_TESTBED.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_50_NODE_FLEET_ROLLOUT_AND_CULDESAC_TESTBED.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/SPEC_50_NODE_FLEET_ROLLOUT_AND_CULDESAC_TESTBED.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/SPEC_50_NODE_FLEET_ROLLOUT_AND_CULDESAC_TESTBED.md"
+    },
+    {
+      "filename": "SPEC_ANTHROPOMORPHIC_DOMAIN_MICROSERVICES_ADM_FRAMEWORK.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_ANTHROPOMORPHIC_DOMAIN_MICROSERVICES_ADM_FRAMEWORK.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SPEC_ANTHROPOMORPHIC_DOMAIN_MICROSERVICES_ADM_FRAMEWORK.md",
+      "symlink_target": "../../99_Legacy_Archive/SPEC_ANTHROPOMORPHIC_DOMAIN_MICROSERVICES_ADM_FRAMEWORK.md"
+    },
+    {
+      "filename": "SPEC_EXP_FANSTACK_CITI_PACKAGE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_EXP_FANSTACK_CITI_PACKAGE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/SPEC_EXP_FANSTACK_CITI_PACKAGE.md",
+      "symlink_target": "../../04_Advocate_Swarms/SPEC_EXP_FANSTACK_CITI_PACKAGE.md"
+    },
+    {
+      "filename": "SPEC_FAAS_CREATOR_PRECOG_001.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_FAAS_CREATOR_PRECOG_001.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/SPEC_FAAS_CREATOR_PRECOG_001.md",
+      "symlink_target": "../../04_Advocate_Swarms/SPEC_FAAS_CREATOR_PRECOG_001.md"
+    },
+    {
+      "filename": "SPEC_FAAS_STEARNS_STRAY_INDEX_AND_DISTRESSED_VETERAN_SQUEEZE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_FAAS_STEARNS_STRAY_INDEX_AND_DISTRESSED_VETERAN_SQUEEZE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/SPEC_FAAS_STEARNS_STRAY_INDEX_AND_DISTRESSED_VETERAN_SQUEEZE.md",
+      "symlink_target": "../../04_Advocate_Swarms/SPEC_FAAS_STEARNS_STRAY_INDEX_AND_DISTRESSED_VETERAN_SQUEEZE.md"
+    },
+    {
+      "filename": "SPEC_FAAS_THE_SKEW_PRECOG_TALKSHOW_001.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_FAAS_THE_SKEW_PRECOG_TALKSHOW_001.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/SPEC_FAAS_THE_SKEW_PRECOG_TALKSHOW_001.md",
+      "symlink_target": "../../04_Advocate_Swarms/SPEC_FAAS_THE_SKEW_PRECOG_TALKSHOW_001.md"
+    },
+    {
+      "filename": "SPEC_MODEL_S_CELLULAR_MESH_AND_SWARM_SHEPHERD_TOPOLOGY.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_MODEL_S_CELLULAR_MESH_AND_SWARM_SHEPHERD_TOPOLOGY.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/SPEC_MODEL_S_CELLULAR_MESH_AND_SWARM_SHEPHERD_TOPOLOGY.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/SPEC_MODEL_S_CELLULAR_MESH_AND_SWARM_SHEPHERD_TOPOLOGY.md"
+    },
+    {
+      "filename": "SPEC_MODEL_S_NASHVILLE_DROP_SHIP_AND_LOCALIZED_SLM_MATRIX.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_MODEL_S_NASHVILLE_DROP_SHIP_AND_LOCALIZED_SLM_MATRIX.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/SPEC_MODEL_S_NASHVILLE_DROP_SHIP_AND_LOCALIZED_SLM_MATRIX.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/SPEC_MODEL_S_NASHVILLE_DROP_SHIP_AND_LOCALIZED_SLM_MATRIX.md"
+    },
+    {
+      "filename": "SPEC_MORNING_WIRETAP_CULTURAL_SEISMOGRAPH.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_MORNING_WIRETAP_CULTURAL_SEISMOGRAPH.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SPEC_MORNING_WIRETAP_CULTURAL_SEISMOGRAPH.md",
+      "symlink_target": "../../99_Legacy_Archive/SPEC_MORNING_WIRETAP_CULTURAL_SEISMOGRAPH.md"
+    },
+    {
+      "filename": "SPEC_SIR_MOD_002_PREDICTIVE_CONTAGION_AND_BUILDER_SENTINEL.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_SIR_MOD_002_PREDICTIVE_CONTAGION_AND_BUILDER_SENTINEL.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/SPEC_SIR_MOD_002_PREDICTIVE_CONTAGION_AND_BUILDER_SENTINEL.md",
+      "symlink_target": "../../99_Legacy_Archive/SPEC_SIR_MOD_002_PREDICTIVE_CONTAGION_AND_BUILDER_SENTINEL.md"
+    },
+    {
+      "filename": "SPEC_SIR_MOD_002_PREDICTIVE_HORIZON_RADAR.md",
+      "domain": "03_Market_Intelligence",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_SIR_MOD_002_PREDICTIVE_HORIZON_RADAR.md",
+      "new_path": "/home/james/SovereignOS/03_Market_Intelligence/SPEC_SIR_MOD_002_PREDICTIVE_HORIZON_RADAR.md",
+      "symlink_target": "../../03_Market_Intelligence/SPEC_SIR_MOD_002_PREDICTIVE_HORIZON_RADAR.md"
+    },
+    {
+      "filename": "SPEC_SOVEREIGN_HARDWARE_ATTESTATION_AND_QUARANTINE_GATE.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_SOVEREIGN_HARDWARE_ATTESTATION_AND_QUARANTINE_GATE.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/SPEC_SOVEREIGN_HARDWARE_ATTESTATION_AND_QUARANTINE_GATE.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/SPEC_SOVEREIGN_HARDWARE_ATTESTATION_AND_QUARANTINE_GATE.md"
+    },
+    {
+      "filename": "SPEC_WILDSEED_CHAIN_OF_CUSTODY_AND_KAREN_AUDIT_BINDER.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_WILDSEED_CHAIN_OF_CUSTODY_AND_KAREN_AUDIT_BINDER.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/SPEC_WILDSEED_CHAIN_OF_CUSTODY_AND_KAREN_AUDIT_BINDER.md",
+      "symlink_target": "../../04_Advocate_Swarms/SPEC_WILDSEED_CHAIN_OF_CUSTODY_AND_KAREN_AUDIT_BINDER.md"
+    },
+    {
+      "filename": "SPEC_WILDSEED_SHOP_FLOOR_BATCH_DISPATCH_SCAFFOLD.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/SPEC_WILDSEED_SHOP_FLOOR_BATCH_DISPATCH_SCAFFOLD.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/SPEC_WILDSEED_SHOP_FLOOR_BATCH_DISPATCH_SCAFFOLD.md",
+      "symlink_target": "../../04_Advocate_Swarms/SPEC_WILDSEED_SHOP_FLOOR_BATCH_DISPATCH_SCAFFOLD.md"
+    },
+    {
+      "filename": "STACKLABS_DISTRIBUTED_NETWORK_MODEL_S.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/STACKLABS_DISTRIBUTED_NETWORK_MODEL_S.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/STACKLABS_DISTRIBUTED_NETWORK_MODEL_S.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/STACKLABS_DISTRIBUTED_NETWORK_MODEL_S.md"
+    },
+    {
+      "filename": "STACKLABS_MODEL_S_BUSINESS_MODEL_AND_FINANCIAL_PRO_FORMA.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/STACKLABS_MODEL_S_BUSINESS_MODEL_AND_FINANCIAL_PRO_FORMA.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/STACKLABS_MODEL_S_BUSINESS_MODEL_AND_FINANCIAL_PRO_FORMA.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/STACKLABS_MODEL_S_BUSINESS_MODEL_AND_FINANCIAL_PRO_FORMA.md"
+    },
+    {
+      "filename": "STACKLABS_MODEL_S_BUSINESS_MODEL_AND_FINANCIAL_PRO_FORMA.pdf",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/STACKLABS_MODEL_S_BUSINESS_MODEL_AND_FINANCIAL_PRO_FORMA.pdf",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/STACKLABS_MODEL_S_BUSINESS_MODEL_AND_FINANCIAL_PRO_FORMA.pdf",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/STACKLABS_MODEL_S_BUSINESS_MODEL_AND_FINANCIAL_PRO_FORMA.pdf"
+    },
+    {
+      "filename": "STACKLABS_MODEL_S_REBUTTAL_AND_GROUNDED_ENGINEERING_RESPONSE_TO_CLAUDE.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/STACKLABS_MODEL_S_REBUTTAL_AND_GROUNDED_ENGINEERING_RESPONSE_TO_CLAUDE.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/STACKLABS_MODEL_S_REBUTTAL_AND_GROUNDED_ENGINEERING_RESPONSE_TO_CLAUDE.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/STACKLABS_MODEL_S_REBUTTAL_AND_GROUNDED_ENGINEERING_RESPONSE_TO_CLAUDE.md"
+    },
+    {
+      "filename": "STACKLABS_PARTNERSHIP_PROPOSAL_AND_RAPID_FORGE_MEMO_PAWEL_RUDNICKI.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/STACKLABS_PARTNERSHIP_PROPOSAL_AND_RAPID_FORGE_MEMO_PAWEL_RUDNICKI.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/STACKLABS_PARTNERSHIP_PROPOSAL_AND_RAPID_FORGE_MEMO_PAWEL_RUDNICKI.md",
+      "symlink_target": "../../99_Legacy_Archive/STACKLABS_PARTNERSHIP_PROPOSAL_AND_RAPID_FORGE_MEMO_PAWEL_RUDNICKI.md"
+    },
+    {
+      "filename": "STACKLABS_SANITIZED_PLATFORM_CAPABILITIES_AND_POWER_TOOLS.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/STACKLABS_SANITIZED_PLATFORM_CAPABILITIES_AND_POWER_TOOLS.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/STACKLABS_SANITIZED_PLATFORM_CAPABILITIES_AND_POWER_TOOLS.md",
+      "symlink_target": "../../01_Governance_and_ITSM/STACKLABS_SANITIZED_PLATFORM_CAPABILITIES_AND_POWER_TOOLS.md"
+    },
+    {
+      "filename": "STACKLABS_SOVEREIGN_EDGE_AI_COMMERCIAL_STRATEGY.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/STACKLABS_SOVEREIGN_EDGE_AI_COMMERCIAL_STRATEGY.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/STACKLABS_SOVEREIGN_EDGE_AI_COMMERCIAL_STRATEGY.md",
+      "symlink_target": "../../99_Legacy_Archive/STACKLABS_SOVEREIGN_EDGE_AI_COMMERCIAL_STRATEGY.md"
+    },
+    {
+      "filename": "STACKLABS_SOVEREIGN_INTELLIGENCE_RADAR_SPEC.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/STACKLABS_SOVEREIGN_INTELLIGENCE_RADAR_SPEC.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/STACKLABS_SOVEREIGN_INTELLIGENCE_RADAR_SPEC.md",
+      "symlink_target": "../../99_Legacy_Archive/STACKLABS_SOVEREIGN_INTELLIGENCE_RADAR_SPEC.md"
+    },
+    {
+      "filename": "STACK_SEEDER_USER_AND_ADMIN_GUIDE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/STACK_SEEDER_USER_AND_ADMIN_GUIDE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/STACK_SEEDER_USER_AND_ADMIN_GUIDE.md",
+      "symlink_target": "../../99_Legacy_Archive/STACK_SEEDER_USER_AND_ADMIN_GUIDE.md"
+    },
+    {
+      "filename": "STATCAST_EVENT_SCHEMA_AND_EVENT_BIBLE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/STATCAST_EVENT_SCHEMA_AND_EVENT_BIBLE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/STATCAST_EVENT_SCHEMA_AND_EVENT_BIBLE.md",
+      "symlink_target": "../../04_Advocate_Swarms/STATCAST_EVENT_SCHEMA_AND_EVENT_BIBLE.md"
+    },
+    {
+      "filename": "Sovereign Edge & Digital Homestead_ Master Q&A Cheat Sheet.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/Sovereign Edge & Digital Homestead_ Master Q&A Cheat Sheet.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/Sovereign Edge & Digital Homestead_ Master Q&A Cheat Sheet.md",
+      "symlink_target": "../../99_Legacy_Archive/Sovereign Edge & Digital Homestead_ Master Q&A Cheat Sheet.md"
+    },
+    {
+      "filename": "Sovereign Edge Pilot Program - Technical Architecture & Monetization Blueprint.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/Sovereign Edge Pilot Program - Technical Architecture & Monetization Blueprint.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/Sovereign Edge Pilot Program - Technical Architecture & Monetization Blueprint.md",
+      "symlink_target": "../../01_Governance_and_ITSM/Sovereign Edge Pilot Program - Technical Architecture & Monetization Blueprint.md"
+    },
+    {
+      "filename": "Sovereign_Infrastructure_Arbitrage.pdf",
+      "domain": "03_Market_Intelligence",
+      "old_path": "/home/james/SovereignOS/dna/docs/Sovereign_Infrastructure_Arbitrage.pdf",
+      "new_path": "/home/james/SovereignOS/03_Market_Intelligence/Sovereign_Infrastructure_Arbitrage.pdf",
+      "symlink_target": "../../03_Market_Intelligence/Sovereign_Infrastructure_Arbitrage.pdf"
+    },
+    {
+      "filename": "Sovereign_Power_Tools_and_Microservices_Catalog.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/Sovereign_Power_Tools_and_Microservices_Catalog.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/Sovereign_Power_Tools_and_Microservices_Catalog.md",
+      "symlink_target": "../../01_Governance_and_ITSM/Sovereign_Power_Tools_and_Microservices_Catalog.md"
+    },
+    {
+      "filename": "Sovereign_Sports_CFB_Top25_and_Cupcake_Advocates_Registry.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/Sovereign_Sports_CFB_Top25_and_Cupcake_Advocates_Registry.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/Sovereign_Sports_CFB_Top25_and_Cupcake_Advocates_Registry.md",
+      "symlink_target": "../../04_Advocate_Swarms/Sovereign_Sports_CFB_Top25_and_Cupcake_Advocates_Registry.md"
+    },
+    {
+      "filename": "StackLabs LLC & WildSeed LLC \u2014 Commercial Sweetener Addendum & Pilot SOW.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/StackLabs LLC & WildSeed LLC \u2014 Commercial Sweetener Addendum & Pilot SOW.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/StackLabs LLC & WildSeed LLC \u2014 Commercial Sweetener Addendum & Pilot SOW.md",
+      "symlink_target": "../../01_Governance_and_ITSM/StackLabs LLC & WildSeed LLC \u2014 Commercial Sweetener Addendum & Pilot SOW.md"
+    },
+    {
+      "filename": "StackLabs LLC \u2014 Executive Investment One-Pager (The Model-S Distributed Edge Network).md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/StackLabs LLC \u2014 Executive Investment One-Pager (The Model-S Distributed Edge Network).md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/StackLabs LLC \u2014 Executive Investment One-Pager (The Model-S Distributed Edge Network).md",
+      "symlink_target": "../../99_Legacy_Archive/StackLabs LLC \u2014 Executive Investment One-Pager (The Model-S Distributed Edge Network).md"
+    },
+    {
+      "filename": "StackLabs LLC \u2014 Executive Syndicate Memo (The Sunday Napkin).md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/StackLabs LLC \u2014 Executive Syndicate Memo (The Sunday Napkin).md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/StackLabs LLC \u2014 Executive Syndicate Memo (The Sunday Napkin).md",
+      "symlink_target": "../../99_Legacy_Archive/StackLabs LLC \u2014 Executive Syndicate Memo (The Sunday Napkin).md"
+    },
+    {
+      "filename": "StackLabs LLC \u2014 Post-Money SAFE Agreement ($125k _ $3.5M Cap).md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/StackLabs LLC \u2014 Post-Money SAFE Agreement ($125k _ $3.5M Cap).md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/StackLabs LLC \u2014 Post-Money SAFE Agreement ($125k _ $3.5M Cap).md",
+      "symlink_target": "../../99_Legacy_Archive/StackLabs LLC \u2014 Post-Money SAFE Agreement ($125k _ $3.5M Cap).md"
+    },
+    {
+      "filename": "StackLabs_Dual_Node_Mesh_and_Hybrid_Inference_Cascade_Spec.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/StackLabs_Dual_Node_Mesh_and_Hybrid_Inference_Cascade_Spec.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/StackLabs_Dual_Node_Mesh_and_Hybrid_Inference_Cascade_Spec.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/StackLabs_Dual_Node_Mesh_and_Hybrid_Inference_Cascade_Spec.md"
+    },
+    {
+      "filename": "StackLabs_Qwen32B_Coder_Crucible_A100.ipynb",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/StackLabs_Qwen32B_Coder_Crucible_A100.ipynb",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/StackLabs_Qwen32B_Coder_Crucible_A100.ipynb",
+      "symlink_target": "../../99_Legacy_Archive/StackLabs_Qwen32B_Coder_Crucible_A100.ipynb"
+    },
+    {
+      "filename": "Subnet Steward_ Role Profile & Governance Specifications.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/Subnet Steward_ Role Profile & Governance Specifications.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/Subnet Steward_ Role Profile & Governance Specifications.md",
+      "symlink_target": "../../01_Governance_and_ITSM/Subnet Steward_ Role Profile & Governance Specifications.md"
+    },
+    {
+      "filename": "THE ELEMENTALIST BRIDGE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE ELEMENTALIST BRIDGE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/THE ELEMENTALIST BRIDGE.md",
+      "symlink_target": "../../99_Legacy_Archive/THE ELEMENTALIST BRIDGE.md"
+    },
+    {
+      "filename": "THE_ANTI_SCRIPT_KIDDIE_DOCTRINE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE_ANTI_SCRIPT_KIDDIE_DOCTRINE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/THE_ANTI_SCRIPT_KIDDIE_DOCTRINE.md",
+      "symlink_target": "../../99_Legacy_Archive/THE_ANTI_SCRIPT_KIDDIE_DOCTRINE.md"
+    },
+    {
+      "filename": "THE_DIGITAL_HOMESTEAD_EDGE_SOVEREIGNTY_DOMESTIC_MINERAL_RIGHTS.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE_DIGITAL_HOMESTEAD_EDGE_SOVEREIGNTY_DOMESTIC_MINERAL_RIGHTS.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/THE_DIGITAL_HOMESTEAD_EDGE_SOVEREIGNTY_DOMESTIC_MINERAL_RIGHTS.md",
+      "symlink_target": "../../99_Legacy_Archive/THE_DIGITAL_HOMESTEAD_EDGE_SOVEREIGNTY_DOMESTIC_MINERAL_RIGHTS.md"
+    },
+    {
+      "filename": "THE_DIGITAL_HOMESTEAD_EDGE_SOVEREIGNTY_DOMESTIC_MINERAL_RIGHTS.pdf",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE_DIGITAL_HOMESTEAD_EDGE_SOVEREIGNTY_DOMESTIC_MINERAL_RIGHTS.pdf",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/THE_DIGITAL_HOMESTEAD_EDGE_SOVEREIGNTY_DOMESTIC_MINERAL_RIGHTS.pdf",
+      "symlink_target": "../../99_Legacy_Archive/THE_DIGITAL_HOMESTEAD_EDGE_SOVEREIGNTY_DOMESTIC_MINERAL_RIGHTS.pdf"
+    },
+    {
+      "filename": "THE_DIGITAL_MAGNA_CARTA.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE_DIGITAL_MAGNA_CARTA.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/THE_DIGITAL_MAGNA_CARTA.md",
+      "symlink_target": "../../99_Legacy_Archive/THE_DIGITAL_MAGNA_CARTA.md"
+    },
+    {
+      "filename": "THE_DIGITAL_MAGNA_CARTA_MASTER_SOURCE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE_DIGITAL_MAGNA_CARTA_MASTER_SOURCE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/THE_DIGITAL_MAGNA_CARTA_MASTER_SOURCE.md",
+      "symlink_target": "../../99_Legacy_Archive/THE_DIGITAL_MAGNA_CARTA_MASTER_SOURCE.md"
+    },
+    {
+      "filename": "THE_PAWEL_WILDSEED_CHRONICLE_SEPTEMBER_2026.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE_PAWEL_WILDSEED_CHRONICLE_SEPTEMBER_2026.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/THE_PAWEL_WILDSEED_CHRONICLE_SEPTEMBER_2026.md",
+      "symlink_target": "../../04_Advocate_Swarms/THE_PAWEL_WILDSEED_CHRONICLE_SEPTEMBER_2026.md"
+    },
+    {
+      "filename": "THE_PILOTS_GUIDE_TO_MODEL_FINE_TUNING_VS_NOTEBOOKLM.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE_PILOTS_GUIDE_TO_MODEL_FINE_TUNING_VS_NOTEBOOKLM.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/THE_PILOTS_GUIDE_TO_MODEL_FINE_TUNING_VS_NOTEBOOKLM.md",
+      "symlink_target": "../../01_Governance_and_ITSM/THE_PILOTS_GUIDE_TO_MODEL_FINE_TUNING_VS_NOTEBOOKLM.md"
+    },
+    {
+      "filename": "THE_UNVARNISHED_HISTORY_OF_JAMES_CARROLL_AND_JEREMY_MALONE.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE_UNVARNISHED_HISTORY_OF_JAMES_CARROLL_AND_JEREMY_MALONE.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/THE_UNVARNISHED_HISTORY_OF_JAMES_CARROLL_AND_JEREMY_MALONE.md",
+      "symlink_target": "../../99_Legacy_Archive/THE_UNVARNISHED_HISTORY_OF_JAMES_CARROLL_AND_JEREMY_MALONE.md"
+    },
+    {
+      "filename": "THE_UNVARNISHED_HISTORY_OF_JAMES_CARROLL_AND_PAWEL_RUDNICKI.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE_UNVARNISHED_HISTORY_OF_JAMES_CARROLL_AND_PAWEL_RUDNICKI.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/THE_UNVARNISHED_HISTORY_OF_JAMES_CARROLL_AND_PAWEL_RUDNICKI.md",
+      "symlink_target": "../../99_Legacy_Archive/THE_UNVARNISHED_HISTORY_OF_JAMES_CARROLL_AND_PAWEL_RUDNICKI.md"
+    },
+    {
+      "filename": "THE_WILDSEED_COMMERCIAL_ACCELERATION_PLAN.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/THE_WILDSEED_COMMERCIAL_ACCELERATION_PLAN.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/THE_WILDSEED_COMMERCIAL_ACCELERATION_PLAN.md",
+      "symlink_target": "../../04_Advocate_Swarms/THE_WILDSEED_COMMERCIAL_ACCELERATION_PLAN.md"
+    },
+    {
+      "filename": "TRANSCRIPT_NOTEBOOKLM_ARKLE_VET_ALIBI_ENGINE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/TRANSCRIPT_NOTEBOOKLM_ARKLE_VET_ALIBI_ENGINE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/TRANSCRIPT_NOTEBOOKLM_ARKLE_VET_ALIBI_ENGINE.md",
+      "symlink_target": "../../04_Advocate_Swarms/TRANSCRIPT_NOTEBOOKLM_ARKLE_VET_ALIBI_ENGINE.md"
+    },
+    {
+      "filename": "The Campsite Protocol_ Operational Invariants & Human Equity Governance.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/The Campsite Protocol_ Operational Invariants & Human Equity Governance.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/The Campsite Protocol_ Operational Invariants & Human Equity Governance.md",
+      "symlink_target": "../../01_Governance_and_ITSM/The Campsite Protocol_ Operational Invariants & Human Equity Governance.md"
+    },
+    {
+      "filename": "The Digital Homestead_ Edge Sovereignty, Domestic Mineral Rights, and the Physical Commons.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/The Digital Homestead_ Edge Sovereignty, Domestic Mineral Rights, and the Physical Commons.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/The Digital Homestead_ Edge Sovereignty, Domestic Mineral Rights, and the Physical Commons.md",
+      "symlink_target": "../../99_Legacy_Archive/The Digital Homestead_ Edge Sovereignty, Domestic Mineral Rights, and the Physical Commons.md"
+    },
+    {
+      "filename": "The Landscape_ The 4 Adjacent Camps.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/The Landscape_ The 4 Adjacent Camps.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/The Landscape_ The 4 Adjacent Camps.md",
+      "symlink_target": "../../99_Legacy_Archive/The Landscape_ The 4 Adjacent Camps.md"
+    },
+    {
+      "filename": "VERTEX_DEEP_LORE_ADVOCATE_TOON_PROTOCOL.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/VERTEX_DEEP_LORE_ADVOCATE_TOON_PROTOCOL.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/VERTEX_DEEP_LORE_ADVOCATE_TOON_PROTOCOL.md",
+      "symlink_target": "../../04_Advocate_Swarms/VERTEX_DEEP_LORE_ADVOCATE_TOON_PROTOCOL.md"
+    },
+    {
+      "filename": "WHITEPAPER_THE_ARCHITECTS_LEVER_AND_THE_DEATH_OF_THE_VC_TOLLBOOTH.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/WHITEPAPER_THE_ARCHITECTS_LEVER_AND_THE_DEATH_OF_THE_VC_TOLLBOOTH.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/WHITEPAPER_THE_ARCHITECTS_LEVER_AND_THE_DEATH_OF_THE_VC_TOLLBOOTH.md",
+      "symlink_target": "../../01_Governance_and_ITSM/WHITEPAPER_THE_ARCHITECTS_LEVER_AND_THE_DEATH_OF_THE_VC_TOLLBOOTH.md"
+    },
+    {
+      "filename": "WHITE_PAPER_DISTRIBUTED_EDGE_COMPUTE_FEASIBILITY.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/WHITE_PAPER_DISTRIBUTED_EDGE_COMPUTE_FEASIBILITY.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/WHITE_PAPER_DISTRIBUTED_EDGE_COMPUTE_FEASIBILITY.md",
+      "symlink_target": "../../99_Legacy_Archive/WHITE_PAPER_DISTRIBUTED_EDGE_COMPUTE_FEASIBILITY.md"
+    },
+    {
+      "filename": "WHITE_PAPER_WILDSEED_ALGORITHMIC_RECLAMATION_AND_EAT_ENGINE.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/WHITE_PAPER_WILDSEED_ALGORITHMIC_RECLAMATION_AND_EAT_ENGINE.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/WHITE_PAPER_WILDSEED_ALGORITHMIC_RECLAMATION_AND_EAT_ENGINE.md",
+      "symlink_target": "../../04_Advocate_Swarms/WHITE_PAPER_WILDSEED_ALGORITHMIC_RECLAMATION_AND_EAT_ENGINE.md"
+    },
+    {
+      "filename": "WILDSEED_48_HOUR_SWARM_INFILTRATION_AND_BRAND_RECLAMATION_BATTLE_PLAN.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/WILDSEED_48_HOUR_SWARM_INFILTRATION_AND_BRAND_RECLAMATION_BATTLE_PLAN.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/WILDSEED_48_HOUR_SWARM_INFILTRATION_AND_BRAND_RECLAMATION_BATTLE_PLAN.md",
+      "symlink_target": "../../04_Advocate_Swarms/WILDSEED_48_HOUR_SWARM_INFILTRATION_AND_BRAND_RECLAMATION_BATTLE_PLAN.md"
+    },
+    {
+      "filename": "WILDSEED_COMMERCIAL_TURNAROUND_AND_RETAIL_FOOTPRINT_DOSSIER.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/WILDSEED_COMMERCIAL_TURNAROUND_AND_RETAIL_FOOTPRINT_DOSSIER.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/WILDSEED_COMMERCIAL_TURNAROUND_AND_RETAIL_FOOTPRINT_DOSSIER.md",
+      "symlink_target": "../../04_Advocate_Swarms/WILDSEED_COMMERCIAL_TURNAROUND_AND_RETAIL_FOOTPRINT_DOSSIER.md"
+    },
+    {
+      "filename": "WILDSEED_EXTRACTS_PRODUCT_DATA_SHEET.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/WILDSEED_EXTRACTS_PRODUCT_DATA_SHEET.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/WILDSEED_EXTRACTS_PRODUCT_DATA_SHEET.md",
+      "symlink_target": "../../04_Advocate_Swarms/WILDSEED_EXTRACTS_PRODUCT_DATA_SHEET.md"
+    },
+    {
+      "filename": "WILDSEED_MODULE_01_SOLVENTLESS_EXTRACTION_THERMODYNAMICS.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/WILDSEED_MODULE_01_SOLVENTLESS_EXTRACTION_THERMODYNAMICS.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/WILDSEED_MODULE_01_SOLVENTLESS_EXTRACTION_THERMODYNAMICS.md",
+      "symlink_target": "../../04_Advocate_Swarms/WILDSEED_MODULE_01_SOLVENTLESS_EXTRACTION_THERMODYNAMICS.md"
+    },
+    {
+      "filename": "WILDSEED_MODULE_02_LIVING_SOIL_TERPENE_BIOGENESIS_AND_CURING_CHEMISTRY.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/WILDSEED_MODULE_02_LIVING_SOIL_TERPENE_BIOGENESIS_AND_CURING_CHEMISTRY.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/WILDSEED_MODULE_02_LIVING_SOIL_TERPENE_BIOGENESIS_AND_CURING_CHEMISTRY.md",
+      "symlink_target": "../../04_Advocate_Swarms/WILDSEED_MODULE_02_LIVING_SOIL_TERPENE_BIOGENESIS_AND_CURING_CHEMISTRY.md"
+    },
+    {
+      "filename": "WO_Mashup_Autonomous_FloraDex_Telepresence_20260824.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/WO_Mashup_Autonomous_FloraDex_Telepresence_20260824.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/WO_Mashup_Autonomous_FloraDex_Telepresence_20260824.md",
+      "symlink_target": "../../04_Advocate_Swarms/WO_Mashup_Autonomous_FloraDex_Telepresence_20260824.md"
+    },
+    {
+      "filename": "WO_Mashup_Autonomous_TerraVeritas_RealEstate_20260829.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/WO_Mashup_Autonomous_TerraVeritas_RealEstate_20260829.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/WO_Mashup_Autonomous_TerraVeritas_RealEstate_20260829.md",
+      "symlink_target": "../../99_Legacy_Archive/WO_Mashup_Autonomous_TerraVeritas_RealEstate_20260829.md"
+    },
+    {
+      "filename": "WildSeed Extracts_ Sovereign Botanical Master Blueprint.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/WildSeed Extracts_ Sovereign Botanical Master Blueprint.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/WildSeed Extracts_ Sovereign Botanical Master Blueprint.md",
+      "symlink_target": "../../04_Advocate_Swarms/WildSeed Extracts_ Sovereign Botanical Master Blueprint.md"
+    },
+    {
+      "filename": "dr_kosmos_skew_ep1_brief.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/dr_kosmos_skew_ep1_brief.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/dr_kosmos_skew_ep1_brief.md",
+      "symlink_target": "../../04_Advocate_Swarms/dr_kosmos_skew_ep1_brief.md"
+    },
+    {
+      "filename": "media_asset_cataloging_guide.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/media_asset_cataloging_guide.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/media_asset_cataloging_guide.md",
+      "symlink_target": "../../99_Legacy_Archive/media_asset_cataloging_guide.md"
+    },
+    {
+      "filename": "mesh_architecture_docs.md",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/mesh_architecture_docs.md",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/mesh_architecture_docs.md",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/mesh_architecture_docs.md"
+    },
+    {
+      "filename": "mets_phillies_advocate_bios.md",
+      "domain": "04_Advocate_Swarms",
+      "old_path": "/home/james/SovereignOS/dna/docs/mets_phillies_advocate_bios.md",
+      "new_path": "/home/james/SovereignOS/04_Advocate_Swarms/mets_phillies_advocate_bios.md",
+      "symlink_target": "../../04_Advocate_Swarms/mets_phillies_advocate_bios.md"
+    },
+    {
+      "filename": "model_s_node_math.png",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/model_s_node_math.png",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/model_s_node_math.png",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/model_s_node_math.png"
+    },
+    {
+      "filename": "qwen_coder_a100_vllm.ipynb",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/qwen_coder_a100_vllm.ipynb",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/qwen_coder_a100_vllm.ipynb",
+      "symlink_target": "../../99_Legacy_Archive/qwen_coder_a100_vllm.ipynb"
+    },
+    {
+      "filename": "session_handoff_template.md",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/session_handoff_template.md",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/session_handoff_template.md",
+      "symlink_target": "../../99_Legacy_Archive/session_handoff_template.md"
+    },
+    {
+      "filename": "sovereign_hardware_inventory.json",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/sovereign_hardware_inventory.json",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/sovereign_hardware_inventory.json",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/sovereign_hardware_inventory.json"
+    },
+    {
+      "filename": "sovereign_os_power_tools_guide.md",
+      "domain": "01_Governance_and_ITSM",
+      "old_path": "/home/james/SovereignOS/dna/docs/sovereign_os_power_tools_guide.md",
+      "new_path": "/home/james/SovereignOS/01_Governance_and_ITSM/sovereign_os_power_tools_guide.md",
+      "symlink_target": "../../01_Governance_and_ITSM/sovereign_os_power_tools_guide.md"
+    },
+    {
+      "filename": "stacklabs_crucible_dataset.jsonl",
+      "domain": "99_Legacy_Archive",
+      "old_path": "/home/james/SovereignOS/dna/docs/stacklabs_crucible_dataset.jsonl",
+      "new_path": "/home/james/SovereignOS/99_Legacy_Archive/stacklabs_crucible_dataset.jsonl",
+      "symlink_target": "../../99_Legacy_Archive/stacklabs_crucible_dataset.jsonl"
+    },
+    {
+      "filename": "stacklabs_dual_node_hybrid_cascade.jpg",
+      "domain": "02_Edge_Hardware_and_Mesh",
+      "old_path": "/home/james/SovereignOS/dna/docs/stacklabs_dual_node_hybrid_cascade.jpg",
+      "new_path": "/home/james/SovereignOS/02_Edge_Hardware_and_Mesh/stacklabs_dual_node_hybrid_cascade.jpg",
+      "symlink_target": "../../02_Edge_Hardware_and_Mesh/stacklabs_dual_node_hybrid_cascade.jpg"
+    }
+  ]
+}

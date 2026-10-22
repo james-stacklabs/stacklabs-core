@@ -1,0 +1,13 @@
+{
+  "id": "monolith:monolith_04_small_ball_soto_tensor_core",
+  "slug": "monolith_04_small_ball_soto_tensor_core",
+  "title": "The Small Ball Manifesto: Protecting the $765M Tensor Core at DH & Ring-Buffer Centerfielders",
+  "silo": "monoliths",
+  "lenses": [
+    "SMALL_BALL_ALLOCATOR_MOAT",
+    "TENSOR_CORE_PRESERVATION",
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "registered_at_utc": "2026-10-22T01:30:00Z"
+}

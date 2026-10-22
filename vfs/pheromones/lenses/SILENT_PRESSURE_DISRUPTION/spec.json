@@ -1,0 +1,11 @@
+{
+  "category": "PASS_RUSH_LEVERAGE",
+  "created_at": "2026-10-21T04:27:35Z",
+  "description": "Captures pass rushers with 0 box-score sacks who forced early throws (< 2.2s time-to-throw) or throwaways on 3rd down.",
+  "hit_count": 6,
+  "json_filter_spec": "{\"max_qb_time_to_throw_s\":2.2,\"min_pressures\":5,\"sacks\":0}",
+  "lens_name": "Zero-Sack Internal Clock Disruption",
+  "lens_slug": "SILENT_PRESSURE_DISRUPTION",
+  "sql_predicate_template": "sacks = 0 AND pressures >= 5 AND forced_ttt_under_2_2s >= 3",
+  "updated_at": "2026-10-22T07:58:16Z"
+}

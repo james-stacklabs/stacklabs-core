@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wardy Console - FanStack God Mode</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body style="margin: 0; padding: 0; background: #08090d;">
+    <div id="root"></div>
+    <script type="text/babel">
+const { useState, useEffect, useRef, useCallback } = React;
+
+const ROOMS = [
+  { id: "mets", name: "Mets Room", team: "NYM", accent: "#FF5722" },
+  { id: "braves", name: "Braves Room", team: "ATL", accent: "#CE1141" },
+];
+
+const BOTS_META = {
+  dot: { name: "Dot", icon: "◈", color: "#00d4ff" },
+  barf: { name: "B.A.R.F.", icon: "🔥", color: "#FF6B35" },
+  tomahawk: { name: "Tom A. Hawk", icon: "⚡", color: "#CE1141" },
+  phanatic: { name: "Phanatic", icon: "★", color: "#00C853" },
+  wavygravy: { name: "Wavy Gravy", icon: "〰", color: "#B47AFF" },
+  wardy: { name: "WardyNYM", icon: "👑", color: "#f0a500" },
+  james: { name: "James", icon: "●", color: "#8890a4" },
+  barb: { name: "Barb", icon: "●", color: "#FF69B4" },
+};
+
+const font = `'JetBrains Mono', monospace`;
+
+const DEMO_GAME = {
+  away: "NYM", home: "SF",
+  awayScore: 0, homeScore: 0,
+  inning: 1, half: "Top",
+  outs: 0, balls: 0, strikes: 0,
+  batter: "Francisco Lindor",
+  pitcher: "Logan Webb",
+  onBase: { first: false, second: false, third: false },
+};
+
+const DEMO_FEED = {
+  mets: [
+    { id: 1, from: "dot", text: "Lindor enters hitting .143 through 6 games. 3-for-21 with 5 Ks. Below his career .270 pace.", ts: "9:46 PM" },
+    { id: 2, from: "barf", text: "LINDOR IS DUE. I CAN FEEL IT IN MY BONES. THIS IS THE GAME HE WAKES UP.", ts: "9:46 PM" },
+    { id: 3, from: "wavygravy", text: "Oracle Park vibes are immaculate tonight. Bay fog rolling in. Lindor vs Webb under the lights. This is what baseball is about, man.", ts: "9:47 PM" },
+    { id: 4, from: "dot", text: "Webb's splitter usage is up 12% this season. Lindor historically hits .198 against splitters. Watch for the chase.", ts: "9:47 PM" },
+  ],
+  braves: [
+    { id: 1, from: "dot", text: "Braves are off tonight. Monitoring NYM @ SF for divisional implications.", ts: "9:46 PM" },
+    { id: 2, from: "tomahawk", text: "Good. Let the Mets and Giants beat each other up. We rest and watch.", ts: "9:46 PM" },
+    { id: 3, from: "phanatic", text: "BEER COUNT: 14. Wade Boggs had 64 on a cross-country flight. I'm doing this across a 4-game series. Currently on pace for 56. NEED TO PICK IT UP.", ts: "9:47 PM" },
+  ],
+};
+
+function WardyConsole() {
+  const [activeRoom, setActiveRoom] = useState("mets");
+  const [feeds, setFeeds] = useState(DEMO_FEED);
+  const [inputText, setInputText] = useState("");
+  const [sendAs, setSendAs] = useState("wardy");
+  const [gameState, setGameState] = useState(DEMO_GAME);
+  const [botStatus, setBotStatus] = useState({
+    "dot-mets": { active: true, muted: false },
+    "dot-braves": { active: true, muted: false },
+    "barf": { active: true, muted: false },
+    "tomahawk": { active: true, muted: false },
+    "phanatic": { active: true, muted: false },
+    "wavygravy": { active: true, muted: false },
+  });
+  const [viewMode, setViewMode] = useState("single");
+  const [contextInput, setContextInput] = useState("");
+  const [contextLog, setContextLog] = useState([
+    { ts: "7:52 PM", text: "Cardinals SS Masyn Winn involved in single-car crash on I-64 after walk-off win. Not seriously injured.", tag: "injury" },
+  ]);
+  const [contextExpanded, setContextExpanded] = useState(false);
+  const feedRef = useRef(null);
+  const inputRef = useRef(null);
+  const contextRef = useRef(null);
+  const msgId = useRef(100);
+
+  const sendMessage = useCallback(() => {
+    if (!inputText.trim()) return;
+    const newMsg = {
+      id: msgId.current++,
+      from: sendAs,
+      text: inputText.trim(),
+      ts: new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true }),
+    };
+    if (viewMode === "dual") {
+      setFeeds((prev) => ({
+        ...prev,
+        mets: [...prev.mets, { ...newMsg, id: msgId.current++ }],
+        braves: [...prev.braves, { ...newMsg, id: msgId.current++ }],
+      }));
+    } else {
+      setFeeds((prev) => ({
+        ...prev,
+        [activeRoom]: [...prev[activeRoom], newMsg],
+      }));
+    }
+    setInputText("");
+    inputRef.current?.focus();
+  }, [inputText, sendAs, activeRoom, viewMode]);
+
+  useEffect(() => {
+    if (feedRef.current) {
+      feedRef.current.scrollTop = feedRef.current.scrollHeight;
+    }
+  }, [feeds, activeRoom]);
+
+  const toggleBot = (botKey, field) => {
+    setBotStatus((prev) => ({
+      ...prev,
+      [botKey]: { ...prev[botKey], [field]: !prev[botKey]?.[field] },
+    }));
+  };
+
+  const injectContext = useCallback(() => {
+    if (!contextInput.trim()) return;
+    const txt = contextInput.trim();
+    const entry = {
+      ts: new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true }),
+      text: txt,
+      tag: "manual",
+    };
+    
+    fetch("http://clio.taila01894.ts.net:8006/api/context", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({text: txt})
+    }).catch(e => console.error(e));
+
+    setContextLog((prev) => [...prev, entry]);
+    setContextInput("");
+    contextRef.current?.focus();
+  }, [contextInput]);
+
+  const roomBots = {
+    mets: ["dot-mets", "barf", "wavygravy"],
+    braves: ["dot-braves", "tomahawk", "phanatic"],
+  };
+
+  const getBotDisplay = (key) => {
+    const base = key.replace("-mets", "").replace("-braves", "");
+    return BOTS_META[base] || { name: key, icon: "?", color: "#888" };
+  };
+
+  const renderMessage = (msg) => {
+    const bot = BOTS_META[msg.from] || { name: msg.from, icon: "?", color: "#888" };
+    return (
+      <div key={msg.id} style={{
+        padding: "10px 16px",
+        borderBottom: "1px solid rgba(42,47,62,0.3)",
+        animation: "fadeIn 0.3s ease",
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+          <span style={{ color: bot.color, fontSize: "12px" }}>{bot.icon}</span>
+          <span style={{
+            fontFamily: font, fontSize: "11px", fontWeight: 600,
+            color: bot.color, letterSpacing: "0.5px",
+          }}>{bot.name}</span>
+          <span style={{
+            fontFamily: font, fontSize: "9px", color: "#555d74", marginLeft: "auto",
+          }}>{msg.ts}</span>
+        </div>
+        <div style={{
+          fontFamily: font, fontSize: "12px", color: "#c8ccd6",
+          lineHeight: "1.5", paddingLeft: "20px",
+        }}>{msg.text}</div>
+      </div>
+    );
+  };
+
+  const renderFeed = (roomId) => {
+    const room = ROOMS.find((r) => r.id === roomId);
+    const messages = feeds[roomId] || [];
+    return (
+      <div style={{
+        flex: 1, display: "flex", flexDirection: "column",
+        background: "#0a0c10",
+        borderTop: `2px solid ${room.accent}`,
+        minHeight: 0,
+      }}>
+        <div style={{
+          padding: "10px 16px", borderBottom: "1px solid #1a1f2e",
+          display: "flex", justifyContent: "space-between", alignItems: "center",
+          flexShrink: 0,
+        }}>
+          <span style={{
+            fontFamily: font, fontSize: "11px", fontWeight: 600,
+            color: room.accent, letterSpacing: "1px", textTransform: "uppercase",
+          }}>{room.name}</span>
+          <span style={{
+            fontFamily: font, fontSize: "9px", color: "#555d74",
+          }}>{messages.length} messages</span>
+        </div>
+        <div ref={viewMode === "single" || roomId === activeRoom ? feedRef : null} style={{
+          flex: 1, overflowY: "auto", minHeight: 0,
+        }}>
+          {messages.map(renderMessage)}
+        </div>
+      </div>
+    );
+  };
+
+  const diamond = (gs) => (
+    <svg width="80" height="80" viewBox="0 0 80 80">
+      <path d="M40 10 L65 40 L40 70 L15 40 Z" fill="none" stroke="#2a2f3e" strokeWidth="1.5"/>
+      <circle cx="40" cy="70" r="4" fill="#555d74"/>
+      <circle cx="65" cy="40" r="4" fill={gs.onBase.first ? "#f0a500" : "#2a2f3e"} stroke="#555d74" strokeWidth="0.5"/>
+      <circle cx="40" cy="10" r="4" fill={gs.onBase.second ? "#f0a500" : "#2a2f3e"} stroke="#555d74" strokeWidth="0.5"/>
+      <circle cx="15" cy="40" r="4" fill={gs.onBase.third ? "#f0a500" : "#2a2f3e"} stroke="#555d74" strokeWidth="0.5"/>
+    </svg>
+  );
+
+  return (
+    <div style={{
+      fontFamily: font, background: "#08090d", color: "#e2e5ec",
+      height: "100vh", display: "flex", flexDirection: "column", overflow: "hidden",
+    }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+        @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        ::-webkit-scrollbar { width:4px; }
+        ::-webkit-scrollbar-track { background:#08090d; }
+        ::-webkit-scrollbar-thumb { background:#2a2f3e; border-radius:2px; }
+        input:focus, select:focus { outline: 1px solid #f0a50060; }
+      `}</style>
+
+      {/* HEADER */}
+      <div style={{
+        background: "#0c0e14", borderBottom: "1px solid #1a1f2e",
+        padding: "10px 20px", display: "flex", justifyContent: "space-between",
+        alignItems: "center", flexShrink: 0,
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <span style={{
+            background: "#ff1744", color: "#fff", fontSize: "8px", fontWeight: 700,
+            letterSpacing: "2px", padding: "3px 8px", borderRadius: "2px",
+            animation: "pulse 2s ease-in-out infinite",
+          }}>LIVE</span>
+          <span style={{
+            fontSize: "14px", fontWeight: 700, letterSpacing: "2px",
+            color: "#f0a500", textTransform: "uppercase",
+          }}>Wardy Console</span>
+          <span style={{
+            fontSize: "9px", color: "#555d74", letterSpacing: "1px",
+          }}>GOD MODE</span>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "12px", fontWeight: 600 }}>{gameState.away} {gameState.awayScore} — {gameState.home} {gameState.homeScore}</div>
+            <div style={{ fontSize: "9px", color: "#555d74" }}>{gameState.half} {gameState.inning} · {gameState.outs} out</div>
+          </div>
+        </div>
+      </div>
+
+      {/* MAIN BODY */}
+      <div style={{ flex: 1, display: "flex", minHeight: 0, overflow: "hidden" }}>
+
+        {/* LEFT SIDEBAR — Game State + Bot Controls */}
+        <div style={{
+          width: "220px", background: "#0c0e14", borderRight: "1px solid #1a1f2e",
+          display: "flex", flexDirection: "column", flexShrink: 0, overflowY: "auto",
+        }}>
+          {/* Diamond */}
+          <div style={{
+            padding: "16px", borderBottom: "1px solid #1a1f2e",
+            display: "flex", flexDirection: "column", alignItems: "center",
+          }}>
+            {diamond(gameState)}
+            <div style={{ marginTop: "8px", textAlign: "center" }}>
+              <div style={{ fontSize: "10px", color: "#8890a4" }}>
+                {gameState.balls}-{gameState.strikes} · {gameState.outs} out
+              </div>
+              <div style={{ fontSize: "11px", fontWeight: 600, color: "#e2e5ec", marginTop: "4px" }}>
+                {gameState.batter}
+              </div>
+              <div style={{ fontSize: "9px", color: "#555d74" }}>
+                vs {gameState.pitcher}
+              </div>
+            </div>
+          </div>
+
+          {/* Bot Controls */}
+          <div style={{ padding: "12px 16px" }}>
+            <div style={{
+              fontSize: "9px", fontWeight: 600, color: "#555d74",
+              letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "10px",
+            }}>Bot controls</div>
+
+            {Object.entries(roomBots).map(([roomId, bots]) => (
+              <div key={roomId} style={{ marginBottom: "12px" }}>
+                <div style={{
+                  fontSize: "9px", color: ROOMS.find((r) => r.id === roomId).accent,
+                  letterSpacing: "1px", marginBottom: "6px", textTransform: "uppercase",
+                }}>{ROOMS.find((r) => r.id === roomId).name}</div>
+                {bots.map((botKey) => {
+                  const bot = getBotDisplay(botKey);
+                  const status = botStatus[botKey] || { active: true, muted: false };
+                  return (
+                    <div key={botKey} style={{
+                      display: "flex", alignItems: "center", justifyContent: "space-between",
+                      padding: "6px 8px", marginBottom: "4px",
+                      background: status.active ? "rgba(255,255,255,0.02)" : "rgba(255,0,0,0.03)",
+                      borderRadius: "3px", borderLeft: `2px solid ${status.active ? bot.color : "#333"}`,
+                    }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                        <span style={{
+                          width: "5px", height: "5px", borderRadius: "50%",
+                          background: status.active && !status.muted ? "#00d68f" : status.muted ? "#f0a500" : "#ff4757",
+                          display: "inline-block",
+                          animation: status.active && !status.muted ? "pulse 2s ease-in-out infinite" : "none",
+                        }} />
+                        <span style={{ fontSize: "10px", color: bot.color }}>{bot.icon}</span>
+                        <span style={{ fontSize: "10px", color: "#c8ccd6" }}>{bot.name}</span>
+                      </div>
+                      <div style={{ display: "flex", gap: "4px" }}>
+                        <button
+                          onClick={() => toggleBot(botKey, "muted")}
+                          style={{
+                            fontFamily: font, fontSize: "8px", padding: "2px 5px",
+                            background: status.muted ? "#f0a50020" : "transparent",
+                            border: `1px solid ${status.muted ? "#f0a50040" : "#2a2f3e"}`,
+                            color: status.muted ? "#f0a500" : "#555d74",
+                            cursor: "pointer", borderRadius: "2px",
+                          }}
+                        >{status.muted ? "MUTED" : "MUTE"}</button>
+                        <button
+                          onClick={() => toggleBot(botKey, "active")}
+                          style={{
+                            fontFamily: font, fontSize: "8px", padding: "2px 5px",
+                            background: !status.active ? "#ff475720" : "transparent",
+                            border: `1px solid ${!status.active ? "#ff475740" : "#2a2f3e"}`,
+                            color: !status.active ? "#ff4757" : "#555d74",
+                            cursor: "pointer", borderRadius: "2px",
+                          }}
+                        >{status.active ? "KILL" : "DEAD"}</button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+
+          {/* Context Injection */}
+          <div style={{
+            padding: "12px 16px", borderTop: "1px solid #1a1f2e",
+          }}>
+            <div
+              onClick={() => setContextExpanded(!contextExpanded)}
+              style={{
+                fontSize: "9px", fontWeight: 600, color: "#f0a500",
+                letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px",
+                cursor: "pointer", display: "flex", justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <span>Context inject</span>
+              <span style={{ fontSize: "10px", color: "#555d74" }}>
+                {contextLog.length} item{contextLog.length !== 1 ? "s" : ""} {contextExpanded ? "▾" : "▸"}
+              </span>
+            </div>
+            <div style={{ display: "flex", gap: "4px", marginBottom: "8px" }}>
+              <input
+                ref={contextRef}
+                value={contextInput}
+                onChange={(e) => setContextInput(e.target.value)}
+                onKeyDown={(e) => { if (e.key === "Enter") injectContext(); }}
+                placeholder="Breaking news, injury, trade..."
+                style={{
+                  flex: 1, fontFamily: font, fontSize: "10px",
+                  padding: "6px 8px", background: "#08090d",
+                  border: "1px solid #2a2f3e", color: "#e2e5ec",
+                  borderRadius: "2px",
+                }}
+              />
+              <button
+                onClick={injectContext}
+                style={{
+                  fontFamily: font, fontSize: "8px", fontWeight: 600,
+                  padding: "6px 8px", background: "#f0a50015",
+                  border: "1px solid #f0a50040", color: "#f0a500",
+                  cursor: "pointer", borderRadius: "2px", letterSpacing: "0.5px",
+                  whiteSpace: "nowrap",
+                }}
+              >INJECT</button>
+            </div>
+            {contextExpanded && (
+              <div style={{
+                maxHeight: "150px", overflowY: "auto",
+                background: "#08090d", borderRadius: "3px",
+                border: "1px solid #1a1f2e",
+              }}>
+                {contextLog.map((entry, i) => (
+                  <div key={i} style={{
+                    padding: "6px 8px", borderBottom: "1px solid rgba(42,47,62,0.3)",
+                    fontSize: "9px", lineHeight: "1.4",
+                  }}>
+                    <span style={{ color: "#555d74" }}>{entry.ts}</span>
+                    <span style={{
+                      marginLeft: "6px",
+                      color: entry.tag === "injury" ? "#ff4757" : entry.tag === "trade" ? "#00d4ff" : "#c8ccd6",
+                    }}>{entry.text}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* CENTER — Chat Feeds */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
+          {/* Room tabs */}
+          <div style={{
+            display: "flex", borderBottom: "1px solid #1a1f2e",
+            background: "#0c0e14", flexShrink: 0,
+          }}>
+            {ROOMS.map((room) => (
+              <button
+                key={room.id}
+                onClick={() => { setActiveRoom(room.id); setViewMode("single"); }}
+                style={{
+                  fontFamily: font, fontSize: "10px", fontWeight: 600,
+                  padding: "10px 20px", letterSpacing: "1px", textTransform: "uppercase",
+                  background: activeRoom === room.id && viewMode === "single" ? "#0a0c10" : "transparent",
+                  border: "none",
+                  borderBottom: activeRoom === room.id && viewMode === "single" ? `2px solid ${room.accent}` : "2px solid transparent",
+                  color: activeRoom === room.id && viewMode === "single" ? room.accent : "#555d74",
+                  cursor: "pointer", transition: "all 0.15s",
+                }}
+              >{room.name}</button>
+            ))}
+            <button
+              onClick={() => setViewMode("dual")}
+              style={{
+                fontFamily: font, fontSize: "10px", fontWeight: 600,
+                padding: "10px 20px", letterSpacing: "1px", textTransform: "uppercase",
+                background: viewMode === "dual" ? "#0a0c10" : "transparent",
+                border: "none",
+                borderBottom: viewMode === "dual" ? "2px solid #f0a500" : "2px solid transparent",
+                color: viewMode === "dual" ? "#f0a500" : "#555d74",
+                cursor: "pointer", transition: "all 0.15s",
+                marginLeft: "auto",
+              }}
+            >DUAL VIEW</button>
+          </div>
+
+          {/* Feed area */}
+          <div style={{ flex: 1, display: "flex", minHeight: 0, overflow: "hidden" }}>
+            {viewMode === "dual" ? (
+              <>
+                {renderFeed("mets")}
+                <div style={{ width: "1px", background: "#1a1f2e" }} />
+                {renderFeed("braves")}
+              </>
+            ) : (
+              renderFeed(activeRoom)
+            )}
+          </div>
+
+          {/* Input bar */}
+          <div style={{
+            padding: "12px 16px", borderTop: "1px solid #1a1f2e",
+            background: "#0c0e14", display: "flex", gap: "8px",
+            alignItems: "center", flexShrink: 0,
+          }}>
+            <select
+              value={sendAs}
+              onChange={(e) => setSendAs(e.target.value)}
+              style={{
+                fontFamily: font, fontSize: "10px", padding: "8px 8px",
+                background: "#08090d", border: "1px solid #2a2f3e",
+                color: BOTS_META[sendAs]?.color || "#e2e5ec",
+                borderRadius: "3px", cursor: "pointer", width: "130px",
+              }}
+            >
+              <option value="wardy">👑 WardyNYM</option>
+              <option value="james">● James</option>
+              <option value="barb">● Barb</option>
+              <option value="dot">◈ Dot (override)</option>
+              <option value="barf">🔥 B.A.R.F. (override)</option>
+              <option value="phanatic">★ Phanatic (override)</option>
+            </select>
+            <input
+              ref={inputRef}
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              onKeyDown={(e) => { if (e.key === "Enter") sendMessage(); }}
+              placeholder={`Message as ${BOTS_META[sendAs]?.name || sendAs}...`}
+              style={{
+                flex: 1, fontFamily: font, fontSize: "12px",
+                padding: "8px 12px", background: "#08090d",
+                border: "1px solid #2a2f3e", color: "#e2e5ec",
+                borderRadius: "3px",
+              }}
+            />
+            <button
+              onClick={sendMessage}
+              style={{
+                fontFamily: font, fontSize: "10px", fontWeight: 600,
+                padding: "8px 16px", background: "linear-gradient(135deg, rgba(240,165,0,0.15), rgba(240,165,0,0.05))",
+                border: "1px solid #f0a50040", color: "#f0a500",
+                cursor: "pointer", borderRadius: "3px", letterSpacing: "1px",
+                textTransform: "uppercase",
+              }}
+            >Send</button>
+            {viewMode === "single" && (
+              <button
+                onClick={() => {
+                  if (!inputText.trim()) return;
+                  const newMsg = {
+                    id: msgId.current++,
+                    from: sendAs,
+                    text: inputText.trim(),
+                    ts: new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true }),
+                  };
+                  setFeeds((prev) => {
+                    const updated = {};
+                    ROOMS.forEach((r) => {
+                      updated[r.id] = [...(prev[r.id] || []), { ...newMsg, id: msgId.current++ }];
+                    });
+                    return updated;
+                  });
+                  setInputText("");
+                  inputRef.current?.focus();
+                }}
+                style={{
+                  fontFamily: font, fontSize: "9px", fontWeight: 600,
+                  padding: "8px 12px", background: "transparent",
+                  border: "1px solid #2a2f3e", color: "#555d74",
+                  cursor: "pointer", borderRadius: "3px", letterSpacing: "0.5px",
+                  whiteSpace: "nowrap",
+                }}
+              >ALL ROOMS</button>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<WardyConsole />);
+    </script>
+</body>
+</html>

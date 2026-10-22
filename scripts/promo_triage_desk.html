@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cosmic Sieve</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --bg-body: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --primary-blue: #2563eb;
+            --primary-hover: #1d4ed8;
+            --danger-red: #ef4444;
+            --danger-hover: #b91c1c;
+        }
+        
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 3rem 2rem;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1 {
+            color: var(--text-main);
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 3rem;
+        }
+        
+        #sieve-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .promo-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .promo-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        .source {
+            font-size: 0.75rem;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        
+        .headline {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            color: var(--text-main);
+        }
+        
+        .details {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.5;
+            max-height: 100px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        button {
+            border: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-family: inherit;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        
+        button.inject {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        button.inject:hover {
+            background-color: var(--primary-hover);
+        }
+        
+        button.jettison {
+            background-color: transparent;
+            color: var(--danger-red);
+            border: 1px solid var(--danger-red);
+        }
+        
+        button.jettison:hover {
+            background-color: var(--danger-red);
+            color: white;
+        }
+        
+        select.persona-drop {
+            background: #f9fafb;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sovereign Promo Triage</h1>
+    <div class="subtitle">FanStack 1.0 Enterprise Data Sieve</div>
+
+    <div id="sieve-grid">
+        <!-- Cards will load here -->
+    </div>
+
+    <script>
+        const API_BASE = "http://localhost:8091/api/promos";
+        
+        async function loadPromos() {
+            try {
+                const res = await fetch(API_BASE);
+                const promos = await res.json();
+                renderCards(promos);
+            } catch (err) {
+                console.error("Failed to load the cosmos:", err);
+            }
+        }
+
+        function renderCards(promos) {
+            const grid = document.getElementById("sieve-grid");
+            grid.innerHTML = "";
+            
+            if(promos.length === 0) {
+                grid.innerHTML = `<p style="text-align:center; width:100%; color: #6b7280;">The sieve is empty. Awaiting entropy...</p>`;
+                return;
+            }
+
+            promos.forEach(promo => {
+                const card = document.createElement("div");
+                card.className = "promo-card";
+                card.innerHTML = `
+                    <div class="source">[ ${promo.source} ]</div>
+                    <div class="headline">${promo.headline}</div>
+                    <div class="details">${promo.details || "No extracted details."}</div>
+                    
+                    <div class="actions">
+                        <button class="inject" onclick="actionPromo('${promo.id}', 'inject_global')">Inject Global</button>
+                    </div>
+                    <div class="actions" style="margin-top: 10px;">
+                        <select class="persona-drop" id="persona_${promo.id}">
+                            <option value="scraps">Scraps</option>
+                            <option value="barf">Barf</option>
+                            <option value="dr_kosmo">Dr. Kosmo</option>
+                            <option value="mean_jean">Mean Jean</option>
+                        </select>
+                        <button class="inject" onclick="injectPersona('${promo.id}')">Target Persona</button>
+                        <button class="jettison" style="margin-left:auto;" onclick="actionPromo('${promo.id}', 'jettison')">Jettison</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        async function actionPromo(id, actionStr, personaStr = null) {
+            try {
+                await fetch(`${API_BASE}/${id}/action`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: actionStr, persona: personaStr })
+                });
+                loadPromos(); // Refresh the grid
+            } catch (err) {
+                console.error("Action failed:", err);
+            }
+        }
+
+        function injectPersona(id) {
+            const bot_name = document.getElementById(`persona_${id}`).value;
+            actionPromo(id, 'target_persona', bot_name);
+        }
+
+        // Initialize and poll every 5 seconds
+        loadPromos();
+        setInterval(loadPromos, 5000);
+    </script>
+</body>
+</html>

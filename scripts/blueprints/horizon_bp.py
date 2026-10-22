@@ -148,7 +148,7 @@ HORIZON_GROUND_TRUTH_VAULT = {
 def api_horizon_evidence(doc_id: str):
     """
     Sovereign Horizon Bit-Perfect Evidence Endpoint (Invariant 41 Enforced).
-    Slices raw primary source text directly from local bare metal storage.
+    Slices raw primary source text directly from local NVMe storage.
     Zero LLM paraphrase drift, zero recitation filter risk.
     """
     clean_doc_id = doc_id.strip()

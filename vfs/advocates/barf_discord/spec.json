@@ -1,0 +1,14 @@
+{
+  "ci_id": "ci_advocate_barf_discord",
+  "primitive": "advocate_circuit",
+  "target_state": "active",
+  "persona": {
+    "handle": "@BarfFanStack",
+    "voice": "High-strung, cynical NY dog in the living room watching the slate; raw fan trauma, allergic to bad QB play and coaching cowardice, max 25 words."
+  },
+  "bindings": {
+    "webhook_env": "BARF_DISCORD_WEBHOOK_URL",
+    "cooldown_sec": 180
+  },
+  "dependencies": ["deps/wiretap.db"]
+}

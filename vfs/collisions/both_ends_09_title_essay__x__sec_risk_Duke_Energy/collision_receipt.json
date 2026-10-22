@@ -1,0 +1,37 @@
+{
+  "adamic_adar_raw": 0.6714,
+  "blind_spot_lenses_c_minus_a": [
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ],
+  "collision_id": "both_ends_09_title_essay__x__sec_risk_Duke_Energy",
+  "composite_raw": 0.8214,
+  "crucible_brief_3bullet": "1. STRUCTURAL THESIS LOCK (71929.4 us VFS Bisociation): I ran 'Essay 9: Both Ends of the Curve' through my local POSIX VFS Swanson Collider; it locked directly onto [SEC_RISK] Duke_Energy via shared lens ASYMMETRIC_TAIL_CONTAGION, THERMODYNAMIC_ENERGY_CEILING (Adamic-Adar specificity 0.671).\n\n2. EMPIRICAL GROUND-TRUTH RECEIPT (SEC_RISK): > **CIK**: `0001326160` | **Source**: Form 10-K Item 1A | Live Broadcast Phase-Lock: Pat McAfee Show: 'They are taking our jobs. They are drinking up all our water. When you just unplug them? Too late.'\n\n3. THE UNEXAMINED BLIND SPOT (TOPOLOGICAL_CASCADE_FAULT): In my local VFS graph, Duke_Energy also triggers TOPOLOGICAL_CASCADE_FAULT (silent upstream dependency failures propagating across interconnected infrastructure nodes before localized alarms trip)—a second-order failure vector absent from your current draft that belongs in The Breeze.",
+  "empirical_node_id": "Duke_Energy",
+  "empirical_node_key": "sec_risk:Duke_Energy",
+  "empirical_receipt": "> **CIK**: `0001326160` | **Source**: Form 10-K Item 1A",
+  "empirical_silo": "sec_risk",
+  "empirical_title": "Duke_Energy",
+  "essay_slug": "both_ends_09_title_essay",
+  "essay_summary": "Why energy comes from both ends of a curve and none from the middle. Bell curves vs. nuclear binding energy curves. Balance living at extremes.",
+  "essay_title": "Essay 9: Both Ends of the Curve",
+  "essay_unmatched_lenses_a_minus_c": [],
+  "generated_at_utc": "2026-10-22T04:20:45.570069+00:00",
+  "normalized_score": 0.7727,
+  "rank": 16,
+  "sha256_receipt": "f9f178bf79d03c14f6f068924dfa35bd8013191a70acca9859c4464b7bfc7068",
+  "shared_lens_count": 2,
+  "shared_lenses": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "THERMODYNAMIC_ENERGY_CEILING"
+  ],
+  "symmetric_difference_lenses": [
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ],
+  "three_hop_transitive_chains": [
+    "pawel:both_ends_09_title_essay -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Duke_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> energy_cartridge:1",
+    "pawel:both_ends_09_title_essay -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Duke_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> energy_cartridge:10",
+    "pawel:both_ends_09_title_essay -> [ASYMMETRIC_TAIL_CONTAGION] -> sec_risk:Duke_Energy -> [TOPOLOGICAL_CASCADE_FAULT] -> energy_cartridge:11"
+  ],
+  "traversal_latency_us": 71929.38,
+  "triad_acoustic_snipe": "snipes:x8iARwwn-J8"
+}

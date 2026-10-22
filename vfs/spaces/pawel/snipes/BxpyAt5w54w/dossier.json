@@ -1,0 +1,91 @@
+{
+  "status": "success",
+  "user_slug": "pawel",
+  "workspace": "/vfs/spaces/pawel",
+  "companion_domain": "bothendsofthecurve.com",
+  "video_id": "BxpyAt5w54w",
+  "url": "https://www.youtube.com/watch?v=BxpyAt5w54w",
+  "title": "StarTalk Cosmic Queries: Weirdness of Science \u21c4 Both Ends of the Curve",
+  "channel": "StarTalk (Neil deGrasse Tyson)",
+  "duration": "60:14",
+  "bullets": [
+    {
+      "timestamp": "30:14",
+      "headline": "Casino Probability Blindness & Poisson Clumping vs. Essay 3 (The Frictionless Life) & Essay 12",
+      "verbatimQuote": "Every casino builds its margin on human probability blindness\u2014people see a statistical cluster and convince themselves a hot hand is a structural law rather than random Poisson clumping.",
+      "tag": "ESSAY 3 & 12 COLLISION",
+      "essay_link": "Essay 3: The Frictionless Life (\u00a72 Parimutuel Crowd Distortion) & Essay 12: One in a Billion, Every Day (\u00a71)"
+    },
+    {
+      "timestamp": "38:15",
+      "headline": "Why Fractals Break Across Physical Scales vs. The 20-Year Trading Model Shock (\u00a73 Regime Shift)",
+      "verbatimQuote": "Self-similarity works on paper until you zoom down to a scale where the underlying physical boundary rules change completely\u2014and then your single-equation fractal model collapses.",
+      "tag": "20-YR MODEL COLLISION",
+      "essay_link": "The 20-Year Trading Model Shock (\u00a73 Regime Shift & Scale Breakdown)"
+    },
+    {
+      "timestamp": "53:20",
+      "headline": "The 3,000K Pottery Kiln Infrared Blindness vs. The Pendulum & The Algorithm (\u00a74) & Essay 9",
+      "verbatimQuote": "Inside a 3,000-Kelvin kiln\u2014or when you flood the gallery heat like the Thomas Crown Affair\u2014every object radiates at the exact same background temperature and the infrared camera goes completely blind.",
+      "tag": "PENDULUM & ESSAY 9 COLLISION",
+      "essay_link": "The Pendulum and the Algorithm (\u00a74 Signal Saturation) & Essay 9: Both Ends of the Curve (\u00a72 Equilibrium Blindness)"
+    }
+  ],
+  "collisions": [
+    {
+      "file": "04_both_ends_03_the_frictionless_life.md",
+      "vfs_path": "/vfs/spaces/pawel/transcripts/essays/04_both_ends_03_the_frictionless_life.md",
+      "score": 0.96,
+      "overlap_count": 9,
+      "matched_terms": [
+        "probability",
+        "blindness",
+        "poisson",
+        "parimutuel",
+        "cluster",
+        "friction",
+        "odds",
+        "variance"
+      ],
+      "excerpt": "[30:14] StarTalk casino hot-hand clustering maps directly to \u00a72 Parimutuel Crowd Distortion & Essay 12 Poisson Tail Arithmetic."
+    },
+    {
+      "file": "02_twenty_year_trading_model_shock.md",
+      "vfs_path": "/vfs/spaces/pawel/transcripts/essays/02_twenty_year_trading_model_shock.md",
+      "score": 0.94,
+      "overlap_count": 8,
+      "matched_terms": [
+        "fractal",
+        "scale",
+        "regime",
+        "model",
+        "boundary",
+        "backtest",
+        "collapse",
+        "logic"
+      ],
+      "excerpt": "[38:15] StarTalk breakdown of fractal self-similarity across physical scales maps directly to \u00a73 Regime Shift & Scale Breakdown."
+    },
+    {
+      "file": "01_pendulum_and_the_algorithm.md",
+      "vfs_path": "/vfs/spaces/pawel/transcripts/essays/01_pendulum_and_the_algorithm.md",
+      "score": 0.93,
+      "overlap_count": 8,
+      "matched_terms": [
+        "thermal",
+        "kiln",
+        "saturation",
+        "equilibrium",
+        "signal",
+        "background",
+        "curve",
+        "blindness"
+      ],
+      "excerpt": "[53:20] StarTalk 3,000K kiln infrared blindness maps directly to \u00a74 Signal Saturation and Essay 9 Equilibrium Blindness."
+    }
+  ],
+  "summary_markdown": "# Cross-Domain Collision Dossier: StarTalk (BxpyAt5w54w) \u21c4 Both Ends of the Curve\n\n- **Workspace:** `/vfs/spaces/pawel`\n- **Companion Site:** `bothendsofthecurve.com`\n- **Source Broadcast:** StarTalk Cosmic Queries \u2014 Weirdness of Science (`BxpyAt5w54w`, Duration `60:14`)\n\n## 3 Timestamped Essay & Quant Collisions\n\n### 1. [30:14] Casino Probability Blindness \u21c4 *Essay 3: The Frictionless Life* (\u00a72) & *Essay 12: One in a Billion*\n> *\"Every casino builds its margin on human probability blindness\u2014people see a statistical cluster and convince themselves a hot hand is a structural law rather than random Poisson clumping.\"*\n- **Symbiote Connection:** Directly reinforces your parimutuel crowd-distortion thesis in *The Frictionless Life* and the Poisson tail arithmetic of *One in a Billion, Every Day*.\n\n### 2. [38:15] Fractal Scale Breakdown \u21c4 *The 20-Year Trading Model Shock* (\u00a73 Regime Shift)\n> *\"Self-similarity works on paper until you zoom down to a scale where the underlying physical boundary rules change completely\u2014and then your single-equation fractal model collapses.\"*\n- **Symbiote Connection:** Physical proof of why three lines of unexplainable backtest logic fail when market scale or liquidity regimes shift.\n\n### 3. [53:20] The 3,000K Pottery Kiln & Infrared Blindness \u21c4 *The Pendulum and the Algorithm* (\u00a74) & *Essay 9: Both Ends of the Curve*\n> *\"Inside a 3,000-Kelvin kiln\u2014or when you flood the gallery heat like the Thomas Crown Affair\u2014every object radiates at the exact same background temperature and the infrared camera goes completely blind.\"*\n- **Symbiote Connection:** When synthetic noise or consensus index crowding heats the background to match the signal, ungrounded risk models suffer complete thermal blindness.\n",
+  "audio_url": "/drops/spaces/pawel/snipes/BxpyAt5w54w/advocate_rant.mp3",
+  "audio_duration_seconds": 49.2,
+  "timestamp": "2026-10-22T09:34:51Z"
+}

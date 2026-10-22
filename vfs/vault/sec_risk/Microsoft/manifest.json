@@ -1,0 +1,9 @@
+{
+  "entity_name": "Microsoft",
+  "cik": "0000789019",
+  "source": "SEC EDGAR Form 10-K Disclosures",
+  "associated_lenses": [
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ]
+}

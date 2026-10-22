@@ -1,0 +1,12 @@
+{
+  "series_slug": "PRS85006092_Labor_Share_Nonfarm_Business_Sector",
+  "data_source": "Federal Reserve Economic Data (FRED)",
+  "observation_count": 12,
+  "start_date": "1947-01-01",
+  "end_date": "2026-01-01",
+  "latest_reading": "88.920",
+  "associated_lenses": [
+    "GHOST_GDP_DECOUPLING",
+    "COGNITIVE_FRICTION_ATROPHY"
+  ]
+}

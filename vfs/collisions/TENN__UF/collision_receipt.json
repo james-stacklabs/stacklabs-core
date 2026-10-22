@@ -1,0 +1,9 @@
+{
+  "bisociation_score": 1.0,
+  "complementary_lenses_to_test": [],
+  "node_a": "TENN",
+  "node_c": "UF",
+  "shared_lenses_b": [
+    "HIDDEN_SNAP_FATIGUE_COLLAPSE"
+  ]
+}

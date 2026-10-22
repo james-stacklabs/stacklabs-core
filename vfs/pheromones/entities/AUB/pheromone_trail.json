@@ -1,0 +1,56 @@
+{
+  "cross_show_convergences": [],
+  "entity_key": "AUB",
+  "markers": [
+    {
+      "created_at": "2026-10-22T05:14:21Z",
+      "created_epoch": 1792646061.7672694,
+      "entity_key": "AUB",
+      "game_id": null,
+      "lens_slug": "SILENT_PRESSURE_DISRUPTION",
+      "marker_hash": "db93731b5740ad69eabd7dfe7a50a1b7202250c0775e998bfc20afe35b9a3961",
+      "pheromone_weight": 1.0,
+      "source_show": "CFB Week 8 Picks: Taylor Lewan, Will Compton CONFIDENT In Tennessee + Josh Pate LOVES Houston",
+      "sport": "CFB",
+      "surface_stat_claim": "pressures",
+      "timecode": "01:08:39",
+      "verbatim_quote": "**[01:08:34 -> 01:08:39]** Um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um. **[01:08:39 -> 01:08:44]** Hey, um, I'm Jordon Ross collectively like 45 pressures. **[01:08:44 -> 01:08:47]** You look at Auburn, Byrum Brown.",
+      "verified_ground_truth_json": "{\"entity\": \"AUB\", \"verified\": true}",
+      "video_id": "aAPk__vIab4"
+    },
+    {
+      "created_at": "2026-10-22T05:14:21Z",
+      "created_epoch": 1792646061.7672694,
+      "entity_key": "AUB",
+      "game_id": null,
+      "lens_slug": "SILENT_PRESSURE_DISRUPTION",
+      "marker_hash": "830bb257aef7ad5b647edc7f3c25329612a064d696a04fd531305d0e6e43be9e",
+      "pheromone_weight": 1.0,
+      "source_show": "CFB Week 8 Picks: Taylor Lewan, Will Compton CONFIDENT In Tennessee + Josh Pate LOVES Houston",
+      "sport": "CFB",
+      "surface_stat_claim": "pressures",
+      "timecode": "01:08:44",
+      "verbatim_quote": "**[01:08:39 -> 01:08:44]** Hey, um, I'm Jordon Ross collectively like 45 pressures. **[01:08:44 -> 01:08:47]** You look at Auburn, Byrum Brown. **[01:08:47 -> 01:08:48]** He's an easy sack.",
+      "verified_ground_truth_json": "{\"entity\": \"AUB\", \"verified\": true}",
+      "video_id": "aAPk__vIab4"
+    },
+    {
+      "created_at": "2026-10-22T05:14:21Z",
+      "created_epoch": 1792646061.7672694,
+      "entity_key": "AUB",
+      "game_id": null,
+      "lens_slug": "SILENT_PRESSURE_DISRUPTION",
+      "marker_hash": "cf85decd7ba5a030668acf674caeeb6f25e94a97f954311e5a38a0d8ec980238",
+      "pheromone_weight": 1.0,
+      "source_show": "CFB Week 8 Picks: Taylor Lewan, Will Compton CONFIDENT In Tennessee + Josh Pate LOVES Houston",
+      "sport": "CFB",
+      "surface_stat_claim": "pressures",
+      "timecode": "01:08:57",
+      "verbatim_quote": "**[01:08:55 -> 01:08:56]** They've given up 23 pressures on the year. **[01:08:57 -> 01:08:59]** That's where they get their ass handed to them. **[01:08:59 -> 01:09:04]** I think they're going to sack Byrum Brown and I think to Auburn doesn't generate a whole lot of pressure.",
+      "verified_ground_truth_json": "{\"entity\": \"AUB\", \"verified\": true}",
+      "video_id": "aAPk__vIab4"
+    }
+  ],
+  "max_pheromone_weight": 1.0,
+  "total_markers": 3
+}

@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo xinit /bin/sh -c "xset s noblank && xset s off && xset -dpms && xhost +local:james && sudo -u james env DISPLAY=:0 matchbox-window-manager -use_titlebar no -use_cursor yes & sudo -u james env DISPLAY=:0 /usr/bin/chromium --no-sandbox --no-memcheck --disable-gpu --disable-software-rasterizer --disable-dev-shm-usage --ignore-certificate-errors --kiosk --force-device-scale-factor=1.0 'https://clio.taila01894.ts.net:3000/?domain=MLB&room=scruffys'" -- :0 vt7 > /home/james/kiosk_error.log 2>&1

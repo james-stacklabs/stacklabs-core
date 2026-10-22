@@ -1,0 +1,25 @@
+[Unit]
+Description=Sovereign Price Shield — Edge Sentry Agent
+Documentation=https://github.com/stacklabs-llc/SovereignOS
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=james
+WorkingDirectory=/home/james
+ExecStart=/usr/bin/python3 /home/james/price_sentry_agent.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=price-sentry
+Environment="SENTRY_PORT=8710"
+Environment="SENTRY_SECRET=sovereign-sentry-v1"
+Environment="SENTRY_TIMEOUT=25"
+# Limit memory on RAM-constrained Pi nodes
+MemoryMax=80M
+CPUQuota=60%
+
+[Install]
+WantedBy=multi-user.target

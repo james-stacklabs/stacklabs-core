@@ -1,0 +1,5 @@
+{
+  "title": "Unexplained Algorithmic Logic Drift & Auditability Loss",
+  "description": "Black-box AI modifications to core financial or operational logic that pass backtests but fail human auditability and legal/operational defensibility during regime shift.",
+  "category": "Algorithmic Risk & Model Governance"
+}

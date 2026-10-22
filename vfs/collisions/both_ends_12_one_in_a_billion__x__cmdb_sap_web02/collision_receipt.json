@@ -1,0 +1,27 @@
+{
+  "adamic_adar_raw": 0.7863,
+  "blind_spot_lenses_c_minus_a": [],
+  "collision_id": "both_ends_12_one_in_a_billion__x__cmdb_sap_web02",
+  "composite_raw": 0.7863,
+  "crucible_brief_3bullet": "1. STRUCTURAL THESIS LOCK (1176.0 us VFS Bisociation): I ran 'Essay 12: One in a Billion, Every Day' through my local POSIX VFS Swanson Collider; it locked directly onto [CMDB] sap web02 via shared lens ASYMMETRIC_TAIL_CONTAGION, TOPOLOGICAL_CASCADE_FAULT (Adamic-Adar specificity 0.786).\n\n2. EMPIRICAL GROUND-TRUTH RECEIPT (CMDB): Empirical CMDB telemetry node (sap_web02) confirms physical bottleneck constraints.\n\n3. THE FALSIFICATION TEST FOR THE BREEZE (ASYMMETRIC_TAIL_CONTAGION): To stress-test this thesis against non-linear tail-risk amplification where high-frequency micro-dependencies trigger correlated liquidation or grid dispatch penalties, where does your framework draw the quantitative line when sap web02 hits non-linear tail contagion?",
+  "empirical_node_id": "sap_web02",
+  "empirical_node_key": "cmdb:sap_web02",
+  "empirical_receipt": "",
+  "empirical_silo": "cmdb",
+  "empirical_title": "sap web02",
+  "essay_slug": "both_ends_12_one_in_a_billion",
+  "essay_summary": "Rare events at scale: when something is tried 10 billion times a day, one-in-a-billion failures happen 10 times daily. Asymmetric disaster arithmetic.",
+  "essay_title": "Essay 12: One in a Billion, Every Day",
+  "essay_unmatched_lenses_a_minus_c": [],
+  "generated_at_utc": "2026-10-22T03:36:58.188240+00:00",
+  "normalized_score": 0.8312,
+  "rank": 23,
+  "sha256_receipt": "401ef54c85d9180cfb0c45914c3088c9dc7e0ae92e32dbfc54b7a8e890ee2008",
+  "shared_lens_count": 2,
+  "shared_lenses": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ],
+  "symmetric_difference_lenses": [],
+  "traversal_latency_us": 1176.03
+}

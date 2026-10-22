@@ -1,0 +1,12 @@
+{
+  "name": "savant_query_bridge",
+  "version": "1.0.0",
+  "type": "vfs_service",
+  "author": "James Carroll",
+  "description": "Natural Language Query to SQLite Wiretap & Advocate Persona Dispatcher",
+  "bindings": {
+    "db": "deps/wiretap.db",
+    "model": "gemini-3.8-flash",
+    "cooldown_sec": 5
+  }
+}

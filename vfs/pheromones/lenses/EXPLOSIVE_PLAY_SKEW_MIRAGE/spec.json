@@ -1,0 +1,11 @@
+{
+  "category": "EFFICIENCY_DISLOCATION",
+  "created_at": "2026-10-21T04:27:35Z",
+  "description": "Identifies offenses with bloated total yardage driven by 2-3 busted-coverage explosives while down-to-down success rate sat below 36%.",
+  "hit_count": 18,
+  "json_filter_spec": "{\"max_success_rate\":0.36,\"min_explosive_share\":0.42,\"min_total_yards\":400}",
+  "lens_name": "Box-Score Yardage Mirage (Success Rate vs. Explosives)",
+  "lens_slug": "EXPLOSIVE_PLAY_SKEW_MIRAGE",
+  "sql_predicate_template": "total_yards >= 400 AND standard_down_success_rate < 0.36 AND explosive_play_share >= 0.42",
+  "updated_at": "2026-10-22T07:58:16Z"
+}

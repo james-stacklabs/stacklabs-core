@@ -1,0 +1,10 @@
+{
+  "canonical_name": "Cherlyn",
+  "status": "exploratory_hospital_it_contact",
+  "relationship": "occasional_professional_contact",
+  "focus": "Epic EHR integration, 100-alarm storm clinical suppression",
+  "tone": "Enterprise healthcare IT, skeptical, highly regulated",
+  "missing_sources": [
+    "sms_jan_2026"
+  ]
+}

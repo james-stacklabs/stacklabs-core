@@ -1,0 +1,11 @@
+{
+  "category": "DEFENSIVE_LEVERAGE",
+  "created_at": "2026-10-21T04:27:35Z",
+  "description": "Isolates defenders with modest total box-score tackles (<= 4) whose stops occurred overwhelmingly on 3rd/4th & Short (<= 2 yds) or goal-line snaps.",
+  "hit_count": 12,
+  "json_filter_spec": "{\"max_distance\":2,\"max_surface_volume\":4,\"min_wpa_swing\":0.1,\"situational_downs\":[3,4]}",
+  "lens_name": "Low-Volume / High-Leverage Money-Down Anchor",
+  "lens_slug": "LOW_VOL_MONEY_DOWN_STUFF",
+  "sql_predicate_template": "total_tackles <= 4 AND third_fourth_down_stops >= 2 AND leverage_index >= 0.80",
+  "updated_at": "2026-10-22T07:58:16Z"
+}

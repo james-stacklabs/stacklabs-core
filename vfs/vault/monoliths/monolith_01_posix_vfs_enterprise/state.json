@@ -1,0 +1,13 @@
+{
+  "id": "monolith:monolith_01_posix_vfs_enterprise",
+  "slug": "monolith_01_posix_vfs_enterprise",
+  "title": "Rewiring the Enterprise into a POSIX VFS: CI = Folder, Edge = Symlink",
+  "silo": "monoliths",
+  "lenses": [
+    "POSIX_VFS_STATE_PLANE",
+    "CI_FOLDER_EDGE_SYMLINK",
+    "LATENCY_INVERSION_BOUNDARY",
+    "ZERO_RAG_FILESYSTEM_GRAPH"
+  ],
+  "registered_at_utc": "2026-10-22T01:30:00Z"
+}

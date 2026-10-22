@@ -1,0 +1,16 @@
+[Unit]
+Description=ServiceNow MID Server Daemon (Clio Node)
+After=network.target network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=forking
+WorkingDirectory=/home/james/servicenow_mid/agent
+ExecStart=/home/james/servicenow_mid/agent/start.sh
+ExecStop=/home/james/servicenow_mid/agent/stop.sh
+Restart=on-failure
+RestartSec=10s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=default.target

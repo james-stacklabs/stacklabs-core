@@ -20,7 +20,7 @@ def api_pulse():
     now = time.time()
     
     # 1. Read scratch_pad_poller_heartbeat.json
-    sp_hb_file = Path("/home/james/SovereignOS/logs/scratch_pad_poller_heartbeat.json")
+    sp_hb_file = Path("/home/james/stacklabs/logs/scratch_pad_poller_heartbeat.json")
     sp_hb = {}
     if sp_hb_file.exists():
         try:
@@ -33,7 +33,7 @@ def api_pulse():
             sp_hb["error"] = str(e)
 
     # 2. Read fanstack_poller_heartbeat.json
-    fs_hb_file = Path("/home/james/SovereignOS/logs/fanstack_poller_heartbeat.json")
+    fs_hb_file = Path("/home/james/stacklabs/logs/fanstack_poller_heartbeat.json")
     fs_hb = {}
     if fs_hb_file.exists():
         try:
@@ -62,7 +62,7 @@ def api_pulse():
             scratchpad_preview = f"Error reading scratch_pad.md: {e}"
 
     # 4. Tail last 15 lines of scratch_pad_poller.log
-    log_file = Path("/home/james/SovereignOS/logs/scratch_pad_poller.log")
+    log_file = Path("/home/james/stacklabs/logs/scratch_pad_poller.log")
     log_tail = []
     if log_file.exists():
         try:

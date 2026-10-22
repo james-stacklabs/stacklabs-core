@@ -1,0 +1,12 @@
+{
+  "series_slug": "M2V_Velocity_of_M2_Money_Stock",
+  "data_source": "Federal Reserve Economic Data (FRED)",
+  "observation_count": 9,
+  "start_date": "1959-01-01",
+  "end_date": "2026-01-01",
+  "latest_reading": "1.394",
+  "associated_lenses": [
+    "GHOST_GDP_DECOUPLING",
+    "COGNITIVE_FRICTION_ATROPHY"
+  ]
+}

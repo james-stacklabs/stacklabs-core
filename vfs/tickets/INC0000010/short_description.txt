@@ -1,0 +1,1 @@
+Need Oracle 10GR2 installed

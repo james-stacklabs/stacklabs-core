@@ -1,0 +1,17 @@
+{
+  "bisociation_score": 0.3,
+  "complementary_lenses_to_test": [
+    "COGNITIVE_FRICTION_ATROPHY",
+    "GHOST_GDP_DECOUPLING",
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ],
+  "methodology": "Don R. Swanson (1986) Undiscovered Public Knowledge A-B-C Bisociation",
+  "shared_lenses_b": [
+    "THERMODYNAMIC_ENERGY_CEILING"
+  ],
+  "silo_a_node": "pendulum_and_the_algorithm",
+  "silo_a_path": "/home/james/stacklabs/vfs/vault/pawel/pendulum_and_the_algorithm",
+  "silo_c_domain": "sec_risk",
+  "silo_c_node": "Constellation_Energy",
+  "silo_c_path": "/home/james/stacklabs/vfs/vault/sec_risk/Constellation_Energy"
+}

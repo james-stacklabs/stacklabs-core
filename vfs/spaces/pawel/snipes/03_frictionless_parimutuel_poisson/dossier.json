@@ -1,0 +1,22 @@
+{
+  "video_id": "03_frictionless_parimutuel_poisson",
+  "title": "Investigation 03: Frictionless Parimutuel Odds vs. Poisson Memory & NTS Distortion",
+  "url": "https://bothendsofthecurve.com/essays/the-frictionless-life",
+  "duration_sec": 43.0,
+  "generated_at": "2026-10-22T09:48:49.130798+00:00",
+  "sha256_report": "283739de4f8e34e6b5169ae45e87a9919ab5e58fcfc0273a44eb52e1be35d6c9",
+  "summary_bullets": [
+    "ArXiv 2610.29847v1 Theorem: Under Poisson memory recall, manipulation backfires on sparse memories but drives high-memory Bayesian agents to arbitrarily confident beliefs in the wrong state.",
+    "ArXiv 2610.26746v1 Empirical Calibration: A 40% scale shift in Normal Tempered-Stable returns distorts cumulative decision weights by 7 to 8 percentage points across S&P 500 data.",
+    "Parimutuel Invalidation Gate: When surface conditions shift (8.4% sloppy dirt), frictionless historical recall maximizes conviction in obsolete speed figures."
+  ],
+  "collisions": [
+    {
+      "timestamp": "arXiv:2610.29847v1",
+      "essay_target": "Essay 3: The Frictionless Life & Parimutuel Probability Math",
+      "bridge": "Poisson Memory Right-Tail Thickening vs. Racetrack Hot-Hand & Sloppy-Track Blindness",
+      "synthesis": "Demonstrates why frictionless high-volume recall increases vulnerability to regime shifts unless gated by a deliberate human PASS rule."
+    }
+  ],
+  "audio_url": "/drops/spaces/pawel/snipes/03_frictionless_parimutuel_poisson/advocate_rant.mp3"
+}

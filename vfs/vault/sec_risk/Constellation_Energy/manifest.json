@@ -1,0 +1,9 @@
+{
+  "entity_name": "Constellation_Energy",
+  "cik": "0001868275",
+  "source": "SEC EDGAR Form 10-K Disclosures",
+  "associated_lenses": [
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ]
+}

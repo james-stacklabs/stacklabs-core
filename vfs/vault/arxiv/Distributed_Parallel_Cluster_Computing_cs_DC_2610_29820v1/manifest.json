@@ -1,0 +1,10 @@
+{
+  "paper_id": "http://arxiv.org/abs/2610.29820v1",
+  "title": "UlaCache: Unified Logical Addressing for Sparse LLM Serving",
+  "category": "cs.DC",
+  "source": "ArXiv Multi-Domain Open Access",
+  "associated_lenses": [
+    "LATENCY_INVERSION_BOUNDARY",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ]
+}

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hailo Drop Zone — Sovereign Media Intake</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#00040a;
+  --navy-light:#000d1a;
+  --panel:#010b14;
+  --orange:#FF5910;
+  --orange-dim:rgba(255,89,16,0.15);
+  --orange-glow:rgba(255,89,16,0.4);
+  --emerald:#00FF88;
+  --emerald-dim:rgba(0,255,136,0.12);
+  --blue:#00d4ff;
+  --blue-dim:rgba(0,212,255,0.1);
+  --red:#ff3344;
+  --amber:#ffaa4a;
+  --text:#e8e6e1;
+  --text-dim:#8a8a8a;
+  --text-faint:#444;
+  --border:#1a2a3a;
+  --radius:6px;
+}
+html,body{height:100%}
+body{
+  font-family:'Rajdhani',sans-serif;
+  background:var(--navy);
+  color:var(--text);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body::after{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,4,10,0.12) 2px,rgba(0,4,10,0.12) 4px);
+  pointer-events:none;z-index:9998;
+}
+
+.app{
+  display:flex;flex-direction:column;
+  min-height:100vh;
+  position:relative;z-index:1;
+}
+
+/* Header */
+.header{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 24px;
+  border-bottom:1px solid var(--border);
+  flex-shrink:0;
+  position:relative;
+}
+.header::after{
+  content:'';position:absolute;bottom:-1px;left:0;
+  width:80px;height:1px;
+  background:var(--orange);
+  box-shadow:0 0 8px var(--orange-glow);
+}
+.header-icon{
+  width:32px;height:32px;
+  border:1.5px solid var(--orange);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  position:relative;
+}
+.header-icon::before{
+  content:'';width:7px;height:7px;
+  background:var(--orange);border-radius:50%;
+  box-shadow:0 0 8px var(--orange-glow);
+}
+.header h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:14px;font-weight:700;
+  letter-spacing:0.1em;
+}
+.header .sub{
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;color:var(--text-dim);
+  letter-spacing:0.06em;
+}
+.header-right{
+  margin-left:auto;
+  display:flex;align-items:center;gap:12px;
+}
+.node-badge{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;padding:3px 8px;
+  border:1px solid rgba(0,255,136,0.3);
+  color:var(--emerald);
+  background:var(--emerald-dim);
+  border-radius:2px;
+  letter-spacing:0.05em;
+}
+.file-count{
+  font-family:'Share Tech Mono',monospace;
+  font-size:11px;color:var(--text-dim);
+}
+
+/* Drop zone */
+.dropzone-wrap{
+  flex:1;display:flex;flex-direction:column;
+  padding:20px 24px;
+  min-height:0;
+}
+.dropzone{
+  flex:1;
+  border:2px dashed var(--border);
+  border-radius:16px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:16px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  position:relative;
+  min-height:220px;
+  background:rgba(255,255,255,0.008);
+}
+.dropzone.dragover{
+  border-color:var(--orange);
+  background:rgba(255,89,16,0.04);
+  box-shadow:inset 0 0 60px rgba(255,89,16,0.03),0 0 30px rgba(255,89,16,0.06);
+}
+.dropzone.dragover .drop-icon{
+  transform:scale(1.15);
+  filter:drop-shadow(0 0 16px var(--orange-glow));
+}
+.dropzone.dragover .drop-label{color:var(--orange)}
+
+.drop-icon{
+  width:64px;height:64px;
+  transition:all 0.3s ease;
+}
+.drop-icon svg{width:100%;height:100%}
+.drop-label{
+  font-family:'Orbitron',sans-serif;
+  font-size:14px;font-weight:600;
+  letter-spacing:0.1em;
+  color:var(--text-dim);
+  transition:color 0.3s;
+}
+.drop-hint{
+  font-family:'Share Tech Mono',monospace;
+  font-size:11px;color:var(--text-faint);
+  letter-spacing:0.04em;
+}
+.drop-btn{
+  font-family:'Rajdhani',sans-serif;
+  font-size:12px;font-weight:600;
+  padding:8px 20px;
+  border-radius:4px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.03);
+  color:var(--text-dim);
+  cursor:pointer;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  transition:all 0.15s;
+  margin-top:4px;
+}
+.drop-btn:hover{
+  border-color:var(--blue);
+  color:var(--blue);
+  background:var(--blue-dim);
+}
+
+/* Upload queue */
+.queue{
+  padding:0 24px 20px;
+  max-height:40vh;
+  overflow-y:auto;
+  display:flex;flex-direction:column;gap:8px;
+}
+.queue::-webkit-scrollbar{width:4px}
+.queue::-webkit-scrollbar-track{background:transparent}
+.queue::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.queue-label{
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;color:var(--text-faint);
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  padding:0 24px;
+  margin-bottom:4px;
+}
+
+.file-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 14px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  animation:item-in 0.3s ease-out;
+}
+@keyframes item-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
+.file-type-badge{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;font-weight:700;
+  padding:3px 6px;
+  border-radius:3px;
+  letter-spacing:0.06em;
+  flex-shrink:0;
+  min-width:36px;
+  text-align:center;
+}
+.file-type-badge.img{background:rgba(0,212,255,0.15);color:var(--blue)}
+.file-type-badge.vid{background:rgba(255,89,16,0.15);color:var(--orange)}
+.file-type-badge.doc{background:rgba(0,255,136,0.15);color:var(--emerald)}
+.file-type-badge.other{background:rgba(255,255,255,0.06);color:var(--text-dim)}
+
+.file-info{flex:1;min-width:0}
+.file-name{
+  font-family:'Share Tech Mono',monospace;
+  font-size:12px;color:var(--text);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.file-meta{
+  font-size:11px;color:var(--text-faint);
+  margin-top:2px;
+}
+.file-status{
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;
+  flex-shrink:0;
+  letter-spacing:0.04em;
+}
+.file-status.pending{color:var(--text-faint)}
+.file-status.uploading{color:var(--blue)}
+.file-status.done{color:var(--emerald)}
+.file-status.error{color:var(--red)}
+
+/* Progress bar */
+.progress-wrap{
+  width:100%;height:3px;
+  background:rgba(255,255,255,0.04);
+  border-radius:2px;
+  margin-top:6px;
+  overflow:hidden;
+}
+.progress-bar{
+  height:100%;
+  background:var(--blue);
+  border-radius:2px;
+  transition:width 0.3s ease;
+  box-shadow:0 0 8px rgba(0,212,255,0.3);
+}
+.progress-bar.done{background:var(--emerald);box-shadow:0 0 8px rgba(0,255,136,0.3)}
+.progress-bar.error{background:var(--red);box-shadow:0 0 8px rgba(255,51,68,0.3)}
+
+/* Toast */
+.toast-container{
+  position:fixed;top:16px;left:50%;
+  transform:translateX(-50%);
+  z-index:10000;
+  display:flex;flex-direction:column;gap:8px;
+  pointer-events:none;
+}
+.toast{
+  font-family:'Rajdhani',sans-serif;
+  font-size:14px;font-weight:600;
+  padding:12px 24px;border-radius:6px;border:1px solid;
+  letter-spacing:0.04em;
+  animation:toast-in 0.35s ease-out;
+  pointer-events:auto;
+  min-width:280px;text-align:center;
+  backdrop-filter:blur(8px);
+}
+.toast.success{background:rgba(0,255,136,0.12);border-color:rgba(0,255,136,0.4);color:var(--emerald);box-shadow:0 0 30px rgba(0,255,136,0.1)}
+.toast.error{background:rgba(255,51,68,0.12);border-color:rgba(255,51,68,0.4);color:var(--red);box-shadow:0 0 30px rgba(255,51,68,0.1)}
+@keyframes toast-in{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes toast-out{from{opacity:1}to{opacity:0;transform:translateY(-16px)}}
+
+/* Responsive */
+@media(max-width:480px){
+  .header{padding:12px 16px}
+  .dropzone-wrap{padding:12px 16px}
+  .queue{padding:0 16px 16px}
+  .queue-label{padding:0 16px}
+  .drop-label{font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="toast-container" id="toast-container"></div>
+<div class="app">
+
+  <div class="header">
+    <div class="header-icon"></div>
+    <div>
+      <h1>HAILO DROP ZONE</h1>
+      <div class="sub">Sovereign Media Intake</div>
+    </div>
+    <div class="header-right">
+      <span class="node-badge">Node .73</span>
+      <span class="file-count" id="file-count"></span>
+    </div>
+  </div>
+
+  <div class="dropzone-wrap">
+    <div class="dropzone" id="dropzone"
+         ondragover="handleDragOver(event)"
+         ondragleave="handleDragLeave(event)"
+         ondrop="handleDrop(event)"
+         onclick="document.getElementById('file-input').click()">
+      <input type="file" id="file-input" multiple hidden onchange="handleFiles(this.files)">
+      <div class="drop-icon">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="24" width="48" height="34" rx="4" stroke="#FF5910" stroke-width="1.5" fill="none"/>
+          <path d="M8 32h48" stroke="#FF5910" stroke-width="1" opacity="0.3"/>
+          <path d="M32 6v28" stroke="#FF5910" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M24 14l8-8 8 8" stroke="#FF5910" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="28" r="1.5" fill="#FF5910" opacity="0.5"/>
+          <circle cx="22" cy="28" r="1.5" fill="#FF5910" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="drop-label">DROP FILES HERE</div>
+      <div class="drop-hint">images, videos, documents, emails — anything</div>
+      <button class="drop-btn" onclick="event.stopPropagation();document.getElementById('file-input').click()">Or Browse Files</button>
+    </div>
+  </div>
+
+  <div class="queue-label" id="queue-label" style="display:none">Upload Queue</div>
+  <div class="queue" id="queue"></div>
+
+</div>
+<script>
+const ENDPOINT='/api/upload';
+const DROP_PATH='/home/james/stacklabs/dna/media/hailo_dropzone/';
+let fileQueue=[];
+let totalFiles=0;
+let completedFiles=0;
+
+function toast(msg,type='success',dur=4000){
+  const c=document.getElementById('toast-container');
+  const t=document.createElement('div');
+  t.className='toast '+type;
+  t.textContent=msg;
+  c.appendChild(t);
+  setTimeout(()=>{t.style.animation='toast-out 0.3s ease-in forwards';setTimeout(()=>t.remove(),300)},dur);
+}
+
+function getFileType(name){
+  const ext=name.split('.').pop().toLowerCase();
+  if(['jpg','jpeg','png','gif','webp','bmp','svg','heic'].includes(ext))return{type:'img',label:'IMG'};
+  if(['mp4','mov','avi','mkv','webm','m4v'].includes(ext))return{type:'vid',label:'VID'};
+  if(['pdf','doc','docx','txt','md','csv','json','eml','html'].includes(ext))return{type:'doc',label:'DOC'};
+  return{type:'other',label:ext.toUpperCase().slice(0,4)};
+}
+
+function formatSize(bytes){
+  if(bytes<1024)return bytes+' B';
+  if(bytes<1048576)return(bytes/1024).toFixed(1)+' KB';
+  if(bytes<1073741824)return(bytes/1048576).toFixed(1)+' MB';
+  return(bytes/1073741824).toFixed(2)+' GB';
+}
+
+function handleDragOver(e){
+  e.preventDefault();e.stopPropagation();
+  document.getElementById('dropzone').classList.add('dragover');
+}
+function handleDragLeave(e){
+  e.preventDefault();e.stopPropagation();
+  document.getElementById('dropzone').classList.remove('dragover');
+}
+function handleDrop(e){
+  e.preventDefault();e.stopPropagation();
+  document.getElementById('dropzone').classList.remove('dragover');
+  if(e.dataTransfer.files.length)handleFiles(e.dataTransfer.files);
+}
+
+function handleFiles(files){
+  if(!files.length)return;
+  document.getElementById('queue-label').style.display='block';
+  const q=document.getElementById('queue');
+
+  for(let i=0;i<files.length;i++){
+    const file=files[i];
+    const ft=getFileType(file.name);
+    const id='f_'+Date.now()+'_'+i;
+    totalFiles++;
+    updateCount();
+
+    const el=document.createElement('div');
+    el.className='file-item';
+    el.id=id;
+    el.innerHTML=`
+      <span class="file-type-badge ${ft.type}">${ft.label}</span>
+      <div class="file-info">
+        <div class="file-name">${esc(file.name)}</div>
+        <div class="file-meta">${formatSize(file.size)}</div>
+        <div class="progress-wrap"><div class="progress-bar" id="${id}_bar" style="width:0%"></div></div>
+      </div>
+      <span class="file-status pending" id="${id}_status">QUEUED</span>
+    `;
+    q.insertBefore(el,q.firstChild);
+    uploadFile(file,id);
+  }
+}
+
+function esc(s){const d=document.createElement('span');d.textContent=s;return d.innerHTML}
+
+async function uploadFile(file,id){
+  const bar=document.getElementById(id+'_bar');
+  const status=document.getElementById(id+'_status');
+  status.textContent='UPLOADING';
+  status.className='file-status uploading';
+
+  const formData=new FormData();
+  formData.append('file',file);
+  formData.append('target_path',DROP_PATH);
+
+  try{
+    const xhr=new XMLHttpRequest();
+    xhr.open('POST',ENDPOINT,true);
+
+    xhr.upload.onprogress=function(e){
+      if(e.lengthComputable){
+        const pct=Math.round((e.loaded/e.total)*100);
+        bar.style.width=pct+'%';
+      }
+    };
+
+    await new Promise((resolve,reject)=>{
+      xhr.onload=function(){
+        if(xhr.status>=200&&xhr.status<300){
+          bar.style.width='100%';
+          bar.classList.add('done');
+          status.textContent='LANDED';
+          status.className='file-status done';
+          completedFiles++;
+          updateCount();
+          toast(file.name+' dropped into the hive');
+          resolve();
+        }else{
+          bar.classList.add('error');
+          bar.style.width='100%';
+          status.textContent='REJECTED';
+          status.className='file-status error';
+          toast('Failed: '+file.name,'error');
+          reject();
+        }
+      };
+      xhr.onerror=function(){
+        bar.classList.add('error');
+        bar.style.width='100%';
+        status.textContent='OFFLINE';
+        status.className='file-status error';
+        toast('Network error — is .73 reachable?','error',6000);
+        reject();
+      };
+      xhr.send(formData);
+    });
+  }catch(e){
+    // Already handled in xhr callbacks
+  }
+}
+
+function updateCount(){
+  const el=document.getElementById('file-count');
+  if(totalFiles===0){el.textContent='';return}
+  el.textContent=completedFiles+'/'+totalFiles+' landed';
+}
+</script>
+</body>
+</html>

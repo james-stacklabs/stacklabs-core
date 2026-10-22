@@ -1,0 +1,1 @@
+../../by_person/pawel_rudnicki/sms/20261011_2129_hamburglar.md

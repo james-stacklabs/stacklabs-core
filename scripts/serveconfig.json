@@ -1,0 +1,59 @@
+{
+  "version": "0.0.1",
+  "TCP": {
+    "443": {
+      "HTTPS": true
+    },
+    "8095": {
+      "HTTPS": true
+    },
+    "8443": {
+      "HTTPS": true
+    },
+    "8446": {
+      "HTTPS": true
+    }
+  },
+  "Web": {
+    "clio.taila01894.ts.net:443": {
+      "Handlers": {
+        "/": {
+          "Proxy": "https+insecure://localhost:3000"
+        },
+        "/ws": {
+          "Proxy": "http://127.0.0.1:8012"
+        },
+        "/ws-relay": {
+          "Proxy": "http://127.0.0.1:8012"
+        }
+      }
+    },
+    "clio.taila01894.ts.net:8095": {
+      "Handlers": {
+        "/": {
+          "Proxy": "http://127.0.0.1:8095"
+        }
+      }
+    },
+    "clio.taila01894.ts.net:8443": {
+      "Handlers": {
+        "/": {
+          "Proxy": "https+insecure://127.0.0.1:3015"
+        },
+        "/ws": {
+          "Proxy": "http://127.0.0.1:8012"
+        },
+        "/ws-relay": {
+          "Proxy": "http://127.0.0.1:8012"
+        }
+      }
+    },
+    "clio.taila01894.ts.net:8446": {
+      "Handlers": {
+        "/": {
+          "Proxy": "http://127.0.0.1:3006"
+        }
+      }
+    }
+  }
+}

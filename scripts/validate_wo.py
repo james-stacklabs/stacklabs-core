@@ -1,0 +1,1 @@
+/home/james/stacklabs/.agents/skills/stage-work-order/scripts/validate_wo.py

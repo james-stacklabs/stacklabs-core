@@ -1,0 +1,1 @@
+/home/james/stacklabs/scripts/stacklabs_mcp_server.py

@@ -1,0 +1,10 @@
+{
+  "paper_id": "http://arxiv.org/abs/2610.27214v1",
+  "title": "Deep catastrophic-risk-aware reinforcement learning",
+  "category": "q-fin.RM",
+  "source": "ArXiv Multi-Domain Open Access",
+  "associated_lenses": [
+    "LATENCY_INVERSION_BOUNDARY",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ]
+}

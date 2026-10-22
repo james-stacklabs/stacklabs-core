@@ -1,0 +1,17 @@
+{
+  "bisociation_score": 0.3,
+  "complementary_lenses_to_test": [
+    "GHOST_GDP_DECOUPLING",
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "methodology": "Don R. Swanson (1986) Undiscovered Public Knowledge A-B-C Bisociation",
+  "shared_lenses_b": [
+    "LATENCY_INVERSION_BOUNDARY"
+  ],
+  "silo_a_node": "both_ends_20_owning_a_piece",
+  "silo_a_path": "/home/james/stacklabs/vfs/vault/pawel/both_ends_20_owning_a_piece",
+  "silo_c_domain": "arxiv",
+  "silo_c_node": "Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1",
+  "silo_c_path": "/home/james/stacklabs/vfs/vault/arxiv/Risk_Management_Market_Microstructure_q-fin_RM_2610_26746v1"
+}

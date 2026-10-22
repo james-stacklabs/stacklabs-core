@@ -1,0 +1,13 @@
+{
+  "id": "monolith:monolith_02_latency_boundary_collapses",
+  "slug": "monolith_02_latency_boundary_collapses",
+  "title": "When the Latency Boundary Collapses: 541ns Zero-Copy Adjacency vs. Vector RAG Drift",
+  "silo": "monoliths",
+  "lenses": [
+    "LATENCY_INVERSION_BOUNDARY",
+    "ZERO_RAG_FILESYSTEM_GRAPH",
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "ASYMMETRIC_TAIL_CONTAGION"
+  ],
+  "registered_at_utc": "2026-10-22T01:30:00Z"
+}

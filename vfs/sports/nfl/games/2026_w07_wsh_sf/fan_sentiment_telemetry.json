@@ -1,0 +1,81 @@
+{
+  "channel_key": "WSH@SF LIVE",
+  "total_fan_messages": 55829,
+  "unique_participants": 1408,
+  "peak_velocity_minutes": [
+    {
+      "epoch": 1792485060,
+      "messages_per_minute": 202
+    },
+    {
+      "epoch": 1792549860,
+      "messages_per_minute": 197
+    },
+    {
+      "epoch": 1792549020,
+      "messages_per_minute": 197
+    },
+    {
+      "epoch": 1792548960,
+      "messages_per_minute": 196
+    },
+    {
+      "epoch": 1792533900,
+      "messages_per_minute": 193
+    }
+  ],
+  "top_themes": [
+    {
+      "theme": "4th-Quarter Red Zone Defense vs. Jayden Daniels",
+      "sentiment": "Tense / High Entropy",
+      "summary": "49ers fans in full cardiac redline during Washington's final 2-minute drive until the pass deflection on 4th-and-4 sealed the game."
+    },
+    {
+      "theme": "George Kittle Third-Down Dominance",
+      "sentiment": "Overwhelmingly Positive (49ers) / Frustrated (Commanders)",
+      "summary": "Chat exploded every time Kittle moved the chains on 3rd down, citing his physical run blocking and yards after catch."
+    },
+    {
+      "theme": "Commanders Trench Fatigue in Second Half",
+      "sentiment": "Critical Analysis",
+      "summary": "Washington watch party fans conceded the defense wore down after being on the field for 33 minutes against Shanahan's clock-grinding drives."
+    },
+    {
+      "theme": "Officiating Holding Calls & Mechanical Delays",
+      "sentiment": "Universal Bipartisan Contempt",
+      "summary": "Both fan bases united in fury over 3 lengthy replay reviews and missed holding calls along the offensive line."
+    }
+  ],
+  "sample_verbatim_quotes": [
+    {
+      "author": "@elkoholicelkoholic3276",
+      "quote": "No, our defense was a C average at most they gave up huge plays huge penalties.",
+      "timestamp": "00:02:15"
+    },
+    {
+      "author": "@23Mybush",
+      "quote": "Thank the defense for holding on ",
+      "timestamp": "00:00:52"
+    },
+    {
+      "author": "@elkoholicelkoholic3276",
+      "quote": "Defense secondary choking giving up huge place to the worst team in the NFC East WF",
+      "timestamp": "23:58:18"
+    },
+    {
+      "author": "@PeterJoseph76",
+      "quote": "6-0 but wasn\u2019t easy tonight.. Raheem gotta get that defense to wake up",
+      "timestamp": "23:51:55"
+    },
+    {
+      "author": "@elkoholicelkoholic3276",
+      "quote": "The first three games are defense struggled to stop the run now we\u2019re stopping the run, but we can\u2019t stop giving big plays",
+      "timestamp": "23:49:44"
+    },
+    {
+      "author": "@CunaRichie-g1k",
+      "quote": "it comes down to purdy and hoping the recivwe is there cause number 4 dude that was all him",
+      "timestamp": "23:49:27"
+    }
+  ]
+}

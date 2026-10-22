@@ -1,26 +1,27 @@
-"""media blueprint extracted from dead_drop_server.py (generated). Routes unchanged."""
+import subprocess
 from flask import Blueprint
 from scripts.dead_drop_common import *  # noqa: F401,F403
 
 bp = Blueprint("media", __name__)
 
 
-_WHISPER_MODEL = None
-
-
-_WHISPER_LOCK = threading.Lock()
-
-
-def get_whisper_model():
-    """Lazy loader for local Whisper base.en model."""
-    global _WHISPER_MODEL
-    with _WHISPER_LOCK:
-        if _WHISPER_MODEL is None:
-            import whisper
-            logger.info("⚡ Loading local Whisper base.en model onto CPU...")
-            _WHISPER_MODEL = whisper.load_model('base.en')
-            logger.info("✓ Local Whisper base.en model loaded")
-        return _WHISPER_MODEL
+def transcribe_audio_file(audio_path: str) -> str:
+    """
+    Dogfooded Multi-Node Transcription:
+    Dispatches audio to Artemis GTX 1060 CUDA via transcribe_on_artemis.py.
+    """
+    dispatcher = "/home/james/stacklabs/scripts/transcribe_on_artemis.py"
+    cmd = ["/home/james/stacklabs/.venv/bin/python3", dispatcher, audio_path]
+    try:
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+        if res.returncode == 0:
+            transcript_path = audio_path.rsplit(".", 1)[0] + "_transcript.md"
+            if os.path.exists(transcript_path):
+                with open(transcript_path, "r", encoding="utf-8") as f:
+                    return f.read()
+    except Exception as e:
+        logger.error(f"Artemis transcription error: {e}")
+    return ""
 
 
 @bp.route('/api/cockpit/snipe_youtube', methods=['POST'])
@@ -34,10 +35,10 @@ def cockpit_snipe_youtube():
     if not url:
         return jsonify({"success": False, "error": "No YouTube URL provided"}), 400
 
-    snipes_dir = Path("/home/james/sovereign_inbox/today/snipes")
+    snipes_dir = Path("/home/james/stacklabs/data/snipes")
     snipes_dir.mkdir(parents=True, exist_ok=True)
 
-    ytdlp_bin = "/home/james/SovereignOS/.venv/bin/yt-dlp"
+    ytdlp_bin = "/home/james/stacklabs/.venv/bin/yt-dlp"
     if not Path(ytdlp_bin).exists():
         ytdlp_bin = shutil.which("yt-dlp") or "yt-dlp"
 
@@ -111,13 +112,13 @@ def cockpit_snipe_youtube():
 
     if not transcript:
         try:
-            model = get_whisper_model()
-            trans_res = model.transcribe(str(audio_file), fp16=False)
-            transcript = trans_res.get("text", "").strip()
+            transcript = transcribe_audio_file(str(audio_file))
+            if not transcript:
+                raise RuntimeError("Empty transcript returned from Artemis dispatcher")
             txt_path.write_text(transcript, encoding="utf-8")
         except Exception as e:
-            logger.error(f"Whisper transcription failed for {audio_file}: {e}")
-            return jsonify({"success": False, "error": f"Whisper failed: {e}"}), 500
+            logger.error(f"Artemis transcription failed for {audio_file}: {e}")
+            return jsonify({"success": False, "error": f"Transcription failed: {e}"}), 500
 
     try:
         json_path.write_text(json.dumps({
@@ -156,7 +157,7 @@ def api_transcribe():
 
     key = os.getenv("GEMINI_API_KEY")
     if not key:
-        load_dotenv("/home/james/SovereignOS/.env")
+        load_dotenv("/home/james/stacklabs/.env")
         key = os.getenv("GEMINI_API_KEY")
     if not key:
         return jsonify({"status": "error", "message": "GEMINI_API_KEY missing"}), 400
@@ -171,7 +172,9 @@ def api_transcribe():
     if not file_ext.startswith("."):
         file_ext = f".{file_ext}"
 
-    with tempfile.NamedTemporaryFile(suffix=file_ext, delete=False) as tmp:
+    scratch_dir = Path("/home/james/stacklabs/scratch")
+    scratch_dir.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(dir=str(scratch_dir), suffix=file_ext, delete=False) as tmp:
         tmp.write(content)
         tmp_path = tmp.name
 
@@ -189,19 +192,28 @@ def api_transcribe():
     except Exception as e:
         logger.error(f"Cloud transcription error: {e}")
         try:
-            import whisper
-            model = whisper.load_model("base.en")
-            res = model.transcribe(tmp_path)
-            resp = jsonify({"status": "success", "transcript": res["text"].strip()})
-            resp.headers['Access-Control-Allow-Origin'] = '*'
-            return resp
+            transcript = transcribe_audio_file(tmp_path)
+            if transcript:
+                resp = jsonify({"status": "success", "transcript": transcript})
+                resp.headers['Access-Control-Allow-Origin'] = '*'
+                return resp
+            raise RuntimeError("Artemis transcription returned empty transcript")
         except Exception as we:
-            resp = jsonify({"status": "error", "message": str(e)})
+            resp = jsonify({"status": "error", "message": f"{e} | fallback: {we}"})
             resp.headers['Access-Control-Allow-Origin'] = '*'
             return resp, 500
     finally:
         if os.path.exists(tmp_path):
-            os.remove(tmp_path)
+            try:
+                os.remove(tmp_path)
+            except Exception:
+                pass
+        tmp_md = tmp_path.rsplit(".", 1)[0] + "_transcript.md"
+        if os.path.exists(tmp_md):
+            try:
+                os.remove(tmp_md)
+            except Exception:
+                pass
 
 
 @bp.route('/api/tts', methods=['POST', 'OPTIONS'])
@@ -223,7 +235,7 @@ def api_tts():
 
     key = os.getenv("GEMINI_API_KEY")
     if not key:
-        load_dotenv("/home/james/SovereignOS/.env")
+        load_dotenv("/home/james/stacklabs/.env")
         key = os.getenv("GEMINI_API_KEY")
     if not key:
         return jsonify({"status": "error", "message": "GEMINI_API_KEY missing"}), 400

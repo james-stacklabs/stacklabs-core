@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B0D13">
+  <title>StackLabs // Cockpit Stream Sniper Desktop Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            void: '#0B0D13',
+            surface: '#11141E',
+            surfaceHover: '#161A27',
+            card: '#0E111A'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      background-color: #0B0D13;
+      color: #E2E8F0;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0B0D13; }
+    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.25); }
+
+    /* Responsive Desktop Studio Split-Pane Layout (@media (min-width: 1024px)) */
+    .studio-split-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+    @media (min-width: 1024px) {
+      .studio-split-container {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 24px;
+        align-items: start;
+      }
+      .studio-left-pane {
+        grid-column: span 5 / span 5;
+      }
+      .studio-right-pane {
+        grid-column: span 7 / span 7;
+      }
+      .sticky-ingress-card {
+        position: sticky;
+        top: 68px;
+        z-index: 30;
+      }
+      .sticky-dossier-header {
+        position: sticky;
+        top: 68px;
+        z-index: 25;
+      }
+    }
+
+    .stage-pill {
+      transition: all 0.2s ease;
+    }
+    .stage-pill.active {
+      background: rgba(245, 158, 11, 0.18);
+      border-color: rgba(245, 158, 11, 0.6);
+      color: #FBBF24;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.15);
+    }
+    .stage-pill.done {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.45);
+      color: #34D399;
+    }
+    .transcript-row.active-sync {
+      border-color: #F59E0B !important;
+      background-color: rgba(245, 158, 11, 0.1) !important;
+    }
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10B981;
+      color: #090B0F;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.65);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 100;
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans bg-[#0B0D13] text-slate-200 selection:bg-amber-500/20 selection:text-amber-300">
+
+  <!-- ================= PINNED TOP WORKSTATION COMMAND HEADER ================= -->
+  <header class="h-14 border-b border-white/10 bg-[#0E111A]/95 backdrop-blur px-4 lg:px-6 flex flex-row items-center justify-between sticky top-0 z-50 shrink-0">
+    <div class="flex flex-row items-center gap-4">
+      <div class="flex flex-row items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-mono text-xs font-extrabold tracking-wider text-amber-400 uppercase">STACKLABS // STREAM SNIPER STUDIO</span>
+      </div>
+      <span class="hidden md:inline-block text-white/20">|</span>
+      <nav class="hidden md:flex flex-row items-center gap-1.5 text-xs font-mono">
+        <a href="/cockpit" class="px-2.5 py-1 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition-colors">
+          ← Cockpit HUD
+        </a>
+        <a href="/cockpit/sniper" class="px-2.5 py-1 rounded bg-amber-500/15 text-amber-300 border border-amber-500/40 font-semibold">
+          ⚡ Stream Sniper Studio
+        </a>
+        <a href="/cockpit#crawl" class="px-2.5 py-1 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition-colors">
+          Swanson Crawl
+        </a>
+        <a href="/cockpit#vault" class="px-2.5 py-1 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition-colors">
+          Vault Explorer
+        </a>
+      </nav>
+    </div>
+
+    <div class="flex flex-row items-center gap-2.5 font-mono text-[11px]">
+      <div class="hidden xl:flex flex-row items-center gap-2 px-2.5 py-1 rounded bg-[#11141E] border border-white/10 text-slate-300">
+        <span class="text-slate-500">ACOUSTIC SILICON:</span>
+        <span class="text-emerald-400 font-semibold">Local Audio Transcriber</span>
+      </div>
+      <div class="hidden lg:flex flex-row items-center gap-2 px-2.5 py-1 rounded bg-[#11141E] border border-white/10 text-slate-300">
+        <span class="text-slate-500">ALIGNER:</span>
+        <span class="text-cyan-400 font-semibold">Active</span>
+      </div>
+      <div id="headerQueueBadge" class="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold">
+        Clio Ready
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN SPLIT-PANE DESKTOP STUDIO (1920x1080) ================= -->
+  <main class="flex-1 w-full max-w-[1880px] mx-auto px-4 lg:px-6 py-5">
+    <div class="studio-split-container grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- ===================================================================== -->
+      <!-- LEFT PANEL (40% WIDTH / 5 COLS): STICKY INGRESS, RADAR & HISTORY QUEUE -->
+      <!-- ===================================================================== -->
+      <section class="studio-left-pane lg:col-span-5 flex flex-col gap-5 min-w-0">
+
+        <!-- 1. FIXED TOP STICKY INGRESS CARD WITH INLINE EXECUTION TELEMETRY -->
+        <div id="sticky-ingress-card" class="sticky-ingress-card bg-[#11141E] border border-amber-500/30 rounded-xl p-4 shadow-2xl flex flex-col gap-3">
+          <div class="flex flex-row items-center justify-between border-b border-white/10 pb-2.5">
+            <div class="flex flex-row items-center gap-2">
+              <span class="px-2 py-0.5 rounded bg-amber-500/20 border border-amber-500/40 text-amber-300 font-mono text-[10px] font-bold uppercase">
+                Zero-Scroll Ingress
+              </span>
+              <h1 class="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                Direct Stream &amp; Broadcast Sniper
+              </h1>
+            </div>
+            <span id="ingressReadyBadge" class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-bold">
+              ARMED • READY
+            </span>
+          </div>
+
+          <!-- INGRESS FORM CONTAINER (Contains Input + Presets + Trigger Button + Inline Telemetry DOM Node) -->
+          <div id="ingress-form-container" data-testid="ingress-form-container" class="flex flex-col gap-2.5">
+            <div class="flex flex-row gap-2">
+              <input
+                type="text"
+                id="streamUrl"
+                placeholder="Paste YouTube Live / Podcast / Broadcast URL or 11-char ID..."
+                class="flex-1 min-w-0 bg-[#090B0F] border border-white/15 focus:border-amber-400 rounded-lg px-3 py-2 text-xs font-mono text-white placeholder-slate-500 focus:outline-none transition-colors"
+              />
+              <button
+                type="button"
+                id="clipboardPasteBtn"
+                onclick="pasteFromClipboard()"
+                title="Auto-detect & paste URL from system clipboard"
+                class="px-3 py-2 rounded-lg bg-[#161B26] hover:bg-[#1E2638] border border-white/10 text-slate-300 hover:text-white font-mono text-[11px] font-semibold shrink-0 transition-colors cursor-pointer"
+              >
+                📋 Paste URL
+              </button>
+            </div>
+
+            <!-- Preset Quick-Chips -->
+            <div class="flex flex-row items-center gap-1.5 flex-wrap font-mono text-[10px]">
+              <span class="text-slate-500 uppercase mr-0.5">Presets:</span>
+              <button type="button" onclick="selectPresetUrl('https://www.youtube.com/watch?v=aAPk__vIab4', 'aAPk__vIab4')" class="px-2 py-0.5 rounded bg-[#090B0F] hover:bg-amber-500/15 text-slate-300 hover:text-amber-300 border border-white/10 hover:border-amber-500/40 transition-colors cursor-pointer">
+                🏈 Bussin' CFB Wk 8
+              </button>
+              <button type="button" onclick="selectPresetUrl('https://www.youtube.com/watch?v=x8iARwwn-J8', 'x8iARwwn-J8')" class="px-2 py-0.5 rounded bg-[#090B0F] hover:bg-amber-500/15 text-slate-300 hover:text-amber-300 border border-white/10 hover:border-amber-500/40 transition-colors cursor-pointer">
+                ⚡ McAfee AGI &amp; Grid
+              </button>
+              <button type="button" onclick="selectPresetUrl('https://www.youtube.com/watch?v=4ucDJUQSbtQ', '4ucDJUQSbtQ')" class="px-2 py-0.5 rounded bg-[#090B0F] hover:bg-amber-500/15 text-slate-300 hover:text-amber-300 border border-white/10 hover:border-amber-500/40 transition-colors cursor-pointer">
+                🏆 Josh Pate Top-7
+              </button>
+              <button type="button" onclick="selectPresetUrl('https://www.youtube.com/watch?v=J1_BvDQJV44', 'J1_BvDQJV44')" class="px-2 py-0.5 rounded bg-[#090B0F] hover:bg-amber-500/15 text-slate-300 hover:text-amber-300 border border-white/10 hover:border-amber-500/40 transition-colors cursor-pointer">
+                🎙️ Late Kick CFB
+              </button>
+            </div>
+
+            <!-- Action Trigger Button with Built-in Live Spinner & Inline Stage Status -->
+            <button
+              type="button"
+              id="customSnipeBtn"
+              onclick="handleCustomSnipe()"
+              class="w-full py-2.5 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-400 disabled:bg-amber-500/20 disabled:text-amber-300 disabled:border disabled:border-amber-500/50 text-slate-950 font-mono font-extrabold text-xs uppercase tracking-wider flex flex-row items-center justify-center gap-2 shadow-lg shadow-emerald-500/10 transition-all cursor-pointer"
+            >
+              <span id="snipeBtnSpinner" class="hidden w-3.5 h-3.5 border-2 border-amber-300 border-t-transparent rounded-full animate-spin"></span>
+              <span id="snipeBtnLabel">⚡ [SNIPE STREAM] — INGEST &amp; ALIGN DOSSIER</span>
+            </button>
+
+            <!-- INLINE EXECUTION TELEMETRY DOM NODE (Rendered directly inside ingress form container) -->
+            <div
+              id="inline-telemetry-node"
+              data-testid="inline-telemetry-node"
+              class="bg-[#090B0F] border border-white/10 rounded-lg p-2.5 flex flex-col gap-2 font-mono text-[11px]"
+            >
+              <div class="flex flex-row items-center justify-between gap-2">
+                <div class="flex flex-row items-center gap-1.5 min-w-0">
+                  <span id="inlineTelemetryDot" class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                  <span id="stageText" class="text-slate-300 font-semibold truncate">
+                    Ready to snipe stream
+                  </span>
+                </div>
+                <span id="elapsedText" class="text-amber-400 font-bold shrink-0">0:00</span>
+              </div>
+
+              <!-- 3-Stage Inline Pipeline Indicator Bar -->
+              <div class="grid grid-cols-3 gap-1.5 text-[10px]">
+                <div id="stage-pill-1" class="stage-pill px-2 py-1 rounded bg-[#11141E] border border-white/10 text-slate-400 truncate text-center" title="[1/3] Downloading Audio (48MB)">
+                  [1/3] Downloading Audio
+                </div>
+                <div id="stage-pill-2" class="stage-pill px-2 py-1 rounded bg-[#11141E] border border-white/10 text-slate-400 truncate text-center" title="[2/3] Artemis CUDA Faster-Whisper (37.2x)">
+                  [2/3] Transcribing on Artemis
+                </div>
+                <div id="stage-pill-3" class="stage-pill px-2 py-1 rounded bg-[#11141E] border border-white/10 text-slate-400 truncate text-center" title="[3/3] Gemini 3.8 Flash Alignment & Swanson Bisociation">
+                  [3/3] Aligning in Gemini 3.8 Flash
+                </div>
+              </div>
+
+              <!-- Progress Fill Bar -->
+              <div class="w-full h-1.5 bg-[#161B26] rounded-full overflow-hidden">
+                <div id="barFill" class="h-full bg-emerald-400 transition-all duration-300" style="width: 100%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. TODAY'S STREAM RADAR (CATEGORIZED FEEDS WITH 1-CLICK SNIPE TRIGGERS) -->
+        <div class="bg-[#11141E] border border-white/10 rounded-xl p-4 flex flex-col gap-3">
+          <div class="flex flex-row items-center justify-between border-b border-white/10 pb-2.5">
+            <div>
+              <div class="flex flex-row items-center gap-2">
+                <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">🛰️ Today's Stream Radar</span>
+                <span id="radarCount" class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Polling...</span>
+              </div>
+              <p class="text-[11px] font-mono text-slate-400 mt-0.5">Categorized Morning CFB, NFL, Macro &amp; Bloomberg Feeds • 1-Click Ingress</p>
+            </div>
+            <button
+              type="button"
+              onclick="loadRadar()"
+              class="px-2.5 py-1 rounded bg-[#090B0F] hover:bg-white/5 border border-white/10 text-[11px] font-mono text-slate-300 hover:text-white transition-colors cursor-pointer"
+            >
+              ↻ Refresh
+            </button>
+          </div>
+
+          <!-- Radar Category Filter Tabs -->
+          <div class="flex flex-row items-center gap-1.5 overflow-x-auto pb-1 font-mono text-[10px]" id="radarCategoryTabs">
+            <button type="button" onclick="setRadarCategory('ALL')" data-cat="ALL" class="radar-cat-btn px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold cursor-pointer">
+              ALL FEEDS
+            </button>
+            <button type="button" onclick="setRadarCategory('CFB')" data-cat="CFB" class="radar-cat-btn px-2.5 py-1 rounded bg-[#090B0F] text-slate-400 border border-white/10 hover:text-white cursor-pointer">
+              MORNING CFB
+            </button>
+            <button type="button" onclick="setRadarCategory('NFL')" data-cat="NFL" class="radar-cat-btn px-2.5 py-1 rounded bg-[#090B0F] text-slate-400 border border-white/10 hover:text-white cursor-pointer">
+              NFL &amp; SPORTS
+            </button>
+            <button type="button" onclick="setRadarCategory('MACRO')" data-cat="MACRO" class="radar-cat-btn px-2.5 py-1 rounded bg-[#090B0F] text-slate-400 border border-white/10 hover:text-white cursor-pointer">
+              MACRO &amp; HORIZON
+            </button>
+            <button type="button" onclick="setRadarCategory('BLOOMBERG')" data-cat="BLOOMBERG" class="radar-cat-btn px-2.5 py-1 rounded bg-[#090B0F] text-slate-400 border border-white/10 hover:text-white cursor-pointer">
+              BLOOMBERG / MARKETS
+            </button>
+          </div>
+
+          <!-- Radar Feed Items -->
+          <div id="radarList" class="flex flex-col gap-2 max-h-[320px] overflow-y-auto pr-1">
+            <div class="font-mono text-xs text-slate-500 text-center py-6">
+              Polling subscribed feeds (Pat McAfee, Josh Pate, Bussin', New Heights, Macro)...
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. RECENT SNIPES HISTORY LIST (QUICK-ACCESS VFS DOSSIER QUEUE) -->
+        <div class="bg-[#11141E] border border-white/10 rounded-xl p-4 flex flex-col gap-3">
+          <div class="flex flex-row items-center justify-between border-b border-white/10 pb-2.5">
+            <div class="flex flex-row items-center gap-2">
+              <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">📁 Recent Snipes History</span>
+              <span id="catalogCount" class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">0 CIs</span>
+            </div>
+            <span class="text-[10px] font-mono text-slate-500">Click any CI to open in Right Studio</span>
+          </div>
+
+          <div id="catalogList" class="flex flex-col gap-2 max-h-[380px] overflow-y-auto pr-1">
+            <div class="font-mono text-xs text-slate-500 text-center py-6">Loading VFS media dossiers...</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- RIGHT PANEL (60% WIDTH / 7 COLS): INTELLIGENCE DOSSIER & SYNAPSES     -->
+      <!-- ===================================================================== -->
+      <section class="studio-right-pane lg:col-span-7 flex flex-col gap-4 min-w-0">
+
+        <!-- 1. STICKY DOSSIER HEADER (CHANNEL, TITLE, DURATION, AUDIO & DIRECT DOWNLOADS) -->
+        <div id="sticky-dossier-header" class="sticky-dossier-header bg-[#11141E] border border-white/10 rounded-xl p-4 shadow-2xl flex flex-col gap-3">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-3">
+            <div class="flex flex-col gap-1 min-w-0">
+              <div class="flex flex-row items-center gap-2 flex-wrap font-mono text-[11px]">
+                <span id="dossierChannel" class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">
+                  Bussin' With The Boys
+                </span>
+                <span id="dossierDuration" class="px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">
+                  ⏱️ 1:31:00
+                </span>
+                <span id="dossierVideoId" class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                  CI: aAPk__vIab4
+                </span>
+                <span id="dossierAnalyzedAt" class="text-slate-500 text-[10px]">
+                  2026-10-22 01:14:13
+                </span>
+              </div>
+              <h2 id="dossierTitle" class="text-base lg:text-lg font-bold text-white leading-snug mt-0.5">
+                CFB Week 8 Picks: Taylor Lewan, Will Compton CONFIDENT In Tennessee + Josh Pate LOVES Houston
+              </h2>
+            </div>
+
+            <!-- Direct Asset Download Links (audio.m4a, metadata.json, brief.md, transcript.md) -->
+            <div class="flex flex-row items-center gap-1.5 shrink-0 flex-wrap font-mono text-[11px]">
+              <a
+                id="linkDownloadAudio"
+                href="/api/snipe/aAPk__vIab4/file/audio.m4a"
+                download
+                class="px-2.5 py-1.5 rounded-lg bg-[#090B0F] hover:bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold transition-colors"
+              >
+                ⬇ audio.m4a
+              </a>
+              <a
+                id="linkDownloadMeta"
+                href="/api/snipe/aAPk__vIab4/file/metadata.json"
+                download
+                class="px-2.5 py-1.5 rounded-lg bg-[#090B0F] hover:bg-amber-500/15 text-amber-300 border border-amber-500/30 font-semibold transition-colors"
+              >
+                ⬇ metadata.json
+              </a>
+              <a
+                id="linkDownloadBrief"
+                href="/api/snipe/aAPk__vIab4/file/summary_intel_brief.md"
+                download
+                class="px-2.5 py-1.5 rounded-lg bg-[#090B0F] hover:bg-white/10 text-slate-300 border border-white/10 transition-colors"
+              >
+                ⬇ brief.md
+              </a>
+              <a
+                id="linkDownloadTranscript"
+                href="/api/snipe/aAPk__vIab4/file/transcript_aligned.md"
+                download
+                class="px-2.5 py-1.5 rounded-lg bg-[#090B0F] hover:bg-white/10 text-slate-300 border border-white/10 transition-colors"
+              >
+                ⬇ transcript.md
+              </a>
+            </div>
+          </div>
+
+          <!-- Time-Synced HTML5 Audio Player Bar -->
+          <div class="flex flex-col sm:flex-row items-center gap-3 bg-[#090B0F] border border-white/10 rounded-lg px-3 py-2">
+            <div class="flex flex-row items-center gap-2 font-mono text-[11px] shrink-0">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span class="text-slate-400 uppercase">Audio Deck:</span>
+              <span id="audioCurrentTime" class="text-amber-400 font-bold">00:00</span>
+            </div>
+            <audio
+              id="dossierAudioPlayer"
+              controls
+              preload="none"
+              src="/api/snipe/aAPk__vIab4/file/audio.m4a"
+              class="w-full h-8"
+            ></audio>
+          </div>
+
+          <!-- 3-TAB WORKSPACE BAR -->
+          <div class="flex flex-row items-center justify-between border-t border-white/10 pt-2.5 gap-2 flex-wrap">
+            <div class="flex flex-row items-center gap-1.5 bg-[#090B0F] p-1 rounded-lg border border-white/10 font-mono text-xs">
+              <button
+                type="button"
+                id="tab-btn-brief"
+                onclick="switchStudioTab('brief')"
+                class="px-3.5 py-1.5 rounded-md font-bold bg-amber-500 text-slate-950 transition-all cursor-pointer"
+              >
+                1. 3-Bullet Intel Brief
+              </button>
+              <button
+                type="button"
+                id="tab-btn-transcript"
+                onclick="switchStudioTab('transcript')"
+                class="px-3.5 py-1.5 rounded-md font-semibold text-slate-400 hover:text-white transition-all cursor-pointer"
+              >
+                2. Verbatim Transcript Viewer
+              </button>
+              <button
+                type="button"
+                id="tab-btn-collisions"
+                onclick="switchStudioTab('collisions')"
+                class="px-3.5 py-1.5 rounded-md font-semibold text-slate-400 hover:text-white transition-all cursor-pointer flex flex-row items-center gap-1.5"
+              >
+                <span>3. Swanson Topological Collisions</span>
+                <span id="collisionCountPill" class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px]">LIVE</span>
+              </button>
+            </div>
+
+            <div class="flex flex-row items-center gap-2 font-mono text-[11px]">
+              <button
+                type="button"
+                onclick="copyActiveBriefMarkdown()"
+                class="px-3 py-1.5 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/40 font-semibold transition-colors cursor-pointer"
+              >
+                📋 Copy Markdown
+              </button>
+              <button
+                type="button"
+                onclick="exportActiveBriefDiscord()"
+                class="px-3 py-1.5 rounded-lg bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 border border-indigo-500/40 font-semibold transition-colors cursor-pointer"
+              >
+                💬 Discord Export
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================================= -->
+        <!-- TAB 1 WORKSPACE: 3-BULLET INTEL BRIEF                             -->
+        <!-- ================================================================= -->
+        <div id="panel-brief" class="bg-[#11141E] border border-white/10 rounded-xl p-5 flex flex-col gap-4">
+          <div class="flex flex-row items-center justify-between border-b border-white/10 pb-3">
+            <div>
+              <h3 class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">
+                ⚡ Executive 3-Bullet Intelligence Brief (Click Any Timestamp to Seek Audio)
+              </h3>
+              <p class="text-[11px] font-mono text-slate-400 mt-0.5">
+                Zero-scrubbing synthesis aligned via Gemini 3.8 Flash &amp; verified against verbatim transcript
+              </p>
+            </div>
+            <button
+              type="button"
+              onclick="copyActiveDossierText('aligned', 'Full Aligned Transcript')"
+              class="px-3 py-1.5 rounded-lg bg-[#090B0F] hover:bg-white/5 text-emerald-400 border border-emerald-500/30 font-mono text-xs font-semibold transition-colors cursor-pointer"
+            >
+              📄 Copy Full Transcript
+            </button>
+          </div>
+
+          <div id="bulletsContainer" class="flex flex-col gap-3">
+            <!-- Dynamically populated 3-Bullet cards -->
+          </div>
+
+          <!-- Key Moments Preview Strip -->
+          <div class="border-t border-white/10 pt-4 flex flex-col gap-2.5">
+            <div class="flex flex-row items-center justify-between">
+              <span class="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">
+                🎯 Key Timestamped Broadcast Moments
+              </span>
+              <button
+                type="button"
+                onclick="switchStudioTab('transcript')"
+                class="text-[11px] font-mono text-amber-400 hover:underline cursor-pointer"
+              >
+                Open Full Searchable Transcript →
+              </button>
+            </div>
+            <div id="keyMomentsPreview" class="flex flex-col gap-2"></div>
+          </div>
+        </div>
+
+        <!-- ================================================================= -->
+        <!-- TAB 2 WORKSPACE: VERBATIM TRANSCRIPT VIEWER (FILTER + TIME-SYNC)  -->
+        <!-- ================================================================= -->
+        <div id="panel-transcript" class="hidden bg-[#11141E] border border-white/10 rounded-xl p-5 flex flex-col gap-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-3">
+            <div class="relative flex-1">
+              <input
+                type="text"
+                id="transcriptFilterInput"
+                oninput="filterTranscriptRows()"
+                placeholder="Filter verbatim transcript in real time (e.g. Sayin, DeBoer, ERCOT, AGI, third down)..."
+                class="w-full bg-[#090B0F] border border-white/15 focus:border-amber-400 rounded-lg pl-3 pr-24 py-2 text-xs font-mono text-white placeholder-slate-500 focus:outline-none"
+              />
+              <span id="transcriptMatchCount" class="absolute right-2.5 top-2 font-mono text-[10px] px-2 py-0.5 rounded bg-white/5 text-amber-400 border border-white/10">
+                All segments
+              </span>
+            </div>
+            <div class="flex flex-row items-center gap-2 shrink-0 font-mono text-xs">
+              <button
+                type="button"
+                onclick="loadFullRawTranscript('aligned')"
+                class="px-2.5 py-1.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30 font-semibold cursor-pointer"
+              >
+                Aligned (.md)
+              </button>
+              <button
+                type="button"
+                onclick="loadFullRawTranscript('verbatim')"
+                class="px-2.5 py-1.5 rounded bg-[#090B0F] text-slate-300 border border-white/10 hover:text-white cursor-pointer"
+              >
+                Raw Whisper (.md)
+              </button>
+            </div>
+          </div>
+
+          <div id="transcriptViewerList" class="flex flex-col gap-2 max-h-[640px] overflow-y-auto pr-1 font-mono text-xs">
+            <!-- Populated with time-synced clickable transcript rows -->
+          </div>
+        </div>
+
+        <!-- ================================================================= -->
+        <!-- TAB 3 WORKSPACE: SWANSON TOPOLOGICAL COLLISIONS (MULTI-SILO)      -->
+        <!-- ================================================================= -->
+        <div id="panel-collisions" class="hidden bg-[#11141E] border border-white/10 rounded-xl p-5 flex flex-col gap-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3">
+            <div>
+              <h3 class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">
+                🧭 Swanson Topological Collisions // Multi-Silo Bisociations (A ∩ C &amp; Blind Spots L_C \ L_A)
+              </h3>
+              <p class="text-[11px] font-mono text-slate-400 mt-0.5">
+                Cross-referencing broadcast pheromone lenses against Horizon Trading Models, ERCOT Load, SEC 10-K Risk &amp; FRED Macro
+              </p>
+            </div>
+            <span id="collisionEngineBadge" class="font-mono text-[10px] px-2.5 py-1 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shrink-0">
+              POSIX VFS Collider • Verified
+            </span>
+          </div>
+
+          <!-- Active Pheromone Lenses Strip -->
+          <div id="collisionLensesStrip" class="flex flex-row items-center gap-1.5 flex-wrap font-mono text-[10px]"></div>
+
+          <!-- Multi-Silo Bisociation Cards -->
+          <div id="collisionsList" class="flex flex-col gap-3">
+            <div class="font-mono text-xs text-slate-500 text-center py-8">Loading Swanson topological collisions...</div>
+          </div>
+
+          <!-- Deposited Broadcast Pheromone Markers -->
+          <div class="border-t border-white/10 pt-4 flex flex-col gap-2.5">
+            <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">
+              🧬 Deposited Broadcast Pheromone Markers (VFS Ledger)
+            </span>
+            <div id="pheromoneMarkersList" class="flex flex-col gap-2 max-h-[300px] overflow-y-auto pr-1"></div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <div id="toast">✓ Copied to Clipboard!</div>
+
+  <script>
+    let activeVideoId = 'aAPk__vIab4';
+    let activeDossierData = null;
+    let allRadarDrops = [];
+    let currentRadarCat = 'ALL';
+    let fullTranscriptSegments = [];
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      if (!t) return;
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2400);
+    }
+
+    function parseTimestampToSeconds(ts) {
+      if (!ts) return 0;
+      const clean = ts.replace(/[^0-9:]/g, '');
+      const parts = clean.split(':').map(Number);
+      if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+      if (parts.length === 2) return parts[0] * 60 + parts[1];
+      return Number(parts[0]) || 0;
+    }
+
+    function seekAudioToTimestamp(ts) {
+      const seconds = parseTimestampToSeconds(ts);
+      const player = document.getElementById('dossierAudioPlayer');
+      if (player) {
+        player.currentTime = seconds;
+        player.play().catch(() => {});
+        showToast(`▶ Seeked audio to [${ts}] (${seconds}s)`);
+      }
+    }
+
+    // Audio playback time-sync listener
+    const audioPlayerEl = document.getElementById('dossierAudioPlayer');
+    if (audioPlayerEl) {
+      audioPlayerEl.addEventListener('timeupdate', () => {
+        const cur = Math.floor(audioPlayerEl.currentTime || 0);
+        const m = Math.floor(cur / 60);
+        const s = cur % 60;
+        const lbl = document.getElementById('audioCurrentTime');
+        if (lbl) lbl.innerText = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+
+        // Highlight active transcript row
+        const rows = document.querySelectorAll('.transcript-row');
+        let activeRow = null;
+        rows.forEach(r => {
+          const startSec = Number(r.getAttribute('data-sec') || 0);
+          if (cur >= startSec && cur < startSec + 25) {
+            r.classList.add('active-sync');
+            activeRow = r;
+          } else {
+            r.classList.remove('active-sync');
+          }
+        });
+      });
+    }
+
+    async function pasteFromClipboard() {
+      try {
+        const text = await navigator.clipboard.readText();
+        if (text && text.trim()) {
+          document.getElementById('streamUrl').value = text.trim();
+          showToast('📋 URL pasted from clipboard');
+        }
+      } catch (e) {
+        document.getElementById('streamUrl').focus();
+      }
+    }
+
+    function selectPresetUrl(url, vid) {
+      document.getElementById('streamUrl').value = url;
+      if (vid) {
+        loadDossierIntoStudio(vid);
+      }
+    }
+
+    function switchStudioTab(tab) {
+      const tabs = ['brief', 'transcript', 'collisions'];
+      tabs.forEach(t => {
+        const panel = document.getElementById('panel-' + t);
+        const btn = document.getElementById('tab-btn-' + t);
+        if (panel) panel.classList.toggle('hidden', t !== tab);
+        if (btn) {
+          if (t === tab) {
+            btn.className = 'px-3.5 py-1.5 rounded-md font-bold bg-amber-500 text-slate-950 transition-all cursor-pointer flex flex-row items-center gap-1.5';
+          } else {
+            btn.className = 'px-3.5 py-1.5 rounded-md font-semibold text-slate-400 hover:text-white transition-all cursor-pointer flex flex-row items-center gap-1.5';
+          }
+        }
+      });
+      if (tab === 'transcript' && fullTranscriptSegments.length === 0) {
+        loadFullRawTranscript('aligned');
+      }
+      if (tab === 'collisions') {
+        loadDossierCollisions(activeVideoId);
+      }
+    }
+
+    function updateInlineStagePills(stageNumber, stageMessage, pct) {
+      const p1 = document.getElementById('stage-pill-1');
+      const p2 = document.getElementById('stage-pill-2');
+      const p3 = document.getElementById('stage-pill-3');
+      const stageText = document.getElementById('stageText');
+      const barFill = document.getElementById('barFill');
+      const btnLabel = document.getElementById('snipeBtnLabel');
+      const spinner = document.getElementById('snipeBtnSpinner');
+      const dot = document.getElementById('inlineTelemetryDot');
+
+      [p1, p2, p3].forEach((el, idx) => {
+        if (!el) return;
+        el.classList.remove('active', 'done');
+        if (stageNumber === 0) {
+          el.classList.add('done');
+        } else if (idx + 1 < stageNumber) {
+          el.classList.add('done');
+        } else if (idx + 1 === stageNumber) {
+          el.classList.add('active');
+        }
+      });
+
+      if (stageText && stageMessage) stageText.innerText = stageMessage;
+      if (barFill && typeof pct === 'number') barFill.style.width = `${pct}%`;
+
+      if (stageNumber > 0) {
+        if (spinner) spinner.classList.remove('hidden');
+        if (btnLabel) btnLabel.innerText = stageMessage;
+        if (dot) dot.className = 'w-2 h-2 rounded-full bg-amber-400 animate-ping shrink-0';
+      } else {
+        if (spinner) spinner.classList.add('hidden');
+        if (btnLabel) btnLabel.innerText = '⚡ [SNIPE STREAM] — INGEST & ALIGN DOSSIER';
+        if (dot) dot.className = 'w-2 h-2 rounded-full bg-emerald-400 shrink-0';
+      }
+    }
+
+    async function loadDossierIntoStudio(videoId) {
+      if (!videoId) return;
+      activeVideoId = videoId;
+      fullTranscriptSegments = [];
+
+      try {
+        const res = await fetch(`/api/snipe/${videoId}`);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        activeDossierData = data;
+
+        document.getElementById('dossierChannel').innerText = data.channel || data.source || 'Broadcast Feed';
+        document.getElementById('dossierTitle').innerText = data.title || `Stream Dossier ${videoId}`;
+        document.getElementById('dossierDuration').innerText = `⏱️ ${data.duration || 'Live'}`;
+        document.getElementById('dossierVideoId').innerText = `CI: ${videoId}`;
+        document.getElementById('dossierAnalyzedAt').innerText = data.analyzedAt || '';
+
+        // Update direct download links
+        document.getElementById('linkDownloadAudio').href = `/api/snipe/${videoId}/file/audio.m4a`;
+        document.getElementById('linkDownloadMeta').href = `/api/snipe/${videoId}/file/metadata.json`;
+        document.getElementById('linkDownloadBrief').href = `/api/snipe/${videoId}/file/summary_intel_brief.md`;
+        document.getElementById('linkDownloadTranscript').href = `/api/snipe/${videoId}/file/transcript_aligned.md`;
+
+        const player = document.getElementById('dossierAudioPlayer');
+        if (player) {
+          player.src = `/api/snipe/${videoId}/file/audio.m4a`;
+        }
+
+        // Render 3-Bullet Intel Brief
+        const bullets = data.bullets || [];
+        const bContainer = document.getElementById('bulletsContainer');
+        if (bullets.length === 0) {
+          bContainer.innerHTML = '<div class="font-mono text-xs text-slate-500 py-4">No summary bullets extracted for this stream.</div>';
+        } else {
+          bContainer.innerHTML = bullets.map((b, i) => `
+            <div class="bg-[#090B0F] border border-white/10 hover:border-amber-500/40 rounded-xl p-4 flex flex-col gap-2 transition-colors">
+              <div class="flex flex-row items-center justify-between gap-2 font-mono text-xs">
+                <div class="flex flex-row items-center gap-2">
+                  <button
+                    type="button"
+                    onclick="seekAudioToTimestamp('${b.timestamp || '00:00'}')"
+                    class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500 text-amber-300 hover:text-slate-950 border border-amber-500/40 font-bold transition-colors cursor-pointer"
+                    title="Seek audio to ${b.timestamp}"
+                  >
+                    ▶ [${b.timestamp || '00:00'}]
+                  </button>
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold uppercase">
+                    ${b.tag || 'INTEL'}
+                  </span>
+                </div>
+                <span class="text-[10px] text-slate-500">BULLET #${i + 1} • VERIFIED</span>
+              </div>
+              <div class="text-sm font-bold text-white leading-snug">
+                ${b.headline || ''}
+              </div>
+              ${b.verbatimQuote ? `
+                <div class="text-xs text-slate-300 italic border-l-2 border-amber-500 pl-3 py-1 bg-[#11141E]/70 rounded-r">
+                  "${b.verbatimQuote}"
+                </div>
+              ` : ''}
+            </div>
+          `).join('');
+        }
+
+        // Render Key Moments Preview & initial transcript rows
+        const moments = data.transcript || [];
+        const kmPreview = document.getElementById('keyMomentsPreview');
+        if (kmPreview) {
+          kmPreview.innerHTML = moments.map(m => `
+            <div
+              onclick="seekAudioToTimestamp('${m.timestamp || '00:00'}')"
+              class="p-3 rounded-lg bg-[#090B0F] border border-white/10 hover:border-amber-500/40 flex flex-col gap-1 cursor-pointer transition-colors"
+            >
+              <div class="flex flex-row items-center justify-between font-mono text-[11px]">
+                <span class="text-amber-400 font-bold">▶ [${m.timestamp || '00:00'}] ${m.speaker || data.channel || 'Speaker'}</span>
+                <span class="text-[10px] text-emerald-400">KEY QUOTE</span>
+              </div>
+              <div class="text-xs text-slate-200 leading-relaxed">${m.text || ''}</div>
+            </div>
+          `).join('');
+        }
+
+        // Pre-populate transcript viewer & collisions
+        loadFullRawTranscript('aligned');
+        loadDossierCollisions(videoId);
+      } catch (e) {
+        console.error('Failed to load dossier:', e);
+      }
+    }
+
+    async function loadFullRawTranscript(fileType = 'aligned') {
+      const listEl = document.getElementById('transcriptViewerList');
+      if (!listEl) return;
+      try {
+        const res = await fetch(`/api/snipe/${activeVideoId}/text/${fileType}`);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const rawText = await res.text();
+        const lines = rawText.split('\n').filter(l => l.trim().length > 0 && !l.startsWith('# '));
+
+        const parsed = [];
+        lines.forEach(line => {
+          const m = line.match(/\[([0-9:]+)(?:\s*->\s*([0-9:]+))?\]\**\s*(.*)/);
+          if (m) {
+            parsed.push({
+              timestamp: m[1],
+              endTimestamp: m[2] || '',
+              seconds: parseTimestampToSeconds(m[1]),
+              text: m[3].replace(/^\**\s*/, '').trim()
+            });
+          } else if (line.trim()) {
+            parsed.push({
+              timestamp: '00:00',
+              endTimestamp: '',
+              seconds: 0,
+              text: line.trim()
+            });
+          }
+        });
+
+        fullTranscriptSegments = parsed;
+        renderTranscriptSegments(parsed);
+      } catch (e) {
+        const fallback = (activeDossierData && activeDossierData.transcript) || [];
+        fullTranscriptSegments = fallback.map(m => ({
+          timestamp: m.timestamp || '00:00',
+          endTimestamp: '',
+          seconds: parseTimestampToSeconds(m.timestamp),
+          text: `${m.speaker ? m.speaker + ': ' : ''}${m.text || ''}`
+        }));
+        renderTranscriptSegments(fullTranscriptSegments);
+      }
+    }
+
+    function renderTranscriptSegments(segments) {
+      const listEl = document.getElementById('transcriptViewerList');
+      const countEl = document.getElementById('transcriptMatchCount');
+      if (!listEl) return;
+
+      if (countEl) {
+        countEl.innerText = `${segments.length} segments`;
+      }
+
+      if (segments.length === 0) {
+        listEl.innerHTML = '<div class="p-6 text-center text-slate-500">No matching transcript lines found.</div>';
+        return;
+      }
+
+      listEl.innerHTML = segments.slice(0, 400).map(seg => `
+        <div
+          data-sec="${seg.seconds}"
+          onclick="seekAudioToTimestamp('${seg.timestamp}')"
+          class="transcript-row p-2.5 rounded-lg bg-[#090B0F] border border-white/10 hover:border-amber-500/40 flex flex-row items-start gap-3 cursor-pointer transition-colors"
+        >
+          <span class="px-2 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30 font-mono text-[11px] font-bold shrink-0">
+            ▶ ${seg.timestamp}
+          </span>
+          <span class="text-slate-200 text-xs leading-relaxed font-sans">${seg.text}</span>
+        </div>
+      `).join('');
+    }
+
+    function filterTranscriptRows() {
+      const q = (document.getElementById('transcriptFilterInput').value || '').trim().toLowerCase();
+      if (!q) {
+        renderTranscriptSegments(fullTranscriptSegments);
+        return;
+      }
+      const filtered = fullTranscriptSegments.filter(s =>
+        s.text.toLowerCase().includes(q) || s.timestamp.toLowerCase().includes(q)
+      );
+      renderTranscriptSegments(filtered);
+    }
+
+    async function loadDossierCollisions(videoId) {
+      const listEl = document.getElementById('collisionsList');
+      const lensesEl = document.getElementById('collisionLensesStrip');
+      const markersEl = document.getElementById('pheromoneMarkersList');
+      const countPill = document.getElementById('collisionCountPill');
+      if (!listEl) return;
+
+      try {
+        const res = await fetch(`/api/snipe/${videoId}/collisions`);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+
+        const lenses = data.active_lenses || [];
+        if (lensesEl) {
+          lensesEl.innerHTML = lenses.map(l => `
+            <span class="px-2.5 py-1 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-bold">
+              🧬 ${l}
+            </span>
+          `).join('');
+        }
+
+        const collisions = data.collisions || [];
+        if (countPill) countPill.innerText = `${collisions.length} Bisociations`;
+
+        if (collisions.length === 0) {
+          listEl.innerHTML = '<div class="font-mono text-xs text-slate-500 py-4">No topological collisions found.</div>';
+        } else {
+          listEl.innerHTML = collisions.map(c => `
+            <div class="bg-[#090B0F] border border-white/10 hover:border-emerald-500/40 rounded-xl p-4 flex flex-col gap-2.5 transition-colors">
+              <div class="flex flex-row items-center justify-between gap-2 flex-wrap font-mono text-xs">
+                <span class="font-bold text-amber-400">${c.collision_id}</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold">
+                  Score: ${c.normalized_score} • Rank #${c.rank || 1}
+                </span>
+              </div>
+
+              <div class="flex flex-row items-center gap-1.5 flex-wrap font-mono text-[10px]">
+                <span class="text-slate-500">Shared Lenses (A ∩ C):</span>
+                ${(c.shared_lenses || []).map(sl => `<span class="px-1.5 py-0.5 rounded bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">${sl}</span>`).join('')}
+                ${(c.blind_spot_lenses_c_minus_a && c.blind_spot_lenses_c_minus_a.length > 0) ? `
+                  <span class="text-slate-500 ml-2">Blind Spots (L_C \\ L_A):</span>
+                  ${c.blind_spot_lenses_c_minus_a.map(bl => `<span class="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">${bl}</span>`).join('')}
+                ` : ''}
+              </div>
+
+              ${(c.three_hop_transitive_chains && c.three_hop_transitive_chains.length > 0) ? `
+                <div class="bg-[#11141E] border border-white/5 rounded-lg p-2.5 flex flex-col gap-1 font-mono text-[11px] text-slate-300">
+                  <span class="text-[10px] text-slate-500 uppercase">3-Hop Multi-Silo Transitive Chains:</span>
+                  ${c.three_hop_transitive_chains.slice(0, 3).map(ch => `<div class="truncate text-emerald-300">↳ ${ch}</div>`).join('')}
+                </div>
+              ` : ''}
+
+              <div class="flex flex-row items-center justify-between text-[10px] font-mono text-slate-500 pt-1 border-t border-white/5">
+                <span>SHA-256 Receipt: ${(c.sha256_receipt || '').slice(0, 24)}…</span>
+                <span class="text-slate-400">${c.discovered_at_utc ? c.discovered_at_utc.split('T')[0] : 'Verified'}</span>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        const markers = data.pheromone_markers || [];
+        if (markersEl) {
+          if (markers.length === 0) {
+            markersEl.innerHTML = '<div class="font-mono text-xs text-slate-500 py-2">No additional pheromone markers deposited for this stream.</div>';
+          } else {
+            markersEl.innerHTML = markers.map(m => `
+              <div
+                onclick="seekAudioToTimestamp('${m.timecode || '00:00'}')"
+                class="p-3 rounded-lg bg-[#090B0F] border border-white/10 hover:border-amber-500/40 flex flex-col gap-1 cursor-pointer"
+              >
+                <div class="flex flex-row items-center justify-between font-mono text-[10px]">
+                  <span class="text-amber-400 font-bold">▶ [${m.timecode || '00:00'}] ${m.lens_slug}</span>
+                  <span class="px-1.5 py-0.2 rounded bg-white/5 text-slate-300">Entity: ${m.entity_key} • Weight: ${m.pheromone_weight}</span>
+                </div>
+                <div class="text-xs text-slate-300">${m.verbatim_quote || ''}</div>
+              </div>
+            `).join('');
+          }
+        }
+      } catch (e) {
+        listEl.innerHTML = `<div class="text-red-400 font-mono text-xs">Failed to load collisions: ${e.message}</div>`;
+      }
+    }
+
+    async function copyActiveDossierText(type, label) {
+      try {
+        const res = await fetch(`/api/snipe/${activeVideoId}/text/${type}`);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const text = await res.text();
+        await navigator.clipboard.writeText(text);
+        showToast(`✓ ${label} copied to clipboard!`);
+      } catch (e) {
+        alert('Copy failed: ' + e.message);
+      }
+    }
+
+    async function copyActiveBriefMarkdown() {
+      if (!activeDossierData) return;
+      const bullets = (activeDossierData.bullets || []).map((b, idx) =>
+        `${idx + 1}. **[${b.timestamp}] ${b.headline}** (\`${b.tag || 'INTEL'}\`)\n   > "${b.verbatimQuote || ''}"`
+      ).join('\n\n');
+      const md = `# ⚡ STREAM SNIPER BRIEF: ${activeDossierData.title}\n- **Channel:** ${activeDossierData.channel || 'Broadcast'}\n- **Duration:** ${activeDossierData.duration || 'Live'}\n\n${bullets}\n`;
+      await navigator.clipboard.writeText(md);
+      showToast('✓ 3-Bullet Markdown Brief copied!');
+    }
+
+    async function exportActiveBriefDiscord() {
+      if (!activeDossierData) return;
+      const bullets = (activeDossierData.bullets || []).map(b =>
+        `• \`[${b.timestamp}]\` **${b.headline}** — *"${b.verbatimQuote || ''}"*`
+      ).join('\n');
+      const msg = `**⚡ STACKLABS STREAM SNIPER // ${activeDossierData.channel || 'LIVE INTEL'}**\n**${activeDossierData.title}**\n${bullets}`;
+      await navigator.clipboard.writeText(msg);
+      showToast('💬 Formatted for Discord & X copied to clipboard!');
+    }
+
+    function setRadarCategory(cat) {
+      currentRadarCat = cat;
+      document.querySelectorAll('.radar-cat-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = 'radar-cat-btn px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold cursor-pointer';
+        } else {
+          btn.className = 'radar-cat-btn px-2.5 py-1 rounded bg-[#090B0F] text-slate-400 border border-white/10 hover:text-white cursor-pointer';
+        }
+      });
+      renderRadarList();
+    }
+
+    function renderRadarList() {
+      const list = document.getElementById('radarList');
+      if (!list) return;
+
+      const filtered = allRadarDrops.filter(item => {
+        if (item.status === 'error') return false;
+        if (currentRadarCat === 'ALL') return true;
+        const text = `${item.name} ${item.category} ${item.domain} ${item.latest_title}`.toLowerCase();
+        if (currentRadarCat === 'CFB') return text.includes('cfb') || text.includes('college') || text.includes('pate') || text.includes('bussin') || text.includes('morning');
+        if (currentRadarCat === 'NFL') return text.includes('nfl') || text.includes('mcafee') || text.includes('heights') || text.includes('sport') || text.includes('football');
+        if (currentRadarCat === 'MACRO') return text.includes('macro') || text.includes('commodity') || text.includes('horizon') || text.includes('energy') || text.includes('finance');
+        if (currentRadarCat === 'BLOOMBERG') return text.includes('bloomberg') || text.includes('market') || text.includes('cnbc') || text.includes('macro') || text.includes('tech');
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        list.innerHTML = '<div class="font-mono text-xs text-slate-500 text-center py-6">No feeds matching selected category filter.</div>';
+        return;
+      }
+
+      list.innerHTML = filtered.map(item => {
+        const isSniped = item.is_sniped;
+        const vid = item.latest_video_id;
+        return `
+          <div class="p-3 rounded-lg bg-[#090B0F] border ${isSniped ? 'border-emerald-500/40' : 'border-white/10'} flex flex-col gap-2">
+            <div class="flex flex-row items-center justify-between gap-2 font-mono text-[10px]">
+              <span class="font-bold text-slate-200 truncate">${item.icon || '🎙️'} ${item.name}</span>
+              <span class="px-2 py-0.5 rounded font-bold ${isSniped ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-blue-500/15 text-blue-300 border border-blue-500/30'}">
+                ${isSniped ? 'READY IN VFS' : 'LIVE FEED'}
+              </span>
+            </div>
+            <div class="text-xs font-semibold text-white leading-snug line-clamp-2">${item.latest_title || 'Broadcast Drop'}</div>
+            <div class="flex flex-row items-center justify-between pt-1 border-t border-white/5 font-mono text-[10px]">
+              <span class="text-slate-500">${item.category || 'Broadcast'} • ${item.published_at ? item.published_at.split('T')[0] : 'Today'}</span>
+              <div class="flex flex-row items-center gap-1.5">
+                ${isSniped ? `
+                  <button
+                    type="button"
+                    onclick="loadDossierIntoStudio('${vid}')"
+                    class="px-2.5 py-1 rounded bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold cursor-pointer"
+                  >
+                    📂 Open Dossier
+                  </button>
+                ` : `
+                  <button
+                    type="button"
+                    id="btn_snipe_${vid}"
+                    onclick="snipeFromRadar('${item.latest_url}', '${vid}')"
+                    class="px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold cursor-pointer"
+                  >
+                    ⚡ 1-Click Snipe
+                  </button>
+                `}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function loadRadar() {
+      try {
+        const res = await fetch('/api/snipe/radar');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        allRadarDrops = data.radar_drops || [];
+        const cnt = document.getElementById('radarCount');
+        if (cnt) cnt.innerText = `${data.channels_tracked || allRadarDrops.length} Channels`;
+        renderRadarList();
+      } catch (e) {
+        const list = document.getElementById('radarList');
+        if (list) list.innerHTML = `<div class="text-red-400 font-mono text-xs p-3">Radar poll error: ${e.message}</div>`;
+      }
+    }
+
+    async function loadCatalog() {
+      try {
+        const res = await fetch('/api/snipe/catalog');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const catalog = data.catalog || [];
+        const cnt = document.getElementById('catalogCount');
+        if (cnt) cnt.innerText = `${data.total_cis || catalog.length} CIs`;
+
+        const list = document.getElementById('catalogList');
+        if (!list) return;
+
+        if (catalog.length === 0) {
+          list.innerHTML = '<div class="font-mono text-xs text-slate-500 text-center py-4">No sniped CIs registered yet.</div>';
+          return;
+        }
+
+        list.innerHTML = catalog.map(ci => {
+          const poly = ci.polymorphic || { icon: '🏈', domain: 'SPORT / FANSTACK' };
+          const isCurrent = ci.video_id === activeVideoId;
+          return `
+            <div
+              onclick="loadDossierIntoStudio('${ci.video_id}')"
+              class="p-3 rounded-lg bg-[#090B0F] border ${isCurrent ? 'border-amber-400 bg-amber-500/5' : 'border-white/10 hover:border-white/25'} flex flex-col gap-1.5 cursor-pointer transition-all"
+            >
+              <div class="flex flex-row items-center justify-between gap-2 font-mono text-[10px]">
+                <span class="px-2 py-0.5 rounded bg-white/5 text-amber-300 border border-white/10 font-bold">
+                  ${poly.icon} ${ci.channel}
+                </span>
+                <div class="flex flex-row items-center gap-1.5">
+                  <span class="text-slate-500">${ci.duration || ''}</span>
+                  <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">READY</span>
+                </div>
+              </div>
+              <div class="text-xs font-bold text-white leading-snug line-clamp-2">${ci.name}</div>
+              <div class="flex flex-row items-center justify-between text-[10px] font-mono text-slate-500 pt-1">
+                <span>CI: ${ci.video_id}</span>
+                <span>${ci.registered_at || ''}</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+      } catch (e) {
+        console.error('Catalog error:', e);
+      }
+    }
+
+    async function snipeFromRadar(url, vid) {
+      document.getElementById('streamUrl').value = url;
+      await dispatchSnipeUrl(url);
+    }
+
+    async function handleCustomSnipe() {
+      const url = document.getElementById('streamUrl').value.trim();
+      if (!url) {
+        showToast('⚠ Paste a YouTube or stream URL first');
+        document.getElementById('streamUrl').focus();
+        return;
+      }
+      await dispatchSnipeUrl(url);
+    }
+
+    async function dispatchSnipeUrl(url) {
+      const btn = document.getElementById('customSnipeBtn');
+      const elapsedText = document.getElementById('elapsedText');
+      const readyBadge = document.getElementById('ingressReadyBadge');
+
+      if (btn) btn.disabled = true;
+      if (readyBadge) {
+        readyBadge.innerText = 'ACTIVE INGRESS';
+        readyBadge.className = 'font-mono text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold animate-pulse';
+      }
+
+      const startTime = Date.now();
+      updateInlineStagePills(1, '[1/3] Downloading Audio (48MB)...', 22);
+
+      const timer = setInterval(() => {
+        const sec = Math.floor((Date.now() - startTime) / 1000);
+        if (elapsedText) {
+          elapsedText.innerText = Math.floor(sec / 60) + ':' + String(sec % 60).padStart(2, '0');
+        }
+        if (sec >= 15 && sec < 45) {
+          updateInlineStagePills(2, '[2/3] Artemis CUDA Faster-Whisper (37.2x)...', Math.min(72, 25 + sec));
+        } else if (sec >= 45) {
+          updateInlineStagePills(3, '[3/3] Gemini 3.8 Flash Alignment & Swanson Bisociation...', Math.min(95, 45 + Math.floor(sec / 2)));
+        }
+      }, 1000);
+
+      try {
+        const res = await fetch('/api/snipe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: url })
+        });
+        const data = await res.json();
+        const videoId = data.video_id || data.id;
+
+        if (data.status === 'ready' || data.bullets) {
+          clearInterval(timer);
+          if (btn) btn.disabled = false;
+          if (readyBadge) {
+            readyBadge.innerText = 'ARMED • READY';
+            readyBadge.className = 'font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-bold';
+          }
+          updateInlineStagePills(0, `✓ Dossier Ready (${videoId}) — Loaded in Right Studio`, 100);
+          showToast('⚡ Stream Dossier Ready!');
+          await loadDossierIntoStudio(videoId);
+          loadCatalog();
+          loadRadar();
+          return;
+        }
+
+        const poll = setInterval(async () => {
+          try {
+            const check = await fetch('/api/snipe/' + videoId);
+            if (check.ok) {
+              const pollData = await check.json();
+              if (pollData.bullets || pollData.status === 'ready') {
+                clearInterval(poll);
+                clearInterval(timer);
+                if (btn) btn.disabled = false;
+                if (readyBadge) {
+                  readyBadge.innerText = 'ARMED • READY';
+                  readyBadge.className = 'font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-bold';
+                }
+                updateInlineStagePills(0, `✓ Dossier Ready (${videoId}) — Loaded in Right Studio`, 100);
+                showToast('⚡ Stream successfully sniped & cataloged!');
+                await loadDossierIntoStudio(videoId);
+                loadCatalog();
+                loadRadar();
+              } else if (pollData.stage) {
+                const st = pollData.stage;
+                const el = pollData.elapsed || 15;
+                const stNum = st.includes('yt-dlp') || st.includes('1/3') ? 1 : st.includes('Whisper') || st.includes('2/3') ? 2 : 3;
+                updateInlineStagePills(stNum, st, Math.min(94, Math.max(20, Math.floor((el / 90) * 100))));
+              }
+            }
+          } catch (pe) {}
+        }, 2000);
+      } catch (err) {
+        clearInterval(timer);
+        if (btn) btn.disabled = false;
+        updateInlineStagePills(0, '⚠ Snipe request error: ' + err.message, 100);
+      }
+    }
+
+    // Boot studio with latest cataloged dossier
+    (async function initStudio() {
+      await loadCatalog();
+      await loadDossierIntoStudio(activeVideoId);
+      loadRadar();
+    })();
+  </script>
+</body>
+</html>

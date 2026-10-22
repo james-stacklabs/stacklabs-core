@@ -1,0 +1,16 @@
+{
+  "bisociation_score": 0.933,
+  "complementary_lenses_to_test": [
+    "UNEXPLAINED_LOGIC_DRIFT"
+  ],
+  "methodology": "Don R. Swanson (1986) Undiscovered Public Knowledge A-B-C Bisociation",
+  "shared_lenses_b": [
+    "ASYMMETRIC_TAIL_CONTAGION",
+    "COGNITIVE_FRICTION_ATROPHY"
+  ],
+  "silo_a_node": "twenty_year_trading_model_failure",
+  "silo_a_path": "/home/james/stacklabs/vfs/vault/pawel/twenty_year_trading_model_failure",
+  "silo_c_domain": "swanson_benchmark",
+  "silo_c_node": "SWANSON_1986_RAYNAUDS_FISH_OIL",
+  "silo_c_path": "/home/james/stacklabs/vfs/vault/swanson_benchmark/SWANSON_1986_RAYNAUDS_FISH_OIL"
+}

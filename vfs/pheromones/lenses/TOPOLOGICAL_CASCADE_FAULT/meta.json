@@ -1,0 +1,5 @@
+{
+  "title": "Topological Cascade Fault & Unlogged Dependency Propagation",
+  "description": "Upstream configuration or architectural shifts that silently degrade downstream enterprise service nodes without tripping localized health-check alarms.",
+  "category": "Distributed Systems & Enterprise CMDB"
+}

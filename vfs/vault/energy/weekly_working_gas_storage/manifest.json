@@ -1,0 +1,10 @@
+{
+  "report_slug": "weekly_working_gas_storage",
+  "data_source": "U.S. Energy Information Administration (EIA)",
+  "raw_file": "weekly_working_gas_storage.csv",
+  "size_bytes": 617847,
+  "associated_lenses": [
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "TOPOLOGICAL_CASCADE_FAULT"
+  ]
+}

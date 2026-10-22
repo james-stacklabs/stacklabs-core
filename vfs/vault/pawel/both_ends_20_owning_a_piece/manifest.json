@@ -1,0 +1,12 @@
+{
+  "slug": "both_ends_20_owning_a_piece",
+  "title": "Essay 20: Owning a Piece (Local Silicon vs. Cloud Tolls)",
+  "author": "Pawel Rudnicki",
+  "date": "2026-10-20",
+  "summary": "Asks whether small private models on local silicon do for this era what rural electrification did for the 1930s. Immune to centralized cloud toll gates.",
+  "associated_lenses": [
+    "LATENCY_INVERSION_BOUNDARY",
+    "THERMODYNAMIC_ENERGY_CEILING",
+    "GHOST_GDP_DECOUPLING"
+  ]
+}

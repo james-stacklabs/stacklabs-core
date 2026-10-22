@@ -1,0 +1,11 @@
+{
+  "bisociation_score": 0.57,
+  "complementary_lenses_to_test": [
+    "LOW_VOL_MONEY_DOWN_STUFF"
+  ],
+  "node_a": "ALA",
+  "node_c": "TENN",
+  "shared_lenses_b": [
+    "HIDDEN_SNAP_FATIGUE_COLLAPSE"
+  ]
+}

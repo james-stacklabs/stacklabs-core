@@ -1,0 +1,7 @@
+{
+  "name": "monolith_collider_sentinel",
+  "version": "1.0.0",
+  "description": "Semantic output sentinel for StackLabs Small-Ball Monolith Collider.",
+  "target_output": "/home/james/stacklabs/vfs/collisions/monolith_ranked_collisions.json",
+  "min_collisions": 20
+}
