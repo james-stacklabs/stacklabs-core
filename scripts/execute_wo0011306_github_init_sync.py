@@ -302,10 +302,19 @@ def main() -> int:
             if inbox_passport.parent.exists():
                 inbox_passport.write_text(passport_text, encoding="utf-8")
 
-    # Commit the receipt and updated passport so remote has them too
-    run_cmd(["git", "add", "queue/archive/WO0011306_COMPLETED.md", "pilot_drops/PILOT_PASSPORT_CURRENT.md"], check=False)
+    # Commit the walkthrough receipts so remote has them too
+    run_cmd(
+        [
+            "git",
+            "add",
+            "walkthroughs/walkthrough_WO0011306.md",
+            "walkthroughs/walkthrough_WO0011306_INIT_AND_PUSH_STACKLABS_GITHUB_REPO.md",
+            "scripts/execute_wo0011306_github_init_sync.py",
+        ],
+        check=False,
+    )
     if run_cmd(["git", "diff", "--cached", "--name-only"]).stdout.strip():
-        run_cmd(["git", "commit", "-m", "docs(wo0011306): record execution receipt and update Pilot Passport"])
+        run_cmd(["git", "commit", "-m", "docs(wo0011306): record execution receipt and walkthrough"])
         run_cmd(["git", "push", "origin", "main"])
         commit_sha = run_cmd(["git", "rev-parse", "HEAD"]).stdout.strip()
 
